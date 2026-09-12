@@ -265,6 +265,11 @@ Huapaya-Huertas, O., Palomino-Rojas, J., Calle-Texeira, C., Alvarez-Huiman, G., 
 
 #### 1.2.2 Lean UX Process
 ##### 1.2.2.1. Lean UX Problem Statements
+
+Los **médicos y pacientes** presentan dificultades para gestionar y acceder de manera organizada a la información relacionada con la atención médica. Por un lado, los médicos necesitan administrar sus citas y consultar o compartir documentos como recetas, informes y resultados de exámenes; por otro lado, los pacientes necesitan acceder fácilmente a sus citas y a la documentación proporcionada por sus médicos. La dispersión de esta información entre diferentes registros, documentos y medios digitales puede dificultar su consulta y el seguimiento de la atención.
+
+**¿Cómo podríamos facilitar la interacción entre médicos y pacientes, permitiendo gestionar citas y acceder de manera organizada a la información relacionada con la atención médica desde un mismo entorno digital?**
+
 ##### 1.2.2.2. Lean UX Assumptions
 ##### 1.2.2.3. Lean UX Hypothesis Statements
 ##### 1.2.2.4. Lean UX Canvas
