@@ -295,6 +295,17 @@ Los **médicos y pacientes** presentan dificultades para gestionar y acceder de 
 - Creemos que los usuarios consideran importante recibir notificaciones sobre citas y nueva documentación disponible.
 
 ##### 1.2.2.3. Lean UX Hypothesis Statements
+
+1. Creemos que centralizar las citas y documentos relacionados con la atención médica permitirá a médicos y pacientes acceder y gestionar su información de manera más organizada.
+
+2. Creemos que enviar recordatorios de las próximas citas ayudará a los pacientes a realizar un mejor seguimiento de sus citas programadas.
+
+3. Creemos que permitir a los pacientes consultar sus recetas, informes y resultados desde un único entorno facilitará el acceso a su información.
+
+4. Creemos que permitir a los médicos compartir documentos directamente con sus pacientes facilitará el seguimiento de la atención.
+
+5. Creemos que ofrecer una plataforma sencilla, accesible y organizada aumentará la disposición de médicos y pacientes a utilizarla.
+
 ##### 1.2.2.4. Lean UX Canvas
 ### 1.3. Segmentos objetivo
 
