@@ -239,8 +239,7 @@ Desarrollar una plataforma digital que conecte a médicos y pacientes mediante l
 </table>
 
 ### 1.2. Solution Profile
-
-1.2.1 Antecedentes y problemática
+#### 1.2.1 Antecedentes y problemática
 
 En el Perú, la gestión de la información médica presenta dificultades debido a la fragmentación de los sistemas de salud y a la existencia de múltiples registros clínicos. Según Rojas-Mezarina, Cedamanos-Medina y Vargas-Herrera (2015), esta fragmentación puede ocasionar la pérdida de información valiosa del paciente al no contar con mecanismos adecuados para integrar sus diferentes historias clínicas. Asimismo, Huapaya-Huertas et al. (2021) destacan que la implementación de historias clínicas electrónicas permite mejorar la disponibilidad de la información y favorecer la continuidad de la atención.
 
@@ -264,7 +263,6 @@ Rojas-Mezarina, L., Cedamanos-Medina, C. A., & Vargas-Herrera, J. (2015). Regist
 
 Huapaya-Huertas, O., Palomino-Rojas, J., Calle-Texeira, C., Alvarez-Huiman, G., Montesinos-Segura, R., & Taype-Rondan, A. (2021). Experiencia del Complejo Hospitalario San Pablo (Perú) en la implementación de un sistema de historias clínicas electrónicas. *Anales de la Facultad de Medicina, 82*(4), 349–354. 
 
-#### 1.2.1 Antecedentes y problemática
 #### 1.2.2 Lean UX Process
 ##### 1.2.2.1. Lean UX Problem Statements
 ##### 1.2.2.2. Lean UX Assumptions
