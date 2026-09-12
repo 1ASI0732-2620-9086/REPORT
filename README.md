@@ -170,6 +170,41 @@ El curso contribuye al cumplimiento del Student Outcome ABET. En el siguiente cu
 ## Capítulo I: Introducción
 ### 1.1. Startup Profile
 #### 1.1.1. Descripción de la Startup
+
+**[Nombre]** es una startup tecnológica enfocada en mejorar la interacción entre médicos y pacientes mediante una plataforma digital. La solución busca centralizar la gestión de citas y documentos relacionados con la atención, como recetas, informes, resultados de exámenes y estudios médicos.
+
+A través de la plataforma, los médicos podrán gestionar sus citas, pacientes y documentos, mientras que los pacientes podrán consultar sus citas y acceder de manera organizada a la información compartida por sus médicos.
+
+#### Misión
+
+Facilitar la interacción entre médicos y pacientes mediante una solución tecnológica que permita gestionar citas y documentación médica de manera organizada, accesible y segura.
+
+#### Visión
+
+Convertirse en una plataforma tecnológica reconocida por mejorar la experiencia y comunicación entre médicos y pacientes, ofreciendo soluciones innovadoras que faciliten el seguimiento de la atención médica.
+
+#### Valores
+
+Nuestros valores se basan en la **innovación**, buscando constantemente nuevas formas de mejorar la experiencia de médicos y pacientes mediante la tecnología; la **seguridad**, priorizando la protección de la información de los usuarios; la **confianza**, promoviendo una relación transparente entre médicos, pacientes y la plataforma; la **accesibilidad**, desarrollando una solución sencilla y fácil de utilizar; y la **responsabilidad**, considerando la sensibilidad de la información gestionada y el impacto que nuestra solución puede generar en sus usuarios.
+
+#### Objetivo General
+
+Desarrollar una plataforma digital que conecte a médicos y pacientes mediante la gestión centralizada de citas y documentación relacionada con la atención, facilitando el acceso y seguimiento de la información.
+
+#### Objetivos Específicos
+
+- Facilitar a los médicos la gestión de sus citas, pacientes y documentación.
+
+- Permitir el intercambio organizado de recetas, informes, resultados y otros documentos entre médicos y pacientes.
+
+- Facilitar a los pacientes la consulta de sus citas y documentación desde un único lugar.
+
+- Implementar notificaciones que faciliten el seguimiento de citas y nueva información disponible.
+
+- Incorporar mecanismos de autenticación y control de acceso para proteger la información gestionada por la plataforma.
+
+- Recopilar métricas de uso que permitan evaluar funcionalidades y mejorar continuamente la experiencia de médicos y pacientes.
+
 #### 1.1.2. Perfiles de integrantes del equipo
 ### 1.2. Solution Profile
 #### 1.2.1 Antecedentes y problemática
