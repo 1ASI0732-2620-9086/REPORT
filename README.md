@@ -206,6 +206,38 @@ Desarrollar una plataforma digital que conecte a médicos y pacientes mediante l
 - Recopilar métricas de uso que permitan evaluar funcionalidades y mejorar continuamente la experiencia de médicos y pacientes.
 
 #### 1.1.2. Perfiles de integrantes del equipo
+### 1.1.2. Perfiles de los integrantes del equipo
+
+<table border="1">
+  <tr>
+    <th>Integrante</th>
+    <th>Descripción</th>
+    <th>Conocimiento</th>
+  </tr>
+  <tr>
+    <td> U202311828 - <br> 
+      Stephano Mayrzon <br>
+      Landauri Preciado</td>
+    <td>Soy estudiante de la upc con 20 años. Me caracterizo por impulsar las habilidades de mis compañeros y mantener una actitud colaborativa en cada etapa del proyecto. Además, tengo facilidad para detectar las necesidades del usuario, lo que me permite aportar una perspectiva centrada en el cliente al momento de tomar decisiones en el equipo. </td>
+    <td>Cuento con conocimientos en desarrollo Full Stack utilizando React, TypeScript, JavaScript, Node.js y Express, además del desarrollo de APIs REST y manejo de bases de datos como SQLite, MySQL y MongoDB. También tengo experiencia con Git y GitHub, aplicaciones PWA, desarrollo móvil con Capacitor, arquitectura de software, seguridad mediante JWT y despliegue de aplicaciones en la nube con Oracle Cloud.</td>
+  </tr>
+  <tr>
+    <td>Integrante 2</td>
+    <td>Por completar</td>
+    <td>Por completar</td>
+  </tr>
+  <tr>
+    <td>Integrante 3</td>
+    <td>Por completar</td>
+    <td>Por completar</td>
+  </tr>
+  <tr>
+    <td>Integrante 4</td>
+    <td>Por completar</td>
+    <td>Por completar</td>
+  </tr>
+</table>
+
 ### 1.2. Solution Profile
 #### 1.2.1 Antecedentes y problemática
 #### 1.2.2 Lean UX Process
