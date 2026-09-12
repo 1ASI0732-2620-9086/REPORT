@@ -271,6 +271,29 @@ Los **médicos y pacientes** presentan dificultades para gestionar y acceder de 
 **¿Cómo podríamos facilitar la interacción entre médicos y pacientes, permitiendo gestionar citas y acceder de manera organizada a la información relacionada con la atención médica desde un mismo entorno digital?**
 
 ##### 1.2.2.2. Lean UX Assumptions
+
+**Business Assumptions**
+
+- Creemos que los médicos necesitan una herramienta que les permita gestionar sus citas y la información de sus pacientes desde un mismo entorno.
+
+- Creemos que los pacientes valorarán poder consultar sus citas, recetas, informes y resultados de manera organizada.
+
+- Creemos que centralizar la interacción y documentación entre médicos y pacientes puede facilitar el seguimiento de la atención.
+
+- Creemos que una plataforma web y móvil puede mejorar la accesibilidad a la información para ambos segmentos.
+
+**User Assumptions**
+
+- Creemos que los médicos tienen dificultades al gestionar información de sus pacientes mediante diferentes medios.
+
+- Creemos que los pacientes tienen dificultades para mantener organizados sus documentos relacionados con la atención médica.
+
+- Creemos que los pacientes necesitan acceder rápidamente a sus recetas, informes y resultados.
+
+- Creemos que médicos y pacientes utilizarían una plataforma digital si esta es sencilla, accesible y segura.
+
+- Creemos que los usuarios consideran importante recibir notificaciones sobre citas y nueva documentación disponible.
+
 ##### 1.2.2.3. Lean UX Hypothesis Statements
 ##### 1.2.2.4. Lean UX Canvas
 ### 1.3. Segmentos objetivo
