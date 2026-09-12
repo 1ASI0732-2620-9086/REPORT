@@ -308,18 +308,7 @@ Los **médicos y pacientes** presentan dificultades para gestionar y acceder de 
 
 ##### 1.2.2.4. Lean UX Canvas
 
-#### 1.2.2.4. Lean UX Canvas
-
-| Section | Description |
-| --- | --- |
-| 1. Business Problem | La información relacionada con la atención médica puede encontrarse distribuida entre diferentes registros y medios, dificultando a médicos y pacientes la gestión de citas, documentos y el seguimiento de la atención. |
-| 2. Business Outcomes | Incrementar el uso de la plataforma, mejorar la gestión de citas, aumentar la consulta de documentos y fomentar una interacción continua entre médicos y pacientes. |
-| 3. Users | Médicos que necesitan gestionar citas, pacientes y documentación; y pacientes que necesitan consultar sus citas, recetas, informes, resultados y otros documentos relacionados con su atención. |
-| 4. User Benefits | Acceso organizado a la información, facilidad para gestionar citas, disponibilidad de documentos y mejor seguimiento de la atención. |
-| 5. Solutions | Gestión de citas, perfiles de médicos y pacientes, repositorio de documentos, recetas e informes digitales, carga de resultados, notificaciones y seguimiento de citas. |
-| 6. Hypotheses | Creemos que centralizar citas y documentos facilitará la gestión y acceso a la información. Creemos que los recordatorios mejorarán el seguimiento de las citas. Creemos que facilitar el intercambio de documentos generará valor para médicos y pacientes. |
-| 7. What do we need to learn? | Necesitamos conocer cómo gestionan actualmente médicos y pacientes sus citas y documentos, cuáles son sus principales dificultades, qué funcionalidades consideran más útiles y qué factores influirían en su decisión de utilizar la plataforma. |
-| 8. How will we learn? | Mediante entrevistas con médicos y pacientes, pruebas de usabilidad, prototipos y experimentos que permitan recopilar métricas sobre el uso de las principales funcionalidades. |
+![Lean UX Canvas](assets/Lean_UX_Canvas.png)
 
 ### 1.3. Segmentos objetivo
 
