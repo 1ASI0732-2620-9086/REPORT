@@ -216,37 +216,11 @@ Desarrollar una plataforma digital que conecte a médicos y pacientes mediante l
 #### 1.1.2. Perfiles de integrantes del equipo
 ### 1.1.2. Perfiles de los integrantes del equipo
 
-<table border="1">
-  <tr>
-    <th>Integrante</th>
-    <th>Descripción</th>
-    <th>Conocimiento</th>
-  </tr>
-  <tr>
-    <td> U202311828 - <br> 
-      Stephano Mayrzon <br>
-      Landauri Preciado</td>
-    <td>Soy estudiante de la upc con 20 años. Me caracterizo por impulsar las habilidades de mis compañeros y mantener una actitud colaborativa en cada etapa del proyecto. Además, tengo facilidad para detectar las necesidades del usuario, lo que me permite aportar una perspectiva centrada en el cliente al momento de tomar decisiones en el equipo. </td>
-    <td>Cuento con conocimientos en desarrollo Full Stack utilizando React, TypeScript, JavaScript, Node.js y Express, además del desarrollo de APIs REST y manejo de bases de datos como SQLite, MySQL y MongoDB. También tengo experiencia con Git y GitHub, aplicaciones PWA, desarrollo móvil con Capacitor, arquitectura de software, seguridad mediante JWT y despliegue de aplicaciones en la nube con Oracle Cloud.</td>
-  </tr>
-  <tr>
-    <td>U20231F412 - <br> 
-      Johnny Alexander <br>
-      Ojanama Abanto</td>
-    <td>Soy Johnny Alexander Ojanama Abanto, me encuentro en el septimo ciclo de la carrera de Ingenieria de Software. Me considero alguien participativo que le gusta ayudar en lo que puede y alguien capaz de trabajar en situaciones de contratiempo y presion.</td>
-    <td>Tengo conocimientos en C++, MySQL, Mongo DB, Python y experiencia creando Frontend y Backend en frameworks como Angular, Vue.js y Flutter, ademas, tambien tengo conocimientos en DDD (Domain Driven Design) e Hibrido DDD con Clean Architecture.</td>
-  </tr>
-  <tr>
-    <td>Integrante 3</td>
-    <td>Por completar</td>
-    <td>Por completar</td>
-  </tr>
-  <tr>
-    <td>Integrante 4</td>
-    <td>Por completar</td>
-    <td>Por completar</td>
-  </tr>
-</table>
+| Foto | Nombre completo | Código | Carrera | Habilidades técnicas y rol |
+|:---:|---|---|---|---|
+| Por agregar | Stephano Mayrzon Landauri Preciado | U202311828 | Ingeniería de Software | Desarrollo Full Stack con React, TypeScript, JavaScript, Node.js y Express. Creación de APIs REST y manejo de SQLite, MySQL y MongoDB. Conocimientos en Git, GitHub, PWA, Capacitor, JWT y despliegue en Oracle Cloud. Aporta al análisis de las necesidades del usuario y promueve el trabajo colaborativo. |
+| Por agregar | Johnny Alexander Ojanama Abanto | U20231F412 | Ingeniería de Software | Conocimientos en C++, MySQL, MongoDB y Python. Experiencia en desarrollo Frontend y Backend con tecnologías como Angular, Vue.js y Flutter. Conocimientos en DDD y su integración con Clean Architecture. Participa en la resolución de problemas y apoya al equipo ante contratiempos. |
+| <img src="assets/oscar_espinoza.png" alt="Oscar Leonardo Espinoza Quijandria" width="200"> | Oscar Leonardo Espinoza Quijandria | U202311842 | Ingeniería de Software | Conocimientos en programación orientada a objetos con C++, estructuras de datos y bases de datos SQL. Participación en el análisis de requerimientos, diseño de arquitectura con ADD, DDD, Clean Architecture y microservicios. Elaboración de diagramas y documentación técnica mediante Markdown, Git y GitHub. |
 
 ### 1.2. Solution Profile
 #### 1.2.1 Antecedentes y problemática
