@@ -18,8 +18,8 @@
   <br>
   <h4>Integrantes:</h4>
   <ul style="list-style-type: none; padding: 0;">
-    <li>[Código 1] - [Apellidos, Nombres 1]</li>
-    <li>[Código 2] - [Apellidos, Nombres 2]</li>
+    <li>U202311828 - Landauri Preciado, Stephano Mayrzon</li>
+    <li>U202311842 - Quijandria Espinoza, Oscar Leonardo</li>
     <li>[Código 3] - [Apellidos, Nombres 3]</li>
     <li>[Código 4] - [Apellidos, Nombres 4]</li>
   </ul>
