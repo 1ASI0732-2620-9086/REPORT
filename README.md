@@ -54,9 +54,17 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
 - [Capítulo I: Introducción](#capítulo-i-introducción)
   - [1.1. Startup Profile](#11-startup-profile)
     - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
+    - [Misión](#misión)
+    - [Visión](#visión)
+    - [Valores](#valores)
+    - [Objetivo General](#objetivo-general)
+    - [Objetivos Específicos](#objetivos-específicos)
     - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
+  - [1.1.2. Perfiles de los integrantes del equipo](#112-perfiles-de-los-integrantes-del-equipo)
   - [1.2. Solution Profile](#12-solution-profile)
     - [1.2.1 Antecedentes y problemática](#121-antecedentes-y-problemática)
+    - [Análisis 5W + 2H](#análisis-5w--2h)
+    - [Referencias](#referencias)
     - [1.2.2 Lean UX Process](#122-lean-ux-process)
       - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
       - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
@@ -222,9 +230,11 @@ Desarrollar una plataforma digital que conecte a médicos y pacientes mediante l
     <td>Cuento con conocimientos en desarrollo Full Stack utilizando React, TypeScript, JavaScript, Node.js y Express, además del desarrollo de APIs REST y manejo de bases de datos como SQLite, MySQL y MongoDB. También tengo experiencia con Git y GitHub, aplicaciones PWA, desarrollo móvil con Capacitor, arquitectura de software, seguridad mediante JWT y despliegue de aplicaciones en la nube con Oracle Cloud.</td>
   </tr>
   <tr>
-    <td>Integrante 2</td>
-    <td>Por completar</td>
-    <td>Por completar</td>
+    <td>U20231F412 - <br> 
+      Johnny Alexander <br>
+      Ojanama Abanto</td>
+    <td>Soy Johnny Alexander Ojanama Abanto, me encuentro en el septimo ciclo de la carrera de Ingenieria de Software. Me considero alguien participativo que le gusta ayudar en lo que puede y alguien capaz de trabajar en situaciones de contratiempo y presion.</td>
+    <td>Tengo conocimientos en C++, MySQL, Mongo DB, Python y experiencia creando Frontend y Backend en frameworks como Angular, Vue.js y Flutter, ademas, tambien tengo conocimientos en DDD (Domain Driven Design) e Hibrido DDD con Clean Architecture.</td>
   </tr>
   <tr>
     <td>Integrante 3</td>
