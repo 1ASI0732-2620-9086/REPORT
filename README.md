@@ -366,11 +366,3 @@ Esta dependencia justifica la priorización reflejada en el Product Backlog: la 
 
 <img src="assets/ImpactMapping.png" alt="Impact Mapping" width="900">
 
-
-## Bibliografía
-
----
-
-## Anexos
-### Anexo A. Videos de Exposiciones
-*(Incluir de forma progresiva el título e hipervínculo al video de Exposición en Microsoft Stream para cada entrega AV1, TB1, AV2, TB2).*
