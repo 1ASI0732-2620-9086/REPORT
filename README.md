@@ -103,6 +103,32 @@ Este User Persona representa a pacientes que realizan consultas médicas y neces
 ![User Persona - Paciente](assets/User_Persona_Paciente.png)
 
 #### 2.3.2. User Task Matrix
+
+La User Task Matrix permite identificar y comparar las principales actividades realizadas por médicos y pacientes relacionadas con la gestión de citas y documentación. Para cada tarea se considera la frecuencia con la que se realiza y su nivel de importancia para cada segmento.
+
+| Tarea del usuario | Médico - Frecuencia | Médico - Importancia | Paciente - Frecuencia | Paciente - Importancia |
+| --- | --- | --- | --- | --- |
+| Consultar próximas citas | Alta | Alta | Media | Alta |
+| Gestionar una cita | Alta | Alta | Media | Alta |
+| Gestionar agenda | Alta | Alta | No aplica | No aplica |
+| Consultar información relacionada con una atención | Alta | Alta | Media | Alta |
+| Generar una receta | Alta | Alta | No aplica | No aplica |
+| Consultar una receta | Media | Alta | Media | Alta |
+| Generar un informe | Media | Alta | No aplica | No aplica |
+| Consultar un informe | Media | Alta | Media | Alta |
+| Subir resultados o estudios | Baja | Media | Media | Alta |
+| Revisar resultados o estudios | Alta | Alta | Media | Alta |
+| Compartir documentos | Alta | Alta | Media | Alta |
+| Consultar documentos anteriores | Alta | Alta | Media | Alta |
+| Recibir recordatorios de citas | Media | Media | Media | Alta |
+| Consultar notificaciones | Media | Media | Media | Media |
+
+A partir de la matriz se observa que ambos segmentos comparten actividades relacionadas con la gestión de citas, consulta de documentos y acceso a información relacionada con la atención. Sin embargo, las responsabilidades de cada usuario son diferentes.
+
+El médico presenta una mayor frecuencia en actividades relacionadas con la administración de la agenda, generación de recetas e informes y revisión de resultados. Por otro lado, el paciente presenta una mayor necesidad de consultar documentos, recibir recordatorios y compartir resultados obtenidos después de una consulta.
+
+Los valores definitivos de frecuencia e importancia deberán ser revisados después de analizar las entrevistas realizadas a ambos segmentos.
+
 #### 2.3.3. User Journey Mapping
 #### 2.3.4. Empathy Mapping
 #### 2.3.5. As-Is Scenario Mapping
