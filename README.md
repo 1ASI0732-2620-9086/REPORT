@@ -21,7 +21,6 @@
     <li>U202311828 - Landauri Preciado, Stephano Mayrzon</li>
     <li>U202311842 - Quijandria Espinoza, Oscar Leonardo</li>
     <li>[Código 3] - [Apellidos, Nombres 3]</li>
-    <li>[Código 4] - [Apellidos, Nombres 4]</li>
   </ul>
   <br>
   <h4>Septiembre, 2026</h4>
@@ -214,13 +213,12 @@ Desarrollar una plataforma digital que conecte a médicos y pacientes mediante l
 - Recopilar métricas de uso que permitan evaluar funcionalidades y mejorar continuamente la experiencia de médicos y pacientes.
 
 #### 1.1.2. Perfiles de integrantes del equipo
-### 1.1.2. Perfiles de los integrantes del equipo
 
 | Foto | Nombre completo | Código | Carrera | Habilidades técnicas y rol |
 |:---:|---|---|---|---|
 | Por agregar | Stephano Mayrzon Landauri Preciado | U202311828 | Ingeniería de Software | Desarrollo Full Stack con React, TypeScript, JavaScript, Node.js y Express. Creación de APIs REST y manejo de SQLite, MySQL y MongoDB. Conocimientos en Git, GitHub, PWA, Capacitor, JWT y despliegue en Oracle Cloud. Aporta al análisis de las necesidades del usuario y promueve el trabajo colaborativo. |
 | Por agregar | Johnny Alexander Ojanama Abanto | U20231F412 | Ingeniería de Software | Conocimientos en C++, MySQL, MongoDB y Python. Experiencia en desarrollo Frontend y Backend con tecnologías como Angular, Vue.js y Flutter. Conocimientos en DDD y su integración con Clean Architecture. Participa en la resolución de problemas y apoya al equipo ante contratiempos. |
-| <img src="assets/oscar_espinoza.png" alt="Oscar Leonardo Espinoza Quijandria" width="200"> | Oscar Leonardo Espinoza Quijandria | U202311842 | Ingeniería de Software | Conocimientos en programación orientada a objetos con C++, estructuras de datos y bases de datos SQL. Participación en el análisis de requerimientos, diseño de arquitectura con ADD, DDD, Clean Architecture y microservicios. Elaboración de diagramas y documentación técnica mediante Markdown, Git y GitHub. |
+| <img src="assets/oscar_espinoza.jpeg" alt="Oscar Leonardo Espinoza Quijandria" width="200"> | Oscar Leonardo Espinoza Quijandria | U202311842 | Ingeniería de Software | Conocimientos en programación orientada a objetos con C++, estructuras de datos y bases de datos SQL. Participación en el análisis de requerimientos, diseño de arquitectura con ADD, DDD, Clean Architecture y microservicios. Elaboración de diagramas y documentación técnica mediante Markdown, Git y GitHub. |
 
 ### 1.2. Solution Profile
 #### 1.2.1 Antecedentes y problemática
