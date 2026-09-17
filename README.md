@@ -130,6 +130,24 @@ El médico presenta una mayor frecuencia en actividades relacionadas con la admi
 Los valores definitivos de frecuencia e importancia deberán ser revisados después de analizar las entrevistas realizadas a ambos segmentos.
 
 #### 2.3.3. User Journey Mapping
+
+
+En esta sección se presenta el recorrido que realizan los principales usuarios de MAX, considerando los dos segmentos definidos: médicos y pacientes. El recorrido inicia con la programación de una cita y continúa con la preparación previa a la consulta, la realización de la atención, la gestión de los documentos generados y el seguimiento posterior.
+
+Este análisis permite identificar las acciones, objetivos, pensamientos, dificultades y emociones que experimenta cada segmento durante las diferentes etapas de la atención. A partir de estos hallazgos, se pueden reconocer oportunidades para que MAX facilite la gestión de citas, centralice la documentación y mejore la interacción entre médicos y pacientes.
+
+#### User Journey Mapping - Médico
+
+El recorrido del médico comienza con la organización de sus citas y continúa con la revisión de la información disponible antes de atender al paciente. Durante la consulta, el médico evalúa al paciente y registra las indicaciones correspondientes. Posteriormente, genera o comparte documentos como recetas e informes y, finalmente, realiza el seguimiento mediante la revisión de resultados, estudios u otra información proporcionada por el paciente.
+
+![User Journey Mapping - Médico](assets/User_Journey_Medico.png)
+
+#### User Journey Mapping - Paciente
+
+El recorrido del paciente comienza cuando necesita programar una cita con un médico. Antes de la consulta, organiza la información y documentos que podría necesitar. Durante la atención recibe las indicaciones correspondientes y, posteriormente, debe gestionar recetas, informes, resultados u otros documentos. Finalmente, realiza el seguimiento de su atención, pudiendo compartir nuevos resultados o estudios con su médico.
+
+![User Journey Mapping - Paciente](assets/User_Journey_Paciente.png)
+
 #### 2.3.4. Empathy Mapping
 #### 2.3.5. As-Is Scenario Mapping
 ### 2.4. Ubiquitous Language
