@@ -29,7 +29,63 @@ A partir del análisis competitivo realizado, se desarrolla una matriz FODA y C.
 | **Debilidades:** Bajo reconocimiento de marca, ausencia de una comunidad inicial de médicos y pacientes, producto nuevo y necesidad de generar confianza para que los usuarios gestionen información relacionada con su atención mediante la plataforma. | **Estrategia de Reorientación (D + O):** Concentrar inicialmente la adopción en médicos independientes y pacientes que necesiten organizar sus citas y documentos. Realizar entrevistas, pruebas de usabilidad y experimentos permitirá validar las funcionalidades de mayor valor antes de ampliar progresivamente el alcance de MAX. | **Estrategia de Supervivencia (D + A):** Limitar inicialmente el alcance a las funcionalidades esenciales de gestión de citas y documentación, evitando competir directamente con ecosistemas clínicos completos. Implementar controles de seguridad, gestión de permisos y prácticas de protección de información desde el MVP para fortalecer progresivamente la confianza de médicos y pacientes. |
 
 ### 2.2. Entrevistas
+
+Las entrevistas permitirán comprender cómo médicos y pacientes gestionan actualmente sus citas y documentación relacionada con la atención. Asimismo, permitirán identificar problemas, necesidades, comportamientos y expectativas que puedan ser utilizados para validar los supuestos planteados durante el desarrollo de MAX.
+
+Para la investigación se consideran los dos segmentos objetivo definidos previamente: médicos y pacientes.
+
 #### 2.2.1. Diseño de entrevistas
+
+Para cada segmento se elaboró un conjunto de diez preguntas. Las entrevistas buscan explorar experiencias reales relacionadas con la gestión de citas, organización de documentos, intercambio de información entre médicos y pacientes y seguimiento posterior a una consulta.
+
+#### Segmento 1: Médicos
+
+**Objetivo de la entrevista:** Comprender cómo los médicos gestionan actualmente sus citas, pacientes y documentación relacionada con la atención, identificar las principales dificultades que experimentan al compartir o consultar información y conocer qué factores considerarían importantes para utilizar una plataforma digital como MAX.
+
+1. ¿Cómo organizas actualmente las citas y horarios de atención de tus pacientes?
+
+2. ¿Qué herramientas o medios utilizas para gestionar tus citas y por qué los utilizas?
+
+3. ¿Qué dificultades encuentras actualmente al gestionar tu agenda o las citas de tus pacientes?
+
+4. ¿Cómo entregas normalmente recetas, informes u otros documentos después de una consulta?
+
+5. ¿Cómo recibes resultados de laboratorio, resonancias u otros estudios realizados por tus pacientes?
+
+6. Cuando necesitas consultar información o documentos de una atención anterior, ¿cómo los buscas actualmente?
+
+7. ¿Qué dificultades has experimentado al organizar o encontrar documentos relacionados con tus pacientes?
+
+8. ¿Cómo realizas actualmente el seguimiento de un paciente después de una consulta?
+
+9. ¿Qué información o funcionalidades considerarías más importantes en una plataforma para gestionar citas y documentos de tus pacientes?
+
+10. ¿Qué necesitarías conocer sobre una plataforma como MAX para confiar en ella y utilizarla para gestionar información relacionada con tus pacientes?
+
+#### Segmento 2: Pacientes
+
+**Objetivo de la entrevista:** Comprender cómo los pacientes gestionan actualmente sus citas y documentos relacionados con su atención, identificar dificultades al acceder o compartir esta información y conocer qué factores consideran importantes para utilizar una plataforma digital que centralice su interacción con el médico.
+
+1. ¿Cómo programas normalmente una cita con un médico?
+
+2. ¿Qué herramientas o medios utilizas actualmente para recordar y organizar tus citas médicas?
+
+3. ¿Alguna vez has tenido alguna dificultad relacionada con una cita médica, como olvidarla, reprogramarla o encontrar la información necesaria?
+
+4. ¿Cómo recibes y dónde guardas normalmente tus recetas, informes y otros documentos entregados por un médico?
+
+5. ¿Alguna vez has tenido dificultades para encontrar una receta, informe o resultado cuando lo necesitabas? ¿Qué ocurrió?
+
+6. ¿Cómo compartes actualmente resultados de laboratorio, resonancias u otros estudios con tu médico?
+
+7. Después de una consulta, ¿cómo realizas el seguimiento de las indicaciones o documentos que te proporciona el médico?
+
+8. ¿Qué información relacionada con tus citas o documentos te gustaría poder consultar desde una aplicación?
+
+9. Si pudieras tener tus citas, recetas, informes y resultados en un mismo lugar, ¿qué funcionalidades considerarías más importantes?
+
+10. ¿Qué necesitarías conocer sobre una plataforma como MAX para confiar en ella y utilizarla para gestionar información relacionada con tu atención?
+
 #### 2.2.2. Registro de entrevistas
 #### 2.2.3. Análisis de entrevistas
 ### 2.3. Needfinding
