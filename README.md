@@ -149,6 +149,15 @@ El recorrido del paciente comienza cuando necesita programar una cita con un mé
 ![User Journey Mapping - Paciente](assets/User_Journey_Paciente.png)
 
 #### 2.3.4. Empathy Mapping
+
+#### Empathy Mapping - Médico
+
+![Empathy Mapping - Médico](assets/emp_médico.png)
+
+#### Empathy Mapping - Paciente
+
+![Empathy Mapping - Paciente](assets/Empathy_Mapping_Paciente.png)
+
 #### 2.3.5. As-Is Scenario Mapping
 ### 2.4. Ubiquitous Language
 
