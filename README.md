@@ -90,6 +90,18 @@ Para cada segmento se elaboró un conjunto de diez preguntas. Las entrevistas bu
 #### 2.2.3. Análisis de entrevistas
 ### 2.3. Needfinding
 #### 2.3.1. User Personas
+#### User Persona - Médico
+
+A partir de los segmentos objetivo definidos para MAX, se desarrollarán dos User Personas que representen a los principales tipos de usuarios de la solución. Los perfiles definitivos serán elaborados a partir de los patrones identificados durante las entrevistas.
+
+![User Persona - Médico](assets/user_medico.png)
+
+#### User Persona - Paciente
+
+Este User Persona representa a pacientes que realizan consultas médicas y necesitan gestionar sus citas y mantener organizada la documentación relacionada con su atención. Sus principales necesidades se relacionan con el acceso a recetas, informes, resultados y recordatorios, así como con la posibilidad de compartir información con sus médicos.
+
+![User Persona - Paciente](assets/User_Persona_Paciente.png)
+
 #### 2.3.2. User Task Matrix
 #### 2.3.3. User Journey Mapping
 #### 2.3.4. Empathy Mapping
