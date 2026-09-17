@@ -159,5 +159,20 @@ El recorrido del paciente comienza cuando necesita programar una cita con un mé
 ![Empathy Mapping - Paciente](assets/Empathy_Mapping_Paciente.png)
 
 #### 2.3.5. As-Is Scenario Mapping
+
+En esta sección se presenta el As-Is Scenario Mapping de los dos segmentos objetivo de MAX: médicos y pacientes. Este análisis permite comprender cómo ambos usuarios realizan actualmente las actividades relacionadas con la gestión de citas, consultas y documentación médica sin utilizar MAX. A partir de este proceso se identifican las acciones que realizan, sus principales pensamientos y las emociones que experimentan durante cada etapa.
+
+#### As-Is Scenario Mapping - Médico
+
+El escenario actual del médico representa el proceso que realiza desde la organización de sus citas hasta el seguimiento posterior de sus pacientes. Actualmente, estas actividades pueden involucrar diferentes herramientas y medios para gestionar la agenda, consultar información, entregar documentos y recibir resultados.
+
+![As-Is Scenario Mapping - Médico](assets/As_Is_Medico.png)
+
+#### As-Is Scenario Mapping - Paciente
+
+El escenario actual del paciente representa el proceso que realiza desde que necesita programar una cita hasta el seguimiento posterior a la consulta. Durante este recorrido puede utilizar diferentes medios para coordinar citas, conservar recetas e informes y compartir resultados con su médico.
+
+![As-Is Scenario Mapping - Paciente](assets/As_Is_Paciente.png)
+
 ### 2.4. Ubiquitous Language
 
