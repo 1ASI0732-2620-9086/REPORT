@@ -1,549 +1,1190 @@
 # Capítulo IV: Product Design
 
-En este capítulo se presenta la propuesta de diseño de MAX, una plataforma orientada a facilitar la organización de información relacionada con la atención médica y la interacción entre médicos y pacientes. Se establecen los lineamientos visuales, la arquitectura de información, el diseño de las interfaces y las bases de la arquitectura de software y del modelo de datos.
+El diseño de MAX —Medical Assistance Expert— comprende tres experiencias complementarias: una landing page que presenta la propuesta de valor, una aplicación web para la gestión del consultorio y una aplicación móvil que facilita el acceso a sus principales operaciones.
 
-Las decisiones de diseño toman como referencia las necesidades descritas en los capítulos anteriores. Se busca que los médicos puedan gestionar pacientes y documentación de manera organizada, mientras que los pacientes dispongan de una experiencia que facilite la consulta de la información compartida con ellos.
+Las interfaces web y móvil documentadas están orientadas al personal del consultorio. Incluyen autenticación, gestión de pacientes, consulta de citas, administración de estudios y opciones de cuenta. La landing page comunica la propuesta general de conexión entre médicos y pacientes.
 
-El diseño prioriza la claridad de la información, la facilidad de navegación, la consistencia entre pantallas y el acceso a las funciones según las responsabilidades de cada usuario.
+Este capítulo presenta las guías de estilo, la arquitectura de información, los wireframes, los mock-ups y los diagramas de interacción. Las capturas originales sirven como referencias del producto; las reconstrucciones y los estados adicionales representan decisiones de diseño. Las adaptaciones responsive y para iOS se presentan como propuestas.
+
+Los mapas de prototipado documentan las conexiones previstas entre pantallas. Su presentación estática no sustituye los prototipos interactivos ni los videos de demostración.
+
+<!-- Las rutas de las imágenes asumen que este archivo Markdown está junto a la carpeta assets/. -->
 
 ## 4.1. Style Guidelines
 
-Los lineamientos de estilo de MAX establecerán los criterios visuales y de comunicación que se aplicarán en la landing page y en las aplicaciones web y móvil. Su propósito es mantener una identidad reconocible y una experiencia consistente entre los productos de la plataforma.
+Las guías de estilo de MAX establecen criterios compartidos para mantener una identidad reconocible en la landing page, la aplicación web y la aplicación móvil. Comprenden branding, colores, tipografías, composición, iconografía, componentes y comunicación.
 
-Estos lineamientos abarcan la identidad de marca, la tipografía, la paleta de colores, la iconografía, el espaciado y los componentes de interacción. Su aplicación permitirá que los usuarios reconozcan las acciones disponibles y comprendan la información presentada.
+La identidad utiliza tonos azules, superficies con bordes redondeados y agrupaciones visuales que permiten distinguir tareas. La landing page y la aplicación móvil presentan superficies claras, mientras que las referencias de la aplicación web muestran un tema oscuro.
 
-> **Imagen pendiente:** Insertar aquí una vista general de la guía de estilos de MAX.
+<div align="center">
+  <img src="assets/MAX-Experiencias-Visuales.png" alt="Comparación de las experiencias visuales de MAX en landing page, web y mobile" width="1000">
+  <p><em>Identidad visual de MAX aplicada a sus tres experiencias.</em></p>
+</div>
 
 ### 4.1.1. General Style Guidelines
 
-La identidad visual de MAX estará orientada a transmitir organización, confianza y claridad. La presentación del producto deberá facilitar la lectura de información y el reconocimiento de las funciones principales.
+**Branding**
 
-La selección de colores establecerá una jerarquía entre acciones principales, elementos secundarios y mensajes de estado. Los avisos de éxito, advertencia o error deberán acompañarse de textos o elementos visuales que permitan comprender su significado sin depender únicamente del color.
+La identidad de MAX busca transmitir organización, claridad y cercanía en la gestión del consultorio. El nombre de la plataforma constituye el principal elemento de reconocimiento y se acompaña de un símbolo gráfico en la landing page.
 
-La tipografía deberá favorecer la lectura de nombres, datos personales, fechas y descripciones de documentos. Se definirá una jerarquía consistente para títulos, subtítulos, contenido, etiquetas y mensajes de ayuda.
+En las pantallas de autenticación, las letras de MAX reciben mayor protagonismo. En las interfaces autenticadas, la marca comparte espacio con la navegación y el contenido operativo.
 
-La iconografía se utilizará como apoyo para reconocer acciones como buscar, consultar, editar, cargar archivos y cerrar sesión. Cuando un icono pueda generar dudas, se acompañará de una etiqueta textual.
+**Typography**
 
-El tono de comunicación será profesional, respetuoso, claro y sereno. Los mensajes explicarán qué ocurrió y, cuando corresponda, qué acción puede realizar el usuario para continuar. Se evitarán expresiones ambiguas y términos técnicos innecesarios.
+La guía visual establece las siguientes familias tipográficas:
 
-Los valores específicos de colores, fuentes, tamaños y espaciado se documentarán junto con la identidad visual del sistema.
+| Aplicación | Tipografía de referencia | Criterio de uso |
+| --- | --- | --- |
+| Títulos y encabezados | Plus Jakarta Sans | Destacar los mensajes principales y la estructura del contenido. |
+| Párrafos y descripciones | Inter | Facilitar la lectura de información explicativa. |
+| Etiquetas, botones y controles | Inter | Mantener claridad en las acciones y los formularios. |
 
-> **Imágenes pendientes:** Insertar aquí el logotipo, la paleta de colores, las muestras tipográficas, la iconografía y la escala de espaciado de MAX.
+La jerarquía diferencia títulos, subtítulos, contenido y textos auxiliares mediante variaciones de tamaño y peso. Las instrucciones y los mensajes de validación se ubican próximos al campo correspondiente.
+
+Las láminas reconstruidas utilizan DejaVu Sans como sustitución tipográfica de exportación. La referencia del producto sigue siendo Plus Jakarta Sans e Inter; su aplicación exacta debe contrastarse con los estilos de la implementación.
+
+**Colors**
+
+| Color | Código hexadecimal | Aplicación |
+| --- | --- | --- |
+| Primario | `#2F78E6` | Identidad, acciones principales y elementos destacados. |
+| Secundario | `#4F9DFF` | Acentos, selecciones e indicadores de interacción. |
+| Terciario | `#5AA9F3` | Variaciones y elementos complementarios. |
+| Neutro oscuro | `#0B1A2A` | Texto sobre superficies claras y referencia para fondos oscuros. |
+
+La paleta se complementa con blancos y azules claros en la landing page y mobile. La web emplea fondos oscuros, paneles diferenciados y textos claros.
+
+Los colores funcionales refuerzan el significado de las acciones. En la web, el verde aparece en botones de guardado y el rojo en acciones como eliminar. En mobile, el azul identifica las acciones principales y el rojo señala errores de formulario.
+
+El significado de una acción se comunica mediante su etiqueta y contexto, además del color.
+
+**Spacing y composición**
+
+Los espacios separan secciones, diferencian acciones y agrupan campos relacionados. En escritorio, la distribución aprovecha el ancho mediante columnas; en mobile, los formularios utilizan una disposición vertical con desplazamiento.
+
+Las tarjetas mantienen márgenes internos para diferenciar su contenido. Las acciones principales y secundarias se presentan separadas para facilitar su identificación.
+
+**Iconografía y componentes**
+
+La iconografía representa conceptos como pacientes, calendario, documentos, estudios, perfil y configuración. Los destinos principales combinan iconos y etiquetas.
+
+Los componentes incluyen botones, tarjetas, campos de texto, selectores, pestañas, ventanas modales y mensajes de estado. Cada componente conserva una función reconocible dentro de la experiencia correspondiente.
+
+**Tono de comunicación**
+
+| Dimensión | Orientación | Aplicación en MAX |
+| --- | --- | --- |
+| Divertido / Serio | Serio | Mensajes centrados en las tareas y el manejo responsable de la información. |
+| Formal / Casual | Formal y cercano | Instrucciones comprensibles, sin tecnicismos innecesarios. |
+| Respetuoso / Irreverente | Respetuoso | Comunicación considerada con los usuarios. |
+| Entusiasta / Sereno | Sereno | Explicaciones directas que orientan sin generar alarma innecesaria. |
+
+Los mensajes deben explicar qué sucede y cuál es el siguiente paso. Por ejemplo, “Primero registra un paciente” comunica una condición necesaria para continuar.
+
+<div align="center">
+  <img src="assets/MAX-Style-Guidelines.png" alt="Guía visual original de MAX con colores, tipografías y componentes" width="1000">
+  <p><em>Guía visual de referencia del proyecto MAX.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-General-Style-Guide.png" alt="Guía general de estilo de MAX" width="1000">
+  <p><em>Síntesis de los criterios generales de identidad y comunicación.</em></p>
+</div>
 
 ### 4.1.2. Web Style Guidelines
 
-La experiencia web de MAX estará orientada principalmente al trabajo del médico. La distribución de la interfaz deberá permitir consultar información, registrar pacientes y gestionar documentos sin perder el contexto de la actividad realizada.
+La aplicación web organiza el trabajo mediante una cabecera, un menú lateral y un área principal. La cabecera presenta la marca y las opciones generales de sesión; el menú lateral permite cambiar de módulo y destaca la sección seleccionada.
 
-Se mantendrá una estructura consistente para la navegación, los encabezados, los formularios y las acciones principales. Los campos relacionados se agruparán de manera lógica para facilitar el registro y la revisión de información.
+Las referencias muestran una presentación oscura con tarjetas y formularios diferenciados del fondo. La landing page utiliza una presentación clara orientada a comunicar beneficios y facilitar el ingreso.
 
-Los controles deberán mostrar estados comprensibles durante la carga, el procesamiento y la finalización de una acción. También se contemplarán mensajes para formularios incompletos, búsquedas sin resultados y operaciones que no puedan completarse.
+| Elemento | Criterio de diseño |
+| --- | --- |
+| Cabecera | Mantener visibles la identidad y las opciones generales de sesión. |
+| Menú lateral | Identificar los módulos con iconos y etiquetas. |
+| Área principal | Presentar título, descripción y acciones del módulo. |
+| Tarjetas | Agrupar indicadores, información de perfil y preferencias. |
+| Formularios | Ordenar los campos por relación y distinguir guardar de cancelar. |
+| Ventanas modales | Concentrar una tarea conservando el contexto de origen. |
+| Estados vacíos | Explicar la ausencia de registros y orientar el siguiente paso. |
 
-El diseño se adaptará a diferentes tamaños de pantalla. En espacios reducidos, el contenido se reorganizará conservando su jerarquía y manteniendo accesibles las funciones principales.
+**Adaptación responsive**
 
-> **Imágenes pendientes:** Insertar aquí ejemplos de componentes web, botones, formularios, mensajes y distribución adaptable de las interfaces.
+Las propuestas para navegador móvil reorganizan el contenido en una columna y adaptan la navegación al espacio disponible. Los formularios y sus acciones deben permanecer accesibles mediante desplazamiento vertical.
+
+Estas variantes constituyen propuestas de diseño; las capturas originales documentan la presentación de escritorio.
+
+**Idioma y accesibilidad**
+
+Las referencias muestran controles ES y EN. Conforme al Project Statement, la implementación debe evidenciar inglés como idioma predeterminado y español latinoamericano como alternativa. Las capturas incluidas corresponden al español.
+
+Se establecen como criterios de implementación las etiquetas accesibles, el foco visible, la navegación por teclado y los mensajes de error comprensibles. Su cumplimiento requiere validación sobre la aplicación.
+
+<div align="center">
+  <img src="assets/MAX-Web-Style-Guide.png" alt="Guía de estilo de la aplicación web MAX" width="1000">
+  <p><em>Componentes y criterios de composición de la experiencia web.</em></p>
+</div>
 
 ### 4.1.3. Mobile Style Guidelines
 
-La propuesta móvil de MAX se orienta a facilitar que el paciente consulte información relacionada con su atención y acceda a la documentación disponible desde su dispositivo.
+La aplicación móvil adapta las operaciones del consultorio a una composición vertical. Utiliza fondos claros, tarjetas blancas, acentos azules y controles distribuidos según el ancho disponible.
 
-La interfaz priorizará los contenidos más relevantes para cada tarea y distribuirá la información en bloques fáciles de reconocer. Las acciones deberán ser accesibles mediante controles táctiles claros y formularios que soliciten únicamente los datos necesarios.
+La navegación inferior incluye Inicio, Pacientes, Consultas y Estudios. Cada destino combina un icono con una etiqueta, y la opción seleccionada recibe un tratamiento visual diferenciado.
 
-Se contemplarán estados de carga, ausencia de documentos, errores de conexión y confirmaciones de las operaciones realizadas. El diseño también deberá facilitar la lectura y evitar que los controles del dispositivo oculten información importante.
+| Elemento | Criterio de diseño |
+| --- | --- |
+| Barra superior | Identificar el módulo y presentar controles generales. |
+| Navegación inferior | Facilitar el acceso a los cuatro destinos principales. |
+| Formularios | Distribuir los campos verticalmente y agruparlos por información. |
+| Acciones principales | Utilizar botones destacados con etiquetas descriptivas. |
+| Validaciones | Combinar bordes de error con mensajes junto al campo. |
+| Estados vacíos | Diferenciar ausencia de registros, falta de coincidencias y condiciones previas. |
+| Contraseñas | Incorporar entrada protegida y control de visibilidad. |
 
-La distribución definitiva de las funcionalidades móviles se ajustará al alcance acordado para el producto y a sus historias de usuario.
-
-> **Imágenes pendientes:** Insertar aquí ejemplos de componentes móviles, navegación, controles táctiles y estados de la interfaz.
+<div align="center">
+  <img src="assets/MAX-Mobile-Style-Guide.png" alt="Guía de estilo de la aplicación móvil MAX" width="1000">
+  <p><em>Componentes, navegación y estados de la experiencia móvil.</em></p>
+</div>
 
 #### 4.1.3.1. iOS Mobile Style Guidelines
 
-La propuesta para iOS mantendrá la identidad visual de MAX y considerará las convenciones de navegación e interacción de esta plataforma.
+La propuesta para iOS conserva la identidad de MAX y los cuatro destinos principales. Considera las áreas reservadas del dispositivo, los controles de retorno y la interacción con el teclado.
 
-Las pantallas deberán ofrecer títulos claros y mecanismos consistentes para regresar, consultar detalles y completar acciones. La presentación de formularios y documentos respetará las áreas disponibles de la pantalla y el comportamiento del teclado.
+Los formularios deben permitir revisar los datos y alcanzar las acciones finales sin que el teclado o los elementos del sistema oculten información necesaria.
 
-Se buscará que los cambios de vista permitan comprender la relación entre el contenido de origen y la información consultada, especialmente durante la navegación entre listados y documentos.
+La siguiente lámina documenta los criterios de adaptación. No representa evidencia de una implementación ejecutada en iOS.
 
-> **Imágenes pendientes:** Insertar aquí los componentes y ejemplos de navegación propuestos para la versión iOS de MAX.
+<div align="center">
+  <img src="assets/MAX-iOS-Style-Guide.png" alt="Propuesta de guía de estilo de MAX para iOS" width="1000">
+  <p><em>Propuesta visual de adaptación de MAX para iOS.</em></p>
+</div>
 
 #### 4.1.3.2. Android Mobile Style Guidelines
 
-La propuesta para Android mantendrá los mismos criterios de identidad y organización de MAX, considerando los patrones de interacción de la plataforma y los principios de Material Design.
+Las referencias de Android presentan una barra superior para identificar la sección y una navegación inferior persistente para cambiar de módulo.
 
-La navegación deberá conservar un comportamiento predecible al avanzar o regresar entre pantallas. Los controles proporcionarán respuesta visual a las interacciones y permitirán reconocer cuándo una operación está siendo procesada.
+El registro de pacientes utiliza un formulario vertical dividido en información personal y médica. Las acciones Guardar y Cancelar se ubican al final.
 
-La distribución de los elementos se adaptará a diferentes dimensiones de dispositivos, conservando la legibilidad y la facilidad de interacción.
+Los estados vacíos orientan al usuario. En Consultas y Estudios se explica que primero debe registrarse un paciente, mientras los controles de creación aparecen visualmente inactivos. El registro de cuenta utiliza mensajes próximos a cada campo para comunicar errores.
 
-> **Imágenes pendientes:** Insertar aquí los componentes y ejemplos de navegación propuestos para la versión Android de MAX.
+<div align="center">
+  <img src="assets/MAX-Android-Style-Guide.png" alt="Guía de estilo de MAX para Android" width="1000">
+  <p><em>Criterios visuales de Android basados en las interfaces proporcionadas.</em></p>
+</div>
 
 ## 4.2. Information Architecture
 
-La arquitectura de información de MAX organiza los contenidos y las funciones según los objetivos de médicos y pacientes. Su propósito es facilitar que cada usuario encuentre la información necesaria y comprenda qué acciones puede realizar.
+La arquitectura de información organiza los contenidos según el propósito de cada experiencia.
 
-La propuesta considera la separación entre la información pública de la landing page y la información disponible dentro de las aplicaciones. En estas últimas, la organización dependerá del rol del usuario y de los permisos asociados a los recursos.
+La landing page presenta el producto y conduce al ingreso. La aplicación web concentra operaciones clínicas y administrativas. La aplicación móvil prioriza el resumen del consultorio, los pacientes, las consultas y los estudios.
 
-> **Imagen pendiente:** Insertar aquí el mapa general de la arquitectura de información de MAX.
+Esta estructura busca que el usuario reconozca su ubicación, identifique las acciones disponibles y encuentre la información necesaria para completar una tarea.
+
+<div align="center">
+  <img src="assets/MAX-Information-Architecture.png" alt="Arquitectura general de información de MAX" width="1000">
+  <p><em>Organización general de la información en landing page, web y mobile.</em></p>
+</div>
 
 ### 4.2.1. Organization Systems
 
-MAX utilizará una organización jerárquica para distribuir sus funciones en secciones y vistas de detalle. En la experiencia del médico, el contenido se agrupará alrededor del resumen general, la gestión de pacientes, los estudios y el perfil profesional.
+MAX combina estructuras jerárquicas y secuenciales con agrupaciones visuales en cuadrícula.
 
-Se empleará una organización secuencial en actividades que requieran completar pasos, como registrar un paciente o adjuntar un estudio. En estos procesos, se mostrará una relación clara entre la información solicitada y la acción que se realizará.
+| Sistema | Aplicación | Propósito |
+| --- | --- | --- |
+| Jerárquico | Módulos web y destinos móviles. | Organizar funciones desde categorías generales hacia tareas específicas. |
+| Secuencial | Registro de cuenta, registro de paciente y carga de estudios. | Ordenar los pasos necesarios para completar una operación. |
+| Matricial o de exploración por categorías | Funcionalidades del landing e indicadores de inicio. | Presentar accesos y contenidos relacionados para su exploración. |
 
-Los documentos y estudios podrán organizarse cronológicamente para facilitar la consulta de información reciente y la revisión de registros anteriores. También se utilizarán categorías relacionadas con el paciente y el tipo de documento.
+La clasificación temática distingue pacientes, consultas, estudios y opciones de cuenta. La dimensión temporal aparece en próximas citas, actividad reciente y filtros por fecha.
 
-La landing page agrupará sus contenidos por temas, como presentación del producto, beneficios, funcionalidades e información de contacto.
+Las agrupaciones conceptuales de los diagramas facilitan la lectura de la estructura; no implican necesariamente menús adicionales en la interfaz.
 
-> **Imágenes pendientes:** Insertar aquí los esquemas que representen la organización jerárquica, secuencial y cronológica del contenido.
+<div align="center">
+  <img src="assets/MAX-Organization-Systems.png" alt="Sistemas de organización de contenidos de MAX" width="1000">
+  <p><em>Estructuras de organización aplicadas a las experiencias de MAX.</em></p>
+</div>
 
 ### 4.2.2. Labeling Systems
 
-Las etiquetas de MAX deberán expresar de forma breve y directa el contenido de cada sección y el resultado de las acciones disponibles.
+Las etiquetas utilizan términos relacionados con las tareas del consultorio. Los nombres de sección anticipan su contenido y los verbos de acción indican la operación disponible.
 
-Se mantendrán los mismos términos cuando un concepto aparezca en diferentes pantallas. Por ejemplo, la denominación utilizada para un estudio deberá conservarse en el listado, el formulario de carga y la vista de detalle.
+| Experiencia | Etiqueta | Significado |
+| --- | --- | --- |
+| Landing | Inicio | Presentación principal de MAX. |
+| Landing | Nosotros | Información sobre la iniciativa. |
+| Landing | Funcionalidades | Capacidades y beneficios del producto. |
+| Landing | Misión y visión | Propósito y orientación de MAX. |
+| Landing | Valores | Principios institucionales. |
+| Landing | Contacto | Destino de contacto identificado en la navegación. |
+| Landing | Ingresar a MAX | Acceso a la aplicación. |
+| Web y mobile | Inicio | Resumen de la actividad del consultorio. |
+| Web y mobile | Pacientes | Búsqueda y gestión de pacientes. |
+| Web y mobile | Consultas | Información relacionada con citas y atención clínica. |
+| Web y mobile | Estudios | Estudios y archivos asociados a pacientes. |
+| Web | Perfil del Médico | Datos y opciones de cuenta. |
+| Web | Configuración | Preferencias de presentación. |
+| Web | Administrador | Gestión del límite de cuentas y perfiles. |
+| Mobile | Agenda | Vista relacionada con citas. |
+| Mobile | Atenciones | Vista relacionada con atenciones clínicas. |
 
-Como base para la propuesta, se consideran las siguientes etiquetas:
+Las acciones emplean etiquetas como Ingresar, Registrar, Guardar, Cancelar y Adjuntar. Los mensajes de estado explican la situación y, cuando corresponde, orientan hacia la siguiente acción.
 
-| Concepto o acción | Español | Inglés |
-|---|---|---|
-| Resumen general | Inicio | Dashboard |
-| Gestión de pacientes | Pacientes | Patients |
-| Consulta de estudios | Estudios | Studies |
-| Información del usuario | Mi perfil | My Profile |
-| Creación de un paciente | Registrar paciente | Add Patient |
-| Incorporación de un estudio | Adjuntar estudio | Upload Study |
-| Consulta de información | Ver detalle | View Details |
-| Confirmación de modificaciones | Guardar cambios | Save Changes |
-| Finalización de la sesión | Cerrar sesión | Sign Out |
-
-Las etiquetas se revisarán junto con las interfaces definitivas. La propuesta considerará inglés como idioma predeterminado y español como alternativa, de acuerdo con el enunciado del proyecto.
-
-> **Imágenes pendientes:** Insertar aquí ejemplos de las etiquetas utilizadas en menús, botones, encabezados y formularios.
+<div align="center">
+  <img src="assets/MAX-Labeling-Systems.png" alt="Sistema de etiquetas, iconos y acciones de MAX" width="1000">
+  <p><em>Etiquetas utilizadas para identificar módulos, controles y estados.</em></p>
+</div>
 
 ### 4.2.3. SEO Tags and Meta Tags
 
-La landing page contará con títulos y metadatos que describan el propósito de MAX y permitan identificar el contenido de sus páginas.
+Se especifican títulos y metadatos para identificar el propósito de las páginas. La landing page comunica públicamente la propuesta de MAX; los módulos autenticados corresponden al entorno de trabajo del consultorio.
 
-Los valores deberán ser coherentes con las funcionalidades incluidas en el producto. Para la página principal se propone la siguiente base:
+Los siguientes valores constituyen una propuesta para la versión en español. Deben contar con su equivalente en inglés y verificarse durante la implementación.
 
-| Elemento | Valor propuesto en inglés | Valor propuesto en español |
-|---|---|---|
-| Title | MAX — Patient and Medical Document Management | MAX — Gestión de pacientes y documentos médicos |
-| Description | MAX helps doctors organize patient records and medical documents in one digital platform. | MAX ayuda a los médicos a organizar la información de sus pacientes y sus documentos médicos en una plataforma digital. |
-| Keywords | MAX, patient management, medical documents, medical studies | MAX, gestión de pacientes, documentos médicos, estudios médicos |
-| Author | MAX Development Team | Equipo de desarrollo de MAX |
+| Página | Title propuesto | Description propuesta |
+| --- | --- | --- |
+| Landing page | MAX - Atención médica organizada | MAX conecta médicos y pacientes mediante una plataforma para organizar citas y documentación médica. |
+| Iniciar sesión | Iniciar sesión - MAX | Accede a MAX para gestionar la información y las actividades de tu consultorio. |
+| Crear cuenta | Crear cuenta - MAX | Registra una cuenta para acceder a las herramientas de gestión del consultorio en MAX. |
+| Inicio | Panel del consultorio - MAX | Consulta el resumen de pacientes, consultas, próximas citas y estudios del consultorio. |
+| Pacientes | Gestión de pacientes - MAX | Organiza y localiza la información de los pacientes registrados en el consultorio. |
+| Consultas | Consultas - MAX | Consulta la información de citas y atención clínica del consultorio. |
+| Estudios | Estudios médicos - MAX | Organiza y localiza estudios y archivos asociados a los pacientes. |
+| Perfil | Perfil del Médico - MAX | Consulta y actualiza los datos y opciones de tu cuenta. |
+| Configuración | Configuración - MAX | Administra las preferencias de presentación de la aplicación. |
+| Administrador | Administración de perfiles - MAX | Gestiona el límite de cuentas y consulta los perfiles registrados. |
 
-Las vistas internas utilizarán títulos que permitan reconocer la sección abierta. Los metadatos públicos no incluirán nombres de pacientes ni información relacionada con sus documentos.
+| Metadato | Valor propuesto |
+| --- | --- |
+| Author | Equipo MAX |
+| Keywords del landing | MAX, gestión de citas, documentación médica, médicos, pacientes |
+| Keywords de la aplicación | MAX, consultorio, pacientes, consultas, estudios médicos |
+| Viewport | `width=device-width, initial-scale=1.0` |
+| Codificación | `UTF-8` |
 
-> **Imagen pendiente:** Insertar aquí una captura o representación de los títulos y metadatos definidos para la landing page.
+<div align="center">
+  <img src="assets/MAX-SEO-Meta-Tags.png" alt="Especificación propuesta de títulos y metadatos de MAX" width="1000">
+  <p><em>Propuesta de metadatos; su presencia en el código requiere verificación.</em></p>
+</div>
 
 ### 4.2.4. Searching Systems
 
-La búsqueda de pacientes permitirá localizar registros mediante el nombre o el DNI, según las historias de usuario definidas para MAX.
+Los controles de búsqueda se ubican dentro de los módulos que concentran registros. Sus criterios se relacionan con la identificación del paciente, el estudio o la fecha.
 
-En la sección de estudios se contemplará la búsqueda por identificación del paciente y el filtrado por fecha. Los resultados deberán mostrar información suficiente para distinguir los archivos disponibles, incluyendo su relación con el paciente y su tipo.
+| Experiencia y módulo | Criterios de búsqueda |
+| --- | --- |
+| Web: Pacientes | Nombre y DNI. |
+| Web: eliminación de paciente | Nombre o DNI. |
+| Web: Consultas | Nombre y DNI. |
+| Web: Estudios | Nombre o DNI y fecha. |
+| Mobile: Pacientes | Nombre y DNI. |
+| Mobile: Consultas | Nombre y DNI. |
+| Mobile: Estudios | Buscar estudio y fecha. |
 
-La interfaz informará cuando no existan coincidencias y permitirá modificar o limpiar los criterios utilizados. El comportamiento definitivo de la búsqueda se mantendrá consistente con lo establecido en los requisitos.
+El diseño diferencia una búsqueda sin coincidencias de una condición previa no cumplida. Por ejemplo, no contar con pacientes registrados produce un mensaje distinto de no encontrar resultados para un filtro.
 
-> **Imágenes pendientes:** Insertar aquí las vistas de búsqueda de pacientes y estudios, incluyendo filtros, resultados y estados sin coincidencias.
+Las listas pobladas y los resultados adicionales representados en los diagramas describen el comportamiento esperado; las capturas originales muestran principalmente estados vacíos.
+
+<div align="center">
+  <img src="assets/MAX-Searching-Systems.png" alt="Sistemas de búsqueda y estados de resultados de MAX" width="1000">
+  <p><em>Criterios de búsqueda, resultados y condiciones previas por módulo.</em></p>
+</div>
 
 ### 4.2.5. Navigation Systems
 
-La navegación de MAX permitirá acceder a las funciones principales desde una estructura reconocible y consistente.
+MAX adapta la navegación al contexto de uso de cada experiencia.
 
-En la experiencia web del médico se distinguirán los accesos al resumen general, pacientes, estudios y perfil. Desde los listados se podrá continuar hacia las acciones de consulta o gestión correspondientes.
+| Experiencia | Navegación principal | Navegación complementaria |
+| --- | --- | --- |
+| Landing page | Menú superior de secciones. | Llamadas a la acción y enlaces del pie de página. |
+| Aplicación web | Menú lateral de módulos. | Ventanas modales, acciones contextuales y opciones de sesión. |
+| Aplicación móvil | Barra inferior con cuatro destinos. | Barra superior, pestañas y controles de cierre. |
 
-La propuesta móvil organizará sus accesos según las tareas del paciente incluidas en el alcance definitivo. Se mantendrán mecanismos claros para regresar a las vistas anteriores y reconocer la ubicación actual.
+La landing page permite recorrer sus secciones y acceder a la plataforma. La web mantiene el contexto del módulo durante las operaciones. En mobile, las pestañas Agenda y Atenciones añaden navegación local dentro de Consultas.
 
-La landing page facilitará el recorrido por la información del producto y el acceso a las aplicaciones. Los enlaces y acciones conservarán denominaciones coherentes con sus destinos.
+Los nodos de agrupación presentes en los mapas organizan la documentación. El contenido desplegado del menú superior móvil no forma parte de las capturas originales.
 
-> **Imágenes pendientes:** Insertar aquí los menús y esquemas de navegación de la landing page y de las aplicaciones web y móvil.
+<div align="center">
+  <img src="assets/MAX-Navigation-Landing.png" alt="Mapa de navegación de la landing page de MAX" width="1000">
+  <p><em>Navegación de la landing page.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Navigation-Web.png" alt="Mapa de navegación de la aplicación web MAX" width="1000">
+  <p><em>Navegación entre los módulos de la aplicación web.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Navigation-Mobile.png" alt="Mapa de navegación de la aplicación móvil MAX" width="1000">
+  <p><em>Navegación principal y local de la aplicación móvil.</em></p>
+</div>
 
 ## 4.3. Landing Page UI Design
 
-La landing page de MAX presentará el propósito del producto, los usuarios a quienes está dirigido y los beneficios de organizar la información relacionada con la atención médica.
+La landing page presenta la propuesta de valor de MAX y orienta al visitante hacia el acceso a la plataforma.
 
-Su contenido explicará las funciones disponibles mediante una jerarquía clara, combinando textos breves, elementos visuales y accesos a las aplicaciones. Se diferenciará la información dirigida al médico de aquella orientada al paciente.
-
-El diseño se desarrollará para navegador de escritorio y móvil.
-
-> **Imagen pendiente:** Insertar aquí una vista general de la propuesta de diseño de la landing page.
+El recorrido comienza con un mensaje sobre la organización de la atención médica. Continúa con información del producto, funcionalidades, misión, visión y valores. Las llamadas a la acción acompañan el recorrido, que finaliza con enlaces de navegación y contenido legal.
 
 ### 4.3.1. Landing Page Wireframe
 
-El wireframe de la landing page establecerá la ubicación de la navegación, la presentación principal de MAX, sus beneficios, funcionalidades y acciones de acceso.
+Los wireframes representan la estructura y prioridad del contenido sin depender del acabado visual.
 
-Este artefacto permitirá revisar el orden de los contenidos y la visibilidad de las acciones antes de incorporar la identidad visual. También mostrará cómo se reorganizan las secciones en la versión móvil.
+La versión de escritorio organiza la cabecera horizontalmente y distribuye la presentación principal en dos columnas. La propuesta para navegador móvil reorganiza los bloques verticalmente, conservando el mensaje principal y los accesos.
 
-> **Imágenes pendientes:** Insertar aquí los wireframes de la landing page para navegador de escritorio y móvil.
+| Bloque | Propósito |
+| --- | --- |
+| Cabecera | Identificar la marca y facilitar la navegación. |
+| Presentación principal | Comunicar la propuesta de valor y destacar el ingreso. |
+| Nosotros | Explicar el propósito de la iniciativa. |
+| Funcionalidades | Presentar las capacidades del producto. |
+| Misión, visión y valores | Comunicar la orientación institucional. |
+| Llamada final | Reforzar el acceso a MAX. |
+| Pie de página | Reunir navegación y enlaces legales. |
+
+<div align="center">
+  <img src="assets/MAX-Landing-Wireframe-Desktop.png" alt="Wireframe de escritorio de la landing page MAX" width="1000">
+  <p><em>Wireframe de la landing page para escritorio.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Landing-Wireframe-Mobile.png" alt="Wireframe propuesto de la landing page MAX para navegador móvil" width="420">
+  <p><em>Propuesta de wireframe para navegador móvil.</em></p>
+</div>
 
 ### 4.3.2. Landing Page Mock-up
 
-El mockup incorporará los colores, tipografías, imágenes, iconos y componentes definidos para MAX sobre la estructura del wireframe.
+Los mock-ups aplican la identidad visual sobre la estructura del landing. Utilizan fondos claros, títulos destacados, tarjetas redondeadas y botones azules.
 
-Permitirá evaluar la jerarquía visual, la legibilidad y la consistencia de la presentación del producto. Las versiones para escritorio y móvil conservarán el mismo mensaje y facilitarán el acceso a las acciones principales.
+El mensaje “Tu atención médica, organizada en un solo lugar” presenta la propuesta principal. El panel de citas y documentos que lo acompaña funciona como ilustración del beneficio comunicado; no constituye evidencia del funcionamiento de un portal de pacientes.
 
-> **Imágenes pendientes:** Insertar aquí los mockups de la landing page para navegador de escritorio y móvil.
+<div align="center">
+  <img src="assets/MAX-Landing-Mockup-Desktop.png" alt="Mock-up de escritorio de la landing page MAX" width="1000">
+  <p><em>Reconstrucción visual de la landing page para escritorio.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Landing-Mockup-Mobile.png" alt="Mock-up propuesto de la landing page MAX para navegador móvil" width="420">
+  <p><em>Propuesta visual de la landing page para navegador móvil.</em></p>
+</div>
+
+**Inicio**
+
+Presenta la propuesta de valor, los accesos principales y una composición ilustrativa relacionada con citas y documentación.
+
+<div align="center">
+  <img src="assets/MAX-Landing-Inicio.png" alt="Captura de la sección Inicio de la landing page MAX" width="1000">
+  <p><em>Referencia de la sección Inicio.</em></p>
+</div>
+
+**Nosotros**
+
+Explica el propósito de MAX y destaca la organización de citas y documentos como parte de una experiencia compartida entre médicos y pacientes.
+
+<div align="center">
+  <img src="assets/MAX-Landing-Nosotros.png" alt="Captura de la sección Nosotros de la landing page MAX" width="1000">
+  <p><em>Referencia de la sección Nosotros.</em></p>
+</div>
+
+**Funcionalidades**
+
+Agrupa los beneficios comunicados por el producto mediante tarjetas con títulos, iconos y descripciones breves.
+
+<div align="center">
+  <img src="assets/MAX-Landing-Funcionalidades.png" alt="Captura de funcionalidades de la landing page MAX" width="1000">
+  <p><em>Referencia de la presentación de funcionalidades.</em></p>
+</div>
+
+**Misión y visión**
+
+Presenta el propósito de facilitar la interacción entre médicos y pacientes y la aspiración de mejorar la experiencia de seguimiento de la atención.
+
+<div align="center">
+  <img src="assets/MAX-Landing-Mision-Vision.png" alt="Captura de misión y visión de MAX" width="1000">
+  <p><em>Referencia de la sección Misión y visión.</em></p>
+</div>
+
+**Valores**
+
+Expone los principios de innovación, seguridad, confianza, accesibilidad y responsabilidad.
+
+<div align="center">
+  <img src="assets/MAX-Landing-Valores.png" alt="Captura de los valores institucionales de MAX" width="1000">
+  <p><em>Referencia de los valores institucionales.</em></p>
+</div>
+
+**Llamada a la acción**
+
+El bloque final utiliza una superficie oscura y un botón destacado para reforzar el acceso a MAX.
+
+<div align="center">
+  <img src="assets/MAX-Landing-CTA.png" alt="Captura de la llamada final a la acción de MAX" width="1000">
+  <p><em>Referencia de la llamada final a la acción.</em></p>
+</div>
+
+**Pie de página**
+
+Reúne la identidad del producto, los destinos principales y los enlaces legales.
+
+<div align="center">
+  <img src="assets/MAX-Landing-Footer.png" alt="Captura del pie de página de la landing page MAX" width="1000">
+  <p><em>Referencia del pie de página.</em></p>
+</div>
 
 ## 4.4. Mobile Applications UX/UI Design
 
-El diseño de la aplicación móvil desarrollará la experiencia propuesta para el paciente, considerando el acceso a información relacionada con su atención y la consulta de documentos compartidos.
+La experiencia móvil facilita el acceso del personal del consultorio a pacientes, consultas y estudios. Su diseño prioriza una navegación breve, formularios verticales y mensajes que expliquen el estado de la información.
 
-Los flujos de citas, recordatorios e intercambio de documentación se incorporarán conforme se confirme su alcance y se especifiquen las historias de usuario correspondientes.
-
-La propuesta se documentará mediante wireframes, wireflows, mockups y user flows.
-
-> **Imagen pendiente:** Insertar aquí una vista general de las pantallas principales de la propuesta móvil.
+Las referencias corresponden a Android. Los wireframes, mock-ups y flujos reconstruyen estas pantallas y documentan los comportamientos previstos.
 
 ### 4.4.1. Mobile Applications Wireframes
 
-Los wireframes móviles representarán la distribución inicial de los contenidos, controles y acciones de cada pantalla.
+Los wireframes representan la distribución de controles, contenido y acciones. Incluyen autenticación, registro, inicio, búsqueda de pacientes, registro de pacientes, consultas y estudios.
 
-Se priorizará la identificación de la información que el paciente necesita consultar y la facilidad para acceder a sus detalles. También se contemplarán pantallas o estados para contenidos vacíos, procesos de carga y operaciones que no puedan completarse.
+<div align="center">
+  <img src="assets/MAX-Mobile-Wireframes-Overview.png" alt="Vista general de los wireframes móviles de MAX" width="1000">
+  <p><em>Conjunto de wireframes de la aplicación móvil.</em></p>
+</div>
 
-> **Imágenes pendientes:** Insertar aquí los wireframes de las pantallas móviles, incluyendo sus principales estados.
+**Autenticación y registro**
+
+Las pantallas organizan los campos de acceso, la creación de cuenta y los mensajes de validación. El estado de error mantiene visible la relación entre cada campo y su mensaje.
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Wireframe-Login.png" alt="Wireframe móvil de inicio de sesión" width="300">
+  <img src="assets/MAX-Mobile-Wireframe-Registro.png" alt="Wireframe móvil de creación de cuenta" width="300">
+  <img src="assets/MAX-Mobile-Wireframe-Registro-Errores.png" alt="Wireframe móvil de errores de registro" width="300">
+  <p><em>Wireframes de inicio de sesión, registro y validaciones.</em></p>
+</div>
+
+**Inicio y pacientes**
+
+Inicio reúne indicadores y actividad del consultorio. Pacientes presenta filtros y un acceso al registro de una nueva persona.
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Wireframe-Inicio.png" alt="Wireframe del inicio móvil de MAX" width="320">
+  <img src="assets/MAX-Mobile-Wireframe-Pacientes.png" alt="Wireframe del módulo móvil de pacientes" width="320">
+  <p><em>Wireframes de Inicio y Pacientes.</em></p>
+</div>
+
+**Registro de paciente**
+
+El formulario agrupa información personal y médica. Las siguientes imágenes representan dos zonas de un mismo formulario con desplazamiento vertical.
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Wireframe-Nuevo-Paciente.png" alt="Wireframe de información personal de nuevo paciente" width="320">
+  <img src="assets/MAX-Mobile-Wireframe-Nuevo-Paciente-Medica.png" alt="Wireframe de información médica de nuevo paciente" width="320">
+  <p><em>Wireframes del registro de paciente: información personal y médica.</em></p>
+</div>
+
+**Consultas y estudios**
+
+Consultas incorpora las pestañas Agenda y Atenciones. Estudios presenta búsqueda y filtro de fecha. Ambos contemplan mensajes cuando no se cumple la condición de contar con pacientes registrados.
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Wireframe-Consultas.png" alt="Wireframe móvil de Consultas" width="320">
+  <img src="assets/MAX-Mobile-Wireframe-Estudios.png" alt="Wireframe móvil de Estudios" width="320">
+  <p><em>Wireframes de Consultas y Estudios.</em></p>
+</div>
 
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
-Los wireflows mostrarán la secuencia de pantallas necesaria para completar cada objetivo del paciente incluido en el alcance.
+Los wireflows relacionan los wireframes mediante acciones y transiciones. Cada diagrama corresponde a un objetivo del usuario.
 
-Cada recorrido señalará su punto de inicio, las acciones del usuario y los cambios de estado de la interfaz. Cuando una interacción modifique una misma pantalla, se representará el nuevo estado para que el comportamiento resulte comprensible.
+| Código | Objetivo | Recorrido principal |
+| --- | --- | --- |
+| M01 | Acceder a la aplicación | Introducir credenciales y acceder a Inicio. |
+| M02 | Crear cuenta | Completar el registro y revisar el resultado. |
+| M03 | Consultar el resumen | Revisar indicadores y actualizar la información. |
+| M04 | Registrar paciente | Completar información personal y médica y guardar. |
+| M05 | Localizar paciente | Introducir criterios y revisar coincidencias. |
+| M06 | Consultar citas o atenciones | Acceder a Consultas y seleccionar la vista correspondiente. |
+| M07 | Localizar estudio | Aplicar búsqueda o fecha y revisar resultados. |
 
-> **Imágenes pendientes:** Insertar aquí los wireflow diagrams móviles, indicando el objetivo del usuario correspondiente a cada recorrido.
+Los estados que no aparecen en las capturas originales se representan como propuestas de interacción.
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Wireflow-M01.png" alt="Wireflow M01 para acceder a la aplicación móvil MAX" width="1000">
+  <p><em>M01. Acceder a la aplicación móvil.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Wireflow-M02.png" alt="Wireflow M02 para crear una cuenta móvil en MAX" width="1000">
+  <p><em>M02. Crear una cuenta.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Wireflow-M03.png" alt="Wireflow M03 para consultar el resumen móvil del consultorio" width="1000">
+  <p><em>M03. Consultar el resumen del consultorio.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Wireflow-M04.png" alt="Wireflow M04 para registrar un paciente desde mobile" width="1000">
+  <p><em>M04. Registrar un paciente.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Wireflow-M05.png" alt="Wireflow M05 para localizar un paciente desde mobile" width="1000">
+  <p><em>M05. Localizar un paciente.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Wireflow-M06.png" alt="Wireflow M06 para consultar citas o atenciones desde mobile" width="1000">
+  <p><em>M06. Consultar citas o atenciones.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Wireflow-M07.png" alt="Wireflow M07 para localizar un estudio desde mobile" width="1000">
+  <p><em>M07. Localizar un estudio.</em></p>
+</div>
 
 ### 4.4.3. Mobile Applications Mock-ups
 
-Los mockups móviles aplicarán la identidad visual de MAX a las pantallas previamente estructuradas.
+Los mock-ups incorporan colores, jerarquías visuales, iconografía y estados de los componentes.
 
-Se definirán la apariencia de los controles, la jerarquía del contenido, los mensajes y la presentación de documentos. La propuesta mantendrá consistencia entre pantallas y considerará las particularidades de Android e iOS.
+En las comparaciones siguientes, la primera imagen corresponde al mock-up reconstruido y la segunda a la captura original de referencia.
 
-> **Imágenes pendientes:** Insertar aquí los mockups de las pantallas móviles con los colores, tipografías y componentes definitivos.
+<div align="center">
+  <img src="assets/MAX-Mobile-Mockups-Overview.png" alt="Vista general de los mock-ups móviles de MAX" width="1000">
+  <p><em>Conjunto de mock-ups de la aplicación móvil.</em></p>
+</div>
+
+**Inicio de sesión**
+
+Presenta correo, contraseña, control de visibilidad y acceso a la creación de cuenta. La composición conserva la identidad de MAX y destaca la acción Ingresar.
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Mockup-Login.png" alt="Mock-up móvil de inicio de sesión" width="320">
+  <img src="assets/MAX-Mobile-Login.png" alt="Captura original del inicio de sesión móvil" width="320">
+  <p><em>Inicio de sesión: mock-up y captura de referencia.</em></p>
+</div>
+
+**Creación de cuenta**
+
+Solicita nombres, apellidos, correo, contraseña y confirmación. Las instrucciones de contraseña se presentan junto al campo correspondiente.
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Mockup-Registro.png" alt="Mock-up móvil de creación de cuenta" width="320">
+  <img src="assets/MAX-Mobile-Registro.png" alt="Captura original de creación de cuenta móvil" width="320">
+  <p><em>Creación de cuenta: mock-up y captura de referencia.</em></p>
+</div>
+
+**Validaciones del registro**
+
+El estado de error combina bordes rojos y mensajes específicos. Permite reconocer qué datos requieren corrección antes de continuar.
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Mockup-Registro-Errores.png" alt="Mock-up de validaciones del registro móvil" width="320">
+  <img src="assets/MAX-Mobile-Registro-Errores.png" alt="Captura original de errores del registro móvil" width="320">
+  <p><em>Validaciones del registro: mock-up y captura de referencia.</em></p>
+</div>
+
+**Inicio**
+
+El panel resume pacientes, próximas citas, consultas y estudios. También incluye áreas para próximas citas y atenciones recientes.
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Mockup-Inicio.png" alt="Mock-up del inicio móvil de MAX" width="320">
+  <img src="assets/MAX-Mobile-Inicio.png" alt="Captura original del inicio móvil de MAX" width="320">
+  <p><em>Inicio: mock-up y captura de referencia.</em></p>
+</div>
+
+**Pacientes**
+
+El módulo incorpora filtros por nombre y DNI, acceso al registro y un área de resultados. El estado vacío explica cuando no existen coincidencias.
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Mockup-Pacientes.png" alt="Mock-up móvil del módulo Pacientes" width="320">
+  <img src="assets/MAX-Mobile-Pacientes.png" alt="Captura original del módulo móvil Pacientes" width="320">
+  <p><em>Pacientes: mock-up y captura de referencia.</em></p>
+</div>
+
+**Nuevo paciente: información personal**
+
+Esta parte del formulario incluye identificación, fecha de nacimiento, sexo, datos de contacto, dirección y ocupación.
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Mockup-Nuevo-Paciente.png" alt="Mock-up móvil de información personal de un nuevo paciente" width="320">
+  <img src="assets/MAX-Mobile-Nuevo-Paciente-Personal.png" alt="Captura original de información personal de un nuevo paciente" width="320">
+  <p><em>Información personal: mock-up y captura de referencia.</em></p>
+</div>
+
+**Nuevo paciente: información médica**
+
+La continuación del formulario reúne alergias, diagnóstico principal, antecedentes, nota inicial y riesgo. Las acciones Guardar y Cancelar se presentan al final.
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Mockup-Nuevo-Paciente-Medica.png" alt="Mock-up móvil de información médica de un nuevo paciente" width="320">
+  <img src="assets/MAX-Mobile-Nuevo-Paciente-Medica.png" alt="Captura original de información médica de un nuevo paciente" width="320">
+  <p><em>Información médica: mock-up y captura de referencia.</em></p>
+</div>
+
+**Consultas**
+
+La pantalla organiza el contenido mediante Agenda y Atenciones. Cuando no existen pacientes, explica esta condición antes de permitir continuar con registros asociados.
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Mockup-Consultas.png" alt="Mock-up móvil del módulo Consultas" width="320">
+  <img src="assets/MAX-Mobile-Consultas.png" alt="Captura original del módulo móvil Consultas" width="320">
+  <p><em>Consultas: mock-up y captura de referencia.</em></p>
+</div>
+
+**Estudios**
+
+Presenta búsqueda y filtro por fecha. El estado inicial informa que todo estudio debe asociarse a un paciente.
+
+<div align="center">
+  <img src="assets/MAX-Mobile-Mockup-Estudios.png" alt="Mock-up móvil del módulo Estudios" width="320">
+  <img src="assets/MAX-Mobile-Estudios.png" alt="Captura original del módulo móvil Estudios" width="320">
+  <p><em>Estudios: mock-up y captura de referencia.</em></p>
+</div>
 
 ### 4.4.4. Mobile Applications User Flow Diagrams
 
-Los user flows relacionarán los mockups para representar los recorridos completos del paciente.
+Los user flows relacionan los mock-ups con las decisiones necesarias para alcanzar cada objetivo. Incluyen el recorrido principal, las alternativas y los retornos para corregir información.
 
-Cada flujo incluirá el objetivo que se busca cumplir, las decisiones necesarias y las rutas alternativas relevantes. Se contemplarán situaciones como ausencia de información, cancelación de una acción o imposibilidad de acceder a un documento.
+| Código | Resultado esperado | Alternativas consideradas |
+| --- | --- | --- |
+| M01 | Acceso al inicio de la aplicación. | Corregir credenciales inválidas. |
+| M02 | Registro de cuenta completado. | Completar campos y corregir validaciones. |
+| M03 | Consulta de indicadores y actividad. | Visualizar estados sin actividad registrada. |
+| M04 | Paciente registrado. | Corregir datos o cancelar. |
+| M05 | Paciente localizado. | Modificar criterios sin coincidencias. |
+| M06 | Consulta de citas o atenciones. | Registrar previamente un paciente cuando sea necesario. |
+| M07 | Estudio localizado. | Modificar filtros o resolver la falta de pacientes. |
 
-> **Imágenes pendientes:** Insertar aquí los user flow diagrams móviles, incluyendo las rutas exitosas y alternativas.
+Las rutas describen el comportamiento de diseño. Los estados de éxito y las listas de ejemplo no constituyen pruebas de ejecución.
+
+<div align="center">
+  <img src="assets/MAX-Mobile-UserFlow-M01.png" alt="User flow móvil M01 para iniciar sesión" width="1000">
+  <p><em>M01. Acceso y corrección de credenciales.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Mobile-UserFlow-M02.png" alt="User flow móvil M02 para crear una cuenta" width="1000">
+  <p><em>M02. Creación de cuenta y validación de datos.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Mobile-UserFlow-M03.png" alt="User flow móvil M03 para consultar el resumen del consultorio" width="1000">
+  <p><em>M03. Consulta del resumen y estados de actividad.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Mobile-UserFlow-M04.png" alt="User flow móvil M04 para registrar un paciente" width="1000">
+  <p><em>M04. Registro, corrección y cancelación de datos del paciente.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Mobile-UserFlow-M05.png" alt="User flow móvil M05 para buscar pacientes" width="1000">
+  <p><em>M05. Búsqueda de pacientes y ausencia de coincidencias.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Mobile-UserFlow-M06.png" alt="User flow móvil M06 para consultar citas o atenciones" width="1000">
+  <p><em>M06. Consulta de agenda y atenciones con sus condiciones previas.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Mobile-UserFlow-M07.png" alt="User flow móvil M07 para buscar estudios" width="1000">
+  <p><em>M07. Búsqueda de estudios y revisión de resultados.</em></p>
+</div>
 
 ## 4.5. Mobile Applications Prototyping
 
-Los prototipos móviles permitirán simular la navegación y las interacciones planteadas para MAX antes de su implementación.
+El prototipado móvil conecta las pantallas para representar tareas completas. Los mapas incluidos documentan los destinos y las transiciones que deben configurarse en el prototipo interactivo.
 
-La simulación cubrirá los recorridos definidos en los user flows y permitirá revisar la comprensión de los controles, la secuencia de acciones y la respuesta visual del sistema.
-
-Se documentarán los enlaces a los prototipos y las evidencias de demostración de sus principales recorridos.
-
-> **Imagen pendiente:** Insertar aquí una vista general de los prototipos móviles y agregar los enlaces correspondientes.
+Los objetivos de revisión comprenden autenticación, creación de cuenta, consulta del resumen, registro y búsqueda de pacientes, consulta de agenda y localización de estudios.
 
 ### 4.5.1. Android Mobile Applications Prototyping
 
-El prototipo para Android permitirá recorrer las pantallas y acciones propuestas para esta plataforma.
+El mapa de Android se basa en las pantallas proporcionadas y organiza los recorridos M01–M07. Incluye transiciones principales y estados que requieren validación o cumplimiento de una condición previa.
 
-Se revisará la continuidad de la navegación, el comportamiento al regresar entre vistas y la facilidad para completar las tareas seleccionadas. Las observaciones obtenidas servirán para ajustar la propuesta antes de desarrollar las interfaces.
+Las pantallas móviles para crear consultas o cargar estudios no forman parte de las capturas disponibles. Por ello, no se presentan como funcionalidades demostradas mediante este mapa.
 
-> **Imágenes y enlaces pendientes:** Insertar aquí capturas del prototipo Android, el enlace al prototipo interactivo y una captura con el enlace al video de demostración.
+<div align="center">
+  <img src="assets/MAX-Android-Prototyping-Map.png" alt="Mapa de prototipado de MAX para Android" width="1000">
+  <p><em>Mapa visual de conexiones previstas para el prototipo Android.</em></p>
+</div>
+
+**Estado de la evidencia:** mapa visual disponible. Pendientes de incorporar el enlace al prototipo interactivo y el video de demostración en Microsoft Stream.
 
 ### 4.5.2. iOS Mobile Applications Prototyping
 
-El prototipo para iOS permitirá evaluar los mismos objetivos funcionales considerando la navegación y presentación definidas para esta plataforma.
+El mapa para iOS propone adaptar los mismos objetivos funcionales a esta plataforma, conservando la organización de módulos y revisando navegación, áreas reservadas y comportamiento de formularios.
 
-Se revisará la claridad de las transiciones, el acceso a las acciones y la visualización de información. La experiencia conservará la identidad de MAX y la coherencia con el alcance funcional del producto.
+La lámina representa una propuesta de prototipado. La interacción y la presentación específica en iOS requieren validación independiente.
 
-> **Imágenes y enlaces pendientes:** Insertar aquí capturas del prototipo iOS, el enlace al prototipo interactivo y una captura con el enlace al video de demostración.
+<div align="center">
+  <img src="assets/MAX-iOS-Prototyping-Map.png" alt="Mapa propuesto de prototipado de MAX para iOS" width="1000">
+  <p><em>Propuesta de conexiones para el prototipo iOS.</em></p>
+</div>
+
+**Estado de la evidencia:** mapa visual propuesto. Pendientes de incorporar el prototipo interactivo, la validación en iOS y el video de demostración en Microsoft Stream.
 
 ## 4.6. Web Applications UX/UI Design
 
-La aplicación web de MAX estará orientada a facilitar el trabajo del médico mediante la gestión de pacientes y estudios.
+La aplicación web concentra las operaciones de gestión del consultorio. Su estructura permite acceder a pacientes, consultas, estudios, perfil, configuración y administración desde un menú lateral.
 
-La propuesta incluirá los flujos de acceso a la plataforma, consulta del resumen general, administración del perfil, registro y búsqueda de pacientes, revisión de sus datos y gestión de archivos médicos.
-
-El diseño buscará reducir confusiones durante el registro y la consulta de información, manteniendo visible el contexto del paciente o documento sobre el cual se trabaja.
-
-> **Imagen pendiente:** Insertar aquí una vista general de las pantallas principales de la aplicación web.
+El diseño utiliza tarjetas para resúmenes, filtros para localizar registros y ventanas modales para tareas específicas. Las referencias muestran la aplicación de escritorio en tema oscuro; las variantes para navegador móvil son propuestas responsive.
 
 ### 4.6.1. Web Applications Wireframes
 
-Los wireframes web establecerán la estructura de las vistas de acceso, inicio, pacientes, estudios y perfil.
+Los wireframes documentan la jerarquía y distribución de las pantallas. Permiten revisar los campos, las acciones y las relaciones entre áreas antes de considerar el acabado visual.
 
-En la gestión de pacientes se representarán los campos y controles necesarios para registrar, consultar y actualizar información. En la gestión de estudios se organizarán los elementos destinados a seleccionar al paciente, adjuntar archivos, buscar registros y abrir documentos.
+<div align="center">
+  <img src="assets/MAX-Web-Wireframes-Overview.png" alt="Vista general de los wireframes web de MAX" width="1000">
+  <p><em>Conjunto de wireframes de la aplicación web.</em></p>
+</div>
 
-La distribución se revisará para su uso en diferentes tamaños de pantalla.
+**Inicio de sesión y registro**
 
-> **Imágenes pendientes:** Insertar aquí los wireframes de la aplicación web y sus adaptaciones para pantallas reducidas.
+Las pantallas de acceso organizan la presentación de MAX y los formularios de autenticación o creación de cuenta.
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireframe-Login.png" alt="Wireframe web de inicio de sesión" width="1000">
+  <p><em>Wireframe de inicio de sesión.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireframe-Registro.png" alt="Wireframe web de creación de cuenta" width="1000">
+  <p><em>Wireframe de creación de cuenta.</em></p>
+</div>
+
+**Inicio**
+
+El panel agrupa indicadores, próximas citas y actividad reciente dentro de la estructura general de navegación.
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireframe-Inicio.png" alt="Wireframe del inicio web de MAX" width="1000">
+  <p><em>Wireframe del resumen del consultorio.</em></p>
+</div>
+
+**Pacientes**
+
+El módulo reúne filtros y acciones de gestión. El registro utiliza campos agrupados; la eliminación dispone de un espacio específico para localizar al paciente.
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireframe-Pacientes.png" alt="Wireframe web del módulo Pacientes" width="1000">
+  <p><em>Wireframe del módulo Pacientes.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireframe-Nuevo-Paciente.png" alt="Wireframe web de registro de paciente" width="1000">
+  <p><em>Wireframe del formulario de nuevo paciente.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireframe-Eliminar-Paciente.png" alt="Wireframe web de búsqueda para eliminar paciente" width="1000">
+  <p><em>Wireframe del acceso a la eliminación de pacientes.</em></p>
+</div>
+
+**Consultas**
+
+La vista presenta filtros y el área correspondiente a la agenda de citas.
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireframe-Consultas.png" alt="Wireframe web del módulo Consultas" width="1000">
+  <p><em>Wireframe del módulo Consultas.</em></p>
+</div>
+
+**Estudios**
+
+El módulo incluye filtros y una acción para adjuntar estudios. El formulario de registro organiza la asociación con el paciente, la consulta opcional y el archivo.
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireframe-Estudios.png" alt="Wireframe web del módulo Estudios" width="1000">
+  <p><em>Wireframe del módulo Estudios.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireframe-Registrar-Estudio.png" alt="Wireframe web del formulario de registro de estudio" width="1000">
+  <p><em>Wireframe del formulario para registrar un estudio.</em></p>
+</div>
+
+**Perfil y contraseña**
+
+El perfil agrupa datos personales y opciones de cuenta. El cambio de contraseña se desarrolla en una ventana específica.
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireframe-Perfil-Medico.png" alt="Wireframe web del perfil del médico" width="1000">
+  <p><em>Wireframe del Perfil del Médico.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireframe-Cambiar-Contrasena.png" alt="Wireframe web del cambio de contraseña" width="1000">
+  <p><em>Wireframe del cambio de contraseña.</em></p>
+</div>
+
+**Configuración y administración**
+
+Configuración reúne preferencias de presentación. Administrador contiene controles relacionados con el límite de cuentas y los perfiles registrados.
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireframe-Configuracion.png" alt="Wireframe web de Configuración" width="1000">
+  <p><em>Wireframe del módulo Configuración.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireframe-Administrador.png" alt="Wireframe web de Administrador" width="1000">
+  <p><em>Wireframe del módulo Administrador.</em></p>
+</div>
+
+**Adaptación responsive**
+
+Las propuestas de Inicio y Pacientes para navegador móvil reorganizan los controles y el contenido en una distribución vertical.
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireframe-Responsive-Inicio.png" alt="Wireframe responsive del inicio web en navegador móvil" width="380">
+  <img src="assets/MAX-Web-Wireframe-Responsive-Pacientes.png" alt="Wireframe responsive de pacientes web en navegador móvil" width="380">
+  <p><em>Propuestas responsive de Inicio y Pacientes para navegador móvil.</em></p>
+</div>
 
 ### 4.6.2. Web Applications Wireflow Diagrams
 
-Los wireflows web mostrarán los pasos necesarios para completar los principales objetivos del médico.
+Los wireflows muestran los cambios de pantalla o estado necesarios para completar los objetivos de la experiencia web.
 
-Se documentarán recorridos como registrar un paciente, localizar su información, actualizar sus datos, adjuntar un estudio y consultar un archivo existente. Cada recorrido mostrará las pantallas involucradas y los cambios que producen las acciones del usuario.
+| Código | Objetivo | Recorrido principal |
+| --- | --- | --- |
+| W01 | Acceder al panel | Ingresar credenciales y acceder a Inicio. |
+| W02 | Crear cuenta | Completar datos y enviar el registro. |
+| W03 | Registrar paciente | Abrir el formulario, completar datos y guardar. |
+| W04 | Localizar paciente | Aplicar filtros y revisar coincidencias. |
+| W05 | Eliminar paciente | Buscar, seleccionar y confirmar la eliminación propuesta. |
+| W06 | Consultar citas | Acceder a Consultas y aplicar criterios. |
+| W07 | Registrar estudio | Seleccionar paciente, completar información y adjuntar archivo. |
+| W08 | Localizar estudio | Aplicar filtros de identificación o fecha. |
+| W09 | Actualizar perfil | Modificar datos y revisar el resultado esperado. |
+| W10 | Cambiar contraseña | Completar las contraseñas y validar los datos. |
+| W11 | Ajustar preferencias | Seleccionar opciones de presentación. |
+| W12 | Gestionar límite de cuentas | Modificar el límite y revisar su estado. |
+| W13 | Cerrar sesión | Finalizar la sesión y regresar al acceso. |
 
-> **Imágenes pendientes:** Insertar aquí los wireflow diagrams web, indicando el objetivo del médico correspondiente a cada recorrido.
+Las capturas originales no documentan todas las transiciones. Los estados adicionales representan la interacción propuesta.
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireflow-W01.png" alt="Wireflow web W01 para acceder al panel" width="1000">
+  <p><em>W01. Acceder al panel.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireflow-W02.png" alt="Wireflow web W02 para crear cuenta" width="1000">
+  <p><em>W02. Crear cuenta.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireflow-W03.png" alt="Wireflow web W03 para registrar paciente" width="1000">
+  <p><em>W03. Registrar paciente.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireflow-W04.png" alt="Wireflow web W04 para localizar paciente" width="1000">
+  <p><em>W04. Localizar paciente.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireflow-W05.png" alt="Wireflow web W05 para eliminar paciente" width="1000">
+  <p><em>W05. Eliminar paciente.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireflow-W06.png" alt="Wireflow web W06 para consultar citas" width="1000">
+  <p><em>W06. Consultar citas.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireflow-W07.png" alt="Wireflow web W07 para registrar estudio" width="1000">
+  <p><em>W07. Registrar estudio.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireflow-W08.png" alt="Wireflow web W08 para localizar estudio" width="1000">
+  <p><em>W08. Localizar estudio.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireflow-W09.png" alt="Wireflow web W09 para actualizar perfil" width="1000">
+  <p><em>W09. Actualizar perfil.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireflow-W10.png" alt="Wireflow web W10 para cambiar contraseña" width="1000">
+  <p><em>W10. Cambiar contraseña.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireflow-W11.png" alt="Wireflow web W11 para ajustar preferencias" width="1000">
+  <p><em>W11. Ajustar preferencias.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireflow-W12.png" alt="Wireflow web W12 para gestionar el límite de cuentas" width="1000">
+  <p><em>W12. Gestionar el límite de cuentas.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-Wireflow-W13.png" alt="Wireflow web W13 para cerrar sesión" width="1000">
+  <p><em>W13. Cerrar sesión.</em></p>
+</div>
 
 ### 4.6.3. Web Applications Mock-ups
 
-Los mockups web incorporarán los lineamientos visuales de MAX a la estructura de las pantallas.
+Los mock-ups desarrollan el acabado visual de las pantallas web mediante fondos oscuros, tarjetas, iconografía y acciones diferenciadas.
 
-Se representará la apariencia de los listados, tarjetas, formularios, controles de búsqueda y mensajes. También se diferenciarán visualmente las acciones de consulta, modificación y eliminación para facilitar su reconocimiento.
+En cada comparación, la primera imagen corresponde al mock-up reconstruido y la segunda a la captura original. Las vistas responsive se presentan como propuestas.
 
-Los diseños mantendrán consistencia entre las secciones de pacientes, estudios y perfil.
+<div align="center">
+  <img src="assets/MAX-Web-Mockups-Overview.png" alt="Vista general de los mock-ups web de MAX" width="1000">
+  <p><em>Conjunto de mock-ups de la aplicación web.</em></p>
+</div>
 
-> **Imágenes pendientes:** Insertar aquí los mockups de las vistas de acceso, inicio, pacientes, estudios y perfil.
+**Inicio de sesión**
+
+La pantalla combina la presentación de MAX con el formulario de acceso. Destaca los campos de credenciales y la acción principal.
+
+<div align="center">
+  <img src="assets/MAX-Web-Mockup-Login.png" alt="Mock-up web de inicio de sesión" width="1000">
+  <img src="assets/MAX-Web-Login.png" alt="Captura original del inicio de sesión web" width="1000">
+  <p><em>Inicio de sesión: mock-up y captura de referencia.</em></p>
+</div>
+
+**Creación de cuenta**
+
+El registro agrupa los datos necesarios para crear una cuenta y mantiene una composición coherente con el inicio de sesión.
+
+<div align="center">
+  <img src="assets/MAX-Web-Mockup-Registro.png" alt="Mock-up web de creación de cuenta" width="1000">
+  <img src="assets/MAX-Web-Registro.png" alt="Captura original de creación de cuenta web" width="1000">
+  <p><em>Creación de cuenta: mock-up y captura de referencia.</em></p>
+</div>
+
+**Inicio**
+
+El panel presenta indicadores del consultorio y áreas de actividad. Los estados vacíos comunican cuando todavía no existen registros.
+
+<div align="center">
+  <img src="assets/MAX-Web-Mockup-Inicio.png" alt="Mock-up del inicio web de MAX" width="1000">
+  <img src="assets/MAX-Web-Inicio.png" alt="Captura original del inicio web de MAX" width="1000">
+  <p><em>Inicio: mock-up y captura de referencia.</em></p>
+</div>
+
+**Pacientes**
+
+El módulo reúne filtros por nombre y DNI, acceso al registro y acceso a la eliminación de pacientes.
+
+<div align="center">
+  <img src="assets/MAX-Web-Mockup-Pacientes.png" alt="Mock-up web del módulo Pacientes" width="1000">
+  <img src="assets/MAX-Web-Pacientes.png" alt="Captura original del módulo web Pacientes" width="1000">
+  <p><em>Pacientes: mock-up y captura de referencia.</em></p>
+</div>
+
+**Nuevo paciente**
+
+El formulario organiza los datos personales y médicos. Las acciones de guardar y cancelar permiten finalizar o abandonar la operación.
+
+<div align="center">
+  <img src="assets/MAX-Web-Mockup-Nuevo-Paciente.png" alt="Mock-up web del registro de nuevo paciente" width="1000">
+  <img src="assets/MAX-Web-Nuevo-Paciente.png" alt="Captura original del registro web de nuevo paciente" width="1000">
+  <p><em>Nuevo paciente: mock-up y captura de referencia.</em></p>
+</div>
+
+**Eliminar paciente**
+
+La interfaz original presenta una advertencia y controles para localizar al paciente. La selección y confirmación posteriores se desarrollan como estados propuestos en los diagramas de flujo.
+
+<div align="center">
+  <img src="assets/MAX-Web-Mockup-Eliminar-Paciente.png" alt="Mock-up web de eliminación de paciente" width="1000">
+  <img src="assets/MAX-Web-Eliminar-Paciente.png" alt="Captura original de la búsqueda para eliminar paciente" width="1000">
+  <p><em>Acceso a la eliminación de pacientes: mock-up y captura de referencia.</em></p>
+</div>
+
+**Consultas**
+
+El módulo presenta la agenda y filtros de identificación. La referencia incluye un estado sin citas programadas.
+
+<div align="center">
+  <img src="assets/MAX-Web-Mockup-Consultas.png" alt="Mock-up web del módulo Consultas" width="1000">
+  <img src="assets/MAX-Web-Consultas.png" alt="Captura original del módulo web Consultas" width="1000">
+  <p><em>Consultas: mock-up y captura de referencia.</em></p>
+</div>
+
+**Estudios**
+
+La pantalla ofrece filtros por identificación y fecha, además del acceso para adjuntar un estudio.
+
+<div align="center">
+  <img src="assets/MAX-Web-Mockup-Estudios.png" alt="Mock-up web del módulo Estudios" width="1000">
+  <img src="assets/MAX-Web-Estudios.png" alt="Captura original del módulo web Estudios" width="1000">
+  <p><em>Estudios: mock-up y captura de referencia.</em></p>
+</div>
+
+**Registrar estudio**
+
+El formulario permite seleccionar un paciente, indicar una consulta asociada cuando corresponda, definir el tipo de estudio, añadir una descripción y seleccionar un archivo.
+
+<div align="center">
+  <img src="assets/MAX-Web-Mockup-Registrar-Estudio.png" alt="Mock-up web del registro de estudio" width="1000">
+  <img src="assets/MAX-Web-Registrar-Estudio.png" alt="Captura original del registro web de estudio" width="1000">
+  <p><em>Registro de estudio: mock-up y captura de referencia.</em></p>
+</div>
+
+**Perfil del Médico**
+
+El perfil agrupa datos de la cuenta, imagen, preferencias e información de sesión. También presenta accesos relacionados con la contraseña y el cierre de sesión.
+
+<div align="center">
+  <img src="assets/MAX-Web-Mockup-Perfil-Medico.png" alt="Mock-up web del Perfil del Médico" width="1000">
+  <img src="assets/MAX-Web-Perfil-Medico.png" alt="Captura original del Perfil del Médico" width="1000">
+  <p><em>Perfil del Médico: mock-up y captura de referencia.</em></p>
+</div>
+
+**Cambiar contraseña**
+
+La ventana solicita la contraseña actual, la nueva contraseña y su confirmación. Las instrucciones permiten reconocer las condiciones esperadas para la entrada.
+
+<div align="center">
+  <img src="assets/MAX-Web-Mockup-Cambiar-Contrasena.png" alt="Mock-up web del cambio de contraseña" width="1000">
+  <img src="assets/MAX-Web-Cambiar-Contrasena.png" alt="Captura original del cambio de contraseña web" width="1000">
+  <p><em>Cambio de contraseña: mock-up y captura de referencia.</em></p>
+</div>
+
+**Configuración**
+
+La pantalla presenta opciones de idioma, tema, tamaño de texto y notificaciones, además de información del sistema. La presencia visual de estos controles no verifica por sí sola su funcionamiento.
+
+<div align="center">
+  <img src="assets/MAX-Web-Mockup-Configuracion.png" alt="Mock-up web del módulo Configuración" width="1000">
+  <img src="assets/MAX-Web-Configuracion.png" alt="Captura original del módulo web Configuración" width="1000">
+  <p><em>Configuración: mock-up y captura de referencia.</em></p>
+</div>
+
+**Administrador**
+
+El módulo muestra controles para el límite de cuentas y un área de perfiles. El acceso efectivo a estas operaciones debe corresponder a los permisos definidos en la implementación.
+
+<div align="center">
+  <img src="assets/MAX-Web-Mockup-Administrador.png" alt="Mock-up web del módulo Administrador" width="1000">
+  <img src="assets/MAX-Web-Administrador.png" alt="Captura original del módulo web Administrador" width="1000">
+  <p><em>Administrador: mock-up y captura de referencia.</em></p>
+</div>
+
+**Versión responsive**
+
+Las siguientes propuestas adaptan Inicio y Pacientes a un navegador móvil. Conservan las funciones principales y reorganizan la presentación para un ancho reducido.
+
+<div align="center">
+  <img src="assets/MAX-Web-Mockup-Responsive-Inicio.png" alt="Mock-up responsive del inicio web para navegador móvil" width="380">
+  <img src="assets/MAX-Web-Mockup-Responsive-Pacientes.png" alt="Mock-up responsive de pacientes web para navegador móvil" width="380">
+  <p><em>Propuestas responsive de Inicio y Pacientes.</em></p>
+</div>
 
 ### 4.6.4. Web Applications User Flow Diagrams
 
-Los user flows web describirán los recorridos completos mediante los mockups de las pantallas.
+Los user flows presentan las decisiones y los resultados esperados para cada objetivo web. Utilizan los mock-ups para relacionar la lógica de interacción con las pantallas correspondientes.
 
-Además de las rutas exitosas, se contemplarán situaciones como credenciales incorrectas, búsquedas sin coincidencias, datos incompletos y archivos con formatos no permitidos.
+Las rutas principales conducen al resultado esperado. Las alternativas consideran validaciones, ausencia de coincidencias, cancelaciones y retornos para corregir información.
 
-Los flujos deberán corresponder con las historias de usuario y permitir identificar el resultado esperado de cada interacción.
+| Código | Objetivo | Alternativas o condiciones consideradas |
+| --- | --- | --- |
+| W01 | Acceder al panel | Credenciales inválidas y corrección. |
+| W02 | Crear cuenta | Campos incompletos o datos inválidos. |
+| W03 | Registrar paciente | Corrección de información o cancelación. |
+| W04 | Localizar paciente | Búsqueda sin coincidencias. |
+| W05 | Eliminar paciente | Ausencia de coincidencias y cancelación de la confirmación. |
+| W06 | Consultar citas | Ausencia de citas o resultados. |
+| W07 | Registrar estudio | Revisión del paciente, datos y archivo requerido. |
+| W08 | Localizar estudio | Modificación de filtros sin coincidencias. |
+| W09 | Actualizar perfil | Corrección de datos. |
+| W10 | Cambiar contraseña | Datos inválidos o confirmación no coincidente. |
+| W11 | Ajustar preferencias | Selección o conservación de preferencias. |
+| W12 | Gestionar límite de cuentas | Validación del valor propuesto. |
+| W13 | Cerrar sesión | Retorno al acceso una vez finalizada la sesión. |
 
-> **Imágenes pendientes:** Insertar aquí los user flow diagrams web, incluyendo decisiones, rutas exitosas y alternativas.
+Los diagramas documentan la propuesta de interacción. Su validación funcional debe realizarse sobre el prototipo interactivo o la aplicación.
+
+<div align="center">
+  <img src="assets/MAX-Web-UserFlow-W01.png" alt="User flow web W01 para acceder al panel" width="1000">
+  <p><em>W01. Acceso al panel y validación de credenciales.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-UserFlow-W02.png" alt="User flow web W02 para crear cuenta" width="1000">
+  <p><em>W02. Creación de cuenta y corrección de datos.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-UserFlow-W03.png" alt="User flow web W03 para registrar paciente" width="1000">
+  <p><em>W03. Registro de paciente y alternativas de corrección o cancelación.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-UserFlow-W04.png" alt="User flow web W04 para localizar paciente" width="1000">
+  <p><em>W04. Búsqueda de pacientes y revisión de coincidencias.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-UserFlow-W05.png" alt="User flow web W05 para eliminar paciente" width="1000">
+  <p><em>W05. Búsqueda, selección y confirmación propuesta de eliminación.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-UserFlow-W06.png" alt="User flow web W06 para consultar citas" width="1000">
+  <p><em>W06. Consulta de agenda y estados sin resultados.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-UserFlow-W07.png" alt="User flow web W07 para registrar estudio" width="1000">
+  <p><em>W07. Registro de estudio y validación de información y archivo.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-UserFlow-W08.png" alt="User flow web W08 para localizar estudio" width="1000">
+  <p><em>W08. Búsqueda de estudios mediante filtros.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-UserFlow-W09.png" alt="User flow web W09 para actualizar perfil" width="1000">
+  <p><em>W09. Actualización del perfil y corrección de datos.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-UserFlow-W10.png" alt="User flow web W10 para cambiar contraseña" width="1000">
+  <p><em>W10. Cambio de contraseña y validaciones.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-UserFlow-W11.png" alt="User flow web W11 para ajustar preferencias" width="1000">
+  <p><em>W11. Ajuste de preferencias de presentación.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-UserFlow-W12.png" alt="User flow web W12 para gestionar el límite de cuentas" width="1000">
+  <p><em>W12. Gestión del límite de cuentas y validación del valor.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/MAX-Web-UserFlow-W13.png" alt="User flow web W13 para cerrar sesión" width="1000">
+  <p><em>W13. Cierre de sesión y retorno al acceso.</em></p>
+</div>
 
 ## 4.7. Web Applications Prototyping
 
-El prototipo web integrará las pantallas diseñadas para simular los principales procesos del médico dentro de MAX.
+El prototipado web conecta las pantallas para representar los recorridos W01–W13. Permite revisar la continuidad entre acceso, navegación, formularios, validaciones y resultados esperados.
 
-Permitirá recorrer las funciones de acceso, gestión de pacientes, consulta de estudios y actualización del perfil. También permitirá revisar la relación entre la navegación general y las acciones disponibles dentro de cada sección.
-
-Se prepararán experiencias para navegador de escritorio y móvil. La documentación incluirá el enlace al prototipo, una descripción de los recorridos cubiertos y la evidencia en video de su funcionamiento.
-
-> **Imágenes y enlaces pendientes:** Insertar aquí capturas de los prototipos web para escritorio y móvil, los enlaces interactivos y una captura con el enlace al video de demostración.
-
-## 4.8. Domain-Driven Software Architecture
-
-La arquitectura de software de MAX organiza las responsabilidades de la plataforma tomando como referencia las funcionalidades de identidad y acceso, gestión de pacientes y administración de estudios y documentos médicos.
-
-La documentación utiliza diferentes niveles de representación para explicar el sistema: contexto, contenedores y componentes. Estas vistas permiten comprender la relación de MAX con sus usuarios, la distribución de responsabilidades entre sus aplicaciones y la organización interna de los elementos que implementan sus funcionalidades.
-
-Asimismo, se incluyen diagramas complementarios de interacción y despliegue para facilitar la comprensión de los recorridos de información y de la organización de la solución. Las representaciones relacionadas con el futuro portal del paciente se consideran parte de la evolución propuesta del producto.
-
-### 4.8.1. Software Architecture Context Diagram
-
-El diagrama de contexto presenta a MAX como un sistema dentro de su entorno de interacción. Su propósito es identificar los actores y sistemas externos relacionados con la plataforma, así como las relaciones que permiten comprender su alcance general.
-
-Esta vista permite comunicar la finalidad de MAX sin profundizar en los detalles internos de implementación. A partir de ella se establece una referencia común para interpretar los diagramas de contenedores y componentes desarrollados en las siguientes secciones.
+El mapa organiza los destinos principales y las operaciones asociadas a pacientes, consultas, estudios, perfil, configuración y administración.
 
 <div align="center">
-  <img src="assets/MAX-SystemContext.png" alt="Diagrama de contexto del sistema MAX" width="1000">
-  <p><em>Diagrama de contexto del sistema MAX.</em></p>
+  <img src="assets/MAX-Web-Prototyping-Map.png" alt="Mapa de prototipado de la aplicación web MAX" width="1000">
+  <p><em>Mapa visual de conexiones previstas para el prototipo web.</em></p>
 </div>
 
-### 4.8.2. Software Architecture Container Diagrams
-
-El diagrama de contenedores presenta la distribución de responsabilidades entre las aplicaciones, servicios y mecanismos de almacenamiento que conforman MAX.
-
-Esta vista permite comprender cómo se relacionan las interfaces utilizadas por los usuarios con los servicios que procesan las operaciones y los recursos que almacenan la información. También facilita identificar los límites de cada elemento y las comunicaciones necesarias para completar los procesos de la plataforma.
-
-<div align="center">
-  <img src="assets/MAX-Containers.png" alt="Diagrama de contenedores de la plataforma MAX" width="1000">
-  <p><em>Diagrama de contenedores de MAX.</em></p>
-</div>
-
-#### Vista complementaria de despliegue
-
-Como complemento de la estructura de contenedores, se incluye una vista de despliegue. Su propósito es documentar la distribución de los elementos de software sobre el entorno de ejecución y facilitar la comprensión de las relaciones entre la aplicación y su infraestructura.
-
-Esta representación complementa el análisis de la arquitectura al mostrar una perspectiva diferente de la organización lógica del sistema.
-
-<div align="center">
-  <img src="assets/MAX-ProductionDeployment.png" alt="Diagrama de despliegue de MAX en el entorno de producción" width="1000">
-  <p><em>Vista de despliegue de MAX.</em></p>
-</div>
-
-#### Interacción de la aplicación web
-
-El flujo de la aplicación web complementa la vista de contenedores al representar el recorrido de las interacciones correspondientes a esta aplicación.
-
-Su lectura permite relacionar las acciones iniciadas desde la experiencia web con los elementos de la arquitectura que intervienen en su procesamiento.
-
-<div align="center">
-  <img src="assets/MAX-WebFlow.png" alt="Flujo de interacción de la aplicación web de MAX" width="1000">
-  <p><em>Flujo de interacción de la aplicación web.</em></p>
-</div>
-
-#### Interacción de la aplicación móvil
-
-El flujo móvil presenta una perspectiva complementaria de las interacciones correspondientes a la aplicación móvil de MAX.
-
-Esta representación permite analizar el recorrido de las solicitudes y respuestas entre la experiencia móvil y los elementos de la plataforma, manteniendo coherencia con las responsabilidades definidas en la arquitectura.
-
-<div align="center">
-  <img src="assets/MAX-MobileFlow.png" alt="Flujo de interacción de la aplicación móvil de MAX" width="1000">
-  <p><em>Flujo de interacción de la aplicación móvil.</em></p>
-</div>
-
-#### Interacción propuesta para el futuro portal del paciente
-
-El siguiente flujo documenta la propuesta de interacción del paciente como parte de la evolución de MAX. Su finalidad es representar cómo podría integrarse esta experiencia con la plataforma y servir como referencia para la especificación de sus funcionalidades.
-
-La incorporación de este flujo al producto dependerá de la definición de sus historias de usuario y de la confirmación del alcance correspondiente.
-
-<div align="center">
-  <img src="assets/MAX-FuturePatientFlow.png" alt="Flujo propuesto para la futura experiencia del paciente en MAX" width="1000">
-  <p><em>Flujo propuesto para la futura experiencia del paciente.</em></p>
-</div>
-
-### 4.8.3. Software Architecture Components Diagrams
-
-Los diagramas de componentes presentan la organización interna de los contenedores seleccionados de MAX. Su propósito es identificar las responsabilidades de sus elementos y explicar cómo colaboran para atender las operaciones de la plataforma.
-
-Estas vistas permiten relacionar las funcionalidades del producto con su estructura de software y facilitan la comprensión de las dependencias entre componentes.
-
-#### Componentes del backend
-
-La vista de componentes del backend permite examinar la organización de los elementos que participan en el procesamiento de las solicitudes de MAX.
-
-El diagrama sirve como referencia para comprender la distribución de responsabilidades y las relaciones entre los componentes que soportan las funcionalidades de la plataforma.
-
-<div align="center">
-  <img src="assets/MAX-BackendComponents.png" alt="Diagrama de componentes del backend de MAX" width="1000">
-  <p><em>Componentes del backend de MAX.</em></p>
-</div>
-
-#### Componentes de la aplicación web
-
-La vista de componentes de la aplicación web presenta la organización interna de esta experiencia y las relaciones entre sus elementos.
-
-Su propósito es facilitar la comprensión de cómo se distribuyen las responsabilidades de presentación e interacción, así como su relación con los servicios utilizados por la aplicación.
-
-<div align="center">
-  <img src="assets/MAX-WebComponents.png" alt="Diagrama de componentes de la aplicación web de MAX" width="1000">
-  <p><em>Componentes de la aplicación web de MAX.</em></p>
-</div>
-
-#### Componentes de la aplicación móvil
-
-La vista de componentes móviles documenta la organización interna de la aplicación móvil de MAX.
-
-Esta representación permite reconocer los elementos que colaboran en sus funcionalidades y comprender sus relaciones con los servicios de la plataforma.
-
-<div align="center">
-  <img src="assets/MAX-MobileComponents.png" alt="Diagrama de componentes de la aplicación móvil de MAX" width="1000">
-  <p><em>Componentes de la aplicación móvil de MAX.</em></p>
-</div>
-
-#### Componentes propuestos para el portal del paciente
-
-El diagrama del portal del paciente presenta una propuesta de organización para esta experiencia dentro de MAX.
-
-Esta vista se utiliza como referencia de diseño para la evolución del producto. Su desarrollo deberá mantener coherencia con las funcionalidades y los permisos que se definan para el paciente.
-
-<div align="center">
-  <img src="assets/MAX-PatientPortalComponents.png" alt="Diagrama de componentes propuestos para el portal del paciente de MAX" width="1000">
-  <p><em>Componentes propuestos para el portal del paciente.</em></p>
-</div>
-
-#### Flujo de componentes para el inicio de sesión web
-
-El flujo de inicio de sesión complementa la vista estática de componentes al mostrar las interacciones relacionadas con el acceso del usuario a la aplicación web.
-
-Esta representación permite seguir la colaboración entre los elementos que intervienen en el proceso y relacionarla con las funcionalidades de identidad y acceso de MAX.
-
-<div align="center">
-  <img src="assets/MAX-WebLoginComponentsFlow.png" alt="Flujo de componentes para el inicio de sesión web en MAX" width="1000">
-  <p><em>Flujo de componentes para el inicio de sesión web.</em></p>
-</div>
-
-#### Flujo de procesamiento de solicitudes del backend
-
-El siguiente diagrama presenta el recorrido de una solicitud dentro del backend.
-
-Su propósito es facilitar la comprensión del orden de las interacciones y de la participación de los componentes involucrados en el procesamiento de una operación.
-
-<div align="center">
-  <img src="assets/MAX-BackendRequestFlow.png" alt="Flujo de procesamiento de solicitudes en el backend de MAX" width="1000">
-  <p><em>Flujo de procesamiento de solicitudes del backend.</em></p>
-</div>
-
-#### Flujo de archivos de estudios médicos
-
-El flujo de archivos de estudios complementa la documentación de la gestión de documentos médicos en MAX.
-
-Esta representación permite analizar las interacciones asociadas al tratamiento de un archivo y su vinculación con los registros del sistema, conforme a las operaciones definidas para la gestión de estudios.
-
-<div align="center">
-  <img src="assets/MAX-StudyFileFlow.png" alt="Flujo de archivos de estudios médicos en MAX" width="1000">
-  <p><em>Flujo de archivos de estudios médicos.</em></p>
-</div>
-
-#### Síntesis de los flujos web y móvil
-
-El siguiente esquema se incluye como una representación complementaria de los flujos web y móvil.
-
-Su propósito es facilitar una lectura conjunta de estas experiencias y apoyar la explicación de su relación con la arquitectura de MAX.
-
-<div align="center">
-  <img src="assets/flujo web y móvil.png" alt="Esquema de los flujos web y móvil de MAX" width="1000">
-  <p><em>Esquema de los flujos web y móvil.</em></p>
-</div>
-
-#### Síntesis del flujo del paciente
-
-El esquema del paciente complementa la propuesta de esta experiencia dentro de MAX.
-
-Se utiliza como apoyo para explicar el recorrido planteado y relacionarlo con los elementos que deberán participar en su implementación, una vez confirmado su alcance.
-
-<div align="center">
-  <img src="assets/flujo paciente.png" alt="Esquema del flujo propuesto para el paciente en MAX" width="1000">
-  <p><em>Esquema del flujo propuesto para el paciente.</em></p>
-</div>
-
-## 4.9. Software Object-Oriented Design
-
-El diseño orientado a objetos de MAX organiza los conceptos y responsabilidades del sistema mediante clases y relaciones.
-
-Su propósito es mantener una estructura comprensible que permita vincular los requisitos del producto con los elementos que participan en su implementación. El modelo toma como referencia las funcionalidades de identidad y acceso, gestión de pacientes y administración de estudios y documentos.
-
-La representación por objetos y capas permite explicar la distribución de responsabilidades y sirve como base para interpretar el diagrama de clases y su diccionario.
-
-<div align="center">
-  <img src="assets/diseño orientado a objetos y capas.png" alt="Diseño orientado a objetos y organización por capas de MAX" width="1000">
-  <p><em>Diseño orientado a objetos y organización por capas de MAX.</em></p>
-</div>
-
-### 4.9.1. Class Diagrams
-
-El diagrama de clases documenta la estructura del modelo de MAX y las relaciones entre sus elementos.
-
-Esta representación permite identificar las clases que participan en las funcionalidades del sistema y comprender sus asociaciones. Su interpretación deberá mantenerse alineada con las reglas de negocio y con los conceptos definidos en el lenguaje del dominio.
-
-El diagrama constituye una referencia para la implementación y para la revisión de la coherencia entre los requisitos, la arquitectura y el modelo de datos.
-
-<div align="center">
-  <img src="assets/diagrama de clases.png" alt="Diagrama de clases de la plataforma MAX" width="1000">
-  <p><em>Diagrama de clases de MAX.</em></p>
-</div>
-
-### 4.9.2. Class Dictionary
-
-El diccionario de clases complementa el diagrama mediante la descripción de los elementos del modelo.
-
-Su propósito es establecer un significado común para cada clase y facilitar que los integrantes del equipo comprendan su responsabilidad dentro de MAX. Las denominaciones utilizadas deberán coincidir con las presentadas en los diagramas y conservar consistencia con la documentación del dominio.
-
-Este recurso facilita la lectura del modelo y reduce ambigüedades durante la implementación y el mantenimiento del sistema.
-
-<div align="center">
-  <img src="assets/diccionario de clases.png" alt="Diccionario de clases de la plataforma MAX" width="1000">
-  <p><em>Diccionario de clases de MAX.</em></p>
-</div>
-
-## 4.10. Database Design
-
-El diseño de la base de datos de MAX organiza la información necesaria para soportar las funcionalidades de la plataforma.
-
-El modelo considera los datos relacionados con el acceso de los usuarios, la gestión de pacientes y la administración de estudios y documentos médicos. Su propósito es mantener relaciones claras entre los registros y facilitar las operaciones de consulta y actualización requeridas por el producto.
-
-La estructura de persistencia debe conservar coherencia con las reglas del negocio y con el diseño orientado a objetos. El diagrama relacional se presenta en la siguiente sección como referencia de esta organización.
-
-### 4.10.1. Relational/Non-Relational Database Diagram
-
-Para MAX se presenta un diagrama relacional que permite visualizar la organización de los datos y las relaciones entre las entidades del sistema.
-
-Esta representación sirve como referencia para comprender la estructura de almacenamiento y revisar la correspondencia entre los registros de usuarios, pacientes y estudios. También permite analizar las relaciones necesarias para mantener vinculada la información utilizada por las funcionalidades del producto.
-
-El modelo deberá conservar consistencia con la implementación de la base de datos y actualizarse cuando se incorporen cambios en el alcance o en las reglas de negocio.
-
-<div align="center">
-  <img src="assets/diagrama relacional de base de datos.png" alt="Diagrama relacional de la base de datos de MAX" width="1000">
-  <p><em>Diagrama relacional de la base de datos de MAX.</em></p>
-</div>
+La evaluación del prototipo interactivo deberá considerar:
+
+- Acceso a los módulos y reconocimiento de la sección seleccionada.
+- Continuidad de los formularios de registro.
+- Comprensión de validaciones, estados vacíos y resultados.
+- Cancelación de operaciones y retorno al contexto anterior.
+- Confirmación de las acciones de eliminación.
+- Uso de las propuestas responsive desde un navegador móvil.
+- Finalización de sesión y retorno a la pantalla de acceso.
+
+Las láminas constituyen la base visual para configurar estas interacciones en la herramienta de prototipado. No demuestran por sí solas persistencia de datos, permisos ni ejecución de operaciones.
+
+**Estado de la evidencia:** mapa visual y diseños de pantallas disponibles. Pendientes de incorporar el enlace al prototipo interactivo para escritorio y navegador móvil, junto con el video de demostración en Microsoft Stream.
