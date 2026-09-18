@@ -1,5 +1,13 @@
 ## Capítulo III: Requirements Specification
 ### 3.1. To-Be Scenario Mapping
+
+El To-Be Scenario Mapping del paciente representa la experiencia propuesta al utilizar MAX mediante cinco fases: buscar y programar una cita, preparar información, asistir a la consulta, gestionar documentos y realizar el seguimiento. Las filas Doing, Thinking y Feeling describen las acciones, pensamientos y emociones esperadas durante este recorrido. La propuesta busca centralizar las citas y la documentación médica, facilitar la consulta de recetas y resultados, y reducir la dependencia de medios dispersos. Con ello, se espera que el paciente experimente mayor confianza, tranquilidad y control sobre la organización de su información.
+
+<div align="center">
+  <img src="assets/To-be.png" alt="To-Be Scenario Mapping del paciente utilizando MAX" width="1000">
+  <p><em>To-Be Scenario Mapping: experiencia propuesta del paciente con MAX.</em></p>
+</div>
+
 ### 3.2. User Stories
 Esta sección presenta el conjunto de Epics, User Stories y Technical Stories definidos para MAX. Su elaboración parte de la evidencia recogida en el capítulo anterior: las tareas identificadas en la User Task Matrix, los puntos de fricción de los User Journey Maps, los problemas y oportunidades del Event Storming y el vocabulario fijado en el Ubiquitous Language.
 
