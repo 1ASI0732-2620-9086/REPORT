@@ -229,6 +229,236 @@ Esta estrategia permite mantener organizado el desarrollo de los diferentes comp
 
 #### 5.1.3. Source Code Style Guide & Conventions
 #### 5.1.4. Software Deployment Configuration
+
+
+
+La configuración de despliegue de **MAX** permite publicar y mantener disponibles los principales componentes de la solución en servicios independientes. Esta estrategia separa el Landing Page, Frontend Web, Backend y Base de Datos, permitiendo que cada componente sea desplegado y administrado según sus requerimientos.
+
+Los repositorios almacenados en **GitHub** constituyen la fuente principal del código utilizado para los despliegues. Para los componentes publicados se utiliza la rama `main` como referencia de las versiones destinadas al ambiente de producción.
+
+#### Deployment Architecture
+
+La configuración general de despliegue de MAX se organiza de la siguiente manera:
+
+```text
+
+                         GitHub
+
+                            │
+
+          ┌─────────────────┼─────────────────┐
+
+          │                 │                 │
+
+          ▼                 ▼                 ▼
+
+    LANDING-PAGE           FRONT             BACK
+
+          │                 │                 │
+
+          ▼                 ▼                 ▼
+
+   GitHub Pages      Cloudflare Pages      Railway
+
+          │                 │                 │
+
+          ▼                 ▼                 ▼
+
+    Landing Page       Web Application     REST API
+
+                                              │
+
+                                              ▼
+
+                                         MySQL Database
+
+                                            Railway
+
+```
+
+De esta manera, cada componente mantiene un proceso de despliegue independiente, mientras que el Frontend y Backend permanecen integrados para proporcionar las funcionalidades de la plataforma.
+
+#### Landing Page Deployment
+
+El **Landing Page** se encuentra desplegado mediante **GitHub Pages** a partir del repositorio `LANDING-PAGE`.
+
+La configuración utiliza la rama `main` y el directorio raíz del repositorio como fuente de publicación. Esto permite que la versión estable almacenada en GitHub pueda ser utilizada para mantener disponible el sitio público de MAX.
+
+**Plataforma:** GitHub Pages  
+
+**Ambiente:** Production  
+
+**Branch:** `main`  
+
+**URL:** [MAX Landing Page](https://1asi0732-2620-9086.github.io/LANDING-PAGE/)
+
+![Deployment Landing Page](assets/dep_landi.jpeg)
+
+#### Frontend Deployment
+
+El **Frontend Web** se encuentra desplegado mediante **Cloudflare Workers & Pages**. El proyecto está conectado con su correspondiente repositorio de GitHub y utiliza la rama `main` para los deployments de producción.
+
+Cuando se integra una versión destinada a producción, Cloudflare realiza el proceso necesario para construir y publicar la aplicación. La plataforma también mantiene un historial de deployments que permite consultar las versiones desplegadas y verificar su estado.
+
+**Plataforma:** Cloudflare Workers & Pages  
+
+**Ambiente:** Production  
+
+**Branch:** `main`  
+
+**URL:** [MAX Web Application](https://max-dev-front.pages.dev/auth)
+
+![Deployment Frontend](assets/dep_front.jpeg)
+
+#### Backend Deployment
+
+El **Backend** se encuentra desplegado mediante **Railway** bajo el servicio `MAX_DEV_BACK`. El servicio se encuentra conectado con el repositorio correspondiente de GitHub y permite ejecutar el Backend en el ambiente de producción.
+
+Railway proporciona las opciones necesarias para administrar el deployment, variables de entorno, métricas y logs de ejecución del servicio.
+
+Las variables de entorno permiten mantener separada del código fuente la configuración necesaria para el funcionamiento del Backend, incluyendo información relacionada con la conexión a servicios externos y a la Base de Datos.
+
+**Plataforma:** Railway  
+
+**Servicio:** `MAX_DEV_BACK`  
+
+**Ambiente:** Production  
+
+**URL:** [MAX Backend](https://maxdevback-production.up.railway.app)
+
+![Deployment Backend](assets/dep_back.jpeg)
+
+#### Database Deployment
+
+MAX utiliza **MySQL** como sistema de gestión de Base de Datos. La instancia se encuentra desplegada mediante **Railway** y es utilizada por el Backend para realizar las operaciones de persistencia requeridas por la plataforma.
+
+La Base de Datos no funciona como un componente público de la aplicación. El acceso se realiza desde el Backend mediante la configuración correspondiente del entorno.
+
+Entre las tablas disponibles actualmente se encuentran:
+
+- `app_settings`
+
+- `citas`
+
+- `consultas`
+
+- `estudios`
+
+- `pacientes`
+
+- `usuarios`
+
+Las credenciales y parámetros necesarios para establecer la conexión con la Base de Datos deben mantenerse mediante variables de entorno y no directamente dentro del código fuente.
+
+**Motor:** MySQL  
+
+**Plataforma:** Railway  
+
+**Ambiente:** Production  
+
+**Acceso:** Interno mediante el Backend
+
+![Deployment Database](assets/dep_db.jpeg)
+
+#### Deployment Workflow
+
+El flujo general utilizado para desplegar los componentes de MAX parte del código fuente administrado mediante Git y GitHub.
+
+```text
+
+Desarrollo local
+
+      │
+
+      ▼
+
+feature/*
+
+      │
+
+      ▼
+
+develop
+
+      │
+
+      ▼
+
+main
+
+      │
+
+      ├──────────────► GitHub Pages
+
+      │                  Landing Page
+
+      │
+
+      ├──────────────► Cloudflare Pages
+
+      │                  Frontend
+
+      │
+
+      └──────────────► Railway
+
+                         Backend
+
+                            │
+
+                            ▼
+
+                      MySQL - Railway
+
+```
+
+Las funcionalidades son desarrolladas inicialmente en ramas `feature/*` y posteriormente integradas a `develop`. Una vez que los cambios corresponden a una versión estable, pueden ser integrados a `main`, rama utilizada como referencia para los componentes desplegados en producción.
+
+#### Environment Variables
+
+Las configuraciones que pueden variar entre ambientes o que contienen información sensible deben mantenerse mediante **variables de entorno**.
+
+Entre estas configuraciones pueden encontrarse:
+
+```text
+
+Database connection
+
+Database user
+
+Database password
+
+API configuration
+
+Authentication configuration
+
+External service credentials
+
+```
+
+Las credenciales no deben almacenarse directamente dentro del repositorio de GitHub.
+
+Railway permite administrar las variables necesarias para el Backend y la Base de Datos desde la configuración del proyecto, manteniendo estos valores separados del código fuente.
+
+#### Deployment Summary
+
+| Componente | Plataforma | Branch / Fuente | Ambiente | Estado |
+| --- | --- | --- | --- | --- |
+| **Landing Page** | GitHub Pages | `main` | Production | Desplegado |
+| **Frontend Web** | Cloudflare Workers & Pages | `main` | Production | Desplegado |
+| **Backend** | Railway | Repositorio BACK | Production | Desplegado |
+| **Base de Datos** | MySQL / Railway | Backend / Variables de entorno | Production | Desplegado |
+
+#### Production URLs
+
+| Componente | URL |
+| --- | --- |
+| **Landing Page** | [https://1asi0732-2620-9086.github.io/LANDING-PAGE/](https://1asi0732-2620-9086.github.io/LANDING-PAGE/) |
+| **Frontend Web** | [https://max-dev-front.pages.dev/auth](https://max-dev-front.pages.dev/auth) |
+| **Backend** | [https://maxdevback-production.up.railway.app](https://maxdevback-production.up.railway.app) |
+
+La configuración implementada permite que los principales componentes de MAX se mantengan desplegados de manera independiente, conservando la integración necesaria entre el Frontend, Backend y Base de Datos. Asimismo, el uso de GitHub como fuente del código facilita mantener una relación entre las versiones desarrolladas y las versiones publicadas en los diferentes servicios de despliegue.
+
 ### 5.2. Product implementation & deployment
 #### 5.2.1. Sprint 1
 ##### 5.2.1.1. Sprint Planning 1
