@@ -311,88 +311,239 @@ Se prepararán experiencias para navegador de escritorio y móvil. La documentac
 
 ## 4.8. Domain-Driven Software Architecture
 
-La arquitectura de software de MAX se organizará tomando como referencia las responsabilidades del dominio y las funcionalidades definidas para el producto.
+La arquitectura de software de MAX organiza las responsabilidades de la plataforma tomando como referencia las funcionalidades de identidad y acceso, gestión de pacientes y administración de estudios y documentos médicos.
 
-Como base inicial, se consideran las áreas de identidad y acceso, gestión de pacientes y gestión de estudios y documentos. La incorporación de otras responsabilidades dependerá de la consolidación del alcance funcional.
+La documentación utiliza diferentes niveles de representación para explicar el sistema: contexto, contenedores y componentes. Estas vistas permiten comprender la relación de MAX con sus usuarios, la distribución de responsabilidades entre sus aplicaciones y la organización interna de los elementos que implementan sus funcionalidades.
 
-Los diagramas de contexto, contenedores y componentes mostrarán distintos niveles de detalle de la misma solución. Sus nombres y relaciones deberán mantenerse consistentes con el lenguaje del dominio.
-
-> **Imagen pendiente:** Insertar aquí una vista general de la organización arquitectónica de MAX, si se utiliza un esquema introductorio.
+Asimismo, se incluyen diagramas complementarios de interacción y despliegue para facilitar la comprensión de los recorridos de información y de la organización de la solución. Las representaciones relacionadas con el futuro portal del paciente se consideran parte de la evolución propuesta del producto.
 
 ### 4.8.1. Software Architecture Context Diagram
 
-El diagrama de contexto representará a MAX como un sistema y mostrará sus relaciones con los actores incluidos en el alcance.
+El diagrama de contexto presenta a MAX como un sistema dentro de su entorno de interacción. Su propósito es identificar los actores y sistemas externos relacionados con la plataforma, así como las relaciones que permiten comprender su alcance general.
 
-Se identificarán los objetivos generales de interacción de médicos y pacientes, según las funciones habilitadas para cada uno. También se incluirán los sistemas externos que intervengan realmente en la solución, una vez confirmadas sus integraciones.
+Esta vista permite comunicar la finalidad de MAX sin profundizar en los detalles internos de implementación. A partir de ella se establece una referencia común para interpretar los diagramas de contenedores y componentes desarrollados en las siguientes secciones.
 
-> **Imagen pendiente:** Insertar aquí el diagrama C4 de contexto de MAX, incluyendo actores y sistemas externos confirmados.
+<div align="center">
+  <img src="assets/MAX-SystemContext.png" alt="Diagrama de contexto del sistema MAX" width="1000">
+  <p><em>Diagrama de contexto del sistema MAX.</em></p>
+</div>
 
 ### 4.8.2. Software Architecture Container Diagrams
 
-Los diagramas de contenedores mostrarán las aplicaciones, servicios y mecanismos de almacenamiento que conformen MAX.
+El diagrama de contenedores presenta la distribución de responsabilidades entre las aplicaciones, servicios y mecanismos de almacenamiento que conforman MAX.
 
-Se explicará la responsabilidad de la landing page, la aplicación web, la aplicación móvil y el backend, así como la comunicación entre estos elementos. También se representará la organización del almacenamiento de información y archivos cuando se confirme su implementación.
+Esta vista permite comprender cómo se relacionan las interfaces utilizadas por los usuarios con los servicios que procesan las operaciones y los recursos que almacenan la información. También facilita identificar los límites de cada elemento y las comunicaciones necesarias para completar los procesos de la plataforma.
 
-Las tecnologías se documentarán de acuerdo con el enunciado del curso y la configuración acordada para el proyecto.
+<div align="center">
+  <img src="assets/MAX-Containers.png" alt="Diagrama de contenedores de la plataforma MAX" width="1000">
+  <p><em>Diagrama de contenedores de MAX.</em></p>
+</div>
 
-> **Imágenes pendientes:** Insertar aquí los diagramas C4 de contenedores, indicando responsabilidades, tecnologías y comunicaciones.
+#### Vista complementaria de despliegue
+
+Como complemento de la estructura de contenedores, se incluye una vista de despliegue. Su propósito es documentar la distribución de los elementos de software sobre el entorno de ejecución y facilitar la comprensión de las relaciones entre la aplicación y su infraestructura.
+
+Esta representación complementa el análisis de la arquitectura al mostrar una perspectiva diferente de la organización lógica del sistema.
+
+<div align="center">
+  <img src="assets/MAX-ProductionDeployment.png" alt="Diagrama de despliegue de MAX en el entorno de producción" width="1000">
+  <p><em>Vista de despliegue de MAX.</em></p>
+</div>
+
+#### Interacción de la aplicación web
+
+El flujo de la aplicación web complementa la vista de contenedores al representar el recorrido de las interacciones correspondientes a esta aplicación.
+
+Su lectura permite relacionar las acciones iniciadas desde la experiencia web con los elementos de la arquitectura que intervienen en su procesamiento.
+
+<div align="center">
+  <img src="assets/MAX-WebFlow.png" alt="Flujo de interacción de la aplicación web de MAX" width="1000">
+  <p><em>Flujo de interacción de la aplicación web.</em></p>
+</div>
+
+#### Interacción de la aplicación móvil
+
+El flujo móvil presenta una perspectiva complementaria de las interacciones correspondientes a la aplicación móvil de MAX.
+
+Esta representación permite analizar el recorrido de las solicitudes y respuestas entre la experiencia móvil y los elementos de la plataforma, manteniendo coherencia con las responsabilidades definidas en la arquitectura.
+
+<div align="center">
+  <img src="assets/MAX-MobileFlow.png" alt="Flujo de interacción de la aplicación móvil de MAX" width="1000">
+  <p><em>Flujo de interacción de la aplicación móvil.</em></p>
+</div>
+
+#### Interacción propuesta para el futuro portal del paciente
+
+El siguiente flujo documenta la propuesta de interacción del paciente como parte de la evolución de MAX. Su finalidad es representar cómo podría integrarse esta experiencia con la plataforma y servir como referencia para la especificación de sus funcionalidades.
+
+La incorporación de este flujo al producto dependerá de la definición de sus historias de usuario y de la confirmación del alcance correspondiente.
+
+<div align="center">
+  <img src="assets/MAX-FuturePatientFlow.png" alt="Flujo propuesto para la futura experiencia del paciente en MAX" width="1000">
+  <p><em>Flujo propuesto para la futura experiencia del paciente.</em></p>
+</div>
 
 ### 4.8.3. Software Architecture Components Diagrams
 
-Los diagramas de componentes detallarán la organización interna de los contenedores seleccionados.
+Los diagramas de componentes presentan la organización interna de los contenedores seleccionados de MAX. Su propósito es identificar las responsabilidades de sus elementos y explicar cómo colaboran para atender las operaciones de la plataforma.
 
-En el backend se representarán las responsabilidades asociadas a la recepción de solicitudes, la ejecución de reglas de negocio y el acceso a los datos. Se mostrará cómo colaboran los componentes para atender operaciones relacionadas con usuarios, pacientes y estudios.
+Estas vistas permiten relacionar las funcionalidades del producto con su estructura de software y facilitan la comprensión de las dependencias entre componentes.
 
-La descomposición definitiva deberá corresponder con la arquitectura utilizada en el sistema.
+#### Componentes del backend
 
-> **Imágenes pendientes:** Insertar aquí los diagramas C4 de componentes de los contenedores seleccionados.
+La vista de componentes del backend permite examinar la organización de los elementos que participan en el procesamiento de las solicitudes de MAX.
+
+El diagrama sirve como referencia para comprender la distribución de responsabilidades y las relaciones entre los componentes que soportan las funcionalidades de la plataforma.
+
+<div align="center">
+  <img src="assets/MAX-BackendComponents.png" alt="Diagrama de componentes del backend de MAX" width="1000">
+  <p><em>Componentes del backend de MAX.</em></p>
+</div>
+
+#### Componentes de la aplicación web
+
+La vista de componentes de la aplicación web presenta la organización interna de esta experiencia y las relaciones entre sus elementos.
+
+Su propósito es facilitar la comprensión de cómo se distribuyen las responsabilidades de presentación e interacción, así como su relación con los servicios utilizados por la aplicación.
+
+<div align="center">
+  <img src="assets/MAX-WebComponents.png" alt="Diagrama de componentes de la aplicación web de MAX" width="1000">
+  <p><em>Componentes de la aplicación web de MAX.</em></p>
+</div>
+
+#### Componentes de la aplicación móvil
+
+La vista de componentes móviles documenta la organización interna de la aplicación móvil de MAX.
+
+Esta representación permite reconocer los elementos que colaboran en sus funcionalidades y comprender sus relaciones con los servicios de la plataforma.
+
+<div align="center">
+  <img src="assets/MAX-MobileComponents.png" alt="Diagrama de componentes de la aplicación móvil de MAX" width="1000">
+  <p><em>Componentes de la aplicación móvil de MAX.</em></p>
+</div>
+
+#### Componentes propuestos para el portal del paciente
+
+El diagrama del portal del paciente presenta una propuesta de organización para esta experiencia dentro de MAX.
+
+Esta vista se utiliza como referencia de diseño para la evolución del producto. Su desarrollo deberá mantener coherencia con las funcionalidades y los permisos que se definan para el paciente.
+
+<div align="center">
+  <img src="assets/MAX-PatientPortalComponents.png" alt="Diagrama de componentes propuestos para el portal del paciente de MAX" width="1000">
+  <p><em>Componentes propuestos para el portal del paciente.</em></p>
+</div>
+
+#### Flujo de componentes para el inicio de sesión web
+
+El flujo de inicio de sesión complementa la vista estática de componentes al mostrar las interacciones relacionadas con el acceso del usuario a la aplicación web.
+
+Esta representación permite seguir la colaboración entre los elementos que intervienen en el proceso y relacionarla con las funcionalidades de identidad y acceso de MAX.
+
+<div align="center">
+  <img src="assets/MAX-WebLoginComponentsFlow.png" alt="Flujo de componentes para el inicio de sesión web en MAX" width="1000">
+  <p><em>Flujo de componentes para el inicio de sesión web.</em></p>
+</div>
+
+#### Flujo de procesamiento de solicitudes del backend
+
+El siguiente diagrama presenta el recorrido de una solicitud dentro del backend.
+
+Su propósito es facilitar la comprensión del orden de las interacciones y de la participación de los componentes involucrados en el procesamiento de una operación.
+
+<div align="center">
+  <img src="assets/MAX-BackendRequestFlow.png" alt="Flujo de procesamiento de solicitudes en el backend de MAX" width="1000">
+  <p><em>Flujo de procesamiento de solicitudes del backend.</em></p>
+</div>
+
+#### Flujo de archivos de estudios médicos
+
+El flujo de archivos de estudios complementa la documentación de la gestión de documentos médicos en MAX.
+
+Esta representación permite analizar las interacciones asociadas al tratamiento de un archivo y su vinculación con los registros del sistema, conforme a las operaciones definidas para la gestión de estudios.
+
+<div align="center">
+  <img src="assets/MAX-StudyFileFlow.png" alt="Flujo de archivos de estudios médicos en MAX" width="1000">
+  <p><em>Flujo de archivos de estudios médicos.</em></p>
+</div>
+
+#### Síntesis de los flujos web y móvil
+
+El siguiente esquema se incluye como una representación complementaria de los flujos web y móvil.
+
+Su propósito es facilitar una lectura conjunta de estas experiencias y apoyar la explicación de su relación con la arquitectura de MAX.
+
+<div align="center">
+  <img src="assets/flujo web y móvil.png" alt="Esquema de los flujos web y móvil de MAX" width="1000">
+  <p><em>Esquema de los flujos web y móvil.</em></p>
+</div>
+
+#### Síntesis del flujo del paciente
+
+El esquema del paciente complementa la propuesta de esta experiencia dentro de MAX.
+
+Se utiliza como apoyo para explicar el recorrido planteado y relacionarlo con los elementos que deberán participar en su implementación, una vez confirmado su alcance.
+
+<div align="center">
+  <img src="assets/flujo paciente.png" alt="Esquema del flujo propuesto para el paciente en MAX" width="1000">
+  <p><em>Esquema del flujo propuesto para el paciente.</em></p>
+</div>
 
 ## 4.9. Software Object-Oriented Design
 
-El diseño orientado a objetos de MAX representará los conceptos del dominio mediante clases con responsabilidades definidas.
+El diseño orientado a objetos de MAX organiza los conceptos y responsabilidades del sistema mediante clases y relaciones.
 
-Se buscará mantener una separación comprensible entre la información de acceso, los datos de los pacientes y los estudios o documentos asociados. Las relaciones entre clases deberán reflejar las reglas del negocio y las operaciones descritas en las historias de usuario.
+Su propósito es mantener una estructura comprensible que permita vincular los requisitos del producto con los elementos que participan en su implementación. El modelo toma como referencia las funcionalidades de identidad y acceso, gestión de pacientes y administración de estudios y documentos.
 
-Este diseño se documentará mediante diagramas de clases y un diccionario que facilite su interpretación.
+La representación por objetos y capas permite explicar la distribución de responsabilidades y sirve como base para interpretar el diagrama de clases y su diccionario.
 
-> **Imagen pendiente:** Insertar aquí una vista general del modelo orientado a objetos, si se utiliza un esquema introductorio.
+<div align="center">
+  <img src="assets/diseño orientado a objetos y capas.png" alt="Diseño orientado a objetos y organización por capas de MAX" width="1000">
+  <p><em>Diseño orientado a objetos y organización por capas de MAX.</em></p>
+</div>
 
 ### 4.9.1. Class Diagrams
 
-Los diagramas de clases presentarán los elementos del modelo, sus atributos, operaciones relevantes y relaciones.
+El diagrama de clases documenta la estructura del modelo de MAX y las relaciones entre sus elementos.
 
-Se representarán las asociaciones y multiplicidades necesarias para comprender cómo se vinculan los usuarios, los pacientes y sus estudios. La estructura se ajustará al modelo real del sistema y mantendrá coherencia con las reglas de creación, consulta, modificación y eliminación de registros.
+Esta representación permite identificar las clases que participan en las funcionalidades del sistema y comprender sus asociaciones. Su interpretación deberá mantenerse alineada con las reglas de negocio y con los conceptos definidos en el lenguaje del dominio.
 
-> **Imágenes pendientes:** Insertar aquí los diagramas UML de clases de MAX, con atributos, operaciones, relaciones y multiplicidades.
+El diagrama constituye una referencia para la implementación y para la revisión de la coherencia entre los requisitos, la arquitectura y el modelo de datos.
+
+<div align="center">
+  <img src="assets/diagrama de clases.png" alt="Diagrama de clases de la plataforma MAX" width="1000">
+  <p><em>Diagrama de clases de MAX.</em></p>
+</div>
 
 ### 4.9.2. Class Dictionary
 
-El diccionario de clases describirá el significado y la responsabilidad de cada clase incluida en los diagramas.
+El diccionario de clases complementa el diagrama mediante la descripción de los elementos del modelo.
 
-Su propósito será facilitar que los integrantes del equipo interpreten el modelo de manera uniforme y relacionen cada elemento con los conceptos del dominio de MAX.
+Su propósito es establecer un significado común para cada clase y facilitar que los integrantes del equipo comprendan su responsabilidad dentro de MAX. Las denominaciones utilizadas deberán coincidir con las presentadas en los diagramas y conservar consistencia con la documentación del dominio.
 
-Las definiciones utilizarán los mismos nombres de los diagramas y explicarán la función de las clases dentro de los procesos que soporta la plataforma.
+Este recurso facilita la lectura del modelo y reduce ambigüedades durante la implementación y el mantenimiento del sistema.
 
-> **Contenido pendiente:** Incorporar aquí la tabla del diccionario de clases. Si se necesita una imagen complementaria, colocarla después de la tabla.
+<div align="center">
+  <img src="assets/diccionario de clases.png" alt="Diccionario de clases de la plataforma MAX" width="1000">
+  <p><em>Diccionario de clases de MAX.</em></p>
+</div>
 
 ## 4.10. Database Design
 
-El diseño de la base de datos de MAX establecerá cómo se organizará y relacionará la información necesaria para soportar las funcionalidades del producto.
+El diseño de la base de datos de MAX organiza la información necesaria para soportar las funcionalidades de la plataforma.
 
-La propuesta considerará la información de usuarios, pacientes, estudios y documentos, así como los vínculos necesarios para identificar a qué paciente pertenece cada registro y quién puede gestionarlo.
+El modelo considera los datos relacionados con el acceso de los usuarios, la gestión de pacientes y la administración de estudios y documentos médicos. Su propósito es mantener relaciones claras entre los registros y facilitar las operaciones de consulta y actualización requeridas por el producto.
 
-Se revisará la coherencia entre los datos almacenados, el modelo de clases y las operaciones del sistema. Las decisiones sobre el motor de base de datos y el almacenamiento de archivos se documentarán cuando se confirme la configuración del proyecto.
-
-> **Imagen pendiente:** Insertar aquí una vista general de la organización de los datos y del almacenamiento de archivos, si corresponde.
+La estructura de persistencia debe conservar coherencia con las reglas del negocio y con el diseño orientado a objetos. El diagrama relacional se presenta en la siguiente sección como referencia de esta organización.
 
 ### 4.10.1. Relational/Non-Relational Database Diagram
 
-El diagrama de base de datos representará las tablas o colecciones utilizadas por MAX, sus identificadores, atributos y relaciones.
+Para MAX se presenta un diagrama relacional que permite visualizar la organización de los datos y las relaciones entre las entidades del sistema.
 
-En caso de utilizar un modelo relacional, se especificarán las claves primarias, claves foráneas y cardinalidades. Si se emplea un modelo no relacional, se documentará la organización de los documentos y sus referencias.
+Esta representación sirve como referencia para comprender la estructura de almacenamiento y revisar la correspondencia entre los registros de usuarios, pacientes y estudios. También permite analizar las relaciones necesarias para mantener vinculada la información utilizada por las funcionalidades del producto.
 
-También se explicará la relación entre los registros de estudios y los archivos asociados, distinguiendo los datos descriptivos del documento de su mecanismo de almacenamiento.
+El modelo deberá conservar consistencia con la implementación de la base de datos y actualizarse cuando se incorporen cambios en el alcance o en las reglas de negocio.
 
-El modelo definitivo se elaborará a partir de la estructura real del sistema y de las reglas de negocio confirmadas para MAX.
-
-> **Imagen pendiente:** Insertar aquí el diagrama relacional o no relacional de la base de datos de MAX, con sus entidades o colecciones, atributos y relaciones.
+<div align="center">
+  <img src="assets/diagrama relacional de base de datos.png" alt="Diagrama relacional de la base de datos de MAX" width="1000">
+  <p><em>Diagrama relacional de la base de datos de MAX.</em></p>
+</div>
