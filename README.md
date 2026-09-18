@@ -86,6 +86,147 @@ La plataforma mantiene un historial de los diferentes despliegues realizados y p
 | **Entorno de desarrollo** | Visual Studio Code | Desarrollo y edición del código fuente de los componentes del proyecto. |
 
 #### 5.1.2. Source Code Management
+
+La gestión del código fuente de **MAX** se realiza mediante **Git** como sistema de control de versiones y **GitHub** como plataforma para el almacenamiento de los repositorios y el trabajo colaborativo. Esta configuración permite mantener un historial de los cambios realizados, separar el desarrollo de los diferentes componentes de la solución y controlar la integración de nuevas funcionalidades.
+
+MAX mantiene sus principales componentes en repositorios independientes, permitiendo que cada aplicación pueda evolucionar y desplegarse de manera separada.
+
+#### Organización de repositorios
+
+| Repositorio | Descripción |
+| --- | --- |
+| **REPORT** | Contiene la documentación, capítulos y evidencias correspondientes al desarrollo del proyecto. |
+| **LANDING-PAGE** | Contiene el código fuente del Landing Page de MAX. |
+| **FRONT** | Contiene el código fuente de la aplicación web utilizada por los usuarios de MAX. |
+| **BACK** | Contiene el código fuente correspondiente al Backend y los servicios necesarios para procesar las operaciones de la plataforma. |
+| **MOBILE** | Contiene el código fuente correspondiente a la aplicación móvil de MAX. |
+
+Esta separación permite administrar de manera independiente la documentación, presentación del producto, interfaz web, lógica del servidor y aplicación móvil.
+
+#### Estrategia de Branching
+
+Para organizar el desarrollo colaborativo se utiliza una estrategia basada en **GitFlow**, evitando realizar el desarrollo de nuevas funcionalidades directamente sobre la rama estable.
+
+Las principales ramas consideradas son:
+
+- **`main`:** contiene las versiones estables e integradas del proyecto y funciona como referencia para los despliegues de producción.
+
+- **`develop`:** concentra los cambios provenientes de las diferentes funcionalidades antes de su integración hacia `main`.
+
+- **`feature/*`:** ramas destinadas al desarrollo de funcionalidades, componentes o secciones específicas del proyecto.
+
+El flujo de integración utilizado puede representarse de la siguiente manera:
+
+```text
+
+feature/*
+
+    │
+
+    ▼
+
+ develop
+
+    │
+
+    ▼
+
+  main
+
+```
+
+Cada nueva funcionalidad puede desarrollarse inicialmente en una rama `feature/*`. Una vez terminada y revisada, sus cambios pueden integrarse a `develop`. Posteriormente, cuando el conjunto de cambios se encuentra preparado para formar parte de una versión estable, se integra a `main`.
+
+En el repositorio de documentación, por ejemplo, se pueden utilizar ramas específicas para trabajar los diferentes capítulos:
+
+```text
+
+feature/report-chapter-1
+
+feature/report-chapter-2
+
+feature/report-chapter-3
+
+feature/report-chapter-4
+
+feature/report-chapter-5
+
+```
+
+Esto permite que los integrantes trabajen sobre diferentes partes del proyecto sin modificar directamente el contenido estable.
+
+#### Gestión de commits
+
+Los cambios realizados en el código y documentación son registrados mediante **commits**, permitiendo mantener la trazabilidad de la evolución del proyecto.
+
+Para facilitar la comprensión del historial se considera el uso de **Conventional Commits**, utilizando prefijos que permitan identificar el propósito principal de cada cambio.
+
+| Convención | Propósito |
+| --- | --- |
+| `feat:` | Incorporación de una nueva funcionalidad. |
+| `fix:` | Corrección de errores. |
+| `docs:` | Modificaciones relacionadas con documentación. |
+| `refactor:` | Reestructuración del código sin incorporar una nueva funcionalidad. |
+| `test:` | Incorporación o modificación de pruebas. |
+| `chore:` | Cambios de mantenimiento, configuración u otras tareas técnicas. |
+
+Algunos ejemplos de mensajes de commit aplicables al proyecto son:
+
+```text
+feat: add appointment management
+feat: support multipart study uploads
+fix: correct patient document upload
+docs: update chapter 5 documentation
+refactor: improve appointment service
+test: add appointment unit tests
+
+```
+
+De esta manera, el historial del repositorio permite identificar con mayor facilidad qué tipo de modificación fue realizada.
+
+#### Integración y revisión de cambios
+
+GitHub permite centralizar el trabajo realizado por los diferentes integrantes del equipo. Los cambios desarrollados localmente son enviados a sus respectivas ramas remotas y posteriormente pueden integrarse mediante **Pull Requests**.
+
+Los Pull Requests permiten revisar las modificaciones antes de incorporarlas a una rama principal, identificar posibles conflictos y mantener evidencia de las integraciones realizadas durante el desarrollo.
+
+El flujo general de gestión del código fuente es:
+
+1. Crear o seleccionar una rama `feature/*`.
+
+2. Realizar los cambios correspondientes.
+
+3. Registrar los cambios mediante commits.
+
+4. Publicar la rama en GitHub.
+
+5. Crear un Pull Request hacia `develop`.
+
+6. Revisar e integrar los cambios.
+
+7. Integrar posteriormente `develop` hacia `main` cuando corresponda a una versión estable.
+
+#### Relación entre Source Code Management y Deployment
+
+Los repositorios almacenados en GitHub también funcionan como fuente para los diferentes servicios utilizados durante el despliegue de MAX.
+| Componente | Repositorio | Servicio de despliegue |
+| --- | --- | --- |
+| **Landing Page** | LANDING-PAGE | GitHub Pages |
+| **Frontend Web** | FRONT | Cloudflare Workers & Pages |
+| **Backend** | BACK | Railway |
+| **Aplicación móvil** | MOBILE | Repositorio de código fuente |
+| **Documentación** | REPORT | GitHub |
+
+En los componentes desplegados, la rama `main` representa el código utilizado como referencia para el ambiente de producción. De esta manera, existe una relación entre el control de versiones y los deployments de la solución.
+
+Por ejemplo, el Landing Page publicado mediante GitHub Pages utiliza el código almacenado en la rama `main`, mientras que el Frontend desplegado mediante Cloudflare y el Backend desplegado mediante Railway se encuentran vinculados con sus respectivos repositorios de GitHub.
+
+#### Trazabilidad del código fuente
+
+El uso conjunto de Git y GitHub permite mantener trazabilidad sobre la evolución de MAX. A través del historial del repositorio es posible identificar los commits realizados, las ramas utilizadas para cada funcionalidad, los integrantes responsables de los cambios y las integraciones realizadas.
+
+Esta estrategia permite mantener organizado el desarrollo de los diferentes componentes de MAX y conservar un registro de la evolución del producto durante las distintas etapas del proyecto.
+
 #### 5.1.3. Source Code Style Guide & Conventions
 #### 5.1.4. Software Deployment Configuration
 ### 5.2. Product implementation & deployment
