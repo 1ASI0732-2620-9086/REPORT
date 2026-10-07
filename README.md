@@ -2793,6 +2793,8 @@ De esta manera, el usuario accede a las interfaces publicadas de MAX, mientras q
 Las evidencias presentadas permiten comprobar que los principales componentes desarrollados para MAX cuentan con entornos de despliegue que permiten validar su funcionamiento e integración durante el Sprint Review.
 
 ##### 5.2.1.8. Team Collaboration Insights during Sprint
+![Team Collaboration Insights](assets/Inside.png)
+
 *(Nota: Repetir esta estructura para Sprint 2, 3, y 4 según corresponda cada hito de evaluación)*
 #### 5.2.2. Implemented Landing Page Evidence
 #### 5.2.3. Implemented Frontend-Web Application Evidence
