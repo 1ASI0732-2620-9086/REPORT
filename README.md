@@ -2609,7 +2609,46 @@ La configuración implementada permite que los principales componentes de MAX se
 | **Johnny Alexander Ojanama Abanto** | C | L | L | L | C | L | C | C |
 
 ##### 5.2.1.3. Sprint Backlog 1
+
+| User Story Id | Título | Task Id | Título | Descripción | Estimación (hrs) | Asignado a | Estado |
+|---|---|---|---|---|---:|---|---|
+| TS-01 | Autenticación y seguridad JWT | T01 | Configurar seguridad JWT | Implementar la generación y validación de tokens JWT en el backend. | 4 | Oscar Espinoza | Done |
+| TS-01 | Autenticación y seguridad JWT | T02 | Proteger endpoints | Configurar el acceso autenticado a los endpoints protegidos de MAX. | 3 | Oscar Espinoza | Done |
+| TS-02 | Cifrado de contraseñas | T03 | Implementar cifrado | Configurar el mecanismo de cifrado para almacenar las contraseñas de manera segura. | 3 | Oscar Espinoza | Done |
+| US-02 | Crear una nueva cuenta médica | T04 | Crear formulario de registro | Implementar la interfaz para registrar una nueva cuenta médica. | 3 | Johnny Ojanama | Done |
+| US-02 | Crear una nueva cuenta médica | T05 | Integrar registro con backend | Conectar el formulario de registro con el servicio correspondiente de la API. | 3 | Oscar Espinoza | Done |
+| US-01 | Iniciar sesión en la plataforma | T06 | Crear interfaz de login | Implementar la pantalla de inicio de sesión de MAX. | 3 | Johnny Ojanama | Done |
+| US-01 | Iniciar sesión en la plataforma | T07 | Integrar autenticación | Conectar el login con el sistema de autenticación JWT. | 3 | Oscar Espinoza | Done |
+| US-03 | Cerrar sesión de forma segura | T08 | Implementar cierre de sesión | Eliminar la sesión activa y redirigir al usuario hacia la pantalla de acceso. | 2 | Johnny Ojanama | Done |
+| US-05 | Editar perfil básico | T09 | Implementar edición de perfil | Permitir al médico modificar su nombre y correo desde su perfil. | 3 | Johnny Ojanama | Done |
+| US-05 | Editar perfil básico | T10 | Actualizar información | Conectar la edición del perfil con el servicio de actualización del backend. | 2 | Oscar Espinoza | Done |
+| US-06 | Registrar un nuevo paciente | T11 | Crear formulario de paciente | Diseñar e implementar el formulario para registrar los datos de un paciente. | 4 | Johnny Ojanama | Done |
+| US-06 | Registrar un nuevo paciente | T12 | Implementar registro de paciente | Crear la operación necesaria en el backend para almacenar nuevos pacientes. | 4 | Oscar Espinoza | Done |
+| US-07 | Consultar el listado en tarjetas | T13 | Diseñar tarjetas de pacientes | Implementar la visualización de pacientes mediante tarjetas independientes. | 4 | Johnny Ojanama | Done |
+| TS-03 | Paginación / Carga diferida | T14 | Implementar paginación | Incorporar paginación en el backend para optimizar la consulta de pacientes. | 4 | Oscar Espinoza | Done |
+| TS-03 | Paginación / Carga diferida | T15 | Integrar carga paginada | Conectar la paginación del backend con el listado mostrado en el frontend. | 3 | Johnny Ojanama | Done |
+| US-08 | Buscar pacientes por DNI o Nombre | T16 | Implementar buscador | Crear el componente de búsqueda de pacientes por DNI o nombre. | 3 | Johnny Ojanama | Done |
+| US-08 | Buscar pacientes por DNI o Nombre | T17 | Implementar filtros de búsqueda | Integrar los criterios de búsqueda con la consulta de pacientes. | 3 | Oscar Espinoza | Done |
+| US-09 | Visualizar detalle estático | T18 | Crear vista de detalle | Implementar la pantalla de información detallada del paciente en modo de solo lectura. | 3 | Johnny Ojanama | Done |
+| US-10 | Editar información del paciente | T19 | Crear edición de paciente | Habilitar el formulario para modificar los datos registrados de un paciente. | 4 | Johnny Ojanama | Done |
+| US-10 | Editar información del paciente | T20 | Actualizar paciente en backend | Implementar la operación de actualización de información del paciente. | 3 | Oscar Espinoza | Done |
+| US-11 | Eliminar un paciente del sistema | T21 | Implementar confirmación de eliminación | Crear el flujo de confirmación mediante el nombre del paciente antes de eliminarlo. | 3 | Johnny Ojanama | Done |
+| US-11 | Eliminar un paciente del sistema | T22 | Implementar eliminación | Crear la operación del backend para eliminar el registro seleccionado. | 2 | Oscar Espinoza | Done |
+| US-04 | Visualizar resumen en Dashboard | T23 | Diseñar Dashboard | Implementar la interfaz principal con los indicadores del consultorio. | 4 | Johnny Ojanama | Done |
+| US-04 | Visualizar resumen en Dashboard | T24 | Integrar indicadores | Obtener y presentar en el Dashboard los datos registrados en MAX. | 3 | Johnny Ojanama | Done |
+| TS-04 | Almacenamiento seguro de archivos | T25 | Implementar almacenamiento | Configurar el mecanismo utilizado para almacenar archivos médicos adjuntos. | 5 | Oscar Espinoza | Done |
+| TS-04 | Almacenamiento seguro de archivos | T26 | Vincular archivos con pacientes | Relacionar cada archivo almacenado con el paciente correspondiente. | 3 | Oscar Espinoza | Done |
+| TS-05 | Validación de Tipos | T27 | Validar formatos de archivos | Implementar validaciones para aceptar únicamente los formatos de archivos permitidos. | 3 | Oscar Espinoza | Done |
+| US-12 | Adjuntar nueva placa o estudio | T28 | Crear formulario de carga | Implementar la interfaz para seleccionar el paciente y adjuntar un estudio médico. | 4 | Johnny Ojanama | Done |
+| US-12 | Adjuntar nueva placa o estudio | T29 | Integrar carga de archivos | Conectar el formulario con el servicio de almacenamiento de estudios. | 4 | Oscar Espinoza | Done |
+| US-13 | Buscar placas por paciente o fecha | T30 | Crear filtros de estudios | Implementar filtros por DNI, nombre del paciente y fecha. | 3 | Johnny Ojanama | Done |
+| US-13 | Buscar placas por paciente o fecha | T31 | Integrar búsqueda de estudios | Conectar los filtros con la consulta de estudios almacenados. | 3 | Oscar Espinoza | Done |
+| US-14 | Identificar formato del estudio | T32 | Mostrar tipo de archivo | Incorporar indicadores visuales para diferenciar los formatos de los estudios adjuntos. | 2 | Johnny Ojanama | Done |
+| US-15 | Visualizar archivo adjunto | T33 | Implementar apertura de archivos | Permitir abrir el archivo asociado a un estudio desde la interfaz de MAX. | 3 | Johnny Ojanama | Done |
+| US-15 | Visualizar archivo adjunto | T34 | Validar acceso al archivo | Verificar que el archivo solicitado pueda ser recuperado correctamente desde el backend. | 2 | Oscar Espinoza | Done |
+
 ##### 5.2.1.4. Development Evidence for Sprint Review
+
 ##### 5.2.1.5. Execution Evidence for Sprint Review
 ##### 5.2.1.6. Services Documentation Evidence for Sprint Review
 ##### 5.2.1.7. Software Deployment Evidence for Sprint Review
