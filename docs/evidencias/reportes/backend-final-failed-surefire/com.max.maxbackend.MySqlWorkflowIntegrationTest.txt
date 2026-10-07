@@ -1,0 +1,43 @@
+-------------------------------------------------------------------------------
+Test set: com.max.maxbackend.MySqlWorkflowIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 3.833 s <<< FAILURE! -- in com.max.maxbackend.MySqlWorkflowIntegrationTest
+com.max.maxbackend.MySqlWorkflowIntegrationTest.dataAndFileAccessAreIsolatedPerProfile -- Time elapsed: 0.299 s <<< FAILURE!
+java.lang.AssertionError: {"timestamp":"2026-10-07T20:23:12.727676300Z","status":409,"error":"Conflict","message":"Data integrity violation","path":"/api/pacientes","details":[],"code":"CONFLICT"}
+	at com.max.maxbackend.AuthIntegrationTest.createPaciente(AuthIntegrationTest.java:396)
+	at com.max.maxbackend.AuthIntegrationTest.dataAndFileAccessAreIsolatedPerProfile(AuthIntegrationTest.java:294)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+
+com.max.maxbackend.MySqlWorkflowIntegrationTest.stalePatientVersionReturnsConflictWithoutOverwritingData -- Time elapsed: 0.106 s <<< FAILURE!
+java.lang.AssertionError: {"timestamp":"2026-10-07T20:23:12.863569800Z","status":409,"error":"Conflict","message":"Data integrity violation","path":"/api/pacientes","details":[],"code":"CONFLICT"}
+	at com.max.maxbackend.AuthIntegrationTest.createPaciente(AuthIntegrationTest.java:396)
+	at com.max.maxbackend.AuthIntegrationTest.stalePatientVersionReturnsConflictWithoutOverwritingData(AuthIntegrationTest.java:332)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+
+com.max.maxbackend.MySqlWorkflowIntegrationTest.deletingAppointmentKeepsConsultationAndClearsItsLink -- Time elapsed: 0.103 s <<< FAILURE!
+java.lang.AssertionError: {"timestamp":"2026-10-07T20:23:12.968190600Z","status":409,"error":"Conflict","message":"Data integrity violation","path":"/api/pacientes","details":[],"code":"CONFLICT"}
+	at com.max.maxbackend.AuthIntegrationTest.createPaciente(AuthIntegrationTest.java:396)
+	at com.max.maxbackend.AuthIntegrationTest.deletingAppointmentKeepsConsultationAndClearsItsLink(AuthIntegrationTest.java:264)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+
+com.max.maxbackend.MySqlWorkflowIntegrationTest.patientInitialHistoryIsAtomicAndIdempotent -- Time elapsed: 0.102 s <<< FAILURE!
+java.lang.AssertionError: {"timestamp":"2026-10-07T20:23:13.263694400Z","status":409,"error":"Conflict","message":"Data integrity violation","path":"/api/pacientes/con-historial","details":[],"code":"CONFLICT"}
+	at com.max.maxbackend.AuthIntegrationTest.patientInitialHistoryIsAtomicAndIdempotent(AuthIntegrationTest.java:173)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+
+com.max.maxbackend.MySqlWorkflowIntegrationTest.deletingPacienteCascadesToClinicalData -- Time elapsed: 0.089 s <<< FAILURE!
+java.lang.AssertionError: {"timestamp":"2026-10-07T20:23:13.363648500Z","status":409,"error":"Conflict","message":"Data integrity violation","path":"/api/pacientes","details":[],"code":"CONFLICT"}
+	at com.max.maxbackend.AuthIntegrationTest.createPaciente(AuthIntegrationTest.java:396)
+	at com.max.maxbackend.AuthIntegrationTest.deletingPacienteCascadesToClinicalData(AuthIntegrationTest.java:278)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+
