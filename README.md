@@ -2671,39 +2671,37 @@ Las siguientes evidencias muestran la ejecución de las principales funcionalida
 
 La plataforma permite al médico ingresar mediante sus credenciales para acceder a las funcionalidades disponibles en MAX.
 
-![Inicio de sesión de MAX](assets/sprint1-login.png)
+![Inicio de sesión de MAX](assets/sprint1-login.jpeg)
 
 ##### Dashboard principal
 
 Después de iniciar sesión, el médico puede acceder al Dashboard principal, desde donde puede visualizar información general y acceder a los diferentes módulos de la plataforma.
 
-![Dashboard de MAX](assets/sprint1-dashboard.png)
+![Dashboard de MAX](assets/sprint1-dashboard.jpeg)
 
 ##### Gestión de pacientes
 
 MAX permite visualizar los pacientes registrados y acceder a las funcionalidades relacionadas con su gestión.
 
-![Listado de pacientes](assets/sprint1-pacientes.png)
+![Listado de pacientes](assets/sprint1-pacientes.jpeg)
 
 Asimismo, el médico puede registrar nuevos pacientes mediante el formulario correspondiente.
 
-![Registro de paciente](assets/sprint1-registro-paciente.png)
+![Registro de paciente](assets/sprint1-registro-paciente.jpeg)
 
 ##### Búsqueda y detalle de pacientes
 
 El sistema permite buscar pacientes mediante los criterios implementados y consultar la información correspondiente al paciente seleccionado.
 
-![Búsqueda de pacientes](assets/sprint1-busqueda-paciente.png)
-
-![Detalle del paciente](assets/sprint1-detalle-paciente.png)
+![Detalle del paciente](assets/sprint1-detalle-paciente.jpeg)
 
 ##### Gestión de estudios médicos
 
 El módulo de estudios permite asociar archivos médicos a los pacientes registrados y posteriormente consultar los estudios almacenados.
 
-![Registro de estudio médico](assets/sprint1-registro-estudio.png)
+![Registro de estudio médico](assets/sprint1-registro-estudio.jpeg)
 
-![Listado de estudios médicos](assets/sprint1-estudios.png)
+![Listado de estudios médicos](assets/sprint1-estudios.jpeg)
 
 Estas evidencias permiten comprobar la ejecución de las principales funcionalidades desarrolladas durante el Sprint 1 y demostrar el avance funcional alcanzado en la Primera Entrega de MAX.
 
@@ -2717,7 +2715,7 @@ La documentación de los servicios permite identificar y verificar las operacion
 
 Los servicios de autenticación permiten gestionar el acceso de los médicos a la plataforma. Durante esta primera entrega se implementaron las operaciones necesarias para el registro e inicio de sesión, utilizando mecanismos de autenticación para proteger el acceso a los recursos de MAX.
 
-![Servicios de autenticación](assets/sprint1-api-auth.png)
+![Servicios de autenticación](assets/sprint1-api-auth.jpeg)
 
 ##### Servicios de pacientes
 
@@ -2725,19 +2723,19 @@ Los servicios relacionados con pacientes permiten realizar las operaciones neces
 
 Estos servicios constituyen una parte central de la Primera Entrega, debido a que permiten gestionar la información necesaria para posteriormente relacionar citas, consultas y estudios médicos con cada paciente.
 
-![Servicios de pacientes](assets/sprint1-api-pacientes.png)
+![Servicios de pacientes](assets/sprint1-api-pacientes.jpeg)
 
 ##### Servicios de estudios médicos
 
 Los servicios de estudios permiten gestionar los archivos médicos asociados a los pacientes. A través de estos servicios, la plataforma puede registrar y consultar estudios, así como relacionarlos con el paciente correspondiente.
 
-![Servicios de estudios médicos](assets/sprint1-api-estudios.png)
+![Servicios de estudios médicos](assets/sprint1-api-estudios.jpeg)
 
 ##### Verificación de los servicios
 
 Durante el Sprint Review se verificó la disponibilidad y funcionamiento de los servicios implementados mediante solicitudes realizadas a la API. Esta validación permitió comprobar la comunicación entre el Frontend Web y el Backend y verificar que las operaciones necesarias para la Primera Entrega estuvieran disponibles.
 
-![Ejecución de servicios de la API](assets/sprint1-api-ejecucion.png)
+![Ejecución de servicios de la API](assets/sprint1-api-ejecucion.jpeg)
 
 Las evidencias presentadas muestran la documentación y ejecución de los servicios utilizados durante el Sprint 1, proporcionando trazabilidad entre las funcionalidades implementadas en el Frontend Web y las operaciones disponibles en el Backend de MAX.
 
