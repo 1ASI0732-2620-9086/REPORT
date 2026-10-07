@@ -2601,6 +2601,13 @@ La configuración implementada permite que los principales componentes de MAX se
 | **Sum of Story Points** | **62 Story Points** |
 
 ##### 5.2.1.2. Aspect Leaders and Collaborators
+
+| Team Member | Autenticación y Seguridad | Gestión de Pacientes | Dashboard | Estudios Médicos | Landing Page | Frontend Web | Backend / API | Documentación |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Stephano Mayrzon Landauri** | C | C | C | C | L | C | C | L |
+| **Oscar Leonardos Espinoza Quijandria** | L | C | C | C | C | C | L | C |
+| **Johnny Alexander Ojanama Abanto** | C | L | L | L | C | L | C | C |
+
 ##### 5.2.1.3. Sprint Backlog 1
 ##### 5.2.1.4. Development Evidence for Sprint Review
 ##### 5.2.1.5. Execution Evidence for Sprint Review
