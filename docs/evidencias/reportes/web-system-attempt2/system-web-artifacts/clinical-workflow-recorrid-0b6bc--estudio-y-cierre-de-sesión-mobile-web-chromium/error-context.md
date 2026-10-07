@@ -1,0 +1,55 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]: MAX
+      - generic [ref=e8]: Medical Assistance eXpert
+    - generic [ref=e9]:
+      - generic [ref=e10]: Panel clínico
+      - strong [ref=e11]: Bienvenido, Doctor!
+    - button "Salir" [ref=e13] [cursor=pointer]
+  - complementary [ref=e14]:
+    - navigation [ref=e15]:
+      - link "Inicio" [ref=e16] [cursor=pointer]:
+        - /url: /inicio
+        - img [ref=e18] [cursor=pointer]
+        - text: Inicio
+      - link "Pacientes" [ref=e20] [cursor=pointer]:
+        - /url: /pacientes
+        - img [ref=e22] [cursor=pointer]
+        - text: Pacientes
+      - link "Consultas" [ref=e24] [cursor=pointer]:
+        - /url: /consultas
+        - img [ref=e26] [cursor=pointer]
+        - text: Consultas
+      - link "Estudios" [ref=e28] [cursor=pointer]:
+        - /url: /estudios
+        - img [ref=e30] [cursor=pointer]
+        - text: Estudios
+      - link "Perfil del Médico" [ref=e32] [cursor=pointer]:
+        - /url: /perfil
+        - img [ref=e34] [cursor=pointer]
+        - text: Perfil del Médico
+      - link "Configuración" [ref=e36] [cursor=pointer]:
+        - /url: /configuracion
+        - img [ref=e38] [cursor=pointer]
+        - text: Configuración
+  - main [ref=e40]:
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - paragraph [ref=e46]: Estudios
+          - heading "Estudios" [level=2] [ref=e47]
+          - paragraph [ref=e48]: Adjunta placas y exámenes del paciente.
+        - button "Adjuntar estudio" [ref=e49] [cursor=pointer]
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - generic [ref=e52]: Nombre o DNI
+          - textbox "Nombre o DNI" [ref=e53]
+        - generic [ref=e54]:
+          - generic [ref=e55]: Fecha
+          - textbox "Fecha" [ref=e56]
+      - paragraph [ref=e58]: Sin estudios registrados.
+```
