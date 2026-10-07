@@ -2649,6 +2649,18 @@ La configuración implementada permite que los principales componentes de MAX se
 
 ##### 5.2.1.4. Development Evidence for Sprint Review
 
+Durante el Sprint 1, el equipo realizó la implementación de los primeros componentes de MAX en los repositorios correspondientes al producto. El desarrollo fue registrado mediante commits en GitHub, permitiendo mantener evidencia de los cambios realizados y de la evolución de los diferentes componentes de la solución.
+
+A continuación, se presentan algunos de los principales commits asociados al desarrollo realizado durante esta primera entrega.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
+|---|---|---|---|---|---|
+| LANDING-PAGE | main | `e70c713` | Primera versión de la landing page | Implementación inicial de la Landing Page de MAX. | 2026-09-17 |
+| LANDING-PAGE | main | `120d36b` | Create CNAME | Configuración inicial del dominio para la publicación de la Landing Page. | 2026-09-17 |
+| LANDING-PAGE | main | `e7352a7` | Delete CNAME | Ajuste de la configuración utilizada para la publicación de la Landing Page. | 2026-09-17 |
+| FRONT | main | `63ed173` | Primera versión del frontend de MAX | Incorporación de la primera versión funcional del Frontend Web de MAX. | 2026-09-17 |
+| MOBILE | main | `601fc35` | Primera versión de la aplicación móvil de MAX | Incorporación de la primera versión de la aplicación móvil del producto MAX. | 2026-09-17 |
+
 ##### 5.2.1.5. Execution Evidence for Sprint Review
 ##### 5.2.1.6. Services Documentation Evidence for Sprint Review
 ##### 5.2.1.7. Software Deployment Evidence for Sprint Review
