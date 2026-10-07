@@ -876,19 +876,21 @@ El artefacto responde a cuatro preguntas encadenadas:
 
 #### Business Goals SMART
 
-Los objetivos se formulan bajo criterios SMART (específicos, medibles, alcanzables, relevantes y acotados en el tiempo). Los plazos se definen respecto a la liberación de la primera entrega de la plataforma.
+Los objetivos se formulan bajo criterios SMART (específicos, medibles, alcanzables, relevantes y acotados en el tiempo). Los plazos se definen respecto a la liberación de las entregas de la plataforma.
 
 | ID | Business Goal |
 |---|---|
 | **BG-01** | Garantizar que el **100%** de los accesos a la información de los pacientes se realice mediante sesiones autenticadas y cifradas durante la fase de despliegue inicial. |
 | **BG-02** | Lograr que los médicos participantes registren digitalmente los expedientes base de al menos **50 pacientes** sin recurrir a formatos de papel durante el primer mes de uso. |
 | **BG-03** | Reducir en un **50%** el tiempo que el médico invierte en localizar radiografías y estudios pasados, utilizando la búsqueda digital por DNI, en un plazo de **2 meses**. |
+| **BG-04** | Lograr que el **80%** de las atenciones médicas se programen y documenten a través del módulo de agenda de la plataforma durante el tercer mes de uso, eliminando por completo los cruces de horarios. |
+| **BG-05** | Incrementar la comodidad de uso de la plataforma, logrando que al menos el **60%** de los médicos personalicen la interfaz (tema, idioma o texto) en sus primeras dos semanas, reduciendo la fatiga visual. |
 
 #### Actores considerados
 
 | Actor | Rol respecto de los objetivos |
 |---|---|
-| **Médico de consultorio** | Es el usuario central de la plataforma. Produce la información (registra pacientes y sube placas) y la consume. Su adopción determina si el sistema contiene datos y si se abandona el uso de expedientes físicos. |
+| **Médico de consultorio** | Es el usuario central de la plataforma. Produce la información (registra pacientes, agenda citas, documenta atenciones y sube placas) y la consume. Su adopción determina si el sistema contiene datos centralizados y si se abandona el uso de medios físicos. |
 
 #### Mapa de impacto
 
@@ -901,12 +903,16 @@ Los objetivos se formulan bajo criterios SMART (específicos, medibles, alcanzab
 | **BG-02** | Médico de consultorio | Localiza el expediente de un paciente específico de manera instantánea. | Buscador en tiempo real por DNI o Nombre. | US-08 |
 | **BG-03** | Médico de consultorio | Almacena las placas y resultados médicos en un repositorio digital seguro en la nube. | Módulo de carga de archivos con validación de formatos. | US-12, US-14, TS-04, TS-05 |
 | **BG-03** | Médico de consultorio | Visualiza y filtra los estudios directamente en pantalla sin buscar en carpetas físicas. | Buscador de estudios y previsualizador integrado de PDF/RX. | US-13, US-15 |
+| **BG-04** | Médico de consultorio | Gestiona su disponibilidad de tiempo y programa citas apoyándose en validaciones automáticas. | Módulo de agenda con prevención de colisiones de horarios. | US-16, US-17, US-18, TS-06, TS-07 |
+| **BG-04** | Médico de consultorio | Documenta la atención y vincula el registro clínico directamente con la cita y el paciente. | Registro de consultas e historial clínico estructurado. | US-19, US-20, US-21, US-22 |
+| **BG-05** | Médico de consultorio | Adapta la plataforma a sus necesidades visuales para trabajar de manera más cómoda. | Panel de configuración de preferencias y sistema. | US-23, US-24, US-25, US-26, US-27, TS-08 |
 
 #### Conclusión del Impact Mapping
 
-El mapa evidencia que los objetivos del MVP de MAX dependen de una adopción secuencial por parte del médico de consultorio. El primer cambio (BG-01) es un requisito de seguridad habilitante: el médico debe interiorizar el acceso mediante credenciales. El segundo cambio (BG-02) es la carga inicial de datos; sin expedientes de pacientes, el sistema carece de utilidad. El tercer cambio (BG-03) consolida el valor de la herramienta al centralizar los archivos adjuntos. 
+El mapa evidencia que los objetivos de MAX dependen de una adopción progresiva por parte del médico de consultorio. El primer cambio (BG-01) es un requisito de seguridad habilitante. El segundo cambio (BG-02) representa la carga inicial de datos maestros. El tercer y cuarto cambio (BG-03 y BG-04) consolidan el valor transaccional de la herramienta al centralizar el flujo de trabajo diario: agendar pacientes, atenderlos y revisar sus exámenes de manera integral. Finalmente, el quinto cambio (BG-05) busca la retención a largo plazo mediante la ergonomía digital.
 
-Esta dependencia justifica la priorización reflejada en el Product Backlog: la infraestructura de identidad debe construirse primero, seguida por la gestión de expedientes de pacientes, para finalmente habilitar la vinculación de placas y estudios.
+Esta dependencia justifica la priorización reflejada en el Product Backlog: la infraestructura de identidad debe construirse primero, seguida por la gestión de expedientes y estudios , para finalmente habilitar las interacciones de agenda diaria y la configuración de experiencia de usuario.
+
 
 <img src="assets/ImpactMapping.png" alt="Impact Mapping" width="900">
 
