@@ -1,0 +1,38 @@
+MAX | baseline-landing-build | Landing | 7.1.2
+Fecha America/Lima: 10/07/2026 14:34:58 -05:00
+Commit: e2396fe467b47ea3659802a99d334e13436d2573
+Cambios locales: 0
+Comando: npm.cmd run build
+
+
+> max-landing@0.0.0 build
+> tsc -b && vite build
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 30 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                                 0.71 kB │ gzip:  0.41 kB
+dist/assets/dm-serif-display-latin-400-normal-_kVFYEpx.woff    21.80 kB
+dist/assets/inter-latin-400-normal-C38fXH4l.woff2              23.66 kB
+dist/assets/inter-latin-500-normal-Cerq10X2.woff2              24.27 kB
+dist/assets/inter-latin-600-normal-LgqL8muc.woff2              24.45 kB
+dist/assets/dm-serif-display-latin-400-normal-C5_t9oOD.woff2   24.74 kB
+dist/assets/inter-latin-400-normal-CyCys3Eg.woff               30.69 kB
+dist/assets/inter-latin-600-normal-CiBQ2DWP.woff               31.26 kB
+dist/assets/inter-latin-500-normal-BL9OpVg8.woff               31.28 kB
+dist/assets/index-BxUjQ27h.css                                 21.39 kB │ gzip:  5.16 kB
+dist/assets/index-BPbKeiG8.js                                 240.73 kB │ gzip: 73.38 kB
+
+✓ built in 3.53s
+[PLUGIN_TIMINGS] JavaScript callbacks ran for 3.5s of this 3.5s build (98%).
+The slowest callbacks, timed inside each callback (the wait before a callback starts is excluded, the time it awaits is included):
+  - plugin vite:css transform (54%, 1.9s, 2 calls)
+  - plugin vite:css-post renderChunk (42%, 1.5s, 1 call)
+Additional callback time came from callbacks under 1s.
+See https://rolldown.rs/reference/InputOptions.checks#bundlertimings for more details.
+
+
+Exit code: 0
+Finalizado: 10/07/2026 14:35:13 -05:00

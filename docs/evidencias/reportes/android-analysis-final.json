@@ -1,0 +1,30 @@
+{
+  "id": "android-analysis-final",
+  "component": "Android",
+  "section": "7.1",
+  "command": "C:\\src\\flutter\\bin\\flutter.bat analyze",
+  "workingDirectory": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_MOBILE",
+  "environment": "Local, Windows; datos sintéticos",
+  "startedAt": "2026-10-07T15:30:26.6063138-05:00",
+  "finishedAt": "2026-10-07T15:31:31.3032166-05:00",
+  "commit": "601fc357b9522e8782f8eae3498c7b98c6638673",
+  "uncommittedChanges": [
+    " M .gitignore",
+    " M lib/data/max_api.dart",
+    " M lib/features/shared/study_viewer.dart",
+    " M pubspec.lock",
+    " M pubspec.yaml",
+    "?? .github/",
+    "?? integration_test/",
+    "?? test/iam_test.dart",
+    "?? test/patients_test.dart",
+    "?? test/studies_test.dart",
+    "?? test/study_transport_test.dart",
+    "?? test/study_viewer_test.dart",
+    "?? test/support/",
+    "?? test_driver/"
+  ],
+  "exitCode": 0,
+  "status": "Ejecutado: aprobado",
+  "originalReport": "android-analysis-final.log"
+}

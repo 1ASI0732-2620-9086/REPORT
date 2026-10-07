@@ -1,0 +1,53 @@
+{
+  "unit": {
+    "IAM/Backend": {
+      "executed": 11,
+      "passed": 11
+    },
+    "Studies/Backend": {
+      "executed": 8,
+      "passed": 8
+    },
+    "Patients/Backend": {
+      "executed": 7,
+      "passed": 7
+    },
+    "Patients/Web": {
+      "executed": 10,
+      "passed": 10
+    },
+    "IAM/Web": {
+      "executed": 8,
+      "passed": 8
+    },
+    "Studies/Web": {
+      "executed": 6,
+      "passed": 6
+    },
+    "IAM/Android": {
+      "executed": 5,
+      "passed": 5
+    },
+    "Patients/Android": {
+      "executed": 9,
+      "passed": 9
+    },
+    "Studies/Android": {
+      "executed": 7,
+      "passed": 7
+    }
+  },
+  "otherAndroid": 1,
+  "integrationJUnit": 37,
+  "bdd": 9,
+  "systemWeb": {
+    "startTime": "2026-10-07T20:28:36.779Z",
+    "duration": 20686.091999999997,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "systemAndroidJourneys": 1
+}
+PNG de reportes/configuración: 28

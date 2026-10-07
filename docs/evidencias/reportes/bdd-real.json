@@ -1,0 +1,28 @@
+{
+  "id": "bdd-real",
+  "component": "Web/API/MySQL",
+  "section": "6.1.3",
+  "command": "npm.cmd run test:bdd",
+  "workingDirectory": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX",
+  "environment": "Local, Windows; datos sintéticos",
+  "startedAt": "2026-10-07T15:00:57.6715285-05:00",
+  "finishedAt": "2026-10-07T15:01:29.5432301-05:00",
+  "commit": "63ed173284647024a7612d5a1cf8f8b0290eff35",
+  "uncommittedChanges": [
+    " M .gitignore",
+    " M package-lock.json",
+    " M package.json",
+    " M playwright.config.ts",
+    "?? bdd/",
+    "?? cucumber.cjs",
+    "?? e2e-system/",
+    "?? playwright.system.config.ts",
+    "?? proxy.evidence.json",
+    "?? src/app/contexts/estudios/application/estudios.store.spec.ts",
+    "?? src/app/contexts/estudios/infrastructure/estudios.api-client.spec.ts",
+    "?? src/app/core/state/clinical-data.service.spec.ts"
+  ],
+  "exitCode": 0,
+  "status": "Ejecutado: aprobado",
+  "originalReport": "bdd-real.log"
+}

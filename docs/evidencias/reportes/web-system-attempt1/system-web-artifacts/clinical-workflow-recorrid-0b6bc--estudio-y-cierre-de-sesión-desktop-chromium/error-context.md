@@ -1,0 +1,44 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e5]:
+  - generic [ref=e6]:
+    - heading "MAX" [level=1] [ref=e7]
+    - paragraph [ref=e8]: Acceso seguro y rápido para gestionar pacientes, consultas y estudios.
+    - list [ref=e9]:
+      - listitem [ref=e10]: "*Historial clínico en un solo lugar."
+      - listitem [ref=e11]: "*Gestión rápida de pacientes y citas."
+      - listitem [ref=e12]: "*Carga de imágenes y estudios."
+    - button "Idioma" [ref=e14] [cursor=pointer]: ES
+  - generic [ref=e16]:
+    - generic [ref=e17]:
+      - heading "Crear cuenta" [level=2] [ref=e18]
+      - paragraph [ref=e19]: Registro interno para el médico.
+    - generic [ref=e20]: Credenciales incorrectas.
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]: Nombres
+          - textbox "Nombres" [ref=e25]: Doctor
+        - generic [ref=e26]:
+          - generic [ref=e27]: Apellidos
+          - textbox "Apellidos" [ref=e28]: Prueba
+      - generic [ref=e29]:
+        - generic [ref=e30]: Correo
+        - textbox "Correo" [ref=e31]: system-bb855b7a-3252-4ac4-90e1-18aaf97a0370@example.test
+      - generic [ref=e32]:
+        - generic [ref=e33]: Contraseña
+        - generic [ref=e34]:
+          - textbox "Contraseña Contraseña Usa al menos 9 caracteres, una mayúscula, un número y un signo, sin espacios." [ref=e35]: SyntheticOnly#123
+          - button "Contraseña" [ref=e36] [cursor=pointer]:
+            - img [ref=e37] [cursor=pointer]
+        - generic [ref=e40]: Usa al menos 9 caracteres, una mayúscula, un número y un signo, sin espacios.
+      - generic [ref=e41]:
+        - generic [ref=e42]: Confirmar contraseña
+        - generic [ref=e43]:
+          - textbox "Confirmar contraseña Confirmar contraseña" [ref=e44]: SyntheticOnly#123
+          - button "Confirmar contraseña" [ref=e45] [cursor=pointer]:
+            - img [ref=e46] [cursor=pointer]
+      - button "Registrarme" [ref=e49] [cursor=pointer]
+    - button "¿Ya tienes cuenta? Inicia sesión" [ref=e50] [cursor=pointer]
+```

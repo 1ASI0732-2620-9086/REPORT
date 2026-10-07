@@ -1,0 +1,37 @@
+MAX | web-expanded-unit | Web | 6.1.1
+Fecha America/Lima: 10/07/2026 14:55:16 -05:00
+Commit: 63ed173284647024a7612d5a1cf8f8b0290eff35
+Cambios locales: 8
+Comando: npm.cmd test -- --watch=false --reporters=json --output-file=reports/web-vitest.json
+
+
+> max@0.0.0 test
+> ng test --watch=false --reporters=json --output-file=reports/web-vitest.json
+
+> Building...
+√ Building...
+Initial chunk files                                                 | Names                                                            |  Raw size
+spec-app-core-state-clinical-data.service.js                        | spec-app-core-state-clinical-data.service                        |  15.78 kB | 
+styles.css                                                          | styles                                                           |  13.03 kB | 
+chunk-JBWBLPNK.js                                                   | -                                                                |   5.19 kB | 
+chunk-OY3FK7DP.js                                                   | -                                                                |   4.87 kB | 
+chunk-6VWIWFSO.js                                                   | -                                                                |   2.79 kB | 
+spec-app-contexts-estudios-infrastructure-estudios.api-client.js    | spec-app-contexts-estudios-infrastructure-estudios.api-client    |   2.30 kB | 
+spec-app-contexts-pacientes-application-patient-input.validation.js | spec-app-contexts-pacientes-application-patient-input.validation |   2.13 kB | 
+spec-app-core-validation-password.validation.js                     | spec-app-core-validation-password.validation                     |   2.03 kB | 
+spec-app-contexts-estudios-application-estudios.store.js            | spec-app-contexts-estudios-application-estudios.store            |   2.02 kB | 
+chunk-75Q2OMWJ.js                                                   | -                                                                |   1.99 kB | 
+spec-app-contexts-pacientes-application-pacientes.store.js          | spec-app-contexts-pacientes-application-pacientes.store          |   1.33 kB | 
+spec-app-core-validation-search-input.validation.js                 | spec-app-core-validation-search-input.validation                 |   1.25 kB | 
+init-testbed.js                                                     | init-testbed                                                     |   1.21 kB | 
+spec-app-contexts-usuarios-application-auth-store.js                | spec-app-contexts-usuarios-application-auth-store                |   1.13 kB | 
+vitest-mock-patch.js                                                | vitest-mock-patch                                                | 974 bytes | 
+
+                                                                    | Initial total                                                    |  58.02 kB
+
+Application bundle generation complete. [1.614 seconds] - 2026-10-07T19:55:19.232Z
+
+JSON report written to C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_FRONT/MAX/reports/web-vitest.json
+
+Exit code: 0
+Finalizado: 10/07/2026 14:55:21 -05:00

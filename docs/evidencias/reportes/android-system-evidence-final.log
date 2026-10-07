@@ -1,0 +1,362 @@
+MAX | android-system-evidence-final | Android | 6.1.4.2
+Fecha America/Lima: 10/07/2026 15:31:55 -05:00
+Commit: 601fc357b9522e8782f8eae3498c7b98c6638673
+Cambios locales: 14
+Comando: C:\src\flutter\bin\flutter.bat drive --driver=test_driver/integration_test.dart --target=integration_test/max_system_test.dart -d emulator-5554 --dart-define=API_BASE_URL=http://10.0.2.2:18080/api
+
+Resolving dependencies...
+Downloading packages...
+  android_file_picker 2.0.0 (2.0.1 available)
+  clock 1.1.2 (1.1.3 available)
+  code_assets 1.2.1 (2.1.0 available)
+  cross_file 0.3.5+5 (0.4.0 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  dbus 0.7.15 (0.8.0 available)
+  file_picker_darwin 2.1.0 (2.1.2 available)
+  file_picker_linux 2.0.0 (2.0.2 available)
+  file_picker_web 4.0.0 (4.0.1 available)
+  hooks 2.0.2 (2.2.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_android 0.8.13+17 (0.8.13+25 available)
+  image_picker_ios 0.8.13+7 (0.8.13+9 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  jni 1.0.3 (1.1.0 available)
+  jni_flutter 1.0.3 (1.0.4+1 available)
+  matcher 0.12.19 (0.12.20 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.17.0 (1.19.0 available)
+  objective_c 9.5.0 (9.6.2 available)
+  petitparser 7.0.2 (7.1.0 available)
+  platform 3.1.6 (3.2.0 available)
+  record_use 0.6.0 (1.1.1 available)
+  shared_preferences 2.5.5 (2.5.6 available)
+  shared_preferences_android 2.4.23 (2.4.28 available)
+  stack_trace 1.12.1 (1.12.2 available)
+  test_api 0.7.10 (0.7.14 available)
+  url_launcher 6.3.2 (6.3.3 available)
+  url_launcher_android 6.3.30 (6.3.33 available)
+  vector_math 2.2.0 (2.4.3 available)
+  windows_file_picker 2.0.0 (2.0.1 available)
+  xml 7.0.1 (7.1.0 available)
+Got dependencies!
+32 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Running Gradle task 'assembleDebug'...                             11.3s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...          706ms
+I/Gralloc4( 6386): mapper 4.x is not supported
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:59502/WJzbALyEgSU=/
+VMServiceFlutterDriver: Isolate found with number: 6006415457606239
+VMServiceFlutterDriver: Isolate 6006415457606239 is runnable.
+VMServiceFlutterDriver: Isolate is paused at start.
+VMServiceFlutterDriver: Attempting to resume isolate
+I/flutter ( 6386): 00:00 +0: Android real: IAM, paciente, edición, estudio y logout
+VMServiceFlutterDriver: Connected to Flutter application.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/EGL_emulation( 6386): app_time_stats: avg=927.36ms min=309.90ms max=1999.89ms count=4
+D/ProfileInstaller( 6386): Installing profile for com.max.max_mobile
+I/ImeTracker( 6386): com.max.max_mobile:e5496a4d: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F....ID 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 6386): com.max.max_mobile:a41173d4: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F....ID 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/EGL_emulation( 6386): app_time_stats: avg=104.18ms min=20.64ms max=183.74ms count=10
+VMServiceFlutterDriver: request_data message is taking a long time to complete...
+D/InsetsController( 6386): show(ime(), fromIme=true)
+I/ImeTracker( 6386): com.max.max_mobile:f9b62878: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 6386): com.max.max_mobile:a17ca6d0: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+I/ImeTracker( 6386): com.max.max_mobile:90148e9d: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 6386): com.max.max_mobile:e0b317c4: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+I/ImeTracker( 6386): com.max.max_mobile:2e2b2d08: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 6386): com.max.max_mobile:43a9697d: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+I/ImeTracker( 6386): com.max.max_mobile:a41173d4: onShown
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+I/ImeTracker( 6386): com.max.max_mobile:532dfed2: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 6386): com.max.max_mobile:87d76960: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getCursorCapsMode on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+D/EGL_emulation( 6386): app_time_stats: avg=85.95ms min=10.01ms max=236.12ms count=12
+W/RemoteInputConnectionImpl( 6386): getCursorCapsMode on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+D/InsetsController( 6386): show(ime(), fromIme=true)
+I/ImeTracker( 6386): com.max.max_mobile:f9b62878: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/InsetsController( 6386): show(ime(), fromIme=true)
+I/ImeTracker( 6386): com.max.max_mobile:a17ca6d0: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+D/InsetsController( 6386): show(ime(), fromIme=true)
+I/ImeTracker( 6386): com.max.max_mobile:90148e9d: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/InsetsController( 6386): show(ime(), fromIme=true)
+I/ImeTracker( 6386): com.max.max_mobile:e0b317c4: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+D/InsetsController( 6386): show(ime(), fromIme=true)
+I/ImeTracker( 6386): com.max.max_mobile:2e2b2d08: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/InsetsController( 6386): show(ime(), fromIme=true)
+I/ImeTracker( 6386): com.max.max_mobile:43a9697d: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/InsetsController( 6386): show(ime(), fromIme=true)
+I/ImeTracker( 6386): com.max.max_mobile:532dfed2: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/InsetsController( 6386): show(ime(), fromIme=true)
+I/ImeTracker( 6386): com.max.max_mobile:87d76960: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/EGL_emulation( 6386): app_time_stats: avg=130.69ms min=113.73ms max=147.56ms count=8
+I/ImeTracker( 6386): com.max.max_mobile:681e72c4: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+D/EGL_emulation( 6386): app_time_stats: avg=928.42ms min=55.97ms max=4376.22ms count=8
+W/WindowOnBackDispatcher( 6386): sendCancelIfRunning: isInProgress=falsecallback=ImeCallback=ImeOnBackInvokedCallback@75983171 Callback=android.window.IOnBackInvokedCallback$Stub$Proxy@136d1e6
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/EGL_emulation( 6386): app_time_stats: avg=180.23ms min=113.98ms max=396.48ms count=6
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+I/ImeTracker( 6386): com.max.max_mobile:89ba21bf: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
+I/ImeTracker( 6386): com.max.max_mobile:681e72c4: onHidden
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/EGL_emulation( 6386): app_time_stats: avg=116.16ms min=8.18ms max=315.50ms count=9
+W/WindowOnBackDispatcher( 6386): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 6386): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/ImeTracker( 6386): com.max.max_mobile:9e7e4a58: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 6386): com.max.max_mobile:7e645b53: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/EGL_emulation( 6386): app_time_stats: avg=106.92ms min=47.01ms max=243.51ms count=10
+D/InsetsController( 6386): show(ime(), fromIme=true)
+D/InsetsController( 6386): show(ime(), fromIme=true)
+I/ImeTracker( 6386): com.max.max_mobile:7e645b53: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+I/ImeTracker( 6386): com.max.max_mobile:be5c5ec9: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 6386): com.max.max_mobile:12e43ff2: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/EGL_emulation( 6386): app_time_stats: avg=130.98ms min=3.87ms max=2201.48ms count=19
+W/FrameTracker( 6386): Missed SF frame:UNKNOWN: 80, 83912, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:UNKNOWN: 80, 83934, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:UNKNOWN: 80, 83956, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:UNKNOWN: 80, 83971, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:UNKNOWN: 80, 83979, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed App frame:UNKNOWN: 88, 83994, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:UNKNOWN: 88, 83994, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:PREDICTION_ERROR, 84003, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:PREDICTION_ERROR, 84018, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:PREDICTION_ERROR, 84033, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:PREDICTION_ERROR, 84055, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:PREDICTION_ERROR, 84077, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:PREDICTION_ERROR, 84099, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:PREDICTION_ERROR, 84114, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:UNKNOWN: 80, 84136, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:UNKNOWN: 80, 84151, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:UNKNOWN: 80, 84173, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 6386): Missed SF frame:UNKNOWN: 80, 84195, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+V/PerfettoTrigger( 6386): Triggering /system/bin/trigger_perfetto com.android.telemetry.interaction-jank-monitor-69
+I/ImeTracker( 6386): com.max.max_mobile:eda30dde: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 6386): com.max.max_mobile:a1085a35: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+I/ImeTracker( 6386): com.max.max_mobile:eaa4bf2: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+I/ImeTracker( 6386): com.max.max_mobile:9e7e4a58: onShown
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+W/RemoteInputConnectionImpl( 6386): getCursorCapsMode on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getCursorCapsMode on inactive InputConnection
+W/RemoteInputConnectionImpl( 6386): getSurroundingText on inactive InputConnection
+D/InsetsController( 6386): show(ime(), fromIme=true)
+I/ImeTracker( 6386): com.max.max_mobile:be5c5ec9: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/InsetsController( 6386): show(ime(), fromIme=true)
+I/ImeTracker( 6386): com.max.max_mobile:12e43ff2: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/InsetsController( 6386): show(ime(), fromIme=true)
+I/ImeTracker( 6386): com.max.max_mobile:a1085a35: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+W/WindowOnBackDispatcher( 6386): sendCancelIfRunning: isInProgress=falsecallback=ImeCallback=ImeOnBackInvokedCallback@75983171 Callback=android.window.IOnBackInvokedCallback$Stub$Proxy@ae4c6db
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/EGL_emulation( 6386): app_time_stats: avg=103.31ms min=54.60ms max=181.50ms count=10
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/EGL_emulation( 6386): app_time_stats: avg=50.89ms min=4.52ms max=338.16ms count=19
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+I/ImeTracker( 6386): com.max.max_mobile:d67ce381: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
+I/ImeTracker( 6386): com.max.max_mobile:eaa4bf2: onHidden
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/EGL_emulation( 6386): app_time_stats: avg=201.04ms min=112.68ms max=467.36ms count=5
+D/EGL_emulation( 6386): app_time_stats: avg=70.47ms min=8.62ms max=149.79ms count=15
+I/ImeTracker( 6386): com.max.max_mobile:33d13487: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 6386): com.max.max_mobile:128343eb: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController( 6386): show(ime(), fromIme=true)
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/EGL_emulation( 6386): app_time_stats: avg=553.92ms min=17.93ms max=2132.57ms count=4
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+I/ImeTracker( 6386): com.max.max_mobile:128343eb: onShown
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/EGL_emulation( 6386): app_time_stats: avg=100.18ms min=21.51ms max=163.28ms count=11
+D/EGL_emulation( 6386): app_time_stats: avg=116.19ms min=108.47ms max=119.57ms count=9
+I/ImeTracker( 6386): com.max.max_mobile:cd87c16f: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/EGL_emulation( 6386): app_time_stats: avg=117.07ms min=3.44ms max=1623.83ms count=17
+W/WindowOnBackDispatcher( 6386): sendCancelIfRunning: isInProgress=falsecallback=ImeCallback=ImeOnBackInvokedCallback@75983171 Callback=android.window.IOnBackInvokedCallback$Stub$Proxy@2db2a49
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+E/FrameTracker( 6386): force finish cuj, time out: J<IME_INSETS_ANIMATION::0@1@com.max.max_mobile>
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+I/ImeTracker( 6386): com.max.max_mobile:f40703c8: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
+I/ImeTracker( 6386): com.max.max_mobile:cd87c16f: onHidden
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/EGL_emulation( 6386): app_time_stats: avg=284.05ms min=111.02ms max=711.79ms count=6
+W/WindowOnBackDispatcher( 6386): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 6386): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/EGL_emulation( 6386): app_time_stats: avg=80.18ms min=14.71ms max=118.17ms count=13
+I/ImeTracker( 6386): com.max.max_mobile:b18a92ed: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 6386): com.max.max_mobile:960c201: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 6386): showSoftInput() view=io.flutter.embedding.android.FlutterView{2037f44 VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController( 6386): show(ime(), fromIme=true)
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/EGL_emulation( 6386): app_time_stats: avg=314.38ms min=8.95ms max=2503.85ms count=9
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+I/ImeTracker( 6386): com.max.max_mobile:960c201: onShown
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/EGL_emulation( 6386): app_time_stats: avg=100.53ms min=50.97ms max=162.69ms count=10
+I/ImeTracker( 6386): com.max.max_mobile:46082732: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+D/EGL_emulation( 6386): app_time_stats: avg=133.86ms min=111.15ms max=256.28ms count=8
+W/WindowOnBackDispatcher( 6386): sendCancelIfRunning: isInProgress=falsecallback=ImeCallback=ImeOnBackInvokedCallback@75983171 Callback=android.window.IOnBackInvokedCallback$Stub$Proxy@46172
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/EGL_emulation( 6386): app_time_stats: avg=185.15ms min=8.30ms max=1548.53ms count=10
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+I/ImeTracker( 6386): com.max.max_mobile:9ad7ea59: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
+I/ImeTracker( 6386): com.max.max_mobile:46082732: onHidden
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+E/FrameTracker( 6386): force finish cuj, time out: J<IME_INSETS_ANIMATION::0@1@com.max.max_mobile>
+E/FrameTracker( 6386): force finish cuj, time out: J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+D/EGL_emulation( 6386): app_time_stats: avg=301.91ms min=116.85ms max=759.99ms count=5
+D/EGL_emulation( 6386): app_time_stats: avg=82.42ms min=16.67ms max=117.23ms count=13
+D/CompatibilityChangeReporter( 6386): Compat change id reported: 236825255; UID 10201; state: ENABLED
+D/EGL_emulation( 6386): app_time_stats: avg=157.48ms min=4.70ms max=2785.27ms count=19
+W/WindowOnBackDispatcher( 6386): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 6386): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+E/FrameTracker( 6386): force finish cuj, time out: J<IME_INSETS_ANIMATION::0@1@com.max.max_mobile>
+D/EGL_emulation( 6386): app_time_stats: avg=122.82ms min=12.94ms max=315.10ms count=10
+D/EGL_emulation( 6386): app_time_stats: avg=1023.55ms min=158.75ms max=1888.35ms count=2
+D/FlutterJNI( 6386): Sending viewport metrics to the engine.
+D/EGL_emulation( 6386): app_time_stats: avg=97.80ms min=6.23ms max=125.07ms count=11
+E/FrameTracker( 6386): force finish cuj, time out: J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+D/EGL_emulation( 6386): app_time_stats: avg=77.37ms min=12.57ms max=155.64ms count=13
+D/EGL_emulation( 6386): app_time_stats: avg=120.50ms min=112.32ms max=148.76ms count=9
+I/flutter ( 6386): 00:28 +1: (tearDownAll)
+I/flutter ( 6386): 00:28 +2: All tests passed!
+D/EGL_emulation( 6386): app_time_stats: avg=3349.53ms min=3349.53ms max=3349.53ms count=1
+All tests passed.
+
+Exit code: 0
+Finalizado: 10/07/2026 15:32:45 -05:00

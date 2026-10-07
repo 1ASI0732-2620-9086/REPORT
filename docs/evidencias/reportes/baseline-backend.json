@@ -1,0 +1,15 @@
+{
+  "id": "baseline-backend",
+  "component": "Backend",
+  "section": "6.1",
+  "command": ".\\mvnw.cmd -B verify",
+  "workingDirectory": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_BACK\\max-backend",
+  "environment": "Local, Windows; datos sintéticos",
+  "startedAt": "2026-10-07T14:34:56.5650601-05:00",
+  "finishedAt": "2026-10-07T14:36:07.6279581-05:00",
+  "commit": "17e93c08b92cad83fdb4ea232b06c21eb70c260f",
+  "uncommittedChanges": [],
+  "exitCode": 0,
+  "status": "Ejecutado: aprobado",
+  "originalReport": "baseline-backend.log"
+}

@@ -1,0 +1,92 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]: MAX
+      - generic [ref=e8]: Medical Assistance eXpert
+    - generic [ref=e9]:
+      - generic [ref=e10]: Panel clínico
+      - strong [ref=e11]: Bienvenido, Doctor!
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e14]: DP
+        - generic [ref=e15]:
+          - paragraph [ref=e16]: Doctor Prueba
+          - paragraph [ref=e17]: Médico
+      - button "Salir" [ref=e18] [cursor=pointer]
+  - complementary [ref=e19]:
+    - navigation [ref=e20]:
+      - link "Inicio" [ref=e21] [cursor=pointer]:
+        - /url: /inicio
+        - img [ref=e23] [cursor=pointer]
+        - text: Inicio
+      - link "Pacientes" [ref=e25] [cursor=pointer]:
+        - /url: /pacientes
+        - img [ref=e27] [cursor=pointer]
+        - text: Pacientes
+      - link "Consultas" [ref=e29] [cursor=pointer]:
+        - /url: /consultas
+        - img [ref=e31] [cursor=pointer]
+        - text: Consultas
+      - link "Estudios" [ref=e33] [cursor=pointer]:
+        - /url: /estudios
+        - img [ref=e35] [cursor=pointer]
+        - text: Estudios
+      - link "Perfil del Médico" [ref=e37] [cursor=pointer]:
+        - /url: /perfil
+        - img [ref=e39] [cursor=pointer]
+        - text: Perfil del Médico
+      - link "Configuración" [ref=e41] [cursor=pointer]:
+        - /url: /configuracion
+        - img [ref=e43] [cursor=pointer]
+        - text: Configuración
+    - generic [ref=e45]: Sistema activo
+  - main [ref=e47]:
+    - generic [ref=e49]:
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - paragraph [ref=e53]: Estudios
+            - heading "Estudios" [level=2] [ref=e54]
+            - paragraph [ref=e55]: Adjunta placas y exámenes del paciente.
+          - button "Adjuntar estudio" [ref=e56] [cursor=pointer]
+        - generic [ref=e57]:
+          - generic [ref=e58]:
+            - generic [ref=e59]: Nombre o DNI
+            - textbox "Nombre o DNI" [ref=e60]
+          - generic [ref=e61]:
+            - generic [ref=e62]: Fecha
+            - textbox "Fecha" [ref=e63]
+        - article [ref=e65]:
+          - generic [ref=e66]:
+            - generic [ref=e67]:
+              - paragraph [ref=e68]: Ana Sintetica
+              - paragraph [ref=e69]: "DNI: 22388316"
+            - generic [ref=e70]: RX
+          - generic [ref=e71]:
+            - generic [ref=e72]:
+              - generic [ref=e73]: Fecha y hora
+              - strong [ref=e74]: 07/10/2026, 03:22 p. m.
+            - generic [ref=e75]:
+              - generic [ref=e76]: Consulta asociada
+              - strong [ref=e77]: "--"
+            - generic [ref=e78]:
+              - generic [ref=e79]: Descripción
+              - strong [ref=e80]: Imagen sintética de prueba
+          - generic [ref=e81]:
+            - img "sintetica.png" [ref=e82]
+            - button "Ver" [ref=e83] [cursor=pointer]
+      - dialog [ref=e84]:
+        - generic [ref=e86]:
+          - generic [ref=e87]:
+            - generic [ref=e88]:
+              - paragraph [ref=e89]: Estudios
+              - heading "sintetica.png" [level=3] [ref=e90]
+            - button "x" [active] [ref=e91] [cursor=pointer]
+          - img "sintetica.png" [ref=e94]
+          - generic [ref=e95]:
+            - button "Cancelar" [ref=e96] [cursor=pointer]
+            - button "Ver en pestaña" [ref=e97] [cursor=pointer]
+```

@@ -1,0 +1,809 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "iam---acceso-a-max;credenciales-válidas-permiten-consultar-la-identidad",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Credenciales válidas permiten consultar la identidad",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4632600
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 373691299
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "una cuenta médica registrada",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:36"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 172139500
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "inicio sesión con la contraseña correcta",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:44"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1864400
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "recibo estado HTTP 200",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:62"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 17670699
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "puedo consultar mi identidad",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:63"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1618199
+            },
+            "keyword": "After",
+            "hidden": true,
+            "embeddings": [
+              {
+                "data": "eyJlbmRwb2ludCI6Ii9hcGkvYXV0aC9sb2dpbiIsInN0YXR1cyI6MjAwLCJiYWNrZW5kIjoiaHR0cDovLzEyNy4wLjAuMToxODA4MCJ9",
+                "mime_type": "application/json"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US-01",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "iam---acceso-a-max;credenciales-incorrectas-son-rechazadas",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Credenciales incorrectas son rechazadas",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 439099
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 87975900
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "una cuenta médica registrada",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:36"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 118845300
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "inicio sesión con una contraseña incorrecta",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:48"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 452299
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "recibo estado HTTP 401",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:62"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 282100
+            },
+            "keyword": "After",
+            "hidden": true,
+            "embeddings": [
+              {
+                "data": "eyJlbmRwb2ludCI6Ii9hcGkvYXV0aC9sb2dpbiIsInN0YXR1cyI6NDAxLCJiYWNrZW5kIjoiaHR0cDovLzEyNy4wLjAuMToxODA4MCJ9",
+                "mime_type": "application/json"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US-01",
+            "line": 9
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "iam---acceso-a-max;login-sin-csrf-es-rechazado",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "Login sin CSRF es rechazado",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 375100
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 94458099
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 17,
+            "name": "una cuenta médica registrada",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:36"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 22138500
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "envío login sin token CSRF",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:52"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 456400
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "recibo estado HTTP 403",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:62"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 519599
+            },
+            "keyword": "After",
+            "hidden": true,
+            "embeddings": [
+              {
+                "data": "eyJlbmRwb2ludCI6Ii9hcGkvYXV0aC9sb2dpbiIsInN0YXR1cyI6NDAzLCJiYWNrZW5kIjoiaHR0cDovLzEyNy4wLjAuMToxODA4MCJ9",
+                "mime_type": "application/json"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@security-csrf",
+            "line": 15
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "iam---acceso-a-max",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "IAM - acceso a MAX",
+    "tags": [],
+    "uri": "bdd\\features\\iam.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "patients---persistencia-de-pacientes;registrar-y-consultar-un-paciente",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Registrar y consultar un paciente",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 497500
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 91203199
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "una cuenta médica registrada",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:36"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 84049600
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "registro un paciente con datos válidos",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:53"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 275000
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "recibo estado HTTP 201",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:62"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 23249400
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "el listado contiene al paciente con su DNI",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:64"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 62078400
+            },
+            "keyword": "After",
+            "hidden": true,
+            "embeddings": [
+              {
+                "data": "eyJlbmRwb2ludCI6Ii9hcGkvcGFjaWVudGVzIiwic3RhdHVzIjoyMDEsImJhY2tlbmQiOiJodHRwOi8vMTI3LjAuMC4xOjE4MDgwIn0=",
+                "mime_type": "application/json"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US-06",
+            "line": 2
+          },
+          {
+            "name": "@US-08",
+            "line": 2
+          },
+          {
+            "name": "@US-09",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "patients---persistencia-de-pacientes;editar-mantiene-identidad-y-datos-actualizados",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Editar mantiene identidad y datos actualizados",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 448300
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 108258799
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "un paciente registrado por mi cuenta",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 31623599
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "actualizo sus observaciones con la versión vigente",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:54"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 294200
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "recibo estado HTTP 200",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:62"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 13155300
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "una nueva consulta conserva el ID y las observaciones",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:65"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 27251100
+            },
+            "keyword": "After",
+            "hidden": true,
+            "embeddings": [
+              {
+                "data": "eyJlbmRwb2ludCI6Ii9hcGkvcGFjaWVudGVzLzMwIiwic3RhdHVzIjoyMDAsImJhY2tlbmQiOiJodHRwOi8vMTI3LjAuMC4xOjE4MDgwIn0=",
+                "mime_type": "application/json"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US-10",
+            "line": 9
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "patients---persistencia-de-pacientes;otra-cuenta-no-puede-modificar-mi-paciente",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Otra cuenta no puede modificar mi paciente",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 384200
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 194095999
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "un paciente registrado por otra cuenta",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:38"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 23478900
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "intento modificar ese paciente",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:55"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 432199
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "recibo estado HTTP 404",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:62"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 396400
+            },
+            "keyword": "After",
+            "hidden": true,
+            "embeddings": [
+              {
+                "data": "eyJlbmRwb2ludCI6Ii9hcGkvcGFjaWVudGVzLzMxIiwic3RhdHVzIjo0MDQsImJhY2tlbmQiOiJodHRwOi8vMTI3LjAuMC4xOjE4MDgwIn0=",
+                "mime_type": "application/json"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@security-owner",
+            "line": 16
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "patients---persistencia-de-pacientes",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Patients - persistencia de pacientes",
+    "tags": [],
+    "uri": "bdd\\features\\patients.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "studies---documentos-del-paciente;adjuntar-y-recuperar-un-pdf-permitido",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Adjuntar y recuperar un PDF permitido",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 337100
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 95989499
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "un paciente registrado por mi cuenta",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 80969699
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "adjunto un PDF sintético válido",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:59"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 348699
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "recibo estado HTTP 201",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:62"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 17434799
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "puedo recuperar exactamente los bytes del estudio",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:66"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 27324300
+            },
+            "keyword": "After",
+            "hidden": true,
+            "embeddings": [
+              {
+                "data": "eyJlbmRwb2ludCI6Ii9hcGkvZXN0dWRpb3MiLCJzdGF0dXMiOjIwMSwiYmFja2VuZCI6Imh0dHA6Ly8xMjcuMC4wLjE6MTgwODAifQ==",
+                "mime_type": "application/json"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US-12",
+            "line": 2
+          },
+          {
+            "name": "@US-15",
+            "line": 2
+          },
+          {
+            "name": "@TS-04",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "studies---documentos-del-paciente;rechazar-extensión-no-admitida",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Rechazar extensión no admitida",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 338899
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 103757300
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "un paciente registrado por mi cuenta",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:37"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 31491899
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "adjunto un archivo con extensión exe",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:60"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 456500
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "recibo estado HTTP 400",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:62"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 18976900
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "ningún estudio fue persistido",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:67"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 37521400
+            },
+            "keyword": "After",
+            "hidden": true,
+            "embeddings": [
+              {
+                "data": "eyJlbmRwb2ludCI6Ii9hcGkvZXN0dWRpb3MiLCJzdGF0dXMiOjQwMCwiYmFja2VuZCI6Imh0dHA6Ly8xMjcuMC4wLjE6MTgwODAifQ==",
+                "mime_type": "application/json"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@TS-05",
+            "line": 9
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "studies---documentos-del-paciente;rechazar-paciente-inexistente",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Rechazar paciente inexistente",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 412000
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 74072000
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "una cuenta médica registrada",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:36"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 31244299
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "adjunto un PDF a un paciente inexistente",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:61"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 374900
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "recibo estado HTTP 404",
+            "match": {
+              "location": "bdd\\steps\\max.steps.cjs:62"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 312799
+            },
+            "keyword": "After",
+            "hidden": true,
+            "embeddings": [
+              {
+                "data": "eyJlbmRwb2ludCI6Ii9hcGkvZXN0dWRpb3MiLCJzdGF0dXMiOjQwNCwiYmFja2VuZCI6Imh0dHA6Ly8xMjcuMC4wLjE6MTgwODAifQ==",
+                "mime_type": "application/json"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@study-association",
+            "line": 16
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "studies---documentos-del-paciente",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Studies - documentos del paciente",
+    "tags": [],
+    "uri": "bdd\\features\\studies.feature"
+  }
+]

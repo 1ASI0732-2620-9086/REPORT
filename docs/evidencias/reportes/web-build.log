@@ -1,0 +1,56 @@
+MAX | web-build | Web | 7.1
+Fecha America/Lima: 10/07/2026 15:29:46 -05:00
+Commit: 63ed173284647024a7612d5a1cf8f8b0290eff35
+Cambios locales: 13
+Comando: npm.cmd run build
+
+
+> max@0.0.0 build
+> ng build
+
+> Building...
+√ Building...
+Initial chunk files | Names                   |  Raw size | Estimated transfer size
+chunk-OARZI64D.js   | -                       | 174.11 kB |                49.42 kB
+chunk-BK5PUPPG.js   | -                       |  91.86 kB |                21.97 kB
+main-W2Q4XBWS.js    | main                    |  74.79 kB |                20.33 kB
+chunk-SWOSJCSS.js   | -                       |  59.48 kB |                14.86 kB
+chunk-4WT3OXB2.js   | -                       |  30.60 kB |                 7.44 kB
+styles-YEYSY3AP.css | styles                  |  10.32 kB |                 2.78 kB
+chunk-CFXQID3T.js   | -                       |   1.05 kB |               432 bytes
+
+                    | Initial total           | 442.22 kB |               117.22 kB
+
+Lazy chunk files    | Names                   |  Raw size | Estimated transfer size
+chunk-E22ZHSYL.js   | pacientes-component     |  38.66 kB |                 8.23 kB
+chunk-HZO5WUAJ.js   | consultas-component     |  31.97 kB |                 6.35 kB
+chunk-PLILQNBB.js   | -                       |  15.63 kB |                 3.35 kB
+chunk-OZRWAGDU.js   | perfil-component        |  14.90 kB |                 3.57 kB
+chunk-PQRG3NPQ.js   | admin-component         |  13.25 kB |                 3.70 kB
+chunk-DPOCNJBH.js   | auth-component          |  12.61 kB |                 3.11 kB
+chunk-PAJDQN2U.js   | dashboard-component     |  12.35 kB |                 3.24 kB
+chunk-UWCH56XT.js   | estudios-component      |  10.74 kB |                 3.06 kB
+chunk-TXG7SQJQ.js   | shell-component         |  10.56 kB |                 2.99 kB
+chunk-PFHWYCHK.js   | -                       |   9.92 kB |                 3.18 kB
+chunk-D7GBZ6GH.js   | -                       |   9.28 kB |                 2.67 kB
+chunk-5D56YB3E.js   | -                       |   7.04 kB |                 2.16 kB
+chunk-QUHU5HN5.js   | configuracion-component |   5.81 kB |                 1.54 kB
+chunk-XSQV5F2M.js   | not-found-component     |   1.78 kB |               761 bytes
+chunk-4T7Y6HDO.js   | -                       | 835 bytes |               835 bytes
+
+Application bundle generation complete. [5.161 seconds] - 2026-10-07T20:29:53.298Z
+
+▲ [WARNING] src/app/layouts/shell/shell.component.css exceeded maximum budget. Budget 4.00 kB was not met by 948 bytes with a total of 4.95 kB.
+
+
+▲ [WARNING] src/app/features/pacientes/pacientes.component.css exceeded maximum budget. Budget 4.00 kB was not met by 174 bytes with a total of 4.17 kB.
+
+
+▲ [WARNING] src/app/features/consultas/consultas.component.css exceeded maximum budget. Budget 4.00 kB was not met by 2.68 kB with a total of 6.68 kB.
+
+
+Output location: C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_FRONT\MAX\dist\MAX
+
+
+Exit code: 0
+Finalizado: 10/07/2026 15:29:53 -05:00

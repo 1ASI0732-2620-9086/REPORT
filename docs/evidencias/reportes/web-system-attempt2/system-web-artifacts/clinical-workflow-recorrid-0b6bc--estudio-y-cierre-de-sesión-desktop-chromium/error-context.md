@@ -1,0 +1,62 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]: MAX
+      - generic [ref=e8]: Medical Assistance eXpert
+    - generic [ref=e9]:
+      - generic [ref=e10]: Panel clínico
+      - strong [ref=e11]: Bienvenido, Doctor!
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e14]: DP
+        - generic [ref=e15]:
+          - paragraph [ref=e16]: Doctor Prueba
+          - paragraph [ref=e17]: Médico
+      - button "Salir" [ref=e18] [cursor=pointer]
+  - complementary [ref=e19]:
+    - navigation [ref=e20]:
+      - link "Inicio" [ref=e21] [cursor=pointer]:
+        - /url: /inicio
+        - img [ref=e23] [cursor=pointer]
+        - text: Inicio
+      - link "Pacientes" [ref=e25] [cursor=pointer]:
+        - /url: /pacientes
+        - img [ref=e27] [cursor=pointer]
+        - text: Pacientes
+      - link "Consultas" [ref=e29] [cursor=pointer]:
+        - /url: /consultas
+        - img [ref=e31] [cursor=pointer]
+        - text: Consultas
+      - link "Estudios" [ref=e33] [cursor=pointer]:
+        - /url: /estudios
+        - img [ref=e35] [cursor=pointer]
+        - text: Estudios
+      - link "Perfil del Médico" [ref=e37] [cursor=pointer]:
+        - /url: /perfil
+        - img [ref=e39] [cursor=pointer]
+        - text: Perfil del Médico
+      - link "Configuración" [ref=e41] [cursor=pointer]:
+        - /url: /configuracion
+        - img [ref=e43] [cursor=pointer]
+        - text: Configuración
+    - generic [ref=e45]: Sistema activo
+  - main [ref=e47]:
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - paragraph [ref=e53]: Estudios
+          - heading "Estudios" [level=2] [ref=e54]
+          - paragraph [ref=e55]: Adjunta placas y exámenes del paciente.
+        - button "Adjuntar estudio" [ref=e56] [cursor=pointer]
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e59]: Nombre o DNI
+          - textbox "Nombre o DNI" [ref=e60]
+        - generic [ref=e61]:
+          - generic [ref=e62]: Fecha
+          - textbox "Fecha" [ref=e63]
+      - paragraph [ref=e65]: Sin estudios registrados.
+```

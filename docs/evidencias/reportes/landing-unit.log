@@ -1,0 +1,59 @@
+MAX | landing-unit | Landing | 6.1
+Fecha America/Lima: 10/07/2026 15:29:46 -05:00
+Commit: e2396fe467b47ea3659802a99d334e13436d2573
+Cambios locales: 4
+Comando: npm.cmd test
+
+
+> max-landing@0.0.0 test
+> node --experimental-strip-types --test --test-reporter=tap tests/appointment.test.ts
+
+TAP version 13
+# Subtest: admite un día laborable futuro
+ok 1 - admite un día laborable futuro
+  ---
+  duration_ms: 1.6396
+  type: 'test'
+  ...
+# Subtest: admite hoy si es laborable
+ok 2 - admite hoy si es laborable
+  ---
+  duration_ms: 0.2104
+  type: 'test'
+  ...
+# Subtest: rechaza una fecha pasada
+ok 3 - rechaza una fecha pasada
+  ---
+  duration_ms: 0.2046
+  type: 'test'
+  ...
+# Subtest: rechaza sábado y domingo
+ok 4 - rechaza sábado y domingo
+  ---
+  duration_ms: 1.03
+  type: 'test'
+  ...
+# Subtest: rechaza una cadena que no es fecha
+ok 5 - rechaza una cadena que no es fecha
+  ---
+  duration_ms: 0.2005
+  type: 'test'
+  ...
+# Subtest: genera hoy con año, mes y día locales
+ok 6 - genera hoy con año, mes y día locales
+  ---
+  duration_ms: 0.1766
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 106.9321
+
+Exit code: 0
+Finalizado: 10/07/2026 15:29:47 -05:00

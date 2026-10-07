@@ -1,0 +1,194 @@
+{
+  "unit": {
+    "IAM/Backend": {
+      "executed": 11,
+      "passed": 11
+    },
+    "Studies/Backend": {
+      "executed": 8,
+      "passed": 8
+    },
+    "Patients/Backend": {
+      "executed": 7,
+      "passed": 7
+    },
+    "Patients/Web": {
+      "executed": 10,
+      "passed": 10
+    },
+    "IAM/Web": {
+      "executed": 8,
+      "passed": 8
+    },
+    "Studies/Web": {
+      "executed": 6,
+      "passed": 6
+    },
+    "IAM/Android": {
+      "executed": 5,
+      "passed": 5
+    },
+    "Patients/Android": {
+      "executed": 9,
+      "passed": 9
+    },
+    "Studies/Android": {
+      "executed": 7,
+      "passed": 7
+    }
+  },
+  "otherAndroid": 1,
+  "integrationJUnit": 37,
+  "bdd": 9,
+  "systemWeb": {
+    "startTime": "2026-10-07T20:28:36.779Z",
+    "duration": 20686.091999999997,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "systemAndroidJourneys": 1,
+  "renderedImages": [
+    {
+      "file": "MAX-UT-IAM-Backend.png",
+      "source": "docs/evidencias/reportes/backend-final-surefire/TEST-com.max.maxbackend.contexts.auth.application.AuthServiceUnitTest.xml; docs/evidencias/reportes/backend-final-surefire/TEST-com.max.maxbackend.contexts.auth.application.AvatarValidatorUnitTest.xml; docs/evidencias/reportes/backend-final-surefire/TEST-com.max.maxbackend.shared.security.PasswordPolicyTest.xml",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-UT-Studies-Backend.png",
+      "source": "docs/evidencias/reportes/backend-final-surefire/TEST-com.max.maxbackend.contexts.estudios.application.EstudioServiceUnitTest.xml",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-UT-Patients-Backend.png",
+      "source": "docs/evidencias/reportes/backend-final-surefire/TEST-com.max.maxbackend.contexts.pacientes.application.PacienteServiceUnitTest.xml",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-UT-Patients-Web.png",
+      "source": "docs/evidencias/reportes/web-vitest.json",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-UT-IAM-Web.png",
+      "source": "docs/evidencias/reportes/web-vitest.json",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-UT-Studies-Web.png",
+      "source": "docs/evidencias/reportes/web-vitest.json",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-UT-IAM-Android.png",
+      "source": "docs/evidencias/reportes/android-unit-final.log",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-UT-Patients-Android.png",
+      "source": "docs/evidencias/reportes/android-unit-final.log",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-UT-Studies-Android.png",
+      "source": "docs/evidencias/reportes/android-unit-final.log",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-IT-IAM.png",
+      "source": "docs/evidencias/reportes/backend-final-surefire/",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-IT-Patients.png",
+      "source": "docs/evidencias/reportes/backend-final-surefire/",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-IT-Studies.png",
+      "source": "docs/evidencias/reportes/backend-final-surefire/",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-IT-Ejecucion-Backend.png",
+      "source": "docs/evidencias/reportes/backend-final-isolated.log",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-BDD-IAM-Resultados.png",
+      "source": "docs/evidencias/reportes/bdd.json",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-BDD-Patients-Resultados.png",
+      "source": "docs/evidencias/reportes/bdd.json",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-BDD-Studies-Resultados.png",
+      "source": "docs/evidencias/reportes/bdd.json",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-IT-Ejecucion-Web.png",
+      "source": "bdd.json; system-web.json; bdd-final.log; web-system-final.log",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-System-Web-Resultados.png",
+      "source": "docs/evidencias/reportes/system-web.json; system-web-artifacts/",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-System-Android-Resultados.png",
+      "source": "android-system-evidence-final.log; android-system-response.json; android-environment.json",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-CI-Tools-Practices.png",
+      "source": "workflows-actionlint.log; actions-pins.json; web-audit-production.json; archivos CI locales",
+      "kind": "CONFIGURACIÓN PREPARADA · NO EJECUCIÓN REMOTA"
+    },
+    {
+      "file": "MAX-CI-Pipeline.png",
+      "source": "MAX_BACK/max-backend/.github/workflows/ci.yml; MAX_BACK/max-backend/.github/workflows/delivery.yml; MAX_FRONT/MAX/.github/workflows/ci.yml; MAX_FRONT/MAX/.github/workflows/delivery.yml; MAX_FRONT/MAX/.github/workflows/integration.yml; MAX_LANDING/.github/workflows/ci.yml; MAX_LANDING/.github/workflows/delivery.yml; MAX_MOBILE/.github/workflows/ci.yml; MAX_MOBILE/.github/workflows/delivery.yml",
+      "kind": "DIAGRAMA DE CONFIGURACIÓN · ACTIONS SIN EJECUTAR"
+    },
+    {
+      "file": "MAX-Delivery-Tools-Practices.png",
+      "source": "docs/pipelines/README.md; delivery.yml; local-candidate.json",
+      "kind": "CONFIGURACIÓN REVISADA · VALIDACIÓN LOCAL"
+    },
+    {
+      "file": "MAX-Delivery-Pipeline.png",
+      "source": "Los cuatro .github/workflows/delivery.yml; docs/pipelines/README.md",
+      "kind": "DIAGRAMA DE CONFIGURACIÓN · SIN DESPLIEGUE"
+    },
+    {
+      "file": "MAX-Delivery-Local-Validacion.png",
+      "source": "local-candidate.json; bdd-final.log; web-system-final.log; android-system-evidence-final.log",
+      "kind": "REPORTE RENDERIZADO · CANDIDATO LOCAL REAL"
+    },
+    {
+      "file": "MAX-Deployment-Tools-Practices.png",
+      "source": "docs/pipelines/README.md; Functions API; landing-academic-actions.json",
+      "kind": "REVISIÓN DE CONFIGURACIÓN · SIN PUBLICACIÓN NUEVA"
+    },
+    {
+      "file": "MAX-Production-Pipeline.png",
+      "source": "landing-academic-actions.json; landing-academic-actions-jobs.json",
+      "kind": "REPORTE RENDERIZADO · EJECUCIONES REMOTAS HISTÓRICAS"
+    },
+    {
+      "file": "MAX-Production-Validacion.png",
+      "source": "docs/evidencias/reportes/remote-health-readonly.json",
+      "kind": "REPORTE RENDERIZADO · SOLO HTTP / HEALTH"
+    },
+    {
+      "file": "MAX-UT-Landing-Web.png",
+      "source": "docs/evidencias/reportes/landing-unit.log",
+      "kind": "REPORTE RENDERIZADO · VALIDACIÓN LOCAL"
+    }
+  ]
+}

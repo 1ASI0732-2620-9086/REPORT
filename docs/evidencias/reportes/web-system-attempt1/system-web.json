@@ -1,0 +1,264 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\playwright.system.config.ts",
+    "rootDir": "C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_FRONT/MAX/e2e-system",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/system-web.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "reports/system-web-html",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_FRONT/MAX/reports/system-web-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop-chromium",
+        "name": "desktop-chromium",
+        "testDir": "C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_FRONT/MAX/e2e-system",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_FRONT/MAX/reports/system-web-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile-web-chromium",
+        "name": "mobile-web-chromium",
+        "testDir": "C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_FRONT/MAX/e2e-system",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node node_modules/@angular/cli/bin/ng.js serve --host 127.0.0.1 --port 14200 --proxy-config proxy.evidence.json",
+      "url": "http://127.0.0.1:14200",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "clinical-workflow.spec.ts",
+      "file": "clinical-workflow.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "recorrido real: registro, paciente, edición, estudio y cierre de sesión",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-chromium",
+              "projectName": "desktop-chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 28809,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/inicio$/\u001b[39m\nReceived string:  \u001b[31m\"http://127.0.0.1:14200/auth\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    18 × unexpected value \"http://127.0.0.1:14200/auth\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/inicio$/\u001b[39m\nReceived string:  \u001b[31m\"http://127.0.0.1:14200/auth\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    18 × unexpected value \"http://127.0.0.1:14200/auth\"\u001b[22m\n\n    at C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\e2e-system\\clinical-workflow.spec.ts:22:22",
+                    "location": {
+                      "file": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\e2e-system\\clinical-workflow.spec.ts",
+                      "column": 22,
+                      "line": 22
+                    },
+                    "snippet": "  20 |   await page.locator('[formcontrolname=\"confirm\"]').fill('SyntheticOnly#123');\n  21 |   await page.getByRole('button', { name: 'Registrarme', exact: true }).click();\n> 22 |   await expect(page).toHaveURL(/\\/inicio$/);\n     |                      ^\n  23 |   await page.goto('/pacientes');\n  24 |   await page.getByRole('button', { name: /registrar paciente/i }).click();\n  25 |   const dialog = page.getByRole('dialog');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\e2e-system\\clinical-workflow.spec.ts",
+                        "column": 22,
+                        "line": 22
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/inicio$/\u001b[39m\nReceived string:  \u001b[31m\"http://127.0.0.1:14200/auth\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    18 × unexpected value \"http://127.0.0.1:14200/auth\"\u001b[22m\n\n\n  20 |   await page.locator('[formcontrolname=\"confirm\"]').fill('SyntheticOnly#123');\n  21 |   await page.getByRole('button', { name: 'Registrarme', exact: true }).click();\n> 22 |   await expect(page).toHaveURL(/\\/inicio$/);\n     |                      ^\n  23 |   await page.goto('/pacientes');\n  24 |   await page.getByRole('button', { name: /registrar paciente/i }).click();\n  25 |   const dialog = page.getByRole('dialog');\n    at C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\e2e-system\\clinical-workflow.spec.ts:22:22"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T20:01:20.179Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "entorno",
+                      "contentType": "application/json",
+                      "body": "eyJicm93c2VyIjoiMTQwLjAuNzMzOS4xODYiLCJ2aWV3cG9ydCI6eyJ3aWR0aCI6MTI4MCwiaGVpZ2h0Ijo3MjB9LCJhcGkiOiJodHRwOi8vMTI3LjAuMC4xOjE4MDgwIiwiZGF0YWJhc2UiOiJNeVNRTCBhaXNsYWRvIiwic3RvcmFnZSI6ImFyY2hpdm8gZW1iZWJpZG87IFIyIG5vIHBhcnRpY2lwYWRvIn0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\reports\\system-web-artifacts\\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-desktop-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\reports\\system-web-artifacts\\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-desktop-chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\reports\\system-web-artifacts\\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-desktop-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\e2e-system\\clinical-workflow.spec.ts",
+                    "column": 22,
+                    "line": 22
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "eb248d528cf9877eabfb-e4a85f08eca152c03075",
+          "file": "clinical-workflow.spec.ts",
+          "line": 10,
+          "column": 5
+        },
+        {
+          "title": "recorrido real: registro, paciente, edición, estudio y cierre de sesión",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-web-chromium",
+              "projectName": "mobile-web-chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 16707,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/inicio$/\u001b[39m\nReceived string:  \u001b[31m\"http://127.0.0.1:14200/auth\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    18 × unexpected value \"http://127.0.0.1:14200/auth\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/inicio$/\u001b[39m\nReceived string:  \u001b[31m\"http://127.0.0.1:14200/auth\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    18 × unexpected value \"http://127.0.0.1:14200/auth\"\u001b[22m\n\n    at C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\e2e-system\\clinical-workflow.spec.ts:22:22",
+                    "location": {
+                      "file": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\e2e-system\\clinical-workflow.spec.ts",
+                      "column": 22,
+                      "line": 22
+                    },
+                    "snippet": "  20 |   await page.locator('[formcontrolname=\"confirm\"]').fill('SyntheticOnly#123');\n  21 |   await page.getByRole('button', { name: 'Registrarme', exact: true }).click();\n> 22 |   await expect(page).toHaveURL(/\\/inicio$/);\n     |                      ^\n  23 |   await page.goto('/pacientes');\n  24 |   await page.getByRole('button', { name: /registrar paciente/i }).click();\n  25 |   const dialog = page.getByRole('dialog');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\e2e-system\\clinical-workflow.spec.ts",
+                        "column": 22,
+                        "line": 22
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/inicio$/\u001b[39m\nReceived string:  \u001b[31m\"http://127.0.0.1:14200/auth\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    18 × unexpected value \"http://127.0.0.1:14200/auth\"\u001b[22m\n\n\n  20 |   await page.locator('[formcontrolname=\"confirm\"]').fill('SyntheticOnly#123');\n  21 |   await page.getByRole('button', { name: 'Registrarme', exact: true }).click();\n> 22 |   await expect(page).toHaveURL(/\\/inicio$/);\n     |                      ^\n  23 |   await page.goto('/pacientes');\n  24 |   await page.getByRole('button', { name: /registrar paciente/i }).click();\n  25 |   const dialog = page.getByRole('dialog');\n    at C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\e2e-system\\clinical-workflow.spec.ts:22:22"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T20:01:50.362Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "entorno",
+                      "contentType": "application/json",
+                      "body": "eyJicm93c2VyIjoiMTQwLjAuNzMzOS4xODYiLCJ2aWV3cG9ydCI6eyJ3aWR0aCI6NDEyLCJoZWlnaHQiOjgzOX0sImFwaSI6Imh0dHA6Ly8xMjcuMC4wLjE6MTgwODAiLCJkYXRhYmFzZSI6Ik15U1FMIGFpc2xhZG8iLCJzdG9yYWdlIjoiYXJjaGl2byBlbWJlYmlkbzsgUjIgbm8gcGFydGljaXBhZG8ifQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\reports\\system-web-artifacts\\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-mobile-web-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\reports\\system-web-artifacts\\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-mobile-web-chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\reports\\system-web-artifacts\\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-mobile-web-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\e2e-system\\clinical-workflow.spec.ts",
+                    "column": 22,
+                    "line": 22
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "eb248d528cf9877eabfb-6b3b6e5319395ca1d526",
+          "file": "clinical-workflow.spec.ts",
+          "line": 10,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-07T20:01:00.222Z",
+    "duration": 67750.485,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,22 @@
+MAX | web-audit-run | Web | 7.1
+Fecha America/Lima: 10/07/2026 15:34:16 -05:00
+Commit: 63ed173284647024a7612d5a1cf8f8b0290eff35
+Cambios locales: 13
+Comando: npm.cmd audit --omit=dev
+
+# npm audit report
+
+@angular/router  21.0.0 - 21.2.23
+Severity: high
+Angular Server-Side Rendering (SSR): Denial of Service via Numeric URL Matrix Parameters - https://github.com/advisories/GHSA-ff3f-86qr-9cv3
+fix available via `npm audit fix --force`
+Will install @angular/router@21.2.25, which is outside the stated dependency range
+node_modules/@angular/router
+
+1 high severity vulnerability
+
+To address all issues, run:
+  npm audit fix --force
+
+Exit code: 1
+Finalizado: 10/07/2026 15:34:18 -05:00
