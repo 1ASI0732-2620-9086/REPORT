@@ -2673,7 +2673,11 @@ A continuación, se presentan algunos de los principales commits asociados al de
 #### 5.2.6. RESTful API Documentation
 #### 5.2.7. Team Collaboration Insights
 ### 5.3. Video About-the-Product
+### 5.3. Video About-the-Product
 
+El siguiente video presenta MAX, su propuesta de valor, las principales funcionalidades de la plataforma y la forma en que facilita la interacción entre médicos cirujanos y pacientes.
+
+[▶️ Ver About the Product de MAX]([PEGA_AQUI_TU_LINK](https://youtu.be/QQunga5vDYM))
 ---
 
 ## Conclusiones
