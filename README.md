@@ -2812,31 +2812,31 @@ https://1asi0732-2620-9086.github.io/LANDING-PAGE/
 
 La sección principal presenta MAX y permite al usuario identificar rápidamente el propósito de la plataforma.
 
-![Landing Page - Inicio](assets/landing-page-home.jpeg)
+![Landing Page - Inicio](assets/landing-page-home.png)
 
 #### Sección Nosotros
 
 Esta sección presenta información sobre MAX y el propósito de la solución, permitiendo que los visitantes comprendan la propuesta del producto.
 
-![Landing Page - Nosotros](assets/landing-page-nosotros.jpeg)
+![Landing Page - Nosotros](assets/landing-page-nosotros.png)
 
 #### Sección de Funcionalidades
 
 Esta sección presenta las principales funcionalidades ofrecidas por MAX para facilitar la interacción entre médicos cirujanos y pacientes.
 
-![Landing Page - Funcionalidades](assets/landing-page-funcionalidades.jpeg)
+![Landing Page - Funcionalidades](assets/landing-page-funcionalidades.png)
 
 #### Sección de Valores
 
 Esta sección presenta los principales valores considerados para el desarrollo de MAX: innovación, seguridad, confianza, accesibilidad y responsabilidad.
 
-![Landing Page - Valores](assets/landing-page-valores.jpeg)
+![Landing Page - Valores](assets/landing-page-valores.png)
 
 #### Sección de Contacto
 
 Finalmente, la Landing Page cuenta con una sección de contacto que proporciona información para comunicarse con el equipo responsable de MAX.
 
-![Landing Page - Contacto](assets/landing-page-contacto.jpeg)
+![Landing Page - Contacto](assets/landing-page-contacto.png)
 
 Las evidencias presentadas demuestran la implementación y publicación de la Landing Page de MAX, proporcionando a los usuarios un punto inicial para conocer la propuesta de valor y las principales características del producto.
 
@@ -2901,34 +2901,25 @@ La aplicación móvil constituye uno de los componentes de la solución MAX y bu
 
 La aplicación móvil dispone de una interfaz de autenticación mediante la cual el usuario puede ingresar utilizando sus credenciales.
 
-![Mobile - Login](assets/mobile-login.jpeg)
+![Mobile - Login](assets/mobile-login.png)
 
 #### Pantalla principal
 
 Después de autenticarse, el usuario puede acceder a la pantalla principal de la aplicación y consultar las funcionalidades disponibles.
 
-![Mobile - Inicio](assets/mobile-home.jpeg)
+![Mobile - Inicio](assets/mobile-home.png)
 
 #### Gestión de citas
 
 La aplicación móvil permite acceder a la información relacionada con las citas del usuario, facilitando su consulta desde un dispositivo móvil.
 
-![Mobile - Citas](assets/mobile-citas.jpeg)
+![Mobile - Citas](assets/mobile-citas.png)
 
 #### Documentación médica
 
 Desde la aplicación, el paciente puede acceder a la información y documentación médica que se encuentre disponible dentro de MAX.
 
-![Mobile - Documentos](assets/mobile-documentos.jpeg)
-
-#### Perfil del usuario
-
-La aplicación dispone de una sección destinada a consultar la información correspondiente al perfil del usuario.
-
-![Mobile - Perfil](assets/mobile-perfil.jpeg)
-
-Las evidencias presentadas muestran la implementación de la aplicación móvil de MAX y las interfaces desarrolladas para proporcionar acceso a las funcionalidades del producto desde dispositivos móviles.
-
+![Mobile - Documentos](assets/mobile-documentos.png)
 
 ### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
 
