@@ -2578,6 +2578,22 @@ La configuración implementada permite que los principales componentes de MAX se
 ### 5.2. Product implementation & deployment
 #### 5.2.1. Sprint 1
 ##### 5.2.1.1. Sprint Planning 1
+
+| Campo | Detalle |
+|---|---|
+| **Sprint #** | Sprint 1 |
+| **Date** | 2026-08-25 |
+| **Time** | 09:00 PM |
+| **Location** | Reunión virtual mediante Discord |
+| **Prepared By** | Oscar Espinoza |
+| **Attendees (to planning meeting)** | Stephano Mayrzon Landauri, Oscar Leonardos Espinoza Quijandria y Johnny Alexander Ojanama Abanto |
+| **Sprint N°1 Review Summary** | Al tratarse del primer sprint del proyecto MAX, no existe una revisión de un sprint anterior. |
+| **Sprint N°1 Retrospective Summary** | Al ser el primer sprint del proyecto, no se cuenta con una retrospectiva previa. La retroalimentación y las oportunidades de mejora serán evaluadas al cierre del Sprint 1. |
+| **Sprint Goal & User Stories** | Para el Sprint 1 se seleccionaron las 20 historias correspondientes a la Primera Entrega del Product Backlog de MAX, relacionadas con la configuración de seguridad, gestión integral de pacientes y almacenamiento de estudios adjuntos. |
+| **Sprint N°1 Goal** | **Our focus is on** implementing the first delivery of MAX, including security configuration, patient management, and storage of attached medical studies. **We believe it delivers** the functional foundation required for doctors to securely manage their patients and associated medical information. **This will be confirmed when** the 20 User Stories and Technical Stories selected for the sprint are implemented and available for review. |
+| **Sprint N°1 Velocity** | **62 Story Points** |
+| **Sum of Story Points** | **62 Story Points** |
+
 ##### 5.2.1.2. Aspect Leaders and Collaborators
 ##### 5.2.1.3. Sprint Backlog 1
 ##### 5.2.1.4. Development Evidence for Sprint Review
