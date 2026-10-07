@@ -32,7 +32,8 @@
 
 | Versión | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
-| 1.0     | [Fecha] | [Autor] | Versión inicial del documento (Estructura base) |
+| TB1 | 16/09/2026 | Stephano Mayrzon Landauri Preciado<br>Oscar Leonardo Espinoza Quijandria<br>Johnny Alexander Ojanama Abanto | Primera entrega del informe de MAX. Desarrollo de los capítulos I al IV: presentación de la startup y de la solución, análisis de la problemática, investigación de usuarios, definición de requerimientos, historias de usuario, Product Backlog y diseño del producto. |
+| TP1 | 07/10/2026 | Stephano Mayrzon Landauri Preciado<br>Oscar Leonardo Espinoza Quijandria<br>Johnny Alexander Ojanama Abanto | Actualización del informe para el Trabajo Parcial. Incorporación y consolidación de los capítulos V, VI y VII: implementación de los componentes de MAX, documentación de pruebas y validación, configuración de integración continua y recopilación de evidencias de GitHub Actions. Actualización del índice, del Student Outcome y de la documentación sobre las prácticas de entrega y despliegue. |
 
 ---
 
@@ -152,15 +153,15 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
     - [4.6.3. Web Applications Mock-ups](#463-web-applications-mock-ups)
     - [4.6.4. Web Applications User Flow Diagrams](#464-web-applications-user-flow-diagrams)
   - [4.7. Web Applications Prototyping](#47-web-applications-prototyping)
-    - [4.8. Domain-Driven Software Architecture](#48-domain-driven-software-architecture)
-      - [4.8.1. Software Architecture Context Diagram](#481-software-architecture-context-diagram)
-      - [4.8.2. Software Architecture Container Diagrams](#482-software-architecture-container-diagrams)
-      - [4.8.3. Software Architecture Components Diagrams](#483-software-architecture-components-diagrams)
-    - [4.9. Software Object-Oriented Design](#49-software-object-oriented-design)
-      - [4.9.1. Class Diagrams](#491-class-diagrams)
-      - [4.9.2. Class Dictionary](#492-class-dictionary)
-    - [4.10. Database Design](#410-database-design)
-      - [4.10.1. Relational/Non-Relational Database Diagrams](#4101-relationalnon-relational-database-diagrams)
+  - [4.8. Domain-Driven Software Architecture](#48-domain-driven-software-architecture)
+    - [4.8.1. Software Architecture Context Diagram](#481-software-architecture-context-diagram)
+    - [4.8.2. Software Architecture Container Diagrams](#482-software-architecture-container-diagrams)
+    - [4.8.3. Software Architecture Components Diagrams](#483-software-architecture-components-diagrams)
+  - [4.9. Software Object-Oriented Design](#49-software-object-oriented-design)
+    - [4.9.1. Class Diagrams](#491-class-diagrams)
+    - [4.9.2. Class Dictionary](#492-class-dictionary)
+  - [4.10. Database Design](#410-database-design)
+    - [4.10.1. Relational/Non-Relational Database Diagrams](#4101-relationalnon-relational-database-diagrams)
 - [Capítulo V: Product Implementation, Validation & Deployment](#capítulo-v-product-implementation-validation--deployment)
   - [5.1. Software Configuration Management](#51-software-configuration-management)
   - [Requirements Management](#requirements-management)
@@ -208,6 +209,54 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
     - [5.2.6. RESTful API Documentation](#526-restful-api-documentation)
     - [5.2.7. Team Collaboration Insights](#527-team-collaboration-insights)
   - [5.3. Video About-the-Product](#53-video-about-the-product)
+- [Capítulo VI: Product Verification & Validation](#capítulo-vi-product-verification--validation)
+  - [6.1. Testing Suites & Validation](#61-testing-suites--validation)
+    - [6.1.1. Core Entities Unit Tests](#611-core-entities-unit-tests)
+      - [6.1.1.1. IAM](#6111-iam)
+        - [6.1.1.1.1. Backend](#61111-backend)
+        - [6.1.1.1.2. iOS](#61112-ios)
+        - [6.1.1.1.3. Android](#61113-android)
+        - [6.1.1.1.4. Web](#61114-web)
+        - [6.1.1.1.5. Resumen agregado de IAM](#61115-resumen-agregado-de-iam)
+      - [6.1.1.2. Patients](#6112-patients)
+        - [6.1.1.2.1. Backend](#61121-backend)
+        - [6.1.1.2.2. iOS](#61122-ios)
+        - [6.1.1.2.3. Android](#61123-android)
+        - [6.1.1.2.4. Web](#61124-web)
+        - [6.1.1.2.5. Resumen agregado de Patients](#61125-resumen-agregado-de-patients)
+      - [6.1.1.3. Studies](#6113-studies)
+        - [6.1.1.3.1. Backend](#61131-backend)
+        - [6.1.1.3.2. iOS](#61132-ios)
+        - [6.1.1.3.3. Android](#61133-android)
+        - [6.1.1.3.4. Web](#61134-web)
+        - [6.1.1.3.5. Resumen agregado de Studies](#61135-resumen-agregado-de-studies)
+      - [6.1.1.4. Pruebas complementarias de la landing y del cliente móvil](#6114-pruebas-complementarias-de-la-landing-y-del-cliente-móvil)
+      - [6.1.1.5. Resumen consolidado de unidades y componentes](#6115-resumen-consolidado-de-unidades-y-componentes)
+    - [6.1.2. Core Integration Tests](#612-core-integration-tests)
+      - [6.1.2.1. Integración de IAM](#6121-integración-de-iam)
+      - [6.1.2.2. Integración de Patients](#6122-integración-de-patients)
+      - [6.1.2.3. Integración de Studies](#6123-integración-de-studies)
+      - [6.1.2.4. Comandos de ejecución](#6124-comandos-de-ejecución)
+      - [6.1.2.5. Evidencias de ejecución](#6125-evidencias-de-ejecución)
+    - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
+      - [6.1.3.1. IAM](#6131-iam)
+      - [6.1.3.2. Patients](#6132-patients)
+      - [6.1.3.3. Studies](#6133-studies)
+      - [6.1.3.4. Trazabilidad](#6134-trazabilidad)
+    - [6.1.4. Core System Tests](#614-core-system-tests)
+      - [6.1.4.1. Aplicación web](#6141-aplicación-web)
+      - [6.1.4.2. Aplicación Android](#6142-aplicación-android)
+      - [6.1.4.3. Aplicación iOS](#6143-aplicación-ios)
+- [Capítulo VII: DevOps Practices](#capítulo-vii-devops-practices)
+  - [7.1. Continuous Integration](#71-continuous-integration)
+    - [7.1.1. Tools and Practices](#711-tools-and-practices)
+    - [7.1.2. Build & Test Suite Pipeline Components](#712-build--test-suite-pipeline-components)
+  - [7.2. Continuous Delivery](#72-continuous-delivery)
+    - [7.2.1. Tools and Practices](#721-tools-and-practices)
+    - [7.2.2. Stages Deployment Pipeline Components](#722-stages-deployment-pipeline-components)
+  - [7.3. Continuous Deployment](#73-continuous-deployment)
+    - [7.3.1. Tools and Practices](#731-tools-and-practices)
+    - [7.3.2. Production Deployment Pipeline Components](#732-production-deployment-pipeline-components)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
   - [Video About-the-Team](#video-about-the-team)
@@ -218,17 +267,14 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
 ---
 
 ## Student Outcome
-**ABET - EAC - Student Outcome 3**
-**Criterio:** Capacidad de comunicarse efectivamente con un rango de audiencias.
 
-El curso contribuye al cumplimiento del Student Outcome ABET. En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro.
+El desarrollo del proyecto MAX contribuye al Student Outcome 3, relacionado con la capacidad de comunicarse eficazmente con diferentes audiencias. A continuación, se describen las acciones realizadas por los integrantes durante AV1 y TP, así como las conclusiones correspondientes a cada criterio.
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---------------------|---------------------|--------------|
-| **3.c1. Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería de software.** | **Stephano Mayrzon Landauri**<br>AV1: Comunicó los avances y resultados correspondientes a los capítulos 1 y 2 y parte del capítulo 5, explicando la propuesta de MAX, la problemática identificada, los segmentos objetivo, el análisis competitivo, los resultados de las entrevistas, el Needfinding y aspectos relacionados con la gestión y configuración del proyecto.<br><br>**Oscar Leonardos Espinoza Quijandria**<br>AV1: Comunicó los aspectos técnicos relacionados con el despliegue de MAX, explicando la configuración y publicación de los diferentes componentes de la solución, incluyendo el Landing Page, Frontend, Backend y Base de Datos.<br><br>**Johnny Alexander Ojanama Abanto**<br>AV1: Comunicó los avances y resultados correspondientes al capítulo 3, explicando los requerimientos y especificaciones definidos para MAX y su relación con las funcionalidades planteadas para la solución. | Durante el AV1, el equipo fortaleció su capacidad para comunicar oralmente los avances y resultados del proyecto MAX de manera objetiva y organizada. Cada integrante presentó los aspectos correspondientes a su participación en el proyecto, permitiendo comunicar tanto elementos relacionados con la investigación y definición del producto como aspectos técnicos de requerimientos, desarrollo y despliegue. |
-| **3.c2. Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto de ingeniería de software.** | **Stephano Mayrzon Landauri**<br>AV1: Elaboró la documentación correspondiente a los capítulos 1 y 2 y parte del capítulo 5, incluyendo la definición de MAX, análisis de la problemática, Lean UX, segmentos objetivo, análisis competitivo, entrevistas, Needfinding y documentación relacionada con la gestión y configuración del proyecto.<br><br>**Oscar Leonardos Espinoza Quijandria**<br>AV1: Elaboró la documentación y evidencias relacionadas con la configuración y despliegue de los componentes de MAX, incluyendo el Landing Page, Frontend, Backend y Base de Datos.<br><br>**Johnny Alexander Ojanama Abanto**<br>AV1: Elaboró la documentación correspondiente al capítulo 3, estructurando los requerimientos y especificaciones de la solución de acuerdo con las necesidades identificadas para MAX. | Durante el AV1, el equipo desarrolló documentación técnica de manera clara, objetiva y estructurada. La distribución del trabajo permitió integrar en un mismo proyecto la investigación de usuarios, la definición de requerimientos y los aspectos técnicos de desarrollo y despliegue. El uso de Markdown y GitHub permitió mantener la información organizada y comprensible para diferentes tipos de audiencia. |
+| **3.c1. Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería de software.** | **Stephano Mayrzon Landauri Preciado**<br>**AV1:** Comunicó los avances y resultados correspondientes a los capítulos 1 y 2 y parte del capítulo 5, explicando la propuesta de MAX, la problemática identificada, los segmentos objetivo, el análisis competitivo, los resultados de las entrevistas, el Needfinding y aspectos relacionados con la gestión y configuración del proyecto.<br>**TP:** Explicó los avances de MAX y su relación con las necesidades de los usuarios, presentando las funcionalidades desarrolladas y el valor de la solución. Organizó la información para que la audiencia comprendiera la evolución del producto y los resultados de esta entrega.<br><br>**Oscar Leonardo Espinoza Quijandria**<br>**AV1:** Comunicó los aspectos técnicos relacionados con el despliegue de MAX, explicando la configuración y publicación de los diferentes componentes de la solución, incluyendo el Landing Page, Frontend, Backend y Base de Datos.<br>**TP:** Explicó la integración de los componentes de MAX, las pruebas realizadas y el funcionamiento de los flujos de integración continua. Presentó las evidencias de ejecución y sus resultados, diferenciando las validaciones efectuadas de las actividades de entrega y despliegue aún pendientes.<br><br>**Johnny Alexander Ojanama Abanto**<br>**AV1:** Comunicó los avances y resultados correspondientes al capítulo 3, explicando los requerimientos y especificaciones definidos para MAX y su relación con las funcionalidades planteadas para la solución.<br>**TP:** Explicó la relación entre los requerimientos, las historias de usuario y las funcionalidades implementadas. Presentó los avances de validación del producto y la forma en que los resultados obtenidos permiten revisar el cumplimiento del alcance de esta entrega. | **AV1:** El equipo fortaleció su capacidad para comunicar oralmente los avances y resultados del proyecto MAX de manera objetiva y organizada. Cada integrante presentó los aspectos correspondientes a su participación en el proyecto, permitiendo comunicar tanto elementos relacionados con la investigación y definición del producto como aspectos técnicos de requerimientos, desarrollo y despliegue.<br><br>**TP:** El equipo fortaleció la presentación de resultados mediante explicaciones apoyadas en demostraciones, capturas y reportes de pruebas. La distribución de temas permitió relacionar el valor del producto con su implementación y validación, utilizando un lenguaje comprensible para audiencias técnicas y no técnicas y señalando el alcance de las evidencias presentadas. |
+| **3.c2. Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto de ingeniería de software.** | **Stephano Mayrzon Landauri Preciado**<br>**AV1:** Elaboró la documentación correspondiente a los capítulos 1 y 2 y parte del capítulo 5, incluyendo la definición de MAX, análisis de la problemática, Lean UX, segmentos objetivo, análisis competitivo, entrevistas, Needfinding y documentación relacionada con la gestión y configuración del proyecto.<br>**TP:** Contribuyó a la actualización y organización del informe, relacionando la propuesta del producto con los avances de implementación. Revisó la claridad de las descripciones, la estructura del contenido y la presentación de las evidencias correspondientes a esta entrega.<br><br>**Oscar Leonardo Espinoza Quijandria**<br>**AV1:** Elaboró la documentación y evidencias relacionadas con la configuración y despliegue de los componentes de MAX, incluyendo el Landing Page, Frontend, Backend y Base de Datos.<br>**TP:** Documentó la configuración técnica, las pruebas y las prácticas de integración continua de MAX. Organizó capturas, reportes y referencias a las ejecuciones de GitHub Actions para respaldar los resultados, precisando los entornos utilizados y las actividades que permanecen pendientes.<br><br>**Johnny Alexander Ojanama Abanto**<br>**AV1:** Elaboró la documentación correspondiente al capítulo 3, estructurando los requerimientos y especificaciones de la solución de acuerdo con las necesidades identificadas para MAX.<br>**TP:** Contribuyó a documentar la relación entre las historias de usuario, las funcionalidades implementadas y los criterios de validación. Revisó la consistencia de los requerimientos y colaboró en la organización de los resultados y conclusiones de esta entrega. | **AV1:** El equipo desarrolló documentación técnica de manera clara, objetiva y estructurada. La distribución del trabajo permitió integrar en un mismo proyecto la investigación de usuarios, la definición de requerimientos y los aspectos técnicos de desarrollo y despliegue. El uso de Markdown y GitHub permitió mantener la información organizada y comprensible para diferentes tipos de audiencia.<br><br>**TP:** El equipo consolidó un informe que vincula los requerimientos con la implementación, las pruebas y las prácticas DevOps. La actualización del índice y el registro de versiones facilitó el seguimiento de los cambios, mientras que la incorporación de evidencias permitió sustentar los resultados y distinguir los avances comprobados de las tareas pendientes. |
 
----
 
 ## Capítulo I: Introducción
 ### 1.1. Startup Profile
