@@ -86,7 +86,7 @@ Los criterios de aceptación se redactan en formato Gherkin, con la estructura G
 
 ### 3.3. Product Backlog
 
-El Product Backlog ordena las User Stories y Technical Stories definidas para la primera entrega (MVP) de la plataforma MAX. El orden responde al plan lógico de construcción del producto: primero la infraestructura de seguridad e identidad, luego el núcleo transaccional (expedientes de pacientes) y, finalmente, el soporte para archivos adjuntos.
+El Product Backlog ordena las User Stories y Technical Stories definidas para la primera y segunda entrega de la plataforma MAX. El orden responde al plan lógico de construcción del producto: primero la infraestructura de seguridad e identidad, luego el núcleo transaccional (expedientes de pacientes), el soporte para archivos adjuntos, seguido por el sistema de agendamiento clínico y, por último, la personalización de preferencias.
 
 La estimación se expresa en Story Points siguiendo la sucesión de Fibonacci (1, 2, 3, 5, 8). El valor representa el esfuerzo relativo considerando complejidad técnica, incertidumbre y volumen de trabajo, y no una cantidad exacta de horas.
 
@@ -112,13 +112,29 @@ La estimación se expresa en Story Points siguiendo la sucesión de Fibonacci (1
 | 18 | Entrega 1 | US-13 | Buscar placas por paciente o fecha | Como médico, quiero filtrar el repositorio buscando por DNI/Nombre o fecha. | 3 |
 | 19 | Entrega 1 | US-14 | Identificar formato del estudio | Como médico, quiero ver visualmente si un estudio adjunto es RX o PDF. | 2 |
 | 20 | Entrega 1 | US-15 | Visualizar archivo adjunto | Como médico, quiero abrir el archivo del estudio haciendo clic en su botón. | 3 |
+| 21 | Entrega 2 | TS-07 | Optimización de agenda por rangos | Como desarrollador, quiero que el endpoint de citas filtre los registros por fecha. | 5 |
+| 22 | Entrega 2 | TS-06 | Integridad transaccional de citas | Como desarrollador, quiero usar transacciones ACID al vincular atenciones. | 3 |
+| 23 | Entrega 2 | US-16 | Programar una nueva cita | Como médico, quiero agendar una consulta futura asignando una fecha y paciente. | 5 |
+| 24 | Entrega 2 | US-17 | Validar disponibilidad de horario | Como médico, quiero que el sistema me avise si hay un cruce de horarios en agenda. | 3 |
+| 25 | Entrega 2 | US-18 | Cancelar una cita programada | Como médico, quiero eliminar o cancelar una cita si el paciente no asiste. | 2 |
+| 26 | Entrega 2 | US-19 | Registrar atención clínica | Como médico, quiero ingresar las notas clínicas (anamnesis, diagnóstico). | 5 |
+| 27 | Entrega 2 | US-20 | Vincular atención a cita previa | Como médico, quiero asociar mi registro clínico a una cita previamente agendada. | 3 |
+| 28 | Entrega 2 | US-21 | Consultar historial de atenciones | Como médico, quiero revisar las consultas pasadas de un paciente específico. | 3 |
+| 29 | Entrega 2 | US-22 | Editar notas de una consulta | Como médico, quiero modificar las notas de una consulta pasada. | 2 |
+| 30 | Entrega 2 | TS-08 | Persistencia de preferencias | Como desarrollador, quiero guardar la configuración visual del usuario (LocalStorage/BD). | 3 |
+| 31 | Entrega 2 | US-23 | Cambiar idioma de la plataforma | Como médico, quiero cambiar el idioma de la interfaz a mi preferencia. | 3 |
+| 32 | Entrega 2 | US-24 | Configurar tema visual | Como médico, quiero alternar entre tema claro y oscuro para reducir fatiga visual. | 3 |
+| 33 | Entrega 2 | US-25 | Ajustar tamaño de texto | Como médico, quiero aumentar la tipografía del sistema para facilitar la lectura. | 2 |
+| 34 | Entrega 2 | US-26 | Gestionar notificaciones | Como médico, quiero activar o desactivar alertas para evitar distracciones. | 2 |
+| 35 | Entrega 2 | US-27 | Consultar versión y estado | Como médico, quiero verificar la versión actual del software y estado operativo. | 1 |
 
 #### Distribución por entrega
 
 | Entrega | Alcance | Historias | Story Points |
 |---|---|---:|---:|
 | **Entrega 1** | Configuración de seguridad, gestión integral de pacientes y almacenamiento de estudios adjuntos. | 20 | 62 |
-| **Total** | — | **20** | **62** |
+| **Entrega 2** | Gestión de agenda médica, registro de atenciones clínicas y configuración de preferencias del sistema. | 15 | 45 |
+| **Total** | — | **35** | **107** |
 
 #### Distribución por Epic
 
@@ -127,7 +143,9 @@ La estimación se expresa en Story Points siguiendo la sucesión de Fibonacci (1
 | EP-01 Gestión de Identidad y Acceso | 7 | 19 |
 | EP-02 Gestión de Pacientes | 7 | 23 |
 | EP-03 Gestión de Placas y Estudios | 6 | 20 |
-| **Total** | **20** | **62** |
+| EP-04 Gestión de Consultas y Agenda Clínica | 9 | 31 |
+| EP-05 Configuración y Preferencias del Sistema | 6 | 14 |
+| **Total** | **35** | **107** |
 
 #### Consideraciones sobre el orden
 
@@ -136,6 +154,8 @@ La secuencia del Product Backlog para esta primera entrega obedece a las depende
 A continuación, se desarrolla el núcleo transaccional, ya que el sistema requiere usuarios autenticados para asignarles la autoría de los registros. Asimismo, la historia US-04 se relega hacia el final de este bloque debido a que requiere la existencia previa de pacientes para mostrar las métricas correctamente.
 
 Finalmente, la sección de placas y estudios se construye al final del ciclo porque la entidad "Estudio" depende obligatoriamente de la existencia de la entidad "Paciente" para poder ser registrada y vinculada en el repositorio.
+
+Para la **Entrega 2**, el orden prioriza la infraestructura backend de la agenda (TS-07 y TS-06) para garantizar que las validaciones lógicas y transacciones funcionen correctamente antes de exponer las interfaces. Luego, se desarrollan las historias de programación de citas y registro de atención médica (EP-04). Por último, las historias de configuración y preferencias (EP-05) se abordan al cierre del ciclo, ya que representan mejoras de usabilidad y personalización visual que no bloquean el flujo clínico principal.
 
 ### 3.4. Impact Mapping
 
