@@ -1,0 +1,32 @@
+[
+  {
+    "repository": "actions/checkout",
+    "tag": "v5",
+    "sha": "fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09",
+    "type": "commit"
+  },
+  {
+    "repository": "actions/setup-node",
+    "tag": "v6",
+    "sha": "249970729cb0ef3589644e2896645e5dc5ba9c38",
+    "type": "commit"
+  },
+  {
+    "repository": "actions/setup-java",
+    "tag": "v5",
+    "sha": "b6effb05e454b25005698d916606bdc6ffcbf961",
+    "type": "commit"
+  },
+  {
+    "repository": "actions/upload-artifact",
+    "tag": "v4",
+    "sha": "ea165f8d65b6e75b540449e92b4886f43607fa02",
+    "type": "commit"
+  },
+  {
+    "repository": "subosito/flutter-action",
+    "tag": "v2",
+    "sha": "1a449444c387b1966244ae4d4f8c696479add0b2",
+    "type": "commit"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "type": "Emulador Android, no dispositivo físico",
+  "serial": "emulator-5554",
+  "model": "sdk_gphone64_x86_64",
+  "release": "14",
+  "api": "34",
+  "screen": "Physical size: 1080x2400\r\nOverride size: 1080x1920",
+  "applicationId": "com.max.max_mobile",
+  "applicationVersion": "1.0.0+1"
+}

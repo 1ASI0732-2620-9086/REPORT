@@ -1,0 +1,323 @@
+MAX | backend-final | Backend | 6.1.1/6.1.2
+Fecha America/Lima: 10/07/2026 15:22:08 -05:00
+Commit: 17e93c08b92cad83fdb4ea232b06c21eb70c260f
+Cambios locales: 4
+Comando: .\mvnw.cmd -B verify
+
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.max:max-backend >-------------------------
+[INFO] Building max-backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ max-backend ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] Copying 12 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ max-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ max-backend ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ max-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 10 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ max-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.max.maxbackend.AuthIntegrationTest
+15:22:57.035 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.max.maxbackend.AuthIntegrationTest]: AuthIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:22:57.197 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.max.maxbackend.MaxBackendApplication for test class com.max.maxbackend.AuthIntegrationTest
+15:22:57.275 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.max.maxbackend.AuthIntegrationTest]: AuthIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:22:57.277 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.max.maxbackend.MaxBackendApplication for test class com.max.maxbackend.AuthIntegrationTest
+15:22:57.347 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-07T15:22:57.633-05:00  INFO 27540 --- [           main] com.max.maxbackend.AuthIntegrationTest   : Starting AuthIntegrationTest using Java 21.0.10 with PID 27540 (started by oscar in C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_BACK\max-backend)
+2026-10-07T15:22:57.634-05:00  INFO 27540 --- [           main] com.max.maxbackend.AuthIntegrationTest   : The following 1 profile is active: "test"
+2026-10-07T15:22:59.370-05:00  INFO 27540 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-07T15:22:59.462-05:00  INFO 27540 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 11 JPA repository interfaces.
+2026-10-07T15:23:00.255-05:00  INFO 27540 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-07T15:23:00.269-05:00  INFO 27540 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-07T15:23:00.269-05:00  INFO 27540 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-07T15:23:00.352-05:00  INFO 27540 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2644 ms
+2026-10-07T15:23:00.684-05:00  INFO 27540 --- [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-07T15:23:00.752-05:00  INFO 27540 --- [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.24.Final
+2026-10-07T15:23:01.177-05:00  INFO 27540 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-07T15:23:01.208-05:00  INFO 27540 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-07T15:23:01.383-05:00  INFO 27540 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:maxdb user=SA
+2026-10-07T15:23:01.384-05:00  INFO 27540 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-07T15:23:01.435-05:00  INFO 27540 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:maxdb]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: MAXDB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-07T15:23:02.383-05:00  INFO 27540 --- [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-07T15:23:02.428-05:00  INFO 27540 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-07T15:23:02.501-05:00  INFO 27540 --- [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-07T15:23:04.191-05:00  INFO 27540 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-07T15:23:04.262-05:00  INFO 27540 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 62641 (http) with context path '/'
+2026-10-07T15:23:04.271-05:00  INFO 27540 --- [           main] com.max.maxbackend.AuthIntegrationTest   : Started AuthIntegrationTest in 6.934 seconds (process running for 9.001)
+2026-10-07T15:23:04.335-05:00  INFO 27540 --- [           main] c.m.m.shared.config.BootstrapDataConfig  : Bootstrap admin seed disabled
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\oscar\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.8\byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+2026-10-07T15:23:05.078-05:00  INFO 27540 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-07T15:23:05.078-05:00  INFO 27540 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-07T15:23:05.079-05:00  INFO 27540 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.31 s -- in com.max.maxbackend.AuthIntegrationTest
+[INFO] Running com.max.maxbackend.contexts.auth.application.AuthServiceUnitTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.397 s -- in com.max.maxbackend.contexts.auth.application.AuthServiceUnitTest
+[INFO] Running com.max.maxbackend.contexts.auth.application.AvatarValidatorUnitTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 s -- in com.max.maxbackend.contexts.auth.application.AvatarValidatorUnitTest
+[INFO] Running com.max.maxbackend.contexts.estudios.application.EstudioServiceUnitTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.422 s -- in com.max.maxbackend.contexts.estudios.application.EstudioServiceUnitTest
+[INFO] Running com.max.maxbackend.contexts.pacientes.application.PacienteServiceUnitTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.157 s -- in com.max.maxbackend.contexts.pacientes.application.PacienteServiceUnitTest
+[INFO] Running com.max.maxbackend.MaxBackendApplicationTests
+2026-10-07T15:23:09.240-05:00  INFO 27540 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.max.maxbackend.MaxBackendApplicationTests]: MaxBackendApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-07T15:23:09.244-05:00  INFO 27540 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.max.maxbackend.MaxBackendApplication for test class com.max.maxbackend.MaxBackendApplicationTests
+2026-10-07T15:23:09.248-05:00  INFO 27540 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.max.maxbackend.MaxBackendApplicationTests]: MaxBackendApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-07T15:23:09.250-05:00  INFO 27540 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.max.maxbackend.MaxBackendApplication for test class com.max.maxbackend.MaxBackendApplicationTests
+2026-10-07T15:23:09.269-05:00  INFO 27540 --- [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-07T15:23:09.335-05:00  INFO 27540 --- [           main] c.m.m.MaxBackendApplicationTests         : Starting MaxBackendApplicationTests using Java 21.0.10 with PID 27540 (started by oscar in C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_BACK\max-backend)
+2026-10-07T15:23:09.335-05:00  INFO 27540 --- [           main] c.m.m.MaxBackendApplicationTests         : The following 1 profile is active: "test"
+2026-10-07T15:23:09.902-05:00  INFO 27540 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-07T15:23:09.999-05:00  INFO 27540 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 11 JPA repository interfaces.
+2026-10-07T15:23:10.211-05:00  INFO 27540 --- [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-07T15:23:10.257-05:00  INFO 27540 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-07T15:23:10.259-05:00  INFO 27540 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-10-07T15:23:10.261-05:00  INFO 27540 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:maxdb user=SA
+2026-10-07T15:23:10.261-05:00  INFO 27540 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-10-07T15:23:10.262-05:00  INFO 27540 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:maxdb]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: MAXDB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-07T15:23:10.399-05:00  INFO 27540 --- [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-07T15:23:10.429-05:00  INFO 27540 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-07T15:23:10.865-05:00  INFO 27540 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-07T15:23:10.881-05:00  INFO 27540 --- [           main] c.m.m.MaxBackendApplicationTests         : Started MaxBackendApplicationTests in 1.612 seconds (process running for 15.611)
+2026-10-07T15:23:10.882-05:00  INFO 27540 --- [           main] c.m.m.shared.config.BootstrapDataConfig  : Bootstrap admin seed disabled
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.672 s -- in com.max.maxbackend.MaxBackendApplicationTests
+[INFO] Running com.max.maxbackend.MySqlWorkflowIntegrationTest
+2026-10-07T15:23:10.914-05:00  INFO 27540 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.max.maxbackend.MySqlWorkflowIntegrationTest]: MySqlWorkflowIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-07T15:23:10.916-05:00  INFO 27540 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.max.maxbackend.MaxBackendApplication for test class com.max.maxbackend.MySqlWorkflowIntegrationTest
+2026-10-07T15:23:10.917-05:00  INFO 27540 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.max.maxbackend.MySqlWorkflowIntegrationTest]: MySqlWorkflowIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-07T15:23:10.917-05:00  INFO 27540 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.max.maxbackend.AuthIntegrationTest]: AuthIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-07T15:23:10.918-05:00  INFO 27540 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.max.maxbackend.MaxBackendApplication for test class com.max.maxbackend.MySqlWorkflowIntegrationTest
+2026-10-07T15:23:10.923-05:00  INFO 27540 --- [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-07T15:23:10.953-05:00  INFO 27540 --- [           main] c.m.m.MySqlWorkflowIntegrationTest       : Starting MySqlWorkflowIntegrationTest using Java 21.0.10 with PID 27540 (started by oscar in C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_BACK\max-backend)
+2026-10-07T15:23:10.954-05:00  INFO 27540 --- [           main] c.m.m.MySqlWorkflowIntegrationTest       : The following 1 profile is active: "test"
+2026-10-07T15:23:11.189-05:00  INFO 27540 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-07T15:23:11.229-05:00  INFO 27540 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 11 JPA repository interfaces.
+2026-10-07T15:23:11.309-05:00  INFO 27540 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-07T15:23:11.309-05:00  INFO 27540 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-07T15:23:11.310-05:00  INFO 27540 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-07T15:23:11.365-05:00  INFO 27540 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 409 ms
+2026-10-07T15:23:11.544-05:00  INFO 27540 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-10-07T15:23:11.684-05:00  INFO 27540 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a6057bf
+2026-10-07T15:23:11.684-05:00  INFO 27540 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-10-07T15:23:11.713-05:00  INFO 27540 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://127.0.0.1:33307/max_evidence?sslMode=DISABLED&allowPublicKeyRetrieval=true&serverTimezone=UTC (MySQL 8.0)
+2026-10-07T15:23:11.763-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.030s)
+2026-10-07T15:23:11.776-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema `max_evidence`: 11
+2026-10-07T15:23:11.777-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Schema `max_evidence` is up to date. No migration necessary.
+2026-10-07T15:23:11.799-05:00  INFO 27540 --- [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-07T15:23:11.823-05:00  INFO 27540 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-07T15:23:11.839-05:00  INFO 27540 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://127.0.0.1:33307/max_evidence?sslMode=DISABLED&allowPublicKeyRetrieval=true&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.45
+	Default catalog/schema: max_evidence/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-07T15:23:12.067-05:00  INFO 27540 --- [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-07T15:23:12.090-05:00  INFO 27540 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-07T15:23:12.280-05:00  INFO 27540 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-07T15:23:12.290-05:00  INFO 27540 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 62678 (http) with context path '/'
+2026-10-07T15:23:12.292-05:00  INFO 27540 --- [           main] c.m.m.MySqlWorkflowIntegrationTest       : Started MySqlWorkflowIntegrationTest in 1.37 seconds (process running for 17.022)
+2026-10-07T15:23:12.296-05:00  INFO 27540 --- [           main] c.m.m.shared.config.BootstrapDataConfig  : Bootstrap admin seed disabled
+2026-10-07T15:23:12.305-05:00  INFO 27540 --- [o-auto-2-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-07T15:23:12.305-05:00  INFO 27540 --- [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-07T15:23:12.307-05:00  INFO 27540 --- [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-10-07T15:23:12.717-05:00  WARN 27540 --- [o-auto-2-exec-2] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 1062, SQLState: 23000
+2026-10-07T15:23:12.717-05:00  WARN 27540 --- [o-auto-2-exec-2] org.hibernate.orm.jdbc.error             : Duplicate entry '10000010' for key 'pacientes.uk_pacientes_dni'
+2026-10-07T15:23:12.861-05:00  WARN 27540 --- [o-auto-2-exec-7] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 1062, SQLState: 23000
+2026-10-07T15:23:12.862-05:00  WARN 27540 --- [o-auto-2-exec-7] org.hibernate.orm.jdbc.error             : Duplicate entry '10000011' for key 'pacientes.uk_pacientes_dni'
+2026-10-07T15:23:12.967-05:00  WARN 27540 --- [o-auto-2-exec-1] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 1062, SQLState: 23000
+2026-10-07T15:23:12.967-05:00  WARN 27540 --- [o-auto-2-exec-1] org.hibernate.orm.jdbc.error             : Duplicate entry '10000012' for key 'pacientes.uk_pacientes_dni'
+2026-10-07T15:23:13.262-05:00  WARN 27540 --- [o-auto-2-exec-7] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 1062, SQLState: 23000
+2026-10-07T15:23:13.262-05:00  WARN 27540 --- [o-auto-2-exec-7] org.hibernate.orm.jdbc.error             : Duplicate entry '10000013' for key 'pacientes.uk_pacientes_dni'
+2026-10-07T15:23:13.273-05:00  WARN 27540 --- [o-auto-2-exec-8] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 1062, SQLState: 23000
+2026-10-07T15:23:13.273-05:00  WARN 27540 --- [o-auto-2-exec-8] org.hibernate.orm.jdbc.error             : Duplicate entry '10000013' for key 'pacientes.uk_pacientes_dni'
+2026-10-07T15:23:13.361-05:00  WARN 27540 --- [o-auto-2-exec-3] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 1062, SQLState: 23000
+2026-10-07T15:23:13.361-05:00  WARN 27540 --- [o-auto-2-exec-3] org.hibernate.orm.jdbc.error             : Duplicate entry '10000014' for key 'pacientes.uk_pacientes_dni'
+[ERROR] Tests run: 17, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 3.833 s <<< FAILURE! -- in com.max.maxbackend.MySqlWorkflowIntegrationTest
+[ERROR] com.max.maxbackend.MySqlWorkflowIntegrationTest.dataAndFileAccessAreIsolatedPerProfile -- Time elapsed: 0.299 s <<< FAILURE!
+java.lang.AssertionError: {"timestamp":"2026-10-07T20:23:12.727676300Z","status":409,"error":"Conflict","message":"Data integrity violation","path":"/api/pacientes","details":[],"code":"CONFLICT"}
+	at com.max.maxbackend.AuthIntegrationTest.createPaciente(AuthIntegrationTest.java:396)
+	at com.max.maxbackend.AuthIntegrationTest.dataAndFileAccessAreIsolatedPerProfile(AuthIntegrationTest.java:294)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+
+[ERROR] com.max.maxbackend.MySqlWorkflowIntegrationTest.stalePatientVersionReturnsConflictWithoutOverwritingData -- Time elapsed: 0.106 s <<< FAILURE!
+java.lang.AssertionError: {"timestamp":"2026-10-07T20:23:12.863569800Z","status":409,"error":"Conflict","message":"Data integrity violation","path":"/api/pacientes","details":[],"code":"CONFLICT"}
+	at com.max.maxbackend.AuthIntegrationTest.createPaciente(AuthIntegrationTest.java:396)
+	at com.max.maxbackend.AuthIntegrationTest.stalePatientVersionReturnsConflictWithoutOverwritingData(AuthIntegrationTest.java:332)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+
+[ERROR] com.max.maxbackend.MySqlWorkflowIntegrationTest.deletingAppointmentKeepsConsultationAndClearsItsLink -- Time elapsed: 0.103 s <<< FAILURE!
+java.lang.AssertionError: {"timestamp":"2026-10-07T20:23:12.968190600Z","status":409,"error":"Conflict","message":"Data integrity violation","path":"/api/pacientes","details":[],"code":"CONFLICT"}
+	at com.max.maxbackend.AuthIntegrationTest.createPaciente(AuthIntegrationTest.java:396)
+	at com.max.maxbackend.AuthIntegrationTest.deletingAppointmentKeepsConsultationAndClearsItsLink(AuthIntegrationTest.java:264)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+
+[ERROR] com.max.maxbackend.MySqlWorkflowIntegrationTest.patientInitialHistoryIsAtomicAndIdempotent -- Time elapsed: 0.102 s <<< FAILURE!
+java.lang.AssertionError: {"timestamp":"2026-10-07T20:23:13.263694400Z","status":409,"error":"Conflict","message":"Data integrity violation","path":"/api/pacientes/con-historial","details":[],"code":"CONFLICT"}
+	at com.max.maxbackend.AuthIntegrationTest.patientInitialHistoryIsAtomicAndIdempotent(AuthIntegrationTest.java:173)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+
+[ERROR] com.max.maxbackend.MySqlWorkflowIntegrationTest.deletingPacienteCascadesToClinicalData -- Time elapsed: 0.089 s <<< FAILURE!
+java.lang.AssertionError: {"timestamp":"2026-10-07T20:23:13.363648500Z","status":409,"error":"Conflict","message":"Data integrity violation","path":"/api/pacientes","details":[],"code":"CONFLICT"}
+	at com.max.maxbackend.AuthIntegrationTest.createPaciente(AuthIntegrationTest.java:396)
+	at com.max.maxbackend.AuthIntegrationTest.deletingPacienteCascadesToClinicalData(AuthIntegrationTest.java:278)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+
+[INFO] Running com.max.maxbackend.shared.config.MySqlMigrationIntegrationTest
+2026-10-07T15:23:14.770-05:00  INFO 27540 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://127.0.0.1:33307/max_evidence_migrations_f68ca2445f11484db81321867917c189?sslMode=DISABLED&allowPublicKeyRetrieval=true (MySQL 8.0)
+2026-10-07T15:23:14.781-05:00  INFO 27540 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `max_evidence_migrations_f68ca2445f11484db81321867917c189`.`flyway_schema_history` does not exist yet
+2026-10-07T15:23:14.782-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.007s)
+2026-10-07T15:23:14.791-05:00  INFO 27540 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `max_evidence_migrations_f68ca2445f11484db81321867917c189`.`flyway_schema_history` ...
+2026-10-07T15:23:14.823-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema `max_evidence_migrations_f68ca2445f11484db81321867917c189`: << Empty Schema >>
+2026-10-07T15:23:14.830-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_f68ca2445f11484db81321867917c189` to version "1 - initial schema"
+2026-10-07T15:23:14.909-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_f68ca2445f11484db81321867917c189` to version "2 - security and integrity"
+2026-10-07T15:23:15.129-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_f68ca2445f11484db81321867917c189` to version "3 - require patient owner"
+2026-10-07T15:23:15.162-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_f68ca2445f11484db81321867917c189` to version "4 - require appointment owner"
+2026-10-07T15:23:15.190-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_f68ca2445f11484db81321867917c189` to version "5 - require consultation owner"
+2026-10-07T15:23:15.224-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_f68ca2445f11484db81321867917c189` to version "6 - require study owner"
+2026-10-07T15:23:15.253-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_f68ca2445f11484db81321867917c189` to version "7 - patient owner constraint"
+2026-10-07T15:23:15.293-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_f68ca2445f11484db81321867917c189` to version "8 - appointment constraints"
+2026-10-07T15:23:15.335-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_f68ca2445f11484db81321867917c189` to version "9 - consultation constraints"
+2026-10-07T15:23:15.377-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_f68ca2445f11484db81321867917c189` to version "10 - study constraints"
+2026-10-07T15:23:15.418-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_f68ca2445f11484db81321867917c189` to version "11 - align study file url type"
+2026-10-07T15:23:15.434-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 11 migrations to schema `max_evidence_migrations_f68ca2445f11484db81321867917c189`, now at version v11 (execution time 00:00.500s)
+2026-10-07T15:23:15.457-05:00  INFO 27540 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://127.0.0.1:33307/max_evidence_migrations_f68ca2445f11484db81321867917c189?sslMode=DISABLED&allowPublicKeyRetrieval=true (MySQL 8.0)
+2026-10-07T15:23:15.468-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 11 migrations (execution time 00:00.008s)
+2026-10-07T15:23:15.472-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema `max_evidence_migrations_f68ca2445f11484db81321867917c189`: 11
+2026-10-07T15:23:15.473-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Schema `max_evidence_migrations_f68ca2445f11484db81321867917c189` is up to date. No migration necessary.
+2026-10-07T15:23:15.653-05:00  WARN 27540 --- [           main] c.m.m.shared.config.LegacyFlywayConfig   : Tablas, columnas y datos V1 verificados; creando baseline Flyway en versi�n 1
+2026-10-07T15:23:15.662-05:00  INFO 27540 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://127.0.0.1:33307/max_evidence_migrations_e1acedbbbe7f46c6abf8c37f8b8602dc?sslMode=DISABLED&allowPublicKeyRetrieval=true (MySQL 8.0)
+2026-10-07T15:23:15.669-05:00  INFO 27540 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `max_evidence_migrations_e1acedbbbe7f46c6abf8c37f8b8602dc`.`flyway_schema_history` with baseline ...
+2026-10-07T15:23:15.705-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbBaseline     : Successfully baselined schema with version: 1
+2026-10-07T15:23:15.732-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 12 migrations (execution time 00:00.012s)
+2026-10-07T15:23:15.737-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema `max_evidence_migrations_e1acedbbbe7f46c6abf8c37f8b8602dc`: 1
+2026-10-07T15:23:15.742-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_e1acedbbbe7f46c6abf8c37f8b8602dc` to version "2 - security and integrity"
+2026-10-07T15:23:16.017-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_e1acedbbbe7f46c6abf8c37f8b8602dc` to version "3 - require patient owner"
+2026-10-07T15:23:16.068-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_e1acedbbbe7f46c6abf8c37f8b8602dc` to version "4 - require appointment owner"
+2026-10-07T15:23:16.100-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_e1acedbbbe7f46c6abf8c37f8b8602dc` to version "5 - require consultation owner"
+2026-10-07T15:23:16.132-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_e1acedbbbe7f46c6abf8c37f8b8602dc` to version "6 - require study owner"
+2026-10-07T15:23:16.169-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_e1acedbbbe7f46c6abf8c37f8b8602dc` to version "7 - patient owner constraint"
+2026-10-07T15:23:16.207-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_e1acedbbbe7f46c6abf8c37f8b8602dc` to version "8 - appointment constraints"
+2026-10-07T15:23:16.245-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_e1acedbbbe7f46c6abf8c37f8b8602dc` to version "9 - consultation constraints"
+2026-10-07T15:23:16.285-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_e1acedbbbe7f46c6abf8c37f8b8602dc` to version "10 - study constraints"
+2026-10-07T15:23:16.329-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `max_evidence_migrations_e1acedbbbe7f46c6abf8c37f8b8602dc` to version "11 - align study file url type"
+2026-10-07T15:23:16.369-05:00  INFO 27540 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 10 migrations to schema `max_evidence_migrations_e1acedbbbe7f46c6abf8c37f8b8602dc`, now at version v11 (execution time 00:00.549s)
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.806 s -- in com.max.maxbackend.shared.config.MySqlMigrationIntegrationTest
+[INFO] Running com.max.maxbackend.shared.security.PasswordPolicyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.max.maxbackend.shared.security.PasswordPolicyTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   MySqlWorkflowIntegrationTest>AuthIntegrationTest.dataAndFileAccessAreIsolatedPerProfile:294->AuthIntegrationTest.createPaciente:396 {"timestamp":"2026-10-07T20:23:12.727676300Z","status":409,"error":"Conflict","message":"Data integrity violation","path":"/api/pacientes","details":[],"code":"CONFLICT"}
+[ERROR]   MySqlWorkflowIntegrationTest>AuthIntegrationTest.deletingAppointmentKeepsConsultationAndClearsItsLink:264->AuthIntegrationTest.createPaciente:396 {"timestamp":"2026-10-07T20:23:12.968190600Z","status":409,"error":"Conflict","message":"Data integrity violation","path":"/api/pacientes","details":[],"code":"CONFLICT"}
+[ERROR]   MySqlWorkflowIntegrationTest>AuthIntegrationTest.deletingPacienteCascadesToClinicalData:278->AuthIntegrationTest.createPaciente:396 {"timestamp":"2026-10-07T20:23:13.363648500Z","status":409,"error":"Conflict","message":"Data integrity violation","path":"/api/pacientes","details":[],"code":"CONFLICT"}
+[ERROR]   MySqlWorkflowIntegrationTest>AuthIntegrationTest.patientInitialHistoryIsAtomicAndIdempotent:173 {"timestamp":"2026-10-07T20:23:13.263694400Z","status":409,"error":"Conflict","message":"Data integrity violation","path":"/api/pacientes/con-historial","details":[],"code":"CONFLICT"}
+[ERROR]   MySqlWorkflowIntegrationTest>AuthIntegrationTest.stalePatientVersionReturnsConflictWithoutOverwritingData:332->AuthIntegrationTest.createPaciente:396 {"timestamp":"2026-10-07T20:23:12.863569800Z","status":409,"error":"Conflict","message":"Data integrity violation","path":"/api/pacientes","details":[],"code":"CONFLICT"}
+[INFO] 
+[ERROR] Tests run: 63, Failures: 5, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  59.023 s
+[INFO] Finished at: 2026-10-07T15:23:17-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project max-backend: There are test failures.
+[ERROR] 
+[ERROR] See C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_BACK\max-backend\target\surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+
+Exit code: 1
+Finalizado: 10/07/2026 15:23:17 -05:00

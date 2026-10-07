@@ -1,0 +1,16 @@
+{
+  "pid": 44300,
+  "port": 18080,
+  "url": "http://127.0.0.1:18080",
+  "artifact": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_BACK\\max-backend\\target\\max-backend-0.0.1-SNAPSHOT.jar",
+  "sha256": "2198991ECE94BA42FF59BED26026CE90AE51EFFC92B548C2906B9803CA24A422",
+  "health": {
+    "groups": [
+      "liveness",
+      "readiness"
+    ],
+    "status": "UP"
+  },
+  "storage": "none: archivo embebido, sin acceso a R2",
+  "startedAt": "2026-10-07T15:31:38.8178275-05:00"
+}

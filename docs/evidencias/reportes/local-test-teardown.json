@@ -1,0 +1,9 @@
+{
+  "stoppedAt": "2026-10-07T15:50:11.6490672-05:00",
+  "apiPid": 44300,
+  "mysqlPid": 31076,
+  "datadirPreserved": true,
+  "productionModified": false,
+  "emulatorClosed": false,
+  "note": "Solo API 18080 y MySQL sintético 33307; no afecta servicio de 3306 ni emulador"
+}

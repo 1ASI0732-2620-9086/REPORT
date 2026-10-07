@@ -1,0 +1,20 @@
+MAX | android-date-regression-green | Android | 6.1.1.3.3
+Fecha America/Lima: 10/07/2026 15:19:33 -05:00
+Commit: 601fc357b9522e8782f8eae3498c7b98c6638673
+Cambios locales: 11
+Comando: C:\src\flutter\bin\flutter.bat test test/study_transport_test.dart --reporter=json
+
+{"protocolVersion":"0.1.1","runnerVersion":null,"pid":29108,"type":"start","time":0}
+{"suite":{"id":0,"platform":"vm","path":"C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_transport_test.dart"},"type":"suite","time":0}
+{"test":{"id":1,"name":"loading C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_transport_test.dart","suiteID":0,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":0}
+{"count":1,"time":3,"type":"allSuites"}
+{"testID":1,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":1306}
+{"group":{"id":2,"suiteID":0,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":null},"type":"group","time":1308}
+{"test":{"id":3,"name":"multipart conserva el día y el contrato de fecha/hora: 2026-10-07","suiteID":0,"groupIDs":[2],"metadata":{"skip":false,"skipReason":null},"line":15,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_transport_test.dart"},"type":"testStart","time":1309}
+{"testID":3,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1349}
+{"test":{"id":4,"name":"multipart conserva el día y el contrato de fecha/hora: 2026-10-07T16:45:00","suiteID":0,"groupIDs":[2],"metadata":{"skip":false,"skipReason":null},"line":15,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_transport_test.dart"},"type":"testStart","time":1349}
+{"testID":4,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1354}
+{"success":true,"type":"done","time":1382}
+
+Exit code: 0
+Finalizado: 10/07/2026 15:19:38 -05:00

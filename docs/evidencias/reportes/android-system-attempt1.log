@@ -1,0 +1,275 @@
+MAX | android-system-attempt1 | Android/API/MySQL | 6.1.4.2
+Fecha America/Lima: 10/07/2026 15:03:40 -05:00
+Commit: 601fc357b9522e8782f8eae3498c7b98c6638673
+Cambios locales: 8
+Comando: flutter.bat drive --driver=test_driver/integration_test.dart --target=integration_test/max_system_test.dart -d emulator-5554 --dart-define=API_BASE_URL=http://10.0.2.2:18080/api
+
+Resolving dependencies...
+Downloading packages...
+  android_file_picker 2.0.0 (2.0.1 available)
+  clock 1.1.2 (1.1.3 available)
+  code_assets 1.2.1 (2.1.0 available)
+  cross_file 0.3.5+5 (0.4.0 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  dbus 0.7.15 (0.8.0 available)
+  file_picker_darwin 2.1.0 (2.1.2 available)
+  file_picker_linux 2.0.0 (2.0.2 available)
+  file_picker_web 4.0.0 (4.0.1 available)
++ flutter_driver 0.0.0 from sdk flutter
++ fuchsia_remote_debug_protocol 0.0.0 from sdk flutter
+  hooks 2.0.2 (2.2.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_android 0.8.13+17 (0.8.13+25 available)
+  image_picker_ios 0.8.13+7 (0.8.13+9 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
++ integration_test 0.0.0 from sdk flutter
+  jni 1.0.3 (1.1.0 available)
+  jni_flutter 1.0.3 (1.0.4+1 available)
+  matcher 0.12.19 (0.12.20 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.17.0 (1.19.0 available)
+  objective_c 9.5.0 (9.6.2 available)
+  petitparser 7.0.2 (7.1.0 available)
+  platform 3.1.6 (3.2.0 available)
++ process 5.0.6
+  record_use 0.6.0 (1.1.1 available)
+  shared_preferences 2.5.5 (2.5.6 available)
+  shared_preferences_android 2.4.23 (2.4.28 available)
+  stack_trace 1.12.1 (1.12.2 available)
++ sync_http 0.3.1
+  test_api 0.7.10 (0.7.14 available)
+  url_launcher 6.3.2 (6.3.3 available)
+  url_launcher_android 6.3.30 (6.3.33 available)
+  vector_math 2.2.0 (2.4.3 available)
++ webdriver 3.2.0
+  windows_file_picker 2.0.0 (2.0.1 available)
+  xml 7.0.1 (7.1.0 available)
+Changed 6 dependencies!
+32 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Running Gradle task 'assembleDebug'...                            224.4s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...        1,886ms
+W/.max.max_mobile( 5209): Accessing hidden method Landroid/view/accessibility/AccessibilityNodeInfo;->getSourceNodeId()J (unsupported,test-api, reflection, allowed)
+W/.max.max_mobile( 5209): Accessing hidden method Landroid/view/accessibility/AccessibilityRecord;->getSourceNodeId()J (unsupported, reflection, allowed)
+W/.max.max_mobile( 5209): Accessing hidden field Landroid/view/accessibility/AccessibilityNodeInfo;->mChildNodeIds:Landroid/util/LongArray; (unsupported, reflection, allowed)
+W/.max.max_mobile( 5209): Accessing hidden method Landroid/util/LongArray;->get(I)J (unsupported, reflection, allowed)
+D/FlutterRenderer( 5209): Width is zero. 0,0
+D/CompatibilityChangeReporter( 5209): Compat change id reported: 237531167; UID 10193; state: DISABLED
+W/OpenGLRenderer( 5209): Unknown dataspace 0
+I/Choreographer( 5209): Skipped 208 frames!  The application may be doing too much work on its main thread.
+D/FlutterRenderer( 5209): Width is zero. 0,0
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+W/OpenGLRenderer( 5209): Failed to initialize 101010-2 format, error = EGL_SUCCESS
+I/Gralloc4( 5209): mapper 4.x is not supported
+I/Choreographer( 5209): Skipped 65 frames!  The application may be doing too much work on its main thread.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:56531/K0YsjOaBREQ=/
+VMServiceFlutterDriver: Isolate found with number: 1393468968634151
+VMServiceFlutterDriver: Isolate 1393468968634151 is runnable.
+VMServiceFlutterDriver: Isolate is paused at start.
+VMServiceFlutterDriver: Attempting to resume isolate
+I/flutter ( 5209): 00:00 +0: Android real: IAM, paciente, edición, estudio y logout
+VMServiceFlutterDriver: Connected to Flutter application.
+I/Choreographer( 5209): Skipped 65 frames!  The application may be doing too much work on its main thread.
+I/OpenGLRenderer( 5209): Davey! duration=1331ms; Flags=1, FrameTimelineVsyncId=18835, IntendedVsync=443102347690, Vsync=444185680980, InputEventId=0, HandleInputStart=444194607200, AnimationStart=444194648600, PerformTraversalsStart=444194790600, DrawStart=444198162400, FrameDeadline=443119014356, FrameInterval=444193832800, FrameStartTime=16666666, SyncQueued=444200603200, SyncStart=444201120500, IssueDrawCommandsStart=444204546000, SwapBuffers=444319633500, FrameCompleted=444434162800, DequeueBufferDuration=1107100, QueueBufferDuration=503500, GpuCompleted=444432836100, SwapBuffersCompleted=444434162800, DisplayPresentTime=0, CommandSubmissionCompleted=444319633500, 
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/ProfileInstaller( 5209): Installing profile for com.max.max_mobile
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+VMServiceFlutterDriver: request_data message is taking a long time to complete...
+D/EGL_emulation( 5209): app_time_stats: avg=1601.15ms min=396.59ms max=3843.79ms count=4
+I/ImeTracker( 5209): com.max.max_mobile:65a713a7: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 5209): showSoftInput() view=io.flutter.embedding.android.FlutterView{edc182d VFE...... .F....ID 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 5209): com.max.max_mobile:7ae33b80: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 5209): showSoftInput() view=io.flutter.embedding.android.FlutterView{edc182d VFE...... .F....ID 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/EGL_emulation( 5209): app_time_stats: avg=204.64ms min=37.02ms max=552.81ms count=6
+I/.max.max_mobile( 5209): NativeAlloc concurrent copying GC freed 25214(1617KB) AllocSpace objects, 18(632KB) LOS objects, 49% free, 2849KB/5699KB, paused 43.363ms,1.179ms total 182.957ms
+I/ImeTracker( 5209): com.max.max_mobile:e94f84bb: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 5209): showSoftInput() view=io.flutter.embedding.android.FlutterView{edc182d VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/EGL_emulation( 5209): app_time_stats: avg=335.34ms min=175.01ms max=422.94ms count=3
+I/ImeTracker( 5209): com.max.max_mobile:1e96223e: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 5209): showSoftInput() view=io.flutter.embedding.android.FlutterView{edc182d VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 5209): com.max.max_mobile:6f540926: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 5209): showSoftInput() view=io.flutter.embedding.android.FlutterView{edc182d VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 5209): com.max.max_mobile:c3581304: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 5209): showSoftInput() view=io.flutter.embedding.android.FlutterView{edc182d VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 5209): com.max.max_mobile:cb339c8f: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 5209): showSoftInput() view=io.flutter.embedding.android.FlutterView{edc182d VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 5209): com.max.max_mobile:f569e7ff: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 5209): showSoftInput() view=io.flutter.embedding.android.FlutterView{edc182d VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 5209): com.max.max_mobile:5b777ebd: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 5209): showSoftInput() view=io.flutter.embedding.android.FlutterView{edc182d VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 5209): com.max.max_mobile:7eda1721: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 5209): showSoftInput() view=io.flutter.embedding.android.FlutterView{edc182d VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/EGL_emulation( 5209): app_time_stats: avg=191.49ms min=103.23ms max=432.64ms count=7
+D/InsetsController( 5209): show(ime(), fromIme=true)
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/EGL_emulation( 5209): app_time_stats: avg=4826.87ms min=2454.93ms max=7198.80ms count=2
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+I/ImeTracker( 5209): com.max.max_mobile:7ae33b80: onShown
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+W/RemoteInputConnectionImpl( 5209): getCursorCapsMode on inactive InputConnection
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+D/EGL_emulation( 5209): app_time_stats: avg=203.76ms min=38.42ms max=434.03ms count=5
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 5209): getCursorCapsMode on inactive InputConnection
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+D/InsetsController( 5209): show(ime(), fromIme=true)
+I/ImeTracker( 5209): com.max.max_mobile:e94f84bb: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/InsetsController( 5209): show(ime(), fromIme=true)
+I/ImeTracker( 5209): com.max.max_mobile:1e96223e: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+D/EGL_emulation( 5209): app_time_stats: avg=214.66ms min=161.71ms max=281.36ms count=5
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+D/InsetsController( 5209): show(ime(), fromIme=true)
+I/ImeTracker( 5209): com.max.max_mobile:6f540926: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/InsetsController( 5209): show(ime(), fromIme=true)
+I/ImeTracker( 5209): com.max.max_mobile:c3581304: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+W/RemoteInputConnectionImpl( 5209): getSurroundingText on inactive InputConnection
+D/InsetsController( 5209): show(ime(), fromIme=true)
+I/ImeTracker( 5209): com.max.max_mobile:cb339c8f: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/InsetsController( 5209): show(ime(), fromIme=true)
+I/ImeTracker( 5209): com.max.max_mobile:f569e7ff: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/EGL_emulation( 5209): app_time_stats: avg=326.78ms min=130.59ms max=826.28ms count=4
+I/ImeTracker( 5209): com.max.max_mobile:7b236d1b: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+D/EGL_emulation( 5209): app_time_stats: avg=563.33ms min=20.85ms max=2967.10ms count=6
+D/InsetsController( 5209): show(ime(), fromIme=true)
+I/ImeTracker( 5209): com.max.max_mobile:7eda1721: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+W/WindowOnBackDispatcher( 5209): sendCancelIfRunning: isInProgress=falsecallback=ImeCallback=ImeOnBackInvokedCallback@75983171 Callback=android.window.IOnBackInvokedCallback$Stub$Proxy@6694ac3
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+W/FrameTracker( 5209): Missed App frame:UNKNOWN: 88, 21169, 0, CUJ=J<IME_INSETS_ANIMATION::0@1@com.max.max_mobile>
+W/FrameTracker( 5209): Missed SF frame:UNKNOWN: 88, 21169, 0, CUJ=J<IME_INSETS_ANIMATION::0@1@com.max.max_mobile>
+W/FrameTracker( 5209): Missed App frame:UNKNOWN: 88, 21201, 0, CUJ=J<IME_INSETS_ANIMATION::0@1@com.max.max_mobile>
+W/FrameTracker( 5209): Missed SF frame:UNKNOWN: 88, 21201, 0, CUJ=J<IME_INSETS_ANIMATION::0@1@com.max.max_mobile>
+W/FrameTracker( 5209): Missed App frame:UNKNOWN: 88, 21209, 0, CUJ=J<IME_INSETS_ANIMATION::0@1@com.max.max_mobile>
+W/FrameTracker( 5209): Missed SF frame:UNKNOWN: 88, 21209, 0, CUJ=J<IME_INSETS_ANIMATION::0@1@com.max.max_mobile>
+W/FrameTracker( 5209): Missed SF frame:UNKNOWN: 80, 21231, 0, CUJ=J<IME_INSETS_ANIMATION::0@1@com.max.max_mobile>
+W/FrameTracker( 5209): Missed App frame:UNKNOWN: 88, 21292, 0, CUJ=J<IME_INSETS_ANIMATION::0@1@com.max.max_mobile>
+W/FrameTracker( 5209): Missed SF frame:UNKNOWN: 88, 21292, 0, CUJ=J<IME_INSETS_ANIMATION::0@1@com.max.max_mobile>
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+V/PerfettoTrigger( 5209): Triggering /system/bin/trigger_perfetto com.android.telemetry.interaction-jank-monitor-69
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+I/ImeTracker( 5209): com.max.max_mobile:c679668a: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
+I/ImeTracker( 5209): com.max.max_mobile:7b236d1b: onHidden
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/EGL_emulation( 5209): app_time_stats: avg=370.07ms min=232.32ms max=513.40ms count=3
+D/EGL_emulation( 5209): app_time_stats: avg=154.95ms min=16.41ms max=543.84ms count=7
+W/WindowOnBackDispatcher( 5209): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher( 5209): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/ImeTracker( 5209): com.max.max_mobile:c0f85bc7: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 5209): showSoftInput() view=io.flutter.embedding.android.FlutterView{edc182d VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 5209): com.max.max_mobile:1290f8ec: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 5209): showSoftInput() view=io.flutter.embedding.android.FlutterView{edc182d VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController( 5209): show(ime(), fromIme=true)
+I/flutter ( 5209): ══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+I/flutter ( 5209): The following StateError was thrown running a test:
+I/flutter ( 5209): Bad state: Too many elements
+I/flutter ( 5209): 
+I/flutter ( 5209): When the exception was thrown, this was the stack:
+I/flutter ( 5209): #0      Iterable.single (dart:core/iterable.dart:696:24)
+I/flutter ( 5209): #1      WidgetController.element (package:flutter_test/src/controller.dart:883:30)
+I/flutter ( 5209): #2      WidgetController.ensureVisible (package:flutter_test/src/controller.dart:2382:32)
+I/flutter ( 5209): #3      main.<anonymous closure>.fill (file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/integration_test/max_system_test.dart:37:20)
+I/flutter ( 5209): #4      main.<anonymous closure> (file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/integration_test/max_system_test.dart:56:11)
+I/flutter ( 5209): <asynchronous suspension>
+I/flutter ( 5209): #5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+I/flutter ( 5209): <asynchronous suspension>
+I/flutter ( 5209): #6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+I/flutter ( 5209): <asynchronous suspension>
+I/flutter ( 5209): #7      TestWidgetsFlutterBinding._createTestCompletionHandler.<anonymous closure> (package:flutter_test/src/binding.dart:1437:12)
+I/flutter ( 5209): <asynchronous suspension>
+I/flutter ( 5209): 
+I/flutter ( 5209): The test description was:
+I/flutter ( 5209):   Android real: IAM, paciente, edición, estudio y logout
+I/flutter ( 5209): ════════════════════════════════════════════════════════════════════════════════════════════════════
+I/flutter ( 5209): 00:19 +0: Android real: IAM, paciente, edición, estudio y logout [E]
+I/flutter ( 5209):   Test failed. See exception logs above.
+I/flutter ( 5209):   The test description was: Android real: IAM, paciente, edición, estudio y logout
+I/flutter ( 5209):   
+I/flutter ( 5209): 00:19 +0 -1: (tearDownAll)
+I/ImeTracker( 5209): com.max.max_mobile:8d78baa9: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 5209): showSoftInput() view=io.flutter.embedding.android.FlutterView{edc182d VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker( 5209): com.max.max_mobile:f9403d1a: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager( 5209): showSoftInput() view=io.flutter.embedding.android.FlutterView{edc182d VFE...... .F...... 0,0-1080,1857 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+W/FrameTracker( 5209): Missed SF frame:UNKNOWN: 80, 22370, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 5209): Missed App frame:UNKNOWN: 88, 22393, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 5209): Missed SF frame:UNKNOWN: 88, 22393, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 5209): Missed SF frame:UNKNOWN: 66, 22429, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 5209): Missed SF frame:UNKNOWN: 80, 22437, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+Failure Details:
+Failure in method: Android real: IAM, paciente, edición, estudio y logout
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞═════════════════
+The following StateError was thrown running a test:
+Bad state: Too many elements
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:696:24)
+#1      WidgetController.element (package:flutter_test/src/controller.dart:883:30)
+#2      WidgetController.ensureVisible (package:flutter_test/src/controller.dart:2382:32)
+#3      main.<anonymous closure>.fill (file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/integration_test/max_system_test.dart:37:20)
+#4      main.<anonymous closure> (file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/integration_test/max_system_test.dart:56:11)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1682:5)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._createTestCompletionHandler.<anonymous closure> (package:flutter_test/src/binding.dart:1437:12)
+<asynchronous suspension>
+
+The test description was:
+  Android real: IAM, paciente, edición, estudio y logout
+═════════════════════════════════════════════════════════════════
+
+end of failure 1
+
+
+
+W/FrameTracker( 5209): Missed App frame:UNKNOWN: 72, 22444, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 5209): Missed App frame:UNKNOWN: 88, 22481, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 5209): Missed SF frame:UNKNOWN: 88, 22481, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+W/FrameTracker( 5209): Missed SF frame:UNKNOWN: 80, 22496, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@com.max.max_mobile>
+V/PerfettoTrigger( 5209): Not triggering com.android.telemetry.interaction-jank-monitor-69 - not enough time since last trigger
+I/Choreographer( 5209): Skipped 127 frames!  The application may be doing too much work on its main thread.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/EGL_emulation( 5209): app_time_stats: avg=545.10ms min=10.07ms max=4176.14ms count=9
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+I/flutter ( 5209): 00:19 +1 -1: Some tests failed.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+I/OpenGLRenderer( 5209): Davey! duration=2136ms; Flags=0, FrameTimelineVsyncId=23589, IntendedVsync=460285680336, Vsync=462402346918, InputEventId=0, HandleInputStart=462405886200, AnimationStart=462405941100, PerformTraversalsStart=462407246200, DrawStart=462415160400, FrameDeadline=460302347002, FrameInterval=462405346400, FrameStartTime=16666666, SyncQueued=462415852100, SyncStart=462416128000, IssueDrawCommandsStart=462416301200, SwapBuffers=462416894100, FrameCompleted=462422398400, DequeueBufferDuration=42200, QueueBufferDuration=994300, GpuCompleted=462422004400, SwapBuffersCompleted=462422398400, DisplayPresentTime=72057628414509593, CommandSubmissionCompleted=462416894100, 
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+I/ImeTracker( 5209): com.max.max_mobile:1290f8ec: onShown
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+D/FlutterJNI( 5209): Sending viewport metrics to the engine.
+
+Exit code: 1
+Finalizado: 10/07/2026 15:08:03 -05:00

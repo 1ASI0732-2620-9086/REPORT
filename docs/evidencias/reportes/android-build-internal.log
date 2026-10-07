@@ -1,0 +1,11 @@
+MAX | android-build-internal | Android | 7.2
+Fecha America/Lima: 10/07/2026 15:33:37 -05:00
+Commit: 601fc357b9522e8782f8eae3498c7b98c6638673
+Cambios locales: 14
+Comando: C:\src\flutter\bin\flutter.bat build apk --debug --dart-define=API_BASE_URL=http://10.0.2.2:18080/api
+
+Running Gradle task 'assembleDebug'...                             26.0s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+
+Exit code: 0
+Finalizado: 10/07/2026 15:34:07 -05:00

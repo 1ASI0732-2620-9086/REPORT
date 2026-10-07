@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://1asi0732-2620-9086.github.io/LANDING-PAGE/",
+    "status": 200,
+    "checkedAt": "2026-10-07T15:31:40.2626318-05:00",
+    "body": "MAX HealthTech",
+    "method": "GET solo lectura; no escritura ni despliegue",
+    "versionVerified": false
+  },
+  {
+    "url": "https://maxdevback-production.up.railway.app/actuator/health",
+    "status": 200,
+    "checkedAt": "2026-10-07T15:31:40.8696178-05:00",
+    "body": "{\"groups\":[\"liveness\",\"readiness\"],\"status\":\"UP\"}",
+    "method": "GET solo lectura; no escritura ni despliegue",
+    "versionVerified": false
+  }
+]

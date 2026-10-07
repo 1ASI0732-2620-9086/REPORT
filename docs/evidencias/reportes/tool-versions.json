@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-07T15:45:54.0531526-05:00",
+  "node": "v24.13.1",
+  "npmLocal": "11.8.0",
+  "npmDeclared": "10.9.3",
+  "mysql": "8.0.45",
+  "junitJupiter": "6.0.3",
+  "mockito": "5.20.0",
+  "flyway": "11.14.1",
+  "chromium": "140.0.7339.186",
+  "playwright": "1.55.1",
+  "cucumber": "13.3.0",
+  "actionlint": "1.7.11",
+  "sources": [
+    "Spring Boot 4.0.8 BOM",
+    "MySQL SELECT VERSION en 33307",
+    "system-web.json attachment entorno",
+    "package-lock.json",
+    "flutter SDK local"
+  ]
+}

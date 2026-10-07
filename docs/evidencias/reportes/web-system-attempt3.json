@@ -1,0 +1,28 @@
+{
+  "id": "web-system-attempt3",
+  "component": "Web",
+  "section": "6.1.4.1",
+  "command": "npm.cmd run test:system",
+  "workingDirectory": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX",
+  "environment": "Local, Windows; datos sintéticos",
+  "startedAt": "2026-10-07T15:21:58.1253536-05:00",
+  "finishedAt": "2026-10-07T15:22:49.8497986-05:00",
+  "commit": "63ed173284647024a7612d5a1cf8f8b0290eff35",
+  "uncommittedChanges": [
+    " M .gitignore",
+    " M package-lock.json",
+    " M package.json",
+    " M playwright.config.ts",
+    "?? bdd/",
+    "?? cucumber.cjs",
+    "?? e2e-system/",
+    "?? playwright.system.config.ts",
+    "?? proxy.evidence.json",
+    "?? src/app/contexts/estudios/application/estudios.store.spec.ts",
+    "?? src/app/contexts/estudios/infrastructure/estudios.api-client.spec.ts",
+    "?? src/app/core/state/clinical-data.service.spec.ts"
+  ],
+  "exitCode": 1,
+  "status": "Ejecutado: fallido",
+  "originalReport": "web-system-attempt3.log"
+}

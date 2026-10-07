@@ -1,0 +1,89 @@
+MAX | android-unit-final | Android | 6.1.1
+Fecha America/Lima: 10/07/2026 15:29:47 -05:00
+Commit: 601fc357b9522e8782f8eae3498c7b98c6638673
+Cambios locales: 14
+Comando: C:\src\flutter\bin\flutter.bat test --reporter=json
+
+{"protocolVersion":"0.1.1","runnerVersion":null,"pid":46104,"type":"start","time":0}
+{"suite":{"id":0,"platform":"vm","path":"C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/iam_test.dart"},"type":"suite","time":0}
+{"test":{"id":1,"name":"loading C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/iam_test.dart","suiteID":0,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":1}
+{"suite":{"id":2,"platform":"vm","path":"C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/models_test.dart"},"type":"suite","time":5}
+{"test":{"id":3,"name":"loading C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/models_test.dart","suiteID":2,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":5}
+{"suite":{"id":4,"platform":"vm","path":"C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/patients_test.dart"},"type":"suite","time":5}
+{"test":{"id":5,"name":"loading C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/patients_test.dart","suiteID":4,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":5}
+{"suite":{"id":6,"platform":"vm","path":"C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/studies_test.dart"},"type":"suite","time":6}
+{"test":{"id":7,"name":"loading C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/studies_test.dart","suiteID":6,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":6}
+{"suite":{"id":8,"platform":"vm","path":"C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_transport_test.dart"},"type":"suite","time":6}
+{"test":{"id":9,"name":"loading C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_transport_test.dart","suiteID":8,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":6}
+{"suite":{"id":10,"platform":"vm","path":"C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_viewer_test.dart"},"type":"suite","time":6}
+{"test":{"id":11,"name":"loading C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_viewer_test.dart","suiteID":10,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":6}
+{"suite":{"id":12,"platform":"vm","path":"C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/validators_test.dart"},"type":"suite","time":8}
+{"test":{"id":13,"name":"loading C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/validators_test.dart","suiteID":12,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":8}
+{"count":7,"time":8,"type":"allSuites"}
+{"testID":1,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":1623}
+{"group":{"id":14,"suiteID":0,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":4,"line":null,"column":null,"url":null},"type":"group","time":1634}
+{"group":{"id":15,"suiteID":0,"parentID":14,"name":"IAM","metadata":{"skip":false,"skipReason":null},"testCount":4,"line":8,"column":3,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/iam_test.dart"},"type":"group","time":1636}
+{"test":{"id":16,"name":"IAM rechaza correo inválido y exige correo al registrarse","suiteID":0,"groupIDs":[14,15],"metadata":{"skip":false,"skipReason":null},"line":9,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/iam_test.dart"},"type":"testStart","time":1636}
+{"testID":16,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1654}
+{"test":{"id":17,"name":"IAM credenciales inválidas no crean identidad autenticada","suiteID":0,"groupIDs":[14,15],"metadata":{"skip":false,"skipReason":null},"line":14,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/iam_test.dart"},"type":"testStart","time":1655}
+{"testID":17,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1670}
+{"test":{"id":18,"name":"IAM login y logout limpian datos e identidad","suiteID":0,"groupIDs":[14,15],"metadata":{"skip":false,"skipReason":null},"line":22,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/iam_test.dart"},"type":"testStart","time":1671}
+{"testID":18,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1681}
+{"test":{"id":19,"name":"IAM contraseña actual incorrecta conserva la sesión","suiteID":0,"groupIDs":[14,15],"metadata":{"skip":false,"skipReason":null},"line":34,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/iam_test.dart"},"type":"testStart","time":1681}
+{"testID":19,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1688}
+{"testID":3,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":1951}
+{"group":{"id":20,"suiteID":2,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":null},"type":"group","time":1952}
+{"test":{"id":21,"name":"paciente conserva contrato JSON del backend","suiteID":2,"groupIDs":[20],"metadata":{"skip":false,"skipReason":null},"line":5,"column":3,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/models_test.dart"},"type":"testStart","time":1952}
+{"testID":21,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1968}
+{"test":{"id":22,"name":"perfil administrativo usa id como userId compatible","suiteID":2,"groupIDs":[20],"metadata":{"skip":false,"skipReason":null},"line":24,"column":3,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/models_test.dart"},"type":"testStart","time":1968}
+{"testID":22,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1971}
+{"testID":5,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":2716}
+{"group":{"id":23,"suiteID":4,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":5,"line":null,"column":null,"url":null},"type":"group","time":2716}
+{"group":{"id":24,"suiteID":4,"parentID":23,"name":"Patients","metadata":{"skip":false,"skipReason":null},"testCount":5,"line":9,"column":3,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/patients_test.dart"},"type":"group","time":2716}
+{"test":{"id":25,"name":"Patients nombres y DNI se normalizan sin cambiar identidad o versión","suiteID":4,"groupIDs":[23,24],"metadata":{"skip":false,"skipReason":null},"line":10,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/patients_test.dart"},"type":"testStart","time":2716}
+{"testID":25,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2731}
+{"test":{"id":26,"name":"Patients registro inexistente y listado vacío mantienen estado vacío","suiteID":4,"groupIDs":[23,24],"metadata":{"skip":false,"skipReason":null},"line":18,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/patients_test.dart"},"type":"testStart","time":2731}
+{"testID":26,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2739}
+{"test":{"id":27,"name":"Patients un fallo de persistencia no agrega pacientes ficticios","suiteID":4,"groupIDs":[23,24],"metadata":{"skip":false,"skipReason":null},"line":24,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/patients_test.dart"},"type":"testStart","time":2740}
+{"testID":27,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2744}
+{"test":{"id":28,"name":"Patients bloquea doble envío mientras la operación está pendiente","suiteID":4,"groupIDs":[23,24],"metadata":{"skip":false,"skipReason":null},"line":32,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/patients_test.dart"},"type":"testStart","time":2744}
+{"testID":28,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2750}
+{"test":{"id":29,"name":"Patients descarta pacientes recibidos después del logout","suiteID":4,"groupIDs":[23,24],"metadata":{"skip":false,"skipReason":null},"line":43,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/patients_test.dart"},"type":"testStart","time":2750}
+{"testID":29,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2753}
+{"testID":7,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":3069}
+{"group":{"id":30,"suiteID":6,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":null,"column":null,"url":null},"type":"group","time":3069}
+{"group":{"id":31,"suiteID":6,"parentID":30,"name":"Studies","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":8,"column":3,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/studies_test.dart"},"type":"group","time":3070}
+{"test":{"id":32,"name":"Studies conserva relaciones y metadatos del contrato JSON","suiteID":6,"groupIDs":[30,31],"metadata":{"skip":false,"skipReason":null},"line":9,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/studies_test.dart"},"type":"testStart","time":3070}
+{"testID":32,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3097}
+{"test":{"id":33,"name":"Studies identifica imágenes y PDF histórico por extensión","suiteID":6,"groupIDs":[30,31],"metadata":{"skip":false,"skipReason":null},"line":17,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/studies_test.dart"},"type":"testStart","time":3097}
+{"testID":33,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3100}
+{"test":{"id":34,"name":"Studies informa archivos fallidos y reintenta sin duplicar atención","suiteID":6,"groupIDs":[30,31],"metadata":{"skip":false,"skipReason":null},"line":21,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/studies_test.dart"},"type":"testStart","time":3101}
+{"testID":34,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3133}
+{"testID":9,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":3450}
+{"group":{"id":35,"suiteID":8,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":null},"type":"group","time":3450}
+{"test":{"id":36,"name":"multipart conserva el día y el contrato de fecha/hora: 2026-10-07","suiteID":8,"groupIDs":[35],"metadata":{"skip":false,"skipReason":null},"line":15,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_transport_test.dart"},"type":"testStart","time":3450}
+{"testID":36,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3486}
+{"test":{"id":37,"name":"multipart conserva el día y el contrato de fecha/hora: 2026-10-07T16:45:00","suiteID":8,"groupIDs":[35],"metadata":{"skip":false,"skipReason":null},"line":15,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_transport_test.dart"},"type":"testStart","time":3487}
+{"testID":37,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3489}
+{"testID":11,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":3956}
+{"group":{"id":38,"suiteID":10,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":null},"type":"group","time":3956}
+{"test":{"id":39,"name":"la imagen histórica embebida usa bytes y conserva el visor","suiteID":10,"groupIDs":[38],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart","root_line":6,"root_column":3,"root_url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_viewer_test.dart"},"type":"testStart","time":3956}
+{"testID":13,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":4271}
+{"group":{"id":40,"suiteID":12,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":4,"line":null,"column":null,"url":null},"type":"group","time":4271}
+{"group":{"id":41,"suiteID":12,"parentID":40,"name":"validaciones de paciente","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":5,"column":3,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/validators_test.dart"},"type":"group","time":4271}
+{"test":{"id":42,"name":"validaciones de paciente DNI acepta exactamente ocho dígitos","suiteID":12,"groupIDs":[40,41],"metadata":{"skip":false,"skipReason":null},"line":6,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/validators_test.dart"},"type":"testStart","time":4271}
+{"testID":42,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":4286}
+{"test":{"id":43,"name":"validaciones de paciente nombres no aceptan números ni signos arbitrarios","suiteID":12,"groupIDs":[40,41],"metadata":{"skip":false,"skipReason":null},"line":12,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/validators_test.dart"},"type":"testStart","time":4286}
+{"testID":43,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":4291}
+{"test":{"id":44,"name":"validaciones de paciente teléfono acepta entre siete y quince dígitos","suiteID":12,"groupIDs":[40,41],"metadata":{"skip":false,"skipReason":null},"line":19,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/validators_test.dart"},"type":"testStart","time":4291}
+{"testID":44,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":4294}
+{"group":{"id":45,"suiteID":12,"parentID":40,"name":"seguridad de contraseña","metadata":{"skip":false,"skipReason":null},"testCount":1,"line":26,"column":3,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/validators_test.dart"},"type":"group","time":4295}
+{"test":{"id":46,"name":"seguridad de contraseña exige longitud, mayúscula, número y signo","suiteID":12,"groupIDs":[40,45],"metadata":{"skip":false,"skipReason":null},"line":27,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/validators_test.dart"},"type":"testStart","time":4295}
+{"testID":46,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":4298}
+{"testID":39,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":4311}
+{"test":{"id":47,"name":"referencia embebida no imagen muestra un error accionable","suiteID":10,"groupIDs":[38],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart","root_line":13,"root_column":3,"root_url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_viewer_test.dart"},"type":"testStart","time":4311}
+{"testID":47,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":4344}
+{"success":true,"type":"done","time":4371}
+
+Exit code: 0
+Finalizado: 10/07/2026 15:29:54 -05:00

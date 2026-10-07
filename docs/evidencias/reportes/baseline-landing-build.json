@@ -1,0 +1,15 @@
+{
+  "id": "baseline-landing-build",
+  "component": "Landing",
+  "section": "7.1.2",
+  "command": "npm.cmd run build",
+  "workingDirectory": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_LANDING",
+  "environment": "Local, Windows; datos sintéticos",
+  "startedAt": "2026-10-07T14:34:58.5450693-05:00",
+  "finishedAt": "2026-10-07T14:35:13.4918797-05:00",
+  "commit": "e2396fe467b47ea3659802a99d334e13436d2573",
+  "uncommittedChanges": [],
+  "exitCode": 0,
+  "status": "Ejecutado: aprobado",
+  "originalReport": "baseline-landing-build.log"
+}

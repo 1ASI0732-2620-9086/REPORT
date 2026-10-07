@@ -1,0 +1,25 @@
+{
+  "id": "android-system-attempt2",
+  "component": "Android",
+  "section": "6.1.4.2",
+  "command": "C:\\src\\flutter\\bin\\flutter.bat drive --driver=test_driver/integration_test.dart --target=integration_test/max_system_test.dart -d emulator-5554 --dart-define=API_BASE_URL=http://10.0.2.2:18080/api",
+  "workingDirectory": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_MOBILE",
+  "environment": "Local, Windows; datos sintéticos",
+  "startedAt": "2026-10-07T15:16:58.9784240-05:00",
+  "finishedAt": "2026-10-07T15:17:51.5742484-05:00",
+  "commit": "601fc357b9522e8782f8eae3498c7b98c6638673",
+  "uncommittedChanges": [
+    " M .gitignore",
+    " M pubspec.lock",
+    " M pubspec.yaml",
+    "?? integration_test/",
+    "?? test/iam_test.dart",
+    "?? test/patients_test.dart",
+    "?? test/studies_test.dart",
+    "?? test/support/",
+    "?? test_driver/"
+  ],
+  "exitCode": 1,
+  "status": "Ejecutado: fallido",
+  "originalReport": "android-system-attempt2.log"
+}

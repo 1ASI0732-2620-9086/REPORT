@@ -1,0 +1,15 @@
+{
+  "id": "workflows-actionlint",
+  "component": "CI/CD",
+  "section": "7.1",
+  "command": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\.max-test-runtime\\tools\\actionlint\\actionlint.exe -shellcheck= -pyflakes= C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_BACK\\max-backend\\.github\\workflows\\ci.yml C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_BACK\\max-backend\\.github\\workflows\\delivery.yml C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\.github\\workflows\\ci.yml C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\.github\\workflows\\delivery.yml C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\.github\\workflows\\integration.yml C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_MOBILE\\.github\\workflows\\ci.yml C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_MOBILE\\.github\\workflows\\delivery.yml C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_LANDING\\.github\\workflows\\ci.yml C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_LANDING\\.github\\workflows\\delivery.yml",
+  "workingDirectory": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX",
+  "environment": "Local, Windows; datos sintéticos",
+  "startedAt": "2026-10-07T15:33:40.6451487-05:00",
+  "finishedAt": "2026-10-07T15:33:40.7576319-05:00",
+  "commit": "",
+  "uncommittedChanges": [],
+  "exitCode": 0,
+  "status": "Ejecutado: aprobado",
+  "originalReport": "workflows-actionlint.log"
+}

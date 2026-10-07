@@ -1,0 +1,82 @@
+{
+  "capturedAt": "2026-10-07T15:52:15.8083376-05:00",
+  "publication": "No se realizaron commits, push ni despliegues",
+  "repositories": [
+    {
+      "path": "MAX_BACK/max-backend",
+      "commit": "17e93c08b92cad83fdb4ea232b06c21eb70c260f",
+      "branch": "main",
+      "remote": "https://github.com/PersonalProjects5443/MAX_DEV_BACK.git",
+      "changes": [
+        "?? .github/",
+        "?? src/test/java/com/max/maxbackend/ClinicalFixtures.java",
+        "?? src/test/java/com/max/maxbackend/MySqlWorkflowIntegrationTest.java",
+        "?? src/test/java/com/max/maxbackend/contexts/",
+        "?? src/test/java/com/max/maxbackend/shared/config/"
+      ],
+      "diffCheck": [],
+      "diffCheckExit": 0
+    },
+    {
+      "path": "MAX_FRONT/MAX",
+      "commit": "63ed173284647024a7612d5a1cf8f8b0290eff35",
+      "branch": "main",
+      "remote": "https://github.com/PersonalProjects5443/MAX_DEV_FRONT.git",
+      "changes": [
+        " M .gitignore",
+        " M package-lock.json",
+        " M package.json",
+        " M playwright.config.ts",
+        "?? .github/",
+        "?? bdd/",
+        "?? cucumber.cjs",
+        "?? e2e-system/",
+        "?? playwright.system.config.ts",
+        "?? proxy.evidence.json",
+        "?? src/app/contexts/estudios/application/estudios.store.spec.ts",
+        "?? src/app/contexts/estudios/infrastructure/estudios.api-client.spec.ts",
+        "?? src/app/core/state/clinical-data.service.spec.ts"
+      ],
+      "diffCheck": [],
+      "diffCheckExit": 0
+    },
+    {
+      "path": "MAX_MOBILE",
+      "commit": "601fc357b9522e8782f8eae3498c7b98c6638673",
+      "branch": "main",
+      "remote": "https://github.com/1ASI0732-2620-9086/MOBILE.git",
+      "changes": [
+        " M .gitignore",
+        " M lib/data/max_api.dart",
+        " M lib/features/shared/study_viewer.dart",
+        " M pubspec.lock",
+        " M pubspec.yaml",
+        "?? .github/",
+        "?? integration_test/",
+        "?? test/iam_test.dart",
+        "?? test/patients_test.dart",
+        "?? test/studies_test.dart",
+        "?? test/study_transport_test.dart",
+        "?? test/study_viewer_test.dart",
+        "?? test/support/",
+        "?? test_driver/"
+      ],
+      "diffCheck": [],
+      "diffCheckExit": 0
+    },
+    {
+      "path": "MAX_LANDING",
+      "commit": "e2396fe467b47ea3659802a99d334e13436d2573",
+      "branch": "main",
+      "remote": "https://github.com/PersonalProjects5443/LANDING-PAGE-MAX.git",
+      "changes": [
+        " M .gitignore",
+        " M package.json",
+        "?? .github/",
+        "?? tests/"
+      ],
+      "diffCheck": [],
+      "diffCheckExit": 0
+    }
+  ]
+}

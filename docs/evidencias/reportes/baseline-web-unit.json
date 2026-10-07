@@ -1,0 +1,15 @@
+{
+  "id": "baseline-web-unit",
+  "component": "Web",
+  "section": "6.1",
+  "command": "npm.cmd test -- --watch=false",
+  "workingDirectory": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX",
+  "environment": "Local, Windows; datos sintéticos",
+  "startedAt": "2026-10-07T14:34:57.2547907-05:00",
+  "finishedAt": "2026-10-07T14:36:04.0364053-05:00",
+  "commit": "63ed173284647024a7612d5a1cf8f8b0290eff35",
+  "uncommittedChanges": [],
+  "exitCode": 0,
+  "status": "Ejecutado: aprobado",
+  "originalReport": "baseline-web-unit.log"
+}

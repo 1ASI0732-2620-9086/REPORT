@@ -1,0 +1,20 @@
+{
+  "id": "android-expanded-unit",
+  "component": "Android",
+  "section": "6.1.1",
+  "command": "flutter.bat test --reporter json",
+  "workingDirectory": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_MOBILE",
+  "environment": "Local, Windows; datos sintéticos",
+  "startedAt": "2026-10-07T14:55:22.8638900-05:00",
+  "finishedAt": "2026-10-07T14:55:30.3907794-05:00",
+  "commit": "601fc357b9522e8782f8eae3498c7b98c6638673",
+  "uncommittedChanges": [
+    "?? test/iam_test.dart",
+    "?? test/patients_test.dart",
+    "?? test/studies_test.dart",
+    "?? test/support/"
+  ],
+  "exitCode": 0,
+  "status": "Ejecutado: aprobado",
+  "originalReport": "android-expanded-unit.log"
+}

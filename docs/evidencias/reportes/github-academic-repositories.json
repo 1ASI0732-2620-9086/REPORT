@@ -1,0 +1,102 @@
+{
+  "checkedAt": "2026-10-07T15:15:01.7951137-05:00",
+  "method": "GitHub REST público, solo lectura",
+  "repositories": [
+    {
+      "repository": "1ASI0732-2620-9086/REPORT",
+      "defaultBranch": "main",
+      "contents": [
+        {
+          "name": "README.md",
+          "type": "file",
+          "sha": "8a5fce52d951ccea5dc8e8daa5bd95f8b056a297"
+        },
+        {
+          "name": "assets",
+          "type": "dir",
+          "sha": "c10f73396230b030f029e7e4c1ddeb0ef6c6974b"
+        }
+      ],
+      "workflowRuns": 0
+    },
+    {
+      "repository": "1ASI0732-2620-9086/LANDING-PAGE",
+      "defaultBranch": "main",
+      "contents": [
+        {
+          "name": ".DS_Store",
+          "type": "file",
+          "sha": "cf84023240ce10dff48301f23f2588e44972639f"
+        },
+        {
+          "name": "index.html",
+          "type": "file",
+          "sha": "b781217496b1b6a4ea9d9c92ec9f00ae74af57c7"
+        },
+        {
+          "name": "public",
+          "type": "dir",
+          "sha": "bc84613b98c9828f9107893d0710b2353ab076f0"
+        },
+        {
+          "name": "stitch_landing_page_max_healthtech",
+          "type": "dir",
+          "sha": "ed94c369b8d7e6f6ed6456441938f23dc690f4e7"
+        }
+      ],
+      "workflowRuns": 3
+    },
+    {
+      "repository": "1ASI0732-2620-9086/MOBILE",
+      "defaultBranch": "main",
+      "contents": [
+        {
+          "name": ".gitignore",
+          "type": "file",
+          "sha": "0ad4bed06deea41209db13be85facac22139cbbe"
+        },
+        {
+          "name": ".metadata",
+          "type": "file",
+          "sha": "0658d412e61d6ce5650c362572c42a83660ca3ea"
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "sha": "dfe4460e92d4f9b9e038601a7f4c620b44c7b2b6"
+        },
+        {
+          "name": "analysis_options.yaml",
+          "type": "file",
+          "sha": "f9b303465f19b5fbf5ec669cd083c9cc38ecda9a"
+        },
+        {
+          "name": "android",
+          "type": "dir",
+          "sha": "9e6ff1db9220cf1b92d244f7d04dfc09c1b7b96f"
+        },
+        {
+          "name": "lib",
+          "type": "dir",
+          "sha": "7911b66e832fa64e23843f1f05ba24abc29c402b"
+        },
+        {
+          "name": "pubspec.lock",
+          "type": "file",
+          "sha": "a89ab52f01196374432be69ab29a1d9e9daf7945"
+        },
+        {
+          "name": "pubspec.yaml",
+          "type": "file",
+          "sha": "0e46f8fe4eb2e9bdad10e74a877829b1e9ceff00"
+        },
+        {
+          "name": "test",
+          "type": "dir",
+          "sha": "72382aad252e15faca957872ebb0574bff1f0a39"
+        }
+      ],
+      "workflowRuns": 0
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]: MAX
+      - generic [ref=e8]: Medical Assistance eXpert
+    - generic [ref=e9]:
+      - generic [ref=e10]: Panel clínico
+      - strong [ref=e11]: Bienvenido, Doctor!
+    - button "Salir" [ref=e13] [cursor=pointer]
+  - complementary [ref=e14]:
+    - navigation [ref=e15]:
+      - link "Inicio" [ref=e16] [cursor=pointer]:
+        - /url: /inicio
+        - img [ref=e18] [cursor=pointer]
+        - text: Inicio
+      - link "Pacientes" [ref=e20] [cursor=pointer]:
+        - /url: /pacientes
+        - img [ref=e22] [cursor=pointer]
+        - text: Pacientes
+      - link "Consultas" [ref=e24] [cursor=pointer]:
+        - /url: /consultas
+        - img [ref=e26] [cursor=pointer]
+        - text: Consultas
+      - link "Estudios" [ref=e28] [cursor=pointer]:
+        - /url: /estudios
+        - img [ref=e30] [cursor=pointer]
+        - text: Estudios
+      - link "Perfil del Médico" [ref=e32] [cursor=pointer]:
+        - /url: /perfil
+        - img [ref=e34] [cursor=pointer]
+        - text: Perfil del Médico
+      - link "Configuración" [ref=e36] [cursor=pointer]:
+        - /url: /configuracion
+        - img [ref=e38] [cursor=pointer]
+        - text: Configuración
+  - main [ref=e40]:
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - paragraph [ref=e46]: Estudios
+            - heading "Estudios" [level=2] [ref=e47]
+            - paragraph [ref=e48]: Adjunta placas y exámenes del paciente.
+          - button "Adjuntar estudio" [ref=e49] [cursor=pointer]
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - generic [ref=e52]: Nombre o DNI
+            - textbox "Nombre o DNI" [ref=e53]
+          - generic [ref=e54]:
+            - generic [ref=e55]: Fecha
+            - textbox "Fecha" [ref=e56]
+        - article [ref=e58]:
+          - generic [ref=e59]:
+            - generic [ref=e60]:
+              - paragraph [ref=e61]: Ana Sintetica
+              - paragraph [ref=e62]: "DNI: 70093674"
+            - generic [ref=e63]: RX
+          - generic [ref=e64]:
+            - generic [ref=e65]:
+              - generic [ref=e66]: Fecha y hora
+              - strong [ref=e67]: 07/10/2026, 03:22 p. m.
+            - generic [ref=e68]:
+              - generic [ref=e69]: Consulta asociada
+              - strong [ref=e70]: "--"
+            - generic [ref=e71]:
+              - generic [ref=e72]: Descripción
+              - strong [ref=e73]: Imagen sintética de prueba
+          - generic [ref=e74]:
+            - img "sintetica.png" [ref=e75]
+            - button "Ver" [ref=e76] [cursor=pointer]
+      - dialog [ref=e77]:
+        - generic [ref=e79]:
+          - generic [ref=e80]:
+            - generic [ref=e81]:
+              - paragraph [ref=e82]: Estudios
+              - heading "sintetica.png" [level=3] [ref=e83]
+            - button "x" [active] [ref=e84] [cursor=pointer]
+          - img "sintetica.png" [ref=e87]
+          - generic [ref=e88]:
+            - button "Cancelar" [ref=e89] [cursor=pointer]
+            - button "Ver en pestaña" [ref=e90] [cursor=pointer]
+```
