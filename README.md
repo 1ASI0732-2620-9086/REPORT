@@ -1,282 +1,244 @@
+
 # Capítulo VII: DevOps Practices
 
-El enfoque DevOps propuesto para MAX busca conectar el desarrollo, la verificación y la publicación de sus componentes mediante procesos reproducibles. Su propósito será detectar errores antes del despliegue y mantener trazabilidad entre el código evaluado y la versión publicada.
+La estrategia DevOps propuesta para MAX busca conectar el control de versiones, la construcción, las pruebas y la publicación de sus componentes mediante procesos reproducibles.
 
-La estrategia se organizará en integración continua, entrega continua y despliegue continuo. Cada etapa tendrá condiciones de entrada y salida para evitar que una versión avance cuando incumpla las verificaciones establecidas.
+Su propósito será detectar errores antes de la publicación, mantener trazabilidad entre el código y las versiones desplegadas, y reducir tareas manuales repetitivas.
 
-> **Estado de la documentación:** las herramientas, plataformas y configuraciones pendientes deberán completarse con la información real de los repositorios y de las ejecuciones del proyecto.
+Los apartados siguientes describen el proceso previsto. Las herramientas, ramas, eventos y resultados se completarán con la configuración real de los repositorios.
 
 ## 7.1. Continuous Integration
 
-La integración continua de MAX tendrá como objetivo verificar los cambios incorporados a los repositorios mediante la ejecución automatizada de tareas de construcción y pruebas.
+La integración continua permitirá evaluar los cambios de código mediante tareas automatizadas de construcción y pruebas.
 
-El flujo propuesto contempla evaluar los cambios antes de integrarlos en las ramas compartidas. Cada ejecución deberá registrar la versión del código, los controles realizados y sus resultados, facilitando la identificación de errores y regresiones.
+El flujo deberá validar los cambios antes de su integración en las ramas protegidas. Cada ejecución se asociará con el commit evaluado y conservará los resultados necesarios para identificar fallos.
 
-La validación se organizará según los componentes del producto: landing page, aplicación web, backend y aplicaciones móviles incluidas en la entrega. Cada componente ejecutará las comprobaciones correspondientes a su tecnología y alcance.
-
-<!-- IMAGEN: diagrama del flujo de integración continua implementado.
-Debe representar las ramas, revisiones y comprobaciones reales.
-Nombre sugerido: MAX-CI-Flujo-General.png -->
-
-<p align="center">
-  <img src="assets/MAX-CI-Flujo-General.png" alt="Flujo general de integración continua de MAX" width="900">
-</p>
-
-<p align="center">
-  <em>Flujo de integración continua de MAX.</em>
-</p>
+El alcance se documentará por componente: backend, aplicación web, landing page y aplicaciones móviles incluidas en la entrega.
 
 ### 7.1.1. Tools and Practices
 
-El control de versiones se apoyará en Git y en los repositorios de GitHub del proyecto. Las herramientas de automatización, construcción y pruebas deberán documentarse a partir de la configuración real de MAX.
-
-| Componente | Herramienta | Función |
+| Categoría | Herramienta | Uso previsto en MAX |
 |---|---|---|
-| Control de versiones | Git y GitHub | Mantener el historial del código y permitir la revisión mediante pull requests. |
-| Motor de automatización | Por confirmar | Ejecutar las tareas definidas ante los eventos configurados del repositorio. |
-| Construcción | Por confirmar según componente | Preparar y construir cada componente del producto. |
-| Frameworks de pruebas | Por confirmar | Ejecutar las suites automatizadas correspondientes. |
-| Almacenamiento de reportes y artefactos | Por confirmar | Conservar los resultados y productos de cada ejecución. |
+| Control de versiones | Git y GitHub | Administrar el historial y la revisión de cambios. |
+| Motor de CI | Por confirmar | Ejecutar los workflows de validación. |
+| Construcción del backend | Por confirmar | Preparar dependencias y generar el artefacto del backend. |
+| Construcción web | Por confirmar | Generar los archivos publicables de la aplicación web y la landing page. |
+| Construcción móvil | Por confirmar | Generar los paquetes de las plataformas incluidas en la entrega. |
+| Pruebas automatizadas | Por confirmar según plataforma | Ejecutar las suites configuradas. |
+| Reportes y artefactos | Por confirmar | Conservar resultados y productos de las ejecuciones. |
+| Gestión de credenciales | Por confirmar | Proporcionar las credenciales requeridas sin incorporarlas al código. |
 
-Las prácticas propuestas comprenden:
+Las prácticas previstas comprenden:
 
-- Trabajar mediante ramas y mantener convenciones de nombres.
-- Revisar los cambios antes de integrarlos.
-- Ejecutar las comprobaciones obligatorias sobre la versión que se desea integrar.
-- Bloquear la integración cuando fallen los controles requeridos.
-- Registrar las versiones de las herramientas utilizadas.
-- Mantener reproducible la instalación de dependencias.
-- Administrar las credenciales mediante la configuración protegida del entorno de automatización.
+- Mantener una estrategia de ramas alineada con la gestión de configuración del proyecto.
+- Revisar los cambios mediante pull requests.
+- Ejecutar los controles requeridos antes de integrar una modificación.
+- Impedir la integración cuando fallen comprobaciones obligatorias.
+- Registrar las versiones de las herramientas y dependencias.
+- Conservar reportes vinculados con cada ejecución.
+- Mantener las credenciales fuera del repositorio y de los logs.
 
-**Información técnica por completar:** herramientas y versiones, estrategia de ramas, eventos que activan las ejecuciones y controles obligatorios.
+<!-- COMPLETAR: herramientas, versiones y reglas efectivamente configuradas. -->
 
-<!-- IMAGEN: captura de las comprobaciones de un pull request y/o de las reglas de protección de ramas.
-No mostrar valores de credenciales.
-Nombre sugerido: MAX-CI-Tools-Practices.png -->
+<!-- IMAGEN: comprobaciones de un pull request y reglas de protección de ramas. -->
 
 <p align="center">
   <img src="assets/MAX-CI-Tools-Practices.png" alt="Herramientas y prácticas de integración continua de MAX" width="900">
 </p>
 
-<p align="center">
-  <em>Configuración de las prácticas de integración continua.</em>
-</p>
+<p align="center"><em>Configuración de las prácticas de integración continua.</em></p>
 
 ### 7.1.2. Build & Test Suite Pipeline Components
 
-El pipeline de integración continua se plantea como una secuencia de tareas que comprueba si una versión puede integrarse de forma satisfactoria.
+El pipeline de integración continua comprobará que una revisión del código puede construirse y superar las verificaciones establecidas.
 
-| Etapa | Responsabilidad | Condición para continuar |
+| Etapa | Responsabilidad | Resultado esperado |
 |---|---|---|
-| Obtención del código | Recuperar la revisión asociada con el cambio. | El código corresponde al commit que se desea evaluar. |
-| Preparación del entorno | Configurar las herramientas e instalar las dependencias. | El entorno queda disponible sin errores. |
-| Comprobaciones estáticas | Revisar convenciones y otras reglas configuradas. | Se cumplen los controles obligatorios. |
-| Construcción | Compilar o generar la aplicación según su tecnología. | La construcción finaliza correctamente. |
-| Pruebas automatizadas | Ejecutar las suites unitarias y de integración previstas. | Las pruebas obligatorias resultan satisfactorias. |
-| Publicación de resultados | Guardar los reportes y los artefactos correspondientes. | Los resultados quedan asociados con la ejecución. |
+| Obtención del código | Recuperar la revisión que se desea evaluar. | El entorno contiene el commit correcto. |
+| Preparación del entorno | Configurar herramientas e instalar dependencias. | El entorno queda preparado para la ejecución. |
+| Comprobaciones estáticas | Ejecutar las reglas configuradas de análisis y convenciones. | Se obtiene un resultado verificable de los controles obligatorios. |
+| Construcción | Compilar o generar el componente correspondiente. | Se genera el producto previsto sin errores. |
+| Pruebas | Ejecutar las suites automatizadas definidas. | Se registran los resultados de cada suite. |
+| Publicación de reportes | Conservar logs y reportes. | Los resultados pueden revisarse posteriormente. |
+| Publicación de artefactos | Guardar los productos aptos para las etapas posteriores. | Los artefactos quedan identificados y asociados con la ejecución. |
 
-El orden definitivo y las dependencias entre tareas deberán corresponder al workflow implementado. Cuando falle una comprobación obligatoria, el pipeline deberá finalizar con un estado que impida promover esa versión hacia las siguientes etapas.
+El orden definitivo deberá respetar las dependencias de las herramientas utilizadas. Los reportes de diagnóstico deberán conservarse también cuando una prueba falle, mientras que la promoción de artefactos deberá depender del cumplimiento de los controles establecidos.
 
-**Información técnica por completar:** ubicación del workflow, eventos de activación, tareas configuradas, comandos utilizados y artefactos producidos.
+**Eventos de ejecución por documentar:**
 
-<!-- IMAGEN 1: captura del workflow de construcción y pruebas.
-Nombre sugerido: MAX-CI-Workflow.png -->
+| Elemento | Configuración real |
+|---|---|
+| Eventos que activan el workflow | Por completar |
+| Ramas y filtros de archivos | Por completar |
+| Ejecución manual, si existe | Por completar |
+| Jobs y dependencias | Por completar |
+| Condiciones para aprobar la integración | Por completar |
+
+<!-- CÓDIGO: insertar el workflow real o un fragmento representativo.
+COMPLETAR: ruta y enlace al archivo del repositorio. -->
+
+<!-- IMAGEN 1: representación del pipeline con sus tareas. -->
 
 <p align="center">
-  <img src="assets/MAX-CI-Workflow.png" alt="Configuración del workflow de construcción y pruebas de MAX" width="900">
+  <img src="assets/MAX-CI-Pipeline.png" alt="Componentes del pipeline de integración continua de MAX" width="900">
 </p>
 
-<p align="center">
-  <em>Configuración del pipeline de construcción y pruebas.</em>
-</p>
-
-<!-- IMAGEN 2: vista de una ejecución real con las tareas y sus estados.
-Nombre sugerido: MAX-CI-Pipeline-Resultados.png -->
+<!-- IMAGEN 2: ejecución real y resultados de construcción y pruebas. -->
 
 <p align="center">
-  <img src="assets/MAX-CI-Pipeline-Resultados.png" alt="Resultados del pipeline de integración continua de MAX" width="900">
-</p>
-
-<p align="center">
-  <em>Resultados de una ejecución del pipeline de integración continua.</em>
+  <img src="assets/MAX-CI-Resultados.png" alt="Resultados del pipeline de construcción y pruebas de MAX" width="900">
 </p>
 
 ## 7.2. Continuous Delivery
 
-La entrega continua de MAX tendrá como finalidad mantener versiones verificadas y preparadas para su publicación. A partir de los resultados de integración continua, se plantea generar artefactos identificables y comprobar su funcionamiento en un entorno previo a producción.
+La entrega continua permitirá disponer de versiones verificadas y preparadas para su publicación. A partir de una construcción validada, se plantea recuperar el artefacto correspondiente y comprobarlo en un entorno previo a producción.
 
-Esta etapa permitirá revisar la configuración, la interacción entre componentes y los recorridos principales antes de liberar una versión a los usuarios.
+Esta etapa facilitará la revisión de la configuración, las dependencias y los recorridos principales del producto.
 
-La disponibilidad de una versión para producción deberá sustentarse en los resultados de las verificaciones establecidas. Cuando exista una aprobación manual de publicación, deberá quedar registrada como parte del proceso.
-
-<!-- IMAGEN: diagrama que muestre la preparación de la versión, su despliegue en staging y las validaciones previas a producción.
-Nombre sugerido: MAX-Delivery-Flujo-General.png -->
-
-<p align="center">
-  <img src="assets/MAX-Delivery-Flujo-General.png" alt="Flujo general de entrega continua de MAX" width="900">
-</p>
-
-<p align="center">
-  <em>Flujo de preparación y validación de versiones para su entrega.</em>
-</p>
+La disponibilidad de una versión deberá sustentarse en evidencias. Cuando exista una aprobación manual antes de publicar en producción, esta deberá registrarse como parte del proceso de liberación.
 
 ### 7.2.1. Tools and Practices
 
-Las herramientas de entrega continua deberán permitir recuperar los artefactos validados, desplegarlos en un entorno de pruebas y conservar evidencias de los resultados.
+| Categoría | Herramienta o recurso | Uso previsto |
+|---|---|---|
+| Automatización | Por confirmar | Coordinar la preparación y evaluación de versiones candidatas. |
+| Almacenamiento de artefactos | Por confirmar | Conservar los productos generados por la integración continua. |
+| Entorno de staging | Por confirmar | Evaluar la versión antes de publicarla en producción. |
+| Configuración por ambiente | Por confirmar | Separar parámetros y credenciales de pruebas y producción. |
+| Validación funcional | Por confirmar | Comprobar los recorridos definidos para la versión candidata. |
+| Distribución móvil de pruebas | Por confirmar, cuando corresponda | Facilitar la instalación y evaluación de paquetes móviles. |
 
-| Componente | Función prevista |
-|---|---|
-| Repositorios del proyecto | Identificar el código correspondiente a cada versión candidata. |
-| Motor de automatización — por confirmar | Coordinar la preparación y el despliegue de la versión. |
-| Repositorio de artefactos — por confirmar | Conservar los paquetes o archivos generados por la construcción. |
-| Entorno de staging — por confirmar | Evaluar la versión antes de su publicación en producción. |
-| Configuración por ambiente | Mantener separados los parámetros de pruebas y producción. |
-| Herramientas de validación — por confirmar | Comprobar que la versión desplegada cumple los controles establecidos. |
+Las prácticas previstas incluyen identificar cada versión mediante su commit y etiqueta, conservar el artefacto validado y separar los ambientes de ejecución.
 
-Se propone identificar cada versión mediante una referencia al commit y una etiqueta de versión. También se deberá conservar el artefacto validado, evitando modificaciones sin trazabilidad durante su promoción.
+Los cambios de esquema de datos deberán evaluarse junto con la versión candidata cuando sean necesarios. También se documentarán las condiciones requeridas para promover una versión a producción.
 
-Para las aplicaciones móviles, se documentará el mecanismo de generación y distribución de las versiones de prueba utilizado por el equipo.
+<!-- COMPLETAR: plataforma, configuración de ambientes, identificación de artefactos y política de liberación. -->
 
-**Información técnica por completar:** plataforma de staging, almacenamiento de artefactos, parámetros por ambiente y mecanismo de distribución móvil.
-
-<!-- IMAGEN: captura de los artefactos disponibles y/o de la configuración del entorno de staging.
-No mostrar valores de credenciales.
-Nombre sugerido: MAX-Delivery-Tools-Practices.png -->
+<!-- IMAGEN: artefactos generados y configuración del entorno de staging. -->
 
 <p align="center">
-  <img src="assets/MAX-Delivery-Tools-Practices.png" alt="Herramientas y configuración para la entrega continua de MAX" width="900">
+  <img src="assets/MAX-Delivery-Tools-Practices.png" alt="Herramientas y recursos de entrega continua de MAX" width="900">
 </p>
 
-<p align="center">
-  <em>Artefactos y configuración del entorno de entrega.</em>
-</p>
+<p align="center"><em>Recursos utilizados para preparar las versiones candidatas.</em></p>
 
 ### 7.2.2. Stages Deployment Pipeline Components
 
-El pipeline de entrega continua deberá comprobar que los artefactos pueden ejecutarse en un ambiente representativo antes de considerarlos disponibles para producción.
+El pipeline de entrega continua deberá comprobar que la versión candidata funciona en un ambiente representativo y puede promoverse de acuerdo con la política de liberación.
 
-| Etapa | Descripción | Resultado esperado |
+| Etapa | Responsabilidad | Condición de salida |
 |---|---|---|
-| Selección de la versión candidata | Recuperar una versión que haya superado la integración continua. | Se identifica el código y la ejecución de origen. |
-| Recuperación del artefacto | Obtener el producto generado por la construcción. | Se utiliza el artefacto correspondiente a la versión seleccionada. |
-| Preparación del ambiente | Configurar parámetros, servicios y dependencias. | El entorno queda preparado para recibir la versión. |
-| Despliegue en staging | Publicar los componentes que correspondan. | La versión queda accesible para su evaluación. |
-| Validación posterior | Comprobar disponibilidad, comunicación y recorridos principales. | Los controles previstos se completan satisfactoriamente. |
-| Preparación de la liberación | Registrar resultados y disponibilidad para producción. | La versión queda lista para su promoción según la política establecida. |
+| Selección de versión | Identificar una construcción que superó la integración continua. | Se conoce su commit y ejecución de origen. |
+| Recuperación del artefacto | Obtener el producto validado. | El artefacto corresponde a la versión seleccionada. |
+| Preparación de staging | Configurar parámetros y dependencias. | El ambiente reúne las condiciones necesarias. |
+| Despliegue en staging | Publicar los componentes de la versión. | La aplicación queda disponible para evaluación. |
+| Verificación inicial | Comprobar disponibilidad y comunicación entre componentes. | Las comprobaciones iniciales resultan satisfactorias. |
+| Validación funcional | Ejecutar los recorridos previstos. | Los resultados cumplen los criterios de liberación. |
+| Preparación de publicación | Registrar la versión candidata y sus evidencias. | La versión queda disponible para su promoción. |
 
-Cuando se requieran cambios en la estructura de datos, estos deberán incluirse en la planificación del despliegue y evaluarse antes de promover la versión.
+Si una verificación falla, la versión deberá permanecer sin promover hasta resolver la incidencia y repetir las comprobaciones necesarias.
 
-**Información técnica por completar:** etapas implementadas, condiciones de avance, versión evaluada y resultados de validación en staging.
+<!-- CÓDIGO: insertar la configuración real del pipeline de entrega.
+COMPLETAR: disparadores, jobs, ambiente, artefacto y condiciones de promoción. -->
 
-<!-- IMAGEN 1: ejecución del pipeline de entrega y sus etapas.
-Nombre sugerido: MAX-Delivery-Pipeline.png -->
+<!-- IMAGEN 1: ejecución del pipeline de entrega continua. -->
 
 <p align="center">
   <img src="assets/MAX-Delivery-Pipeline.png" alt="Etapas del pipeline de entrega continua de MAX" width="900">
 </p>
 
-<p align="center">
-  <em>Ejecución de las etapas del pipeline de entrega continua.</em>
-</p>
-
-<!-- IMAGEN 2: evidencia de la versión desplegada en staging y de sus verificaciones.
-Nombre sugerido: MAX-Delivery-Staging-Validacion.png -->
+<!-- IMAGEN 2: evidencia de la versión en staging y sus verificaciones. -->
 
 <p align="center">
-  <img src="assets/MAX-Delivery-Staging-Validacion.png" alt="Validación de MAX en el entorno de staging" width="900">
-</p>
-
-<p align="center">
-  <em>Validación de la versión candidata en staging.</em>
+  <img src="assets/MAX-Delivery-Staging.png" alt="Validación de MAX en el entorno de staging" width="900">
 </p>
 
 ## 7.3. Continuous Deployment
 
-El despliegue continuo plantea publicar automáticamente en producción las versiones que superen los controles establecidos, sin requerir una autorización manual adicional para desplegar cada una.
+El despliegue continuo contempla publicar automáticamente en producción las versiones que superen los controles establecidos, sin una autorización manual adicional para desplegar cada versión.
 
-Para MAX, este apartado define el comportamiento previsto del proceso de publicación. Su implementación deberá comprobarse mediante el workflow real y las evidencias de despliegue. Si la publicación requiere una aprobación manual después de las validaciones, deberá documentarse como entrega continua con despliegue aprobado.
+Para MAX, su alcance deberá precisarse según la configuración de cada componente. Si existe una aprobación manual específica de publicación después de las validaciones, el proceso deberá describirse como entrega continua con despliegue aprobado.
 
-El alcance deberá precisarse por componente, ya que la publicación del backend y de la aplicación web puede seguir un mecanismo diferente al de la distribución móvil.
-
-<!-- IMAGEN: diagrama del flujo hacia producción que refleje sus controles y disparadores reales.
-Nombre sugerido: MAX-Deployment-Flujo-General.png -->
-
-<p align="center">
-  <img src="assets/MAX-Deployment-Flujo-General.png" alt="Flujo de despliegue de MAX hacia producción" width="900">
-</p>
-
-<p align="center">
-  <em>Flujo de publicación de versiones en producción.</em>
-</p>
+La revisión de un pull request puede coexistir con el despliegue continuo cuando, una vez integrado el cambio elegible y superados los controles, su publicación se realiza automáticamente.
 
 ### 7.3.1. Tools and Practices
 
-Las herramientas de despliegue deberán permitir publicar la versión validada, comprobar su disponibilidad y conservar información suficiente para identificar qué versión se encuentra activa.
+| Categoría | Herramienta o recurso | Uso previsto |
+|---|---|---|
+| Automatización del despliegue | Por confirmar | Publicar las versiones que cumplen las condiciones requeridas. |
+| Alojamiento del backend | Por confirmar | Ejecutar la versión publicada del servicio. |
+| Alojamiento web y landing page | Por confirmar | Servir los archivos correspondientes a la versión. |
+| Distribución móvil | Por confirmar, cuando corresponda | Publicar o distribuir las versiones móviles mediante el canal definido. |
+| Identificación de versiones | Commit, etiqueta y artefacto, según configuración | Relacionar la ejecución con el producto publicado. |
+| Verificación posterior | Por confirmar | Comprobar la disponibilidad y las funciones esenciales. |
+| Recuperación | Por confirmar | Restaurar un estado operativo ante una publicación fallida. |
 
-| Componente | Función prevista |
-|---|---|
-| Motor de automatización — por confirmar | Iniciar el despliegue cuando se cumplan sus condiciones. |
-| Plataforma de alojamiento — por confirmar | Ejecutar el backend y alojar los componentes web correspondientes. |
-| Gestión de credenciales | Autorizar las operaciones necesarias para publicar la versión. |
-| Registro de versiones | Relacionar el despliegue con el commit y el artefacto utilizado. |
-| Verificaciones posteriores | Comprobar que los componentes publicados responden correctamente. |
-| Mecanismo de recuperación | Facilitar el retorno a una versión estable cuando sea viable. |
+Las prácticas previstas incluyen desplegar el artefacto validado, registrar la versión activa y conservar una referencia a la versión anterior.
 
-Se propone desplegar el mismo artefacto que haya superado las verificaciones previas y conservar la identificación de la versión anterior. La estrategia de recuperación deberá considerar la compatibilidad de los datos cuando existan modificaciones en la base de datos.
+La recuperación deberá considerar la compatibilidad de los datos. Cuando existan cambios en la base de datos, el retorno a un binario anterior no se asumirá como suficiente sin comprobar dicha compatibilidad.
 
-La generación automática de un paquete móvil no deberá presentarse, por sí sola, como publicación automática a los usuarios. Se documentará el canal de distribución y las condiciones que realmente se hayan implementado.
+La generación de un paquete móvil se documentará de forma separada de su distribución. Solo se afirmará que existe publicación automática si el canal de entrega correspondiente está configurado y cuenta con evidencia.
 
-**Información técnica por completar:** plataforma de publicación, condiciones del despliegue, identificación de versiones y procedimiento de recuperación.
+<!-- COMPLETAR: plataformas reales, mecanismo de autenticación, disparadores y procedimiento de recuperación. -->
 
-<!-- IMAGEN: configuración del despliegue y del entorno de producción.
-Mostrar los componentes relevantes sin exponer credenciales.
-Nombre sugerido: MAX-Deployment-Tools-Practices.png -->
+<!-- IMAGEN: configuración real del entorno y del mecanismo de despliegue.
+No mostrar valores de credenciales. -->
 
 <p align="center">
   <img src="assets/MAX-Deployment-Tools-Practices.png" alt="Herramientas y configuración del despliegue de MAX" width="900">
 </p>
 
-<p align="center">
-  <em>Configuración de las herramientas de despliegue en producción.</em>
-</p>
+<p align="center"><em>Configuración de los recursos utilizados para el despliegue.</em></p>
 
 ### 7.3.2. Production Deployment Pipeline Components
 
-El pipeline de producción deberá relacionar la versión aprobada por los controles de calidad con el artefacto publicado y las verificaciones realizadas después de su despliegue.
+El pipeline de producción deberá conservar la relación entre el código evaluado, el artefacto validado y la versión publicada.
 
 | Etapa | Responsabilidad | Resultado esperado |
 |---|---|---|
-| Comprobación de condiciones | Confirmar que la versión superó los controles previos. | Una versión con controles fallidos no inicia el despliegue. |
-| Identificación del artefacto | Recuperar el artefacto validado y su referencia de versión. | Existe trazabilidad entre código, pruebas y producto desplegable. |
-| Preparación de producción | Configurar parámetros y comprobar las dependencias necesarias. | El ambiente reúne las condiciones requeridas. |
-| Despliegue | Publicar los componentes correspondientes. | La versión queda instalada en el entorno de destino. |
-| Verificación posterior | Comprobar disponibilidad y operaciones esenciales. | Se confirma que la versión responde según lo previsto. |
-| Registro del resultado | Conservar versión, fecha, estado y evidencias. | El equipo puede identificar y revisar la publicación. |
-| Recuperación ante fallos | Aplicar la estrategia definida si la versión no supera las verificaciones. | Se recupera un estado operativo o se registra la incidencia para su atención. |
+| Comprobación de elegibilidad | Confirmar que la versión cumple las condiciones de publicación. | Las versiones con controles fallidos no avanzan. |
+| Recuperación del artefacto | Obtener el producto validado. | Se identifica el artefacto y su origen. |
+| Preparación del entorno | Verificar parámetros y dependencias de producción. | El ambiente reúne las condiciones requeridas. |
+| Publicación | Desplegar los componentes correspondientes. | La versión queda instalada en el destino. |
+| Verificación posterior | Comprobar disponibilidad y operaciones esenciales. | Se obtiene evidencia del funcionamiento de la versión. |
+| Registro del resultado | Conservar versión, fecha, estado y reportes. | El despliegue puede identificarse y revisarse. |
+| Recuperación ante fallos | Aplicar el procedimiento definido cuando sea necesario. | Se recupera un estado operativo o se registra la incidencia para su atención. |
 
-Las comprobaciones posteriores deberán cubrir, como mínimo, la disponibilidad de los componentes publicados y la comunicación necesaria para utilizar las funciones centrales de MAX. Una ejecución satisfactoria del comando de despliegue no sustituirá la verificación de funcionamiento.
+Las comprobaciones posteriores deberán revisar la disponibilidad de los componentes publicados y la comunicación requerida para utilizar las funciones centrales de MAX. El resultado satisfactorio del comando de despliegue deberá complementarse con estas verificaciones.
 
-**Información técnica por completar:** versión publicada, ejecución del pipeline, verificaciones posteriores y resultados del procedimiento de recuperación, si fue ejecutado.
+**Registro de despliegue**
 
-<!-- IMAGEN 1: ejecución real del pipeline de producción, mostrando las etapas y sus resultados.
-Nombre sugerido: MAX-Production-Pipeline-Resultados.png -->
+| Dato | Valor |
+|---|---|
+| Componente publicado | Por completar |
+| Versión o etiqueta | Por completar |
+| Commit asociado | Por completar |
+| Artefacto utilizado | Por completar |
+| Fecha de publicación | Por completar |
+| Entorno de destino | Por completar |
+| Resultado del pipeline | Por completar |
+| Resultado de verificaciones posteriores | Por completar |
+| Enlace a la ejecución | Por completar |
 
-<p align="center">
-  <img src="assets/MAX-Production-Pipeline-Resultados.png" alt="Resultados del pipeline de producción de MAX" width="900">
-</p>
+<!-- CÓDIGO: insertar la configuración real del despliegue de producción.
+COMPLETAR: archivo, condiciones de ejecución y dependencias entre jobs. -->
 
-<p align="center">
-  <em>Resultados de ejecución del pipeline de producción.</em>
-</p>
-
-<!-- IMAGEN 2: evidencia de la versión publicada y su funcionamiento.
-Puede incluir la aplicación accesible y la identificación de la versión desplegada.
-Nombre sugerido: MAX-Production-Validacion.png -->
-
-<p align="center">
-  <img src="assets/MAX-Production-Validacion.png" alt="Validación de la versión de MAX publicada en producción" width="900">
-</p>
+<!-- IMAGEN 1: ejecución real del pipeline de producción. -->
 
 <p align="center">
-  <em>Verificación de la versión publicada en producción.</em>
+  <img src="assets/MAX-Production-Pipeline.png" alt="Ejecución del pipeline de producción de MAX" width="900">
 </p>
+
+<p align="center"><em>Ejecución del pipeline de producción.</em></p>
+
+<!-- IMAGEN 2: identificación de la versión publicada y comprobaciones posteriores. -->
+
+<p align="center">
+  <img src="assets/MAX-Production-Validacion.png" alt="Verificación de la versión de MAX publicada en producción" width="900">
+</p>
+
+<p align="center"><em>Verificación de la versión publicada en producción.</em></p>
+
+<!-- EVIDENCIA ADICIONAL, SI EXISTE:
+Añadir aquí el reporte de una prueba del procedimiento de recuperación.
+No presentarlo como ejecutado si únicamente se ha documentado el procedimiento. -->
