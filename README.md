@@ -294,4 +294,55 @@ Los **médicos y pacientes** presentan dificultades para gestionar y acceder de 
 
 ### 1.3. Segmentos objetivo
 
+#### Segmento 1: Médicos cirujanos
+
+Este segmento está conformado por médicos cirujanos que atienden pacientes de manera presencial o virtual y que necesitan organizar sus citas, consultar información de sus pacientes y gestionar documentación relacionada con la atención.
+
+Durante su actividad profesional, pueden generar y consultar recetas, informes médicos y otros documentos, además de recibir resultados de laboratorio, resonancias, estudios y archivos proporcionados por sus pacientes. La información puede encontrarse distribuida entre diferentes medios, dificultando su organización y consulta posterior.
+
+MAX busca brindar a este segmento un entorno digital centralizado desde el cual puedan gestionar sus citas y pacientes, compartir documentación médica, recibir estudios o resultados y consultar información de atenciones anteriores.
+
+**Principales necesidades:**
+
+- Gestionar citas y disponibilidad de atención.
+
+- Consultar información de sus pacientes.
+
+- Generar y compartir recetas e informes médicos.
+
+- Recibir resultados de laboratorio, resonancias y otros estudios.
+
+- Consultar documentos relacionados con atenciones anteriores.
+
+- Realizar seguimiento de los pacientes después de una consulta.
+
+- Mantener organizada la información relacionada con cada atención.
+
+- Contar con mecanismos de autenticación y control de acceso para proteger la información.
+
+#### Segmento 2: Pacientes
+
+Este segmento está conformado por personas que reciben atención médica y necesitan organizar sus citas y acceder a la documentación relacionada con sus atenciones.
+
+Los pacientes pueden recibir recetas, informes, resultados de exámenes y otros documentos durante diferentes etapas de su atención. Asimismo, pueden necesitar compartir resultados de laboratorio, resonancias u otros estudios con sus médicos para continuar con su seguimiento.
+
+MAX busca permitir que los pacientes consulten desde un mismo entorno sus citas y documentos, reciban recordatorios y compartan información con sus médicos de manera organizada.
+
+**Principales necesidades:**
+
+- Programar y consultar sus citas médicas.
+
+- Recibir recordatorios de próximas citas.
+
+- Consultar recetas e informes médicos.
+
+- Acceder a resultados y estudios relacionados con sus atenciones.
+
+- Consultar documentos de atenciones anteriores.
+
+- Compartir resultados o estudios con su médico.
+
+- Mantener organizada su documentación médica.
+
+- Tener control sobre el acceso a su información.
 
