@@ -18,10 +18,9 @@
   <br>
   <h4>Integrantes:</h4>
   <ul style="list-style-type: none; padding: 0;">
-    <li>[Código 1] - [Apellidos, Nombres 1]</li>
-    <li>[Código 2] - [Apellidos, Nombres 2]</li>
+    <li>U202311828 - Landauri Preciado, Stephano Mayrzon</li>
+    <li>U202311842 - Quijandria Espinoza, Oscar Leonardo</li>
     <li>[Código 3] - [Apellidos, Nombres 3]</li>
-    <li>[Código 4] - [Apellidos, Nombres 4]</li>
   </ul>
   <br>
   <h4>Septiembre, 2026</h4>
@@ -54,16 +53,25 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
 - [Capítulo I: Introducción](#capítulo-i-introducción)
   - [1.1. Startup Profile](#11-startup-profile)
     - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
+    - [Misión](#misión)
+    - [Visión](#visión)
+    - [Valores](#valores)
+    - [Objetivo General](#objetivo-general)
+    - [Objetivos Específicos](#objetivos-específicos)
     - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
   - [1.2. Solution Profile](#12-solution-profile)
     - [1.2.1 Antecedentes y problemática](#121-antecedentes-y-problemática)
+    - [Análisis 5W + 2H](#análisis-5w--2h)
+    - [Referencias](#referencias)
     - [1.2.2 Lean UX Process](#122-lean-ux-process)
       - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
       - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
       - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
       - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
   - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
-- [Capítulo II: Requirements Elicitation \& Analysis](#capítulo-ii-requirements-elicitation--analysis)
+    - [Segmento 1: Médicos cirujanos](#segmento-1-médicos-cirujanos)
+    - [Segmento 2: Pacientes](#segmento-2-pacientes)
+- [Capítulo II: Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation--analysis)
   - [2.1. Competidores](#21-competidores)
     - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
     - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
@@ -122,13 +130,13 @@ URL del repositorio: `[URL del Repositorio de GitHub para el Informe]`
     - [4.9.2. Class Dictionary](#492-class-dictionary)
   - [4.10. Database Design](#410-database-design)
     - [4.10.1. Relational/Non-Relational Database Diagrams](#4101-relationalnon-relational-database-diagrams)
-- [Capítulo V: Product Implementation, Validation \& Deployment](#capítulo-v-product-implementation-validation--deployment)
+- [Capítulo V: Product Implementation, Validation & Deployment](#capítulo-v-product-implementation-validation--deployment)
   - [5.1. Software Configuration Management](#51-software-configuration-management)
     - [5.1.1. Software Development Environment Configuration](#511-software-development-environment-configuration)
     - [5.1.2. Source Code Management](#512-source-code-management)
-    - [5.1.3. Source Code Style Guide \& Conventions](#513-source-code-style-guide--conventions)
+    - [5.1.3. Source Code Style Guide & Conventions](#513-source-code-style-guide--conventions)
     - [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
-  - [5.2. Product implementation \& deployment](#52-product-implementation--deployment)
+  - [5.2. Product implementation & deployment](#52-product-implementation--deployment)
     - [5.2.1. Sprint 1](#521-sprint-1)
       - [5.2.1.1. Sprint Planning 1](#5211-sprint-planning-1)
       - [5.2.1.2. Aspect Leaders and Collaborators](#5212-aspect-leaders-and-collaborators)
@@ -162,23 +170,182 @@ El curso contribuye al cumplimiento del Student Outcome ABET. En el siguiente cu
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---------------------|---------------------|--------------|
-| Comunica oralmente con efectividad a diferentes rangos de audiencia. | **[Apellidos, Nombres 1]**<br>AV1: [Acción 1]<br>AV2: [Acción 2] | *(Conclusión grupal sobre la mejora en comunicación oral y medios audiovisuales)* |
-| Comunica por escrito con efectividad a diferentes rangos de audiencia. | **[Apellidos, Nombres 1]**<br>AV1: [Acción 1]<br>AV2: [Acción 2] | *(Conclusión grupal sobre redacción técnica, calidad de entregables e idioma)* |
+| **3.c1. Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería de software.** | **Stephano Mayrzon Landauri**<br>AV1: Comunicó los avances y resultados correspondientes a los capítulos 1 y 2 y parte del capítulo 5, explicando la propuesta de MAX, la problemática identificada, los segmentos objetivo, el análisis competitivo, los resultados de las entrevistas, el Needfinding y aspectos relacionados con la gestión y configuración del proyecto.<br><br>**Oscar Leonardos Espinoza Quijandria**<br>AV1: Comunicó los aspectos técnicos relacionados con el despliegue de MAX, explicando la configuración y publicación de los diferentes componentes de la solución, incluyendo el Landing Page, Frontend, Backend y Base de Datos.<br><br>**Johnny Alexander Ojanama Abanto**<br>AV1: Comunicó los avances y resultados correspondientes al capítulo 3, explicando los requerimientos y especificaciones definidos para MAX y su relación con las funcionalidades planteadas para la solución. | Durante el AV1, el equipo fortaleció su capacidad para comunicar oralmente los avances y resultados del proyecto MAX de manera objetiva y organizada. Cada integrante presentó los aspectos correspondientes a su participación en el proyecto, permitiendo comunicar tanto elementos relacionados con la investigación y definición del producto como aspectos técnicos de requerimientos, desarrollo y despliegue. |
+| **3.c2. Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto de ingeniería de software.** | **Stephano Mayrzon Landauri**<br>AV1: Elaboró la documentación correspondiente a los capítulos 1 y 2 y parte del capítulo 5, incluyendo la definición de MAX, análisis de la problemática, Lean UX, segmentos objetivo, análisis competitivo, entrevistas, Needfinding y documentación relacionada con la gestión y configuración del proyecto.<br><br>**Oscar Leonardos Espinoza Quijandria**<br>AV1: Elaboró la documentación y evidencias relacionadas con la configuración y despliegue de los componentes de MAX, incluyendo el Landing Page, Frontend, Backend y Base de Datos.<br><br>**Johnny Alexander Ojanama Abanto**<br>AV1: Elaboró la documentación correspondiente al capítulo 3, estructurando los requerimientos y especificaciones de la solución de acuerdo con las necesidades identificadas para MAX. | Durante el AV1, el equipo desarrolló documentación técnica de manera clara, objetiva y estructurada. La distribución del trabajo permitió integrar en un mismo proyecto la investigación de usuarios, la definición de requerimientos y los aspectos técnicos de desarrollo y despliegue. El uso de Markdown y GitHub permitió mantener la información organizada y comprensible para diferentes tipos de audiencia. |
 
 ---
 
 ## Capítulo I: Introducción
 ### 1.1. Startup Profile
 #### 1.1.1. Descripción de la Startup
+
+Max es una startup tecnológica enfocada en mejorar la interacción entre médicos y pacientes mediante una plataforma digital. La solución busca centralizar la gestión de citas y documentos relacionados con la atención, como recetas, informes, resultados de exámenes y estudios médicos.
+
+A través de la plataforma, los médicos podrán gestionar sus citas, pacientes y documentos, mientras que los pacientes podrán consultar sus citas y acceder de manera organizada a la información compartida por sus médicos.
+
+#### Misión
+
+Facilitar la interacción entre médicos y pacientes mediante una solución tecnológica que permita gestionar citas y documentación médica de manera organizada, accesible y segura.
+
+#### Visión
+
+Convertirse en una plataforma tecnológica reconocida por mejorar la experiencia y comunicación entre médicos y pacientes, ofreciendo soluciones innovadoras que faciliten el seguimiento de la atención médica.
+
+#### Valores
+
+Nuestros valores se basan en la **innovación**, buscando constantemente nuevas formas de mejorar la experiencia de médicos y pacientes mediante la tecnología; la **seguridad**, priorizando la protección de la información de los usuarios; la **confianza**, promoviendo una relación transparente entre médicos, pacientes y la plataforma; la **accesibilidad**, desarrollando una solución sencilla y fácil de utilizar; y la **responsabilidad**, considerando la sensibilidad de la información gestionada y el impacto que nuestra solución puede generar en sus usuarios.
+
+#### Objetivo General
+
+Desarrollar una plataforma digital que conecte a médicos y pacientes mediante la gestión centralizada de citas y documentación relacionada con la atención, facilitando el acceso y seguimiento de la información.
+
+#### Objetivos Específicos
+
+- Facilitar a los médicos la gestión de sus citas, pacientes y documentación.
+
+- Permitir el intercambio organizado de recetas, informes, resultados y otros documentos entre médicos y pacientes.
+
+- Facilitar a los pacientes la consulta de sus citas y documentación desde un único lugar.
+
+- Implementar notificaciones que faciliten el seguimiento de citas y nueva información disponible.
+
+- Incorporar mecanismos de autenticación y control de acceso para proteger la información gestionada por la plataforma.
+
+- Recopilar métricas de uso que permitan evaluar funcionalidades y mejorar continuamente la experiencia de médicos y pacientes.
+
 #### 1.1.2. Perfiles de integrantes del equipo
+
+| Foto | Nombre completo | Código | Carrera | Habilidades técnicas y rol |
+|:---:|---|---|---|---|
+| <img src="assets/stephano_landauri.jpg" alt="Stephano Landauri Preciado" width="400"> | Stephano Mayrzon Landauri Preciado | U202311828 | Ingeniería de Software | Desarrollo Full Stack con React, TypeScript, JavaScript, Node.js y Express. Creación de APIs REST y manejo de SQLite, MySQL y MongoDB. Conocimientos en Git, GitHub, PWA, Capacitor, JWT y despliegue en Oracle Cloud. Aporta al análisis de las necesidades del usuario y promueve el trabajo colaborativo. |
+| Por agregar | Johnny Alexander Ojanama Abanto | U20231F412 | Ingeniería de Software | Conocimientos en C++, MySQL, MongoDB y Python. Experiencia en desarrollo Frontend y Backend con tecnologías como Angular, Vue.js y Flutter. Conocimientos en DDD y su integración con Clean Architecture. Participa en la resolución de problemas y apoya al equipo ante contratiempos. |
+| <img src="assets/oscar_espinoza.jpeg" alt="Oscar Leonardo Espinoza Quijandria" width="200"> | Oscar Leonardo Espinoza Quijandria | U202311842 | Ingeniería de Software | Conocimientos en programación orientada a objetos con C++, estructuras de datos y bases de datos SQL. Participación en el análisis de requerimientos, diseño de arquitectura con ADD, DDD, Clean Architecture y microservicios. Elaboración de diagramas y documentación técnica mediante Markdown, Git y GitHub. |
+
 ### 1.2. Solution Profile
 #### 1.2.1 Antecedentes y problemática
+
+En el Perú, la gestión de la información médica presenta dificultades debido a la fragmentación de los sistemas de salud y a la existencia de múltiples registros clínicos. Según Rojas-Mezarina, Cedamanos-Medina y Vargas-Herrera (2015), esta fragmentación puede ocasionar la pérdida de información valiosa del paciente al no contar con mecanismos adecuados para integrar sus diferentes historias clínicas. Asimismo, Huapaya-Huertas et al. (2021) destacan que la implementación de historias clínicas electrónicas permite mejorar la disponibilidad de la información y favorecer la continuidad de la atención.
+
+Esta problemática evidencia la necesidad de soluciones digitales que faciliten la organización y disponibilidad de la información relacionada con la atención. Por ello, se propone una plataforma que conecte a médicos y pacientes, permitiendo gestionar citas y compartir de manera organizada recetas, informes, resultados de exámenes y otros documentos.
+
+#### Análisis 5W + 2H
+
+| Elemento | Descripción |
+| --- | --- |
+| **What? (¿Qué?)** | Fragmentación y dificultad para organizar y acceder a la información relacionada con la atención médica (Rojas-Mezarina et al., 2015). |
+| **Why? (¿Por qué?)** | Debido a la existencia de diferentes registros y sistemas que dificultan integrar la información de un mismo paciente (Rojas-Mezarina et al., 2015). |
+| **Who? (¿Quién?)** | Médicos y pacientes que necesitan consultar, gestionar o compartir información relacionada con la atención. |
+| **Where? (¿Dónde?)** | En el contexto de los servicios de salud en el Perú (Rojas-Mezarina et al., 2015). |
+| **When? (¿Cuándo?)** | Durante las consultas y el posterior seguimiento de la atención del paciente. |
+| **How? (¿Cómo?)** | Mediante información distribuida en diferentes registros y documentos, dificultando su disponibilidad y continuidad (Huapaya-Huertas et al., 2021). |
+| **How much? (¿Cuánto?)** | La fragmentación puede ocasionar pérdida de información relevante y afectar la continuidad de la atención (Rojas-Mezarina et al., 2015; Huapaya-Huertas et al., 2021). |
+
+#### Referencias
+
+Rojas-Mezarina, L., Cedamanos-Medina, C. A., & Vargas-Herrera, J. (2015). Registro nacional de historias clínicas electrónicas en Perú. *Revista Peruana de Medicina Experimental y Salud Pública, 32*(2), 395–396. 
+
+Huapaya-Huertas, O., Palomino-Rojas, J., Calle-Texeira, C., Alvarez-Huiman, G., Montesinos-Segura, R., & Taype-Rondan, A. (2021). Experiencia del Complejo Hospitalario San Pablo (Perú) en la implementación de un sistema de historias clínicas electrónicas. *Anales de la Facultad de Medicina, 82*(4), 349–354. 
+
 #### 1.2.2 Lean UX Process
 ##### 1.2.2.1. Lean UX Problem Statements
+
+Los **médicos y pacientes** presentan dificultades para gestionar y acceder de manera organizada a la información relacionada con la atención médica. Por un lado, los médicos necesitan administrar sus citas y consultar o compartir documentos como recetas, informes y resultados de exámenes; por otro lado, los pacientes necesitan acceder fácilmente a sus citas y a la documentación proporcionada por sus médicos. La dispersión de esta información entre diferentes registros, documentos y medios digitales puede dificultar su consulta y el seguimiento de la atención.
+
+**¿Cómo podríamos facilitar la interacción entre médicos y pacientes, permitiendo gestionar citas y acceder de manera organizada a la información relacionada con la atención médica desde un mismo entorno digital?**
+
 ##### 1.2.2.2. Lean UX Assumptions
+
+**Business Assumptions**
+
+- Creemos que los médicos necesitan una herramienta que les permita gestionar sus citas y la información de sus pacientes desde un mismo entorno.
+
+- Creemos que los pacientes valorarán poder consultar sus citas, recetas, informes y resultados de manera organizada.
+
+- Creemos que centralizar la interacción y documentación entre médicos y pacientes puede facilitar el seguimiento de la atención.
+
+- Creemos que una plataforma web y móvil puede mejorar la accesibilidad a la información para ambos segmentos.
+
+**User Assumptions**
+
+- Creemos que los médicos tienen dificultades al gestionar información de sus pacientes mediante diferentes medios.
+
+- Creemos que los pacientes tienen dificultades para mantener organizados sus documentos relacionados con la atención médica.
+
+- Creemos que los pacientes necesitan acceder rápidamente a sus recetas, informes y resultados.
+
+- Creemos que médicos y pacientes utilizarían una plataforma digital si esta es sencilla, accesible y segura.
+
+- Creemos que los usuarios consideran importante recibir notificaciones sobre citas y nueva documentación disponible.
+
 ##### 1.2.2.3. Lean UX Hypothesis Statements
+
+1. Creemos que centralizar las citas y documentos relacionados con la atención médica permitirá a médicos y pacientes acceder y gestionar su información de manera más organizada.
+
+2. Creemos que enviar recordatorios de las próximas citas ayudará a los pacientes a realizar un mejor seguimiento de sus citas programadas.
+
+3. Creemos que permitir a los pacientes consultar sus recetas, informes y resultados desde un único entorno facilitará el acceso a su información.
+
+4. Creemos que permitir a los médicos compartir documentos directamente con sus pacientes facilitará el seguimiento de la atención.
+
+5. Creemos que ofrecer una plataforma sencilla, accesible y organizada aumentará la disposición de médicos y pacientes a utilizarla.
+
 ##### 1.2.2.4. Lean UX Canvas
+
+![Lean UX Canvas](assets/Lean_UX_Canvas.png)
+
 ### 1.3. Segmentos objetivo
+
+#### Segmento 1: Médicos cirujanos
+
+Este segmento está conformado por médicos cirujanos que atienden pacientes de manera presencial o virtual y que necesitan organizar sus citas, consultar información de sus pacientes y gestionar documentación relacionada con la atención.
+
+Durante su actividad profesional, pueden generar y consultar recetas, informes médicos y otros documentos, además de recibir resultados de laboratorio, resonancias, estudios y archivos proporcionados por sus pacientes. La información puede encontrarse distribuida entre diferentes medios, dificultando su organización y consulta posterior.
+
+MAX busca brindar a este segmento un entorno digital centralizado desde el cual puedan gestionar sus citas y pacientes, compartir documentación médica, recibir estudios o resultados y consultar información de atenciones anteriores.
+
+**Principales necesidades:**
+
+- Gestionar citas y disponibilidad de atención.
+
+- Consultar información de sus pacientes.
+
+- Generar y compartir recetas e informes médicos.
+
+- Recibir resultados de laboratorio, resonancias y otros estudios.
+
+- Consultar documentos relacionados con atenciones anteriores.
+
+- Realizar seguimiento de los pacientes después de una consulta.
+
+- Mantener organizada la información relacionada con cada atención.
+
+- Contar con mecanismos de autenticación y control de acceso para proteger la información.
+
+#### Segmento 2: Pacientes
+
+Este segmento está conformado por personas que reciben atención médica y necesitan organizar sus citas y acceder a la documentación relacionada con sus atenciones.
+
+Los pacientes pueden recibir recetas, informes, resultados de exámenes y otros documentos durante diferentes etapas de su atención. Asimismo, pueden necesitar compartir resultados de laboratorio, resonancias u otros estudios con sus médicos para continuar con su seguimiento.
+
+MAX busca permitir que los pacientes consulten desde un mismo entorno sus citas y documentos, reciban recordatorios y compartan información con sus médicos de manera organizada.
+
+**Principales necesidades:**
+
+- Programar y consultar sus citas médicas.
+
+- Recibir recordatorios de próximas citas.
+
+- Consultar recetas e informes médicos.
+
+- Acceder a resultados y estudios relacionados con sus atenciones.
+
+- Consultar documentos de atenciones anteriores.
+
+- Compartir resultados o estudios con su médico.
+
+- Mantener organizada su documentación médica.
+
+- Tener control sobre el acceso a su información.
 
 ---
 
