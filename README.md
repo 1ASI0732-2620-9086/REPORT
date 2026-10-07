@@ -2796,13 +2796,240 @@ Las evidencias presentadas permiten comprobar que los principales componentes de
 ![Team Collaboration Insights](assets/Inside.png)
 
 *(Nota: Repetir esta estructura para Sprint 2, 3, y 4 según corresponda cada hito de evaluación)*
-#### 5.2.2. Implemented Landing Page Evidence
-#### 5.2.3. Implemented Frontend-Web Application Evidence
-#### 5.2.4. Implemented Native-Mobile Application Evidence
-#### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
-#### 5.2.6. RESTful API Documentation
-#### 5.2.7. Team Collaboration Insights
-### 5.3. Video About-the-Product
+
+### 5.2.2. Implemented Landing Page Evidence
+
+La Landing Page de MAX fue implementada con el objetivo de presentar la propuesta de valor del producto y brindar información sobre las principales características de la plataforma dirigida a médicos cirujanos y pacientes.
+
+La página permite a los usuarios conocer el propósito de MAX, sus principales funcionalidades, valores y medios de contacto.
+
+La Landing Page se encuentra desplegada mediante **GitHub Pages** y puede ser consultada públicamente mediante el siguiente enlace:
+
+**Landing Page:**  
+https://1asi0732-2620-9086.github.io/LANDING-PAGE/
+
+#### Página principal
+
+La sección principal presenta MAX y permite al usuario identificar rápidamente el propósito de la plataforma.
+
+![Landing Page - Inicio](assets/landing-page-home.jpeg)
+
+#### Sección Nosotros
+
+Esta sección presenta información sobre MAX y el propósito de la solución, permitiendo que los visitantes comprendan la propuesta del producto.
+
+![Landing Page - Nosotros](assets/landing-page-nosotros.jpeg)
+
+#### Sección de Funcionalidades
+
+Esta sección presenta las principales funcionalidades ofrecidas por MAX para facilitar la interacción entre médicos cirujanos y pacientes.
+
+![Landing Page - Funcionalidades](assets/landing-page-funcionalidades.jpeg)
+
+#### Sección de Valores
+
+Esta sección presenta los principales valores considerados para el desarrollo de MAX: innovación, seguridad, confianza, accesibilidad y responsabilidad.
+
+![Landing Page - Valores](assets/landing-page-valores.jpeg)
+
+#### Sección de Contacto
+
+Finalmente, la Landing Page cuenta con una sección de contacto que proporciona información para comunicarse con el equipo responsable de MAX.
+
+![Landing Page - Contacto](assets/landing-page-contacto.jpeg)
+
+Las evidencias presentadas demuestran la implementación y publicación de la Landing Page de MAX, proporcionando a los usuarios un punto inicial para conocer la propuesta de valor y las principales características del producto.
+
+
+### 5.2.3. Implemented Frontend-Web Application Evidence
+
+La aplicación Frontend Web de MAX fue implementada para proporcionar a los médicos cirujanos una interfaz desde la cual puedan acceder a las principales funcionalidades de la plataforma.
+
+El Frontend Web permite interactuar con los servicios proporcionados por el Backend de MAX y gestionar la información disponible en la plataforma.
+
+La aplicación se encuentra desplegada mediante **Cloudflare Pages** y puede ser consultada mediante el siguiente enlace:
+
+**Frontend Web:**  
+https://max-dev-front.pages.dev/auth
+
+#### Autenticación
+
+La aplicación cuenta con una interfaz de autenticación que permite al usuario ingresar a MAX utilizando sus credenciales.
+
+![Frontend Web - Login](assets/sprint1-login.jpeg)
+
+#### Dashboard
+
+Después de iniciar sesión, el usuario puede acceder al Dashboard principal de MAX, desde donde puede visualizar información general y acceder a los diferentes módulos disponibles.
+
+![Frontend Web - Dashboard](assets/sprint1-dashboard.jpeg)
+
+#### Gestión de pacientes
+
+El módulo de pacientes permite visualizar y gestionar la información de los pacientes registrados en la plataforma.
+
+![Frontend Web - Pacientes](assets/sprint1-pacientes.jpeg)
+
+#### Registro de pacientes
+
+La aplicación permite registrar nuevos pacientes mediante un formulario destinado al ingreso de su información.
+
+![Frontend Web - Registro de Paciente](assets/sprint1-registro-paciente.jpeg)
+
+#### Detalle del paciente
+
+El médico puede acceder al detalle de un paciente para consultar la información registrada y las opciones disponibles relacionadas con su gestión.
+
+![Frontend Web - Detalle de Paciente](assets/sprint1-detalle-paciente.jpeg)
+
+#### Gestión de estudios médicos
+
+MAX permite gestionar estudios médicos asociados a los pacientes, facilitando el almacenamiento y consulta de los archivos registrados en la plataforma.
+
+![Frontend Web - Estudios Médicos](assets/sprint1-estudios.jpeg)
+
+Las evidencias presentadas permiten comprobar la implementación de las principales interfaces del Frontend Web de MAX y su integración con las funcionalidades desarrolladas para el producto.
+
+
+### 5.2.4. Implemented Native-Mobile Application Evidence
+
+MAX cuenta con una aplicación móvil orientada a facilitar el acceso de los pacientes a las funcionalidades disponibles desde dispositivos móviles.
+
+La aplicación móvil constituye uno de los componentes de la solución MAX y busca proporcionar una experiencia adaptada a este tipo de dispositivos, permitiendo consultar información relacionada con la atención médica desde una interfaz accesible.
+
+#### Inicio de sesión
+
+La aplicación móvil dispone de una interfaz de autenticación mediante la cual el usuario puede ingresar utilizando sus credenciales.
+
+![Mobile - Login](assets/mobile-login.jpeg)
+
+#### Pantalla principal
+
+Después de autenticarse, el usuario puede acceder a la pantalla principal de la aplicación y consultar las funcionalidades disponibles.
+
+![Mobile - Inicio](assets/mobile-home.jpeg)
+
+#### Gestión de citas
+
+La aplicación móvil permite acceder a la información relacionada con las citas del usuario, facilitando su consulta desde un dispositivo móvil.
+
+![Mobile - Citas](assets/mobile-citas.jpeg)
+
+#### Documentación médica
+
+Desde la aplicación, el paciente puede acceder a la información y documentación médica que se encuentre disponible dentro de MAX.
+
+![Mobile - Documentos](assets/mobile-documentos.jpeg)
+
+#### Perfil del usuario
+
+La aplicación dispone de una sección destinada a consultar la información correspondiente al perfil del usuario.
+
+![Mobile - Perfil](assets/mobile-perfil.jpeg)
+
+Las evidencias presentadas muestran la implementación de la aplicación móvil de MAX y las interfaces desarrolladas para proporcionar acceso a las funcionalidades del producto desde dispositivos móviles.
+
+
+### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
+
+El Backend de MAX proporciona los servicios necesarios para gestionar la lógica de negocio y permitir la comunicación entre las aplicaciones cliente y la información almacenada en la base de datos.
+
+El Backend se encuentra desplegado mediante **Railway** y se comunica con una base de datos **MySQL** utilizada para la persistencia de la información de la plataforma.
+
+**Backend:**  
+https://maxdevback-production.up.railway.app
+
+#### Backend desplegado
+
+El servicio Backend de MAX se encuentra publicado en Railway, proporcionando el entorno de ejecución necesario para los servicios utilizados por la plataforma.
+
+![Backend - Railway](assets/dep_back.jpeg)
+
+#### Servicios de autenticación
+
+El Backend proporciona servicios relacionados con los procesos de autenticación y control de acceso a la plataforma.
+
+![Backend - Authentication](assets/sprint1-api-auth.jpeg)
+
+#### Servicios de pacientes
+
+Los servicios relacionados con pacientes permiten realizar las operaciones necesarias para registrar, consultar, actualizar y gestionar la información de los pacientes.
+
+![Backend - Pacientes](assets/sprint1-api-pacientes.jpeg)
+
+#### Servicios de estudios médicos
+
+El Backend proporciona servicios para gestionar los estudios médicos asociados a los pacientes y permitir su utilización desde las aplicaciones cliente.
+
+![Backend - Estudios](assets/sprint1-api-estudios.jpeg)
+
+#### Persistencia de información
+
+La información gestionada por los servicios del Backend es almacenada en una base de datos **MySQL** desplegada en Railway.
+
+Entre las estructuras disponibles se encuentran tablas relacionadas con usuarios, pacientes, citas, consultas, estudios y configuraciones de la aplicación.
+
+![Backend - Base de Datos](assets/dep_db.jpeg)
+
+Las evidencias presentadas permiten comprobar la implementación del Backend de MAX, su despliegue y su integración con la base de datos utilizada para la persistencia de la información.
+
+
+### 5.2.6. RESTful API Documentation
+
+La API de MAX permite la comunicación entre las aplicaciones cliente y el Backend mediante servicios orientados a gestionar los diferentes recursos utilizados por la plataforma.
+
+La documentación de la API permite identificar las operaciones disponibles, métodos HTTP, parámetros, estructuras de solicitud y respuestas proporcionadas por los servicios.
+
+#### Documentación general de la API
+
+La documentación proporciona una vista general de los servicios disponibles en el Backend de MAX.
+
+![API Documentation - General](assets/api-documentation.jpeg)
+
+#### Authentication API
+
+Los servicios de autenticación permiten gestionar el acceso de los usuarios a MAX y las operaciones relacionadas con la autenticación de la plataforma.
+
+![API Documentation - Authentication](assets/sprint1-api-auth.jpeg)
+
+#### Patients API
+
+Los servicios correspondientes a pacientes permiten realizar las operaciones necesarias para administrar la información de los pacientes registrados en MAX.
+
+![API Documentation - Patients](assets/sprint1-api-pacientes.jpeg)
+
+#### Medical Studies API
+
+Los servicios relacionados con estudios médicos permiten gestionar la información y los archivos asociados a los pacientes.
+
+![API Documentation - Studies](assets/sprint1-api-estudios.jpeg)
+
+#### Ejecución de servicios
+
+La documentación de la API permite comprobar el funcionamiento de los servicios mediante la ejecución de solicitudes y la visualización de las respuestas proporcionadas por el Backend.
+
+![API Documentation - Execution](assets/sprint1-api-ejecucion.jpeg)
+
+La documentación de la API proporciona una referencia técnica de los servicios implementados en MAX y facilita la comprensión de la comunicación entre el Frontend Web, la aplicación móvil y el Backend.
+
+
+### 5.2.7. Team Collaboration Insights
+
+Durante el desarrollo de MAX, el equipo trabajó de manera colaborativa en los diferentes componentes que conforman la solución, incluyendo la Landing Page, el Frontend Web, la aplicación móvil, el Backend y la documentación del proyecto.
+
+Para la gestión del código fuente se utilizó **GitHub**, permitiendo mantener repositorios independientes para los diferentes componentes del producto y registrar los cambios realizados durante el proceso de desarrollo.
+
+La coordinación del equipo se realizó principalmente mediante reuniones virtuales en **Discord**, donde los integrantes revisaron avances, distribuyeron actividades y discutieron los inconvenientes encontrados durante la implementación.
+
+La utilización de la matriz **Leadership and Collaboration Matrix (LACX)** permitió establecer líderes y colaboradores para los principales aspectos del proyecto, facilitando la distribución de responsabilidades entre los integrantes del equipo.
+
+Durante el desarrollo también se identificó la importancia de mantener una comunicación constante entre los responsables del Frontend y Backend, debido a que la correcta integración de ambos componentes depende de la disponibilidad y estructura de los servicios proporcionados por la API.
+
+Asimismo, el uso de repositorios en GitHub permitió mantener trazabilidad sobre los cambios realizados y facilitó la integración progresiva de los diferentes componentes desarrollados.
+
+Como resultado del trabajo realizado, el equipo logró avanzar en la implementación e integración de los principales componentes de MAX, obteniendo una solución compuesta por una Landing Page, una aplicación Frontend Web, una aplicación móvil, un Backend y una base de datos para la persistencia de la información.
+
+La experiencia obtenida durante las diferentes iteraciones permitió identificar oportunidades de mejora relacionadas con la coordinación del equipo, la integración continua de componentes, el seguimiento de actividades y la validación temprana de las funcionalidades desarrolladas.
 
 El siguiente video presenta MAX, su propuesta de valor, las principales funcionalidades de la plataforma y la forma en que facilita la interacción entre médicos cirujanos y pacientes.
 
