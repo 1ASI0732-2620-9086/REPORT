@@ -2662,8 +2662,138 @@ A continuación, se presentan algunos de los principales commits asociados al de
 | MOBILE | main | `601fc35` | Primera versión de la aplicación móvil de MAX | Incorporación de la primera versión de la aplicación móvil del producto MAX. | 2026-09-17 |
 
 ##### 5.2.1.5. Execution Evidence for Sprint Review
+
+Durante el Sprint 1 se realizaron pruebas de ejecución de las funcionalidades implementadas para comprobar el correcto funcionamiento de los componentes desarrollados en MAX.
+
+Las siguientes evidencias muestran la ejecución de las principales funcionalidades correspondientes a la Primera Entrega, incluyendo el acceso a la plataforma, la visualización del Dashboard, la gestión de pacientes y la administración de estudios médicos.
+
+##### Inicio de sesión
+
+La plataforma permite al médico ingresar mediante sus credenciales para acceder a las funcionalidades disponibles en MAX.
+
+![Inicio de sesión de MAX](assets/sprint1-login.png)
+
+##### Dashboard principal
+
+Después de iniciar sesión, el médico puede acceder al Dashboard principal, desde donde puede visualizar información general y acceder a los diferentes módulos de la plataforma.
+
+![Dashboard de MAX](assets/sprint1-dashboard.png)
+
+##### Gestión de pacientes
+
+MAX permite visualizar los pacientes registrados y acceder a las funcionalidades relacionadas con su gestión.
+
+![Listado de pacientes](assets/sprint1-pacientes.png)
+
+Asimismo, el médico puede registrar nuevos pacientes mediante el formulario correspondiente.
+
+![Registro de paciente](assets/sprint1-registro-paciente.png)
+
+##### Búsqueda y detalle de pacientes
+
+El sistema permite buscar pacientes mediante los criterios implementados y consultar la información correspondiente al paciente seleccionado.
+
+![Búsqueda de pacientes](assets/sprint1-busqueda-paciente.png)
+
+![Detalle del paciente](assets/sprint1-detalle-paciente.png)
+
+##### Gestión de estudios médicos
+
+El módulo de estudios permite asociar archivos médicos a los pacientes registrados y posteriormente consultar los estudios almacenados.
+
+![Registro de estudio médico](assets/sprint1-registro-estudio.png)
+
+![Listado de estudios médicos](assets/sprint1-estudios.png)
+
+Estas evidencias permiten comprobar la ejecución de las principales funcionalidades desarrolladas durante el Sprint 1 y demostrar el avance funcional alcanzado en la Primera Entrega de MAX.
+
 ##### 5.2.1.6. Services Documentation Evidence for Sprint Review
+
+Durante el Sprint 1 se implementaron los servicios necesarios para soportar las principales funcionalidades correspondientes a la Primera Entrega de MAX. Estos servicios permiten la comunicación entre el Frontend Web y el Backend de la plataforma, gestionando las operaciones relacionadas con autenticación, usuarios, pacientes y estudios médicos.
+
+La documentación de los servicios permite identificar y verificar las operaciones disponibles en la API, así como los métodos HTTP, parámetros, estructuras de datos y respuestas utilizadas durante la comunicación entre los componentes de MAX.
+
+##### Servicios de autenticación
+
+Los servicios de autenticación permiten gestionar el acceso de los médicos a la plataforma. Durante esta primera entrega se implementaron las operaciones necesarias para el registro e inicio de sesión, utilizando mecanismos de autenticación para proteger el acceso a los recursos de MAX.
+
+![Servicios de autenticación](assets/sprint1-api-auth.png)
+
+##### Servicios de pacientes
+
+Los servicios relacionados con pacientes permiten realizar las operaciones necesarias para registrar, consultar, buscar, actualizar y eliminar la información de los pacientes asociados al médico.
+
+Estos servicios constituyen una parte central de la Primera Entrega, debido a que permiten gestionar la información necesaria para posteriormente relacionar citas, consultas y estudios médicos con cada paciente.
+
+![Servicios de pacientes](assets/sprint1-api-pacientes.png)
+
+##### Servicios de estudios médicos
+
+Los servicios de estudios permiten gestionar los archivos médicos asociados a los pacientes. A través de estos servicios, la plataforma puede registrar y consultar estudios, así como relacionarlos con el paciente correspondiente.
+
+![Servicios de estudios médicos](assets/sprint1-api-estudios.png)
+
+##### Verificación de los servicios
+
+Durante el Sprint Review se verificó la disponibilidad y funcionamiento de los servicios implementados mediante solicitudes realizadas a la API. Esta validación permitió comprobar la comunicación entre el Frontend Web y el Backend y verificar que las operaciones necesarias para la Primera Entrega estuvieran disponibles.
+
+![Ejecución de servicios de la API](assets/sprint1-api-ejecucion.png)
+
+Las evidencias presentadas muestran la documentación y ejecución de los servicios utilizados durante el Sprint 1, proporcionando trazabilidad entre las funcionalidades implementadas en el Frontend Web y las operaciones disponibles en el Backend de MAX.
+
 ##### 5.2.1.7. Software Deployment Evidence for Sprint Review
+
+Durante el Sprint 1 se realizaron actividades de despliegue de los principales componentes de MAX con el objetivo de disponer de versiones accesibles de la solución y comprobar la integración entre los diferentes componentes desarrollados.
+
+Para el despliegue se utilizaron diferentes servicios según las necesidades de cada componente de la arquitectura. La Landing Page fue publicada mediante GitHub Pages, el Frontend Web mediante Cloudflare Pages y el Backend junto con la base de datos MySQL mediante Railway.
+
+##### Landing Page Deployment
+
+La Landing Page de MAX fue desplegada utilizando **GitHub Pages**, permitiendo disponer de una versión pública del sitio informativo del producto.
+
+**Deployment URL:**  
+https://1asi0732-2620-9086.github.io/LANDING-PAGE/
+
+![Landing Page Deployment](assets/dep_landi.jpeg)
+
+##### Frontend Web Application Deployment
+
+El Frontend Web de MAX fue desplegado mediante **Cloudflare Pages**, permitiendo acceder a la aplicación desde un entorno web publicado.
+
+**Deployment URL:**  
+https://max-dev-front.pages.dev/auth
+
+![Frontend Web Deployment](assets/dep_front.jpeg)
+
+##### Backend Deployment
+
+El Backend de MAX fue desplegado mediante **Railway**, proporcionando el entorno necesario para ejecutar los servicios utilizados por el Frontend Web.
+
+**Deployment URL:**  
+https://maxdevback-production.up.railway.app
+
+![Backend Deployment](assets/dep_back.jpeg)
+
+##### Database Deployment
+
+La base de datos **MySQL** utilizada por MAX se encuentra alojada en Railway y conectada con el servicio Backend.
+
+La instancia contiene las estructuras de datos necesarias para almacenar la información gestionada por la plataforma, incluyendo usuarios, pacientes, citas, consultas, estudios y configuraciones de la aplicación.
+
+A diferencia de los componentes web, la base de datos no dispone de una URL pública destinada al usuario final, debido a que su acceso se realiza desde el Backend mediante la configuración correspondiente del entorno.
+
+![Database Deployment](assets/dep_db.jpeg)
+
+##### Deployment Architecture
+
+La arquitectura de despliegue utilizada durante el desarrollo de MAX puede representarse mediante el siguiente flujo:
+
+**Usuario → Landing Page / Frontend Web → Backend → MySQL**
+
+De esta manera, el usuario accede a las interfaces publicadas de MAX, mientras que el Frontend Web consume los servicios proporcionados por el Backend y este se comunica con la base de datos MySQL para gestionar la persistencia de la información.
+
+Las evidencias presentadas permiten comprobar que los principales componentes desarrollados para MAX cuentan con entornos de despliegue que permiten validar su funcionamiento e integración durante el Sprint Review.
+
 ##### 5.2.1.8. Team Collaboration Insights during Sprint
 *(Nota: Repetir esta estructura para Sprint 2, 3, y 4 según corresponda cada hito de evaluación)*
 #### 5.2.2. Implemented Landing Page Evidence
@@ -2672,7 +2802,6 @@ A continuación, se presentan algunos de los principales commits asociados al de
 #### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
 #### 5.2.6. RESTful API Documentation
 #### 5.2.7. Team Collaboration Insights
-### 5.3. Video About-the-Product
 ### 5.3. Video About-the-Product
 
 El siguiente video presenta MAX, su propuesta de valor, las principales funcionalidades de la plataforma y la forma en que facilita la interacción entre médicos cirujanos y pacientes.
