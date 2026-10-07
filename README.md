@@ -3024,16 +3024,169 @@ La experiencia obtenida durante las diferentes iteraciones permitió identificar
 
 El siguiente video presenta MAX, su propuesta de valor, las principales funcionalidades de la plataforma y la forma en que facilita la interacción entre médicos cirujanos y pacientes.
 
-[▶️ Ver About the Product de MAX]([PEGA_AQUI_TU_LINK](https://youtu.be/QQunga5vDYM))
+[▶️ Ver Video About-the-Product de MAX](https://youtu.be/QQunga5vDYM)
 ---
 
 ## Conclusiones
-### Conclusiones y recomendaciones
+
+A continuación, se presentan las conclusiones y recomendaciones derivadas del trabajo realizado durante el desarrollo de **MAX**. Estas consideran los principales resultados obtenidos durante el **AV1**, que comprendió el desarrollo de los capítulos relacionados con la definición de la startup y solución, el levantamiento y análisis de requerimientos, la especificación de requisitos, el diseño del producto y los avances correspondientes a la implementación de la solución.
+
+El trabajo realizado permitió evolucionar desde la identificación inicial del problema y de los segmentos objetivo hacia la definición de una solución digital compuesta por una Landing Page, una aplicación web, una aplicación móvil, un Backend y una base de datos. Asimismo, permitió establecer una base metodológica y técnica para continuar con las etapas posteriores de validación, DevOps y experimentación del producto.
+
+- El desarrollo del **Startup Profile de MAX** permitió establecer la identidad inicial de la propuesta mediante la definición de su misión, visión, valores y objetivos, orientando el producto hacia la mejora de la interacción entre médicos cirujanos y pacientes.
+
+- La definición del **Solution Profile** permitió delimitar el problema que busca abordar MAX y establecer una propuesta de solución basada en la centralización de citas y documentación relacionada con la atención médica.
+
+- Se definieron claramente los dos segmentos objetivo principales de MAX: **médicos cirujanos y pacientes**. Esta separación permitió analizar necesidades diferentes para cada tipo de usuario y posteriormente diseñar funcionalidades específicas para cada uno.
+
+- La investigación realizada sobre el contexto de la información médica digital permitió sustentar la relevancia de contar con soluciones tecnológicas que faciliten la organización y disponibilidad de información relacionada con la atención de los pacientes.
+
+- La aplicación de **Lean UX** permitió organizar los principales supuestos del producto mediante Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas, estableciendo una base para validar posteriormente las decisiones tomadas durante el desarrollo.
+
+- Las hipótesis planteadas permitieron orientar MAX hacia aspectos concretos como la centralización de citas y documentos, recordatorios, acceso a recetas e informes, intercambio de documentación y facilidad de uso de la plataforma.
+
+- El proceso de **Requirements Elicitation & Analysis** permitió obtener información directamente de representantes de los segmentos objetivo mediante entrevistas a pacientes y profesionales médicos.
+
+- Las entrevistas realizadas permitieron identificar situaciones relevantes para el diseño de MAX, como dificultades para recordar citas, información distribuida entre diferentes medios, almacenamiento de recetas y estudios, necesidad de consultar información previa y preocupación por la privacidad y el acceso a la información.
+
+- La etapa de **Needfinding**, mediante User Personas, User Task Matrix, User Journey Mapping, Empathy Mapping y As-Is Scenario Mapping, permitió transformar los resultados obtenidos en las entrevistas en representaciones concretas de las necesidades, tareas y problemas de los usuarios.
+
+- La elaboración del **Ubiquitous Language** permitió establecer un vocabulario común para conceptos relevantes dentro de MAX, facilitando que términos relacionados con pacientes, médicos, citas, consultas, estudios y documentación sean utilizados de manera consistente dentro del proyecto.
+
+- El análisis competitivo permitió evaluar soluciones existentes y comprender qué características podían servir como referencia para MAX, identificando oportunidades para diferenciar el producto mediante una experiencia enfocada específicamente en la interacción entre médicos cirujanos y pacientes.
+
+- La elaboración del **To-Be Scenario Mapping** permitió representar cómo podría mejorar la experiencia de los usuarios mediante MAX, trasladando los problemas identificados durante el escenario actual hacia una experiencia futura soportada por la plataforma.
+
+- La especificación de requerimientos permitió transformar las necesidades identificadas durante la investigación en **Epics, User Stories y Technical Stories**, estableciendo una relación entre las necesidades del usuario y las funcionalidades que posteriormente serían implementadas.
+
+- El **Product Backlog de MAX** permitió organizar y priorizar el desarrollo del producto mediante un total de **35 historias y 107 Story Points**, distribuidos entre funcionalidades relacionadas con identidad y acceso, pacientes, estudios, consultas, agenda clínica y configuración de preferencias.
+
+- La Primera Entrega del Product Backlog permitió concentrar el desarrollo en las funcionalidades fundamentales del producto, incluyendo autenticación y seguridad, gestión integral de pacientes y almacenamiento de estudios médicos adjuntos.
+
+- La Segunda Entrega permitió extender el alcance previsto hacia funcionalidades relacionadas con agenda médica, atención clínica y configuración de preferencias del sistema, proporcionando una ruta progresiva para la evolución del producto.
+
+- La definición de las interfaces y experiencia de usuario permitió establecer una representación visual coherente de MAX para sus diferentes plataformas, considerando las necesidades particulares de los médicos cirujanos y pacientes.
+
+- La implementación de la **Landing Page** permitió disponer de un punto público de presentación de MAX, comunicando su propósito, funcionalidades, valores y propuesta de valor.
+
+- La implementación del **Frontend Web** permitió materializar las principales interfaces destinadas a la gestión de información dentro de MAX, incluyendo autenticación, Dashboard, pacientes y estudios médicos.
+
+- El desarrollo de la **aplicación móvil** permitió avanzar hacia una experiencia adaptada a dispositivos móviles, complementando la solución web y considerando las necesidades de acceso de los usuarios desde este tipo de dispositivos.
+
+- La implementación del **Backend** permitió establecer los servicios necesarios para soportar las funcionalidades de la plataforma y gestionar la comunicación entre las aplicaciones cliente y la información persistida por MAX.
+
+- La utilización de una base de datos **MySQL** permitió establecer la persistencia de información relacionada con usuarios, pacientes, citas, consultas, estudios y configuraciones de la aplicación.
+
+- El despliegue del Backend y la base de datos mediante **Railway**, del Frontend Web mediante **Cloudflare Pages** y de la Landing Page mediante **GitHub Pages** permitió contar con entornos accesibles para comprobar progresivamente la integración y funcionamiento de los componentes desarrollados.
+
+- El uso de **GitHub** como plataforma de gestión del código fuente permitió mantener separados los principales componentes del producto y conservar trazabilidad sobre los cambios realizados durante el desarrollo.
+
+- La organización del trabajo mediante **Sprints, Product Backlog y la matriz Leadership and Collaboration Matrix (LACX)** permitió distribuir responsabilidades entre los integrantes y mantener una estructura de colaboración durante la implementación.
+
+- El Sprint 1 permitió trabajar sobre las **20 User Stories y Technical Stories de la Primera Entrega**, correspondientes a un total de **62 Story Points**, estableciendo una primera base funcional de MAX.
+
+- La documentación de evidencias de desarrollo, ejecución, servicios y deployment permitió mantener trazabilidad entre los requerimientos definidos, el código implementado y el funcionamiento observable de los diferentes componentes de MAX.
+
+- En conjunto, el trabajo realizado hasta el AV1 permitió que MAX avance desde una propuesta inicial hacia una solución con requerimientos definidos, diseño, backlog priorizado y componentes de software implementados, estableciendo una base para continuar posteriormente con las actividades de verificación, validación, DevOps y Experiment-Driven Development.
+
+### Recomendaciones
+
+- Continuar validando las **Hypothesis Statements de Lean UX** mediante experimentos con usuarios reales, evitando considerar una hipótesis como validada únicamente porque una funcionalidad haya sido diseñada o implementada.
+
+- Ampliar progresivamente la cantidad de **médicos cirujanos y pacientes entrevistados**, buscando participantes con diferentes edades, especialidades, niveles de experiencia y frecuencia de uso de servicios médicos para reducir posibles sesgos en los resultados.
+
+- Mantener una trazabilidad clara entre los resultados de las entrevistas, User Personas, Scenario Maps, Epics, User Stories, criterios de aceptación y funcionalidades implementadas.
+
+- Actualizar el **Product Backlog** conforme aparezcan nuevos hallazgos durante las entrevistas, pruebas de usabilidad y futuras actividades de experimentación, evitando mantener historias que hayan perdido relevancia para los usuarios.
+
+- Mantener el **Ubiquitous Language** como un elemento vivo del proyecto y actualizarlo cuando aparezcan nuevos conceptos relevantes durante el desarrollo o la investigación con usuarios.
+
+- Refinar las User Stories antes de cada Sprint, asegurando que sus criterios de aceptación sean suficientemente específicos para permitir comprobar objetivamente cuándo una funcionalidad puede considerarse terminada.
+
+- Incorporar progresivamente criterios de aceptación en formato **Given/When/Then**, facilitando posteriormente la implementación de pruebas BDD y la trazabilidad entre requerimientos y pruebas.
+
+- Realizar pruebas de usabilidad adicionales sobre los flujos principales de MAX, especialmente en autenticación, gestión de pacientes, citas, acceso a documentación y consulta de estudios médicos.
+
+- Mantener consistencia visual y funcional entre la **aplicación web y la aplicación móvil**, utilizando los Style Guidelines definidos durante el diseño del producto como referencia para futuras funcionalidades.
+
+- Priorizar la **seguridad y privacidad de la información** durante todas las futuras iteraciones, debido a la naturaleza de los datos gestionados por MAX.
+
+- Fortalecer los mecanismos de autenticación, autorización y control de acceso, asegurando que cada usuario pueda acceder únicamente a la información y funcionalidades correspondientes a su rol.
+
+- Evitar almacenar credenciales, secretos, tokens o configuraciones sensibles directamente en los repositorios de GitHub, utilizando variables de entorno y mecanismos seguros de configuración para los diferentes entornos.
+
+- Implementar y ampliar las **pruebas unitarias, de integración y de sistema** para los principales flujos de MAX, especialmente aquellos relacionados con autenticación, pacientes, citas, consultas y estudios.
+
+- Incorporar pruebas automatizadas dentro del flujo de integración del proyecto para detectar errores antes de integrar nuevos cambios a las ramas principales.
+
+- Fortalecer el proceso de **Continuous Integration**, incorporando validaciones automáticas de compilación, pruebas y calidad de código para los diferentes componentes del producto.
+
+- Mantener entornos diferenciados de desarrollo, pruebas y producción para reducir el riesgo de que cambios todavía no validados afecten las versiones utilizadas durante las demostraciones o validaciones con usuarios.
+
+- Fortalecer el proceso de **Continuous Deployment** utilizado con Cloudflare Pages, Railway y GitHub Pages, documentando claramente las variables de entorno y configuraciones necesarias para reproducir cada deployment.
+
+- Implementar mecanismos de **Continuous Monitoring** sobre el Backend y los servicios desplegados, considerando métricas como disponibilidad, tiempo de respuesta y errores producidos por la API.
+
+- Definir mecanismos de respaldo y recuperación para la base de datos MySQL, considerando la importancia de mantener disponible la información gestionada por la plataforma.
+
+- Mantener una documentación actualizada de la **RESTful API**, de manera que los responsables del Frontend Web y de la aplicación móvil puedan conocer los endpoints, parámetros, estructuras de solicitud y respuestas disponibles.
+
+- Mantener sincronización frecuente entre los responsables del Frontend, Mobile y Backend para evitar diferencias entre las interfaces desarrolladas y los servicios realmente disponibles en la API.
+
+- Utilizar Pull Requests y revisiones entre integrantes antes de integrar cambios importantes, reduciendo la posibilidad de introducir errores y mejorando el conocimiento compartido del código.
+
+- Mantener commits pequeños y descriptivos siguiendo **Conventional Commits**, así como una estrategia consistente de ramas basada en GitFlow para conservar la trazabilidad del desarrollo.
+
+- Continuar utilizando la matriz **LACX** para distribuir liderazgo y colaboración, pero revisar los responsables en cada Sprint de acuerdo con las funcionalidades que deban desarrollarse.
+
+- Para las siguientes etapas del proyecto, diseñar experimentos que permitan comprobar las hipótesis más importantes de MAX con **médicos cirujanos y pacientes reales**, definiendo previamente qué se desea aprender y qué evidencia permitirá tomar una decisión.
+
+- Establecer para cada experimento una hipótesis falsable, su correspondiente hipótesis nula, métricas, condiciones de control y experimentación y criterios objetivos para decidir si una funcionalidad debe **perseverar, iterar o descartarse**.
+
+- Instrumentar métricas relacionadas con los principales objetivos del producto antes de ejecutar los experimentos, evitando depender exclusivamente de opiniones cualitativas de los participantes.
+
+- Realizar las futuras **To-Be Validation Interviews** utilizando las funcionalidades realmente implementadas para determinar si los cambios propuestos solucionan los problemas identificados durante la etapa inicial de investigación.
+
+- Utilizar los resultados de las futuras validaciones y experimentos para repriorizar el Question Backlog y Product Backlog, de manera que las siguientes decisiones de MAX estén respaldadas por evidencia y no únicamente por supuestos del equipo.
+
+- Mantener sesiones de **shareback** al finalizar los ciclos de experimentación para que todos los integrantes comprendan los resultados obtenidos, las decisiones tomadas y los cambios que deberán incorporarse al producto.
+
+- Continuar evolucionando MAX de manera iterativa, priorizando primero aquellas funcionalidades que demuestren aportar mayor valor a médicos cirujanos y pacientes antes de ampliar el alcance del producto con características adicionales.
+  
 ### Video About-the-Team
 
 ---
 
 ## Bibliografía
+
+Huapaya-Huertas, O., Palomino-Rojas, J., Calle-Texeira, C., Alvarez-Huiman, G., Montesinos-Segura, R., & Taype-Rondan, A. (2021). Experiencia del Complejo Hospitalario San Pablo (Perú) en la implementación de un sistema de historias clínicas electrónicas. *Anales de la Facultad de Medicina, 82*(4), 349–354.  
+
+https://doi.org/10.15381/anales.v82i4.22211
+
+Rojas-Mezarina, L., Cedamanos-Medina, C. A., & Vargas-Herrera, J. (2015). Registro nacional de historias clínicas electrónicas en Perú. *Revista Peruana de Medicina Experimental y Salud Pública, 32*(2), 395–396.  
+
+https://doi.org/10.17843/rpmesp.2015.322.1639
+
+GitHub. (2026). *GitHub Documentation*.  
+
+https://docs.github.com/
+
+Cloudflare. (2026). *Cloudflare Pages Documentation*.  
+
+https://developers.cloudflare.com/pages/
+
+Railway. (2026). *Railway Documentation*.  
+
+https://docs.railway.com/
+
+MySQL. (2026). *MySQL Documentation*.  
+
+https://dev.mysql.com/doc/
+
+Git. (2026). *Git Documentation*.  
+
+https://git-scm.com/doc
+
 
 ---
 
