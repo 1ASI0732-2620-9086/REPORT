@@ -1,0 +1,20 @@
+{
+  "id": "backend-expanded",
+  "component": "Backend",
+  "section": "6.1.1/6.1.2",
+  "command": ".\\mvnw.cmd -B verify",
+  "workingDirectory": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_BACK\\max-backend",
+  "environment": "Local, Windows; datos sintéticos",
+  "startedAt": "2026-10-07T14:45:26.4173835-05:00",
+  "finishedAt": "2026-10-07T14:46:11.9943882-05:00",
+  "commit": "17e93c08b92cad83fdb4ea232b06c21eb70c260f",
+  "uncommittedChanges": [
+    "?? src/test/java/com/max/maxbackend/ClinicalFixtures.java",
+    "?? src/test/java/com/max/maxbackend/MySqlWorkflowIntegrationTest.java",
+    "?? src/test/java/com/max/maxbackend/contexts/",
+    "?? src/test/java/com/max/maxbackend/shared/config/"
+  ],
+  "exitCode": 0,
+  "status": "Ejecutado: aprobado",
+  "originalReport": "backend-expanded.log"
+}

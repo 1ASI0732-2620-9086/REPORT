@@ -1,0 +1,9 @@
+MAX | workflows-actionlint | CI/CD | 7.1
+Fecha America/Lima: 10/07/2026 15:33:40 -05:00
+Commit: 
+Cambios locales: 0
+Comando: C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\.max-test-runtime\tools\actionlint\actionlint.exe -shellcheck= -pyflakes= C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_BACK\max-backend\.github\workflows\ci.yml C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_BACK\max-backend\.github\workflows\delivery.yml C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_FRONT\MAX\.github\workflows\ci.yml C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_FRONT\MAX\.github\workflows\delivery.yml C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_FRONT\MAX\.github\workflows\integration.yml C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_MOBILE\.github\workflows\ci.yml C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_MOBILE\.github\workflows\delivery.yml C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_LANDING\.github\workflows\ci.yml C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_LANDING\.github\workflows\delivery.yml
+
+
+Exit code: 0
+Finalizado: 10/07/2026 15:33:40 -05:00

@@ -1,0 +1,112 @@
+MAX | web-system-real | Web/API/MySQL | 6.1.4.1
+Fecha America/Lima: 10/07/2026 15:00:56 -05:00
+Commit: 63ed173284647024a7612d5a1cf8f8b0290eff35
+Cambios locales: 12
+Comando: npm.cmd run test:system
+
+
+> max@0.0.0 test:system
+> playwright test --config=playwright.system.config.ts
+
+[WebServer] (node:10996) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10996) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:14948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:14948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 [desktop-chromium] › e2e-system\clinical-workflow.spec.ts:10:5 › recorrido real: registro, paciente, edición, estudio y cierre de sesión (28.8s)
+(node:39108) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:39108) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 [mobile-web-chromium] › e2e-system\clinical-workflow.spec.ts:10:5 › recorrido real: registro, paciente, edición, estudio y cierre de sesión (16.7s)
+
+
+  1) [desktop-chromium] › e2e-system\clinical-workflow.spec.ts:10:5 › recorrido real: registro, paciente, edición, estudio y cierre de sesión 
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Expected pattern: [32m/\/inicio$/[39m
+    Received string:  [31m"http://127.0.0.1:14200/auth"[39m
+    Timeout: 15000ms
+
+    Call log:
+    [2m  - Expect "toHaveURL" with timeout 15000ms[22m
+    [2m    18 × unexpected value "http://127.0.0.1:14200/auth"[22m
+
+
+      20 |   await page.locator('[formcontrolname="confirm"]').fill('SyntheticOnly#123');
+      21 |   await page.getByRole('button', { name: 'Registrarme', exact: true }).click();
+    > 22 |   await expect(page).toHaveURL(/\/inicio$/);
+         |                      ^
+      23 |   await page.goto('/pacientes');
+      24 |   await page.getByRole('button', { name: /registrar paciente/i }).click();
+      25 |   const dialog = page.getByRole('dialog');
+        at C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_FRONT\MAX\e2e-system\clinical-workflow.spec.ts:22:22
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-desktop-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-desktop-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-desktop-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-desktop-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [mobile-web-chromium] › e2e-system\clinical-workflow.spec.ts:10:5 › recorrido real: registro, paciente, edición, estudio y cierre de sesión 
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveURL[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Expected pattern: [32m/\/inicio$/[39m
+    Received string:  [31m"http://127.0.0.1:14200/auth"[39m
+    Timeout: 15000ms
+
+    Call log:
+    [2m  - Expect "toHaveURL" with timeout 15000ms[22m
+    [2m    18 × unexpected value "http://127.0.0.1:14200/auth"[22m
+
+
+      20 |   await page.locator('[formcontrolname="confirm"]').fill('SyntheticOnly#123');
+      21 |   await page.getByRole('button', { name: 'Registrarme', exact: true }).click();
+    > 22 |   await expect(page).toHaveURL(/\/inicio$/);
+         |                      ^
+      23 |   await page.goto('/pacientes');
+      24 |   await page.getByRole('button', { name: /registrar paciente/i }).click();
+      25 |   const dialog = page.getByRole('dialog');
+        at C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_FRONT\MAX\e2e-system\clinical-workflow.spec.ts:22:22
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-mobile-web-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-mobile-web-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-mobile-web-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-mobile-web-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [desktop-chromium] › e2e-system\clinical-workflow.spec.ts:10:5 › recorrido real: registro, paciente, edición, estudio y cierre de sesión 
+    [mobile-web-chromium] › e2e-system\clinical-workflow.spec.ts:10:5 › recorrido real: registro, paciente, edición, estudio y cierre de sesión 
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report reports\system-web-html[39m
+[36m[39m
+
+Exit code: 1
+Finalizado: 10/07/2026 15:02:08 -05:00

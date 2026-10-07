@@ -1,0 +1,7 @@
+{
+  "api": "http://10.0.2.2:18080/api",
+  "account": "sintética",
+  "patientDni": "27262005",
+  "storage": "none / archivo embebido",
+  "filePicker": "No automatizado: carga ejecutada mediante cliente API nativo"
+}

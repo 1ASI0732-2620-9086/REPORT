@@ -1,0 +1,30 @@
+{
+  "id": "android-build-internal",
+  "component": "Android",
+  "section": "7.2",
+  "command": "C:\\src\\flutter\\bin\\flutter.bat build apk --debug --dart-define=API_BASE_URL=http://10.0.2.2:18080/api",
+  "workingDirectory": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_MOBILE",
+  "environment": "Local, Windows; datos sintéticos",
+  "startedAt": "2026-10-07T15:33:37.5541109-05:00",
+  "finishedAt": "2026-10-07T15:34:07.0757171-05:00",
+  "commit": "601fc357b9522e8782f8eae3498c7b98c6638673",
+  "uncommittedChanges": [
+    " M .gitignore",
+    " M lib/data/max_api.dart",
+    " M lib/features/shared/study_viewer.dart",
+    " M pubspec.lock",
+    " M pubspec.yaml",
+    "?? .github/",
+    "?? integration_test/",
+    "?? test/iam_test.dart",
+    "?? test/patients_test.dart",
+    "?? test/studies_test.dart",
+    "?? test/study_transport_test.dart",
+    "?? test/study_viewer_test.dart",
+    "?? test/support/",
+    "?? test_driver/"
+  ],
+  "exitCode": 0,
+  "status": "Ejecutado: aprobado",
+  "originalReport": "android-build-internal.log"
+}

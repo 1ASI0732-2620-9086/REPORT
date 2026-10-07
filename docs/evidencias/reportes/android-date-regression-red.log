@@ -1,0 +1,21 @@
+MAX | android-date-regression-red | Android | 6.1.1.3.3
+Fecha America/Lima: 10/07/2026 15:19:01 -05:00
+Commit: 601fc357b9522e8782f8eae3498c7b98c6638673
+Cambios locales: 10
+Comando: C:\src\flutter\bin\flutter.bat test test/study_transport_test.dart --reporter=json
+
+{"protocolVersion":"0.1.1","runnerVersion":null,"pid":31808,"type":"start","time":0}
+{"suite":{"id":0,"platform":"vm","path":"C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_transport_test.dart"},"type":"suite","time":0}
+{"test":{"id":1,"name":"loading C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_transport_test.dart","suiteID":0,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":1}
+{"count":1,"time":5,"type":"allSuites"}
+{"testID":1,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":1554}
+{"group":{"id":2,"suiteID":0,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":null},"type":"group","time":1557}
+{"test":{"id":3,"name":"multipart conserva el día y el contrato de fecha/hora: 2026-10-07","suiteID":0,"groupIDs":[2],"metadata":{"skip":false,"skipReason":null},"line":15,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_transport_test.dart"},"type":"testStart","time":1557}
+{"testID":3,"error":"Expected: '2026-10-07T00:00:00'\n  Actual: '2026-10-07'\n   Which: is different. Both strings start the same, but the actual value is missing the following trailing characters: T00:00:00\n","stackTrace":"package:matcher                                     expect\npackage:flutter_test/src/widget_tester.dart 473:18  expect\ntest\\study_transport_test.dart 28:7                 main.<fn>\n","isFailure":true,"type":"error","time":1612}
+{"testID":3,"result":"failure","skipped":false,"hidden":false,"type":"testDone","time":1612}
+{"test":{"id":4,"name":"multipart conserva el día y el contrato de fecha/hora: 2026-10-07T16:45:00","suiteID":0,"groupIDs":[2],"metadata":{"skip":false,"skipReason":null},"line":15,"column":5,"url":"file:///C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_MOBILE/test/study_transport_test.dart"},"type":"testStart","time":1613}
+{"testID":4,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1619}
+{"success":false,"type":"done","time":1655}
+
+Exit code: 1
+Finalizado: 10/07/2026 15:19:08 -05:00

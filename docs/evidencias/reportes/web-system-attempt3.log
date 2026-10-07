@@ -1,0 +1,118 @@
+MAX | web-system-attempt3 | Web | 6.1.4.1
+Fecha America/Lima: 10/07/2026 15:21:58 -05:00
+Commit: 63ed173284647024a7612d5a1cf8f8b0290eff35
+Cambios locales: 12
+Comando: npm.cmd run test:system
+
+
+> max@0.0.0 test:system
+> playwright test --config=playwright.system.config.ts
+
+[WebServer] (node:19488) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:19488) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:39348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:39348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 [desktop-chromium] › e2e-system\clinical-workflow.spec.ts:10:5 › recorrido real: registro, paciente, edición, estudio y cierre de sesión (21.5s)
+(node:47584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:47584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 [mobile-web-chromium] › e2e-system\clinical-workflow.spec.ts:10:5 › recorrido real: registro, paciente, edición, estudio y cierre de sesión (21.1s)
+
+
+  1) [desktop-chromium] › e2e-system\clinical-workflow.spec.ts:10:5 › recorrido real: registro, paciente, edición, estudio y cierre de sesión 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+
+    Locator:  locator('app-study-viewer')
+    Expected: visible
+    Received: hidden
+    Timeout:  15000ms
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 15000ms[22m
+    [2m  - waiting for locator('app-study-viewer')[22m
+    [2m    16 × locator resolved to <app-study-viewer _nghost-ng-c4069053349="" _ngcontent-ng-c2510838879="">…</app-study-viewer>[22m
+    [2m       - unexpected value "hidden"[22m
+
+
+      66 |   await expect(page.locator('.study-card')).toHaveCount(1);
+      67 |   await page.locator('.study-card').getByRole('button', { name: 'Ver', exact: true }).click();
+    > 68 |   await expect(page.locator('app-study-viewer')).toBeVisible();
+         |                                                  ^
+      69 |   await expect(page.locator('app-study-viewer img')).toHaveJSProperty('naturalWidth', 480);
+      70 |   const filename = testInfo.project.name === 'desktop-chromium' ? 'MAX-System-Web-Recorrido.png' : 'MAX-System-Web-Mobile-Recorrido.png';
+      71 |   await page.screenshot({ path: `../../assets/${filename}`, fullPage: true });
+        at C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_FRONT\MAX\e2e-system\clinical-workflow.spec.ts:68:50
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-desktop-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-desktop-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-desktop-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-desktop-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [mobile-web-chromium] › e2e-system\clinical-workflow.spec.ts:10:5 › recorrido real: registro, paciente, edición, estudio y cierre de sesión 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+
+    Locator:  locator('app-study-viewer')
+    Expected: visible
+    Received: hidden
+    Timeout:  15000ms
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 15000ms[22m
+    [2m  - waiting for locator('app-study-viewer')[22m
+    [2m    16 × locator resolved to <app-study-viewer _nghost-ng-c4069053349="" _ngcontent-ng-c2510838879="">…</app-study-viewer>[22m
+    [2m       - unexpected value "hidden"[22m
+
+
+      66 |   await expect(page.locator('.study-card')).toHaveCount(1);
+      67 |   await page.locator('.study-card').getByRole('button', { name: 'Ver', exact: true }).click();
+    > 68 |   await expect(page.locator('app-study-viewer')).toBeVisible();
+         |                                                  ^
+      69 |   await expect(page.locator('app-study-viewer img')).toHaveJSProperty('naturalWidth', 480);
+      70 |   const filename = testInfo.project.name === 'desktop-chromium' ? 'MAX-System-Web-Recorrido.png' : 'MAX-System-Web-Mobile-Recorrido.png';
+      71 |   await page.screenshot({ path: `../../assets/${filename}`, fullPage: true });
+        at C:\Users\oscar\OneDrive\Desktop\PROJECTS\MAX\MAX_FRONT\MAX\e2e-system\clinical-workflow.spec.ts:68:50
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-mobile-web-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-mobile-web-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-mobile-web-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace reports\system-web-artifacts\clinical-workflow-recorrid-0b6bc--estudio-y-cierre-de-sesión-mobile-web-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [desktop-chromium] › e2e-system\clinical-workflow.spec.ts:10:5 › recorrido real: registro, paciente, edición, estudio y cierre de sesión 
+    [mobile-web-chromium] › e2e-system\clinical-workflow.spec.ts:10:5 › recorrido real: registro, paciente, edición, estudio y cierre de sesión 
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report reports\system-web-html[39m
+[36m[39m
+
+Exit code: 1
+Finalizado: 10/07/2026 15:22:49 -05:00

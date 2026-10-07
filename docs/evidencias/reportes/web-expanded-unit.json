@@ -1,0 +1,24 @@
+{
+  "id": "web-expanded-unit",
+  "component": "Web",
+  "section": "6.1.1",
+  "command": "npm.cmd test -- --watch=false --reporters=json --output-file=reports/web-vitest.json",
+  "workingDirectory": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX",
+  "environment": "Local, Windows; datos sintéticos",
+  "startedAt": "2026-10-07T14:55:16.4193097-05:00",
+  "finishedAt": "2026-10-07T14:55:21.7465157-05:00",
+  "commit": "63ed173284647024a7612d5a1cf8f8b0290eff35",
+  "uncommittedChanges": [
+    " M package-lock.json",
+    " M package.json",
+    "?? bdd/",
+    "?? cucumber.cjs",
+    "?? proxy.evidence.json",
+    "?? src/app/contexts/estudios/application/estudios.store.spec.ts",
+    "?? src/app/contexts/estudios/infrastructure/estudios.api-client.spec.ts",
+    "?? src/app/core/state/clinical-data.service.spec.ts"
+  ],
+  "exitCode": 0,
+  "status": "Ejecutado: aprobado",
+  "originalReport": "web-expanded-unit.log"
+}

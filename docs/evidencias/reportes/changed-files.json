@@ -1,0 +1,284 @@
+{
+  "capturedAt": "2026-10-07T15:52:15.9685074-05:00",
+  "repositories": [
+    {
+      "repository": "MAX_BACK/max-backend",
+      "files": [
+        {
+          "status": "??",
+          "path": "MAX_BACK/max-backend/.github/workflows/ci.yml",
+          "sha256": "e61702027874265b5c3f87401a9edd5235f00b28b07d943ca555384a7501c38a"
+        },
+        {
+          "status": "??",
+          "path": "MAX_BACK/max-backend/.github/workflows/delivery.yml",
+          "sha256": "88fa97a86ff356146477902a686b90b27a4cd139f1682de77d58438639978e81"
+        },
+        {
+          "status": "??",
+          "path": "MAX_BACK/max-backend/src/test/java/com/max/maxbackend/ClinicalFixtures.java",
+          "sha256": "bf377578f4b0b31243b404c448fae23adf722019ca97b3bd952ecd4f20ce12b7"
+        },
+        {
+          "status": "??",
+          "path": "MAX_BACK/max-backend/src/test/java/com/max/maxbackend/MySqlWorkflowIntegrationTest.java",
+          "sha256": "569b9322b75ba00b758168638e12bdf43c46a44093782be4c23e70d7625aab05"
+        },
+        {
+          "status": "??",
+          "path": "MAX_BACK/max-backend/src/test/java/com/max/maxbackend/contexts/auth/application/AuthServiceUnitTest.java",
+          "sha256": "eefe50811d76efe420ace2fe11a690a2c1096f868e8eb4b3a86e59af4f359029"
+        },
+        {
+          "status": "??",
+          "path": "MAX_BACK/max-backend/src/test/java/com/max/maxbackend/contexts/auth/application/AvatarValidatorUnitTest.java",
+          "sha256": "73762967bbaf56ee36a801915b54573f7fc3af6d6e01bc04dfcdfd53f49e9c45"
+        },
+        {
+          "status": "??",
+          "path": "MAX_BACK/max-backend/src/test/java/com/max/maxbackend/contexts/estudios/application/EstudioServiceUnitTest.java",
+          "sha256": "5473810fddeab2ced87b434b58e1e507f7cd895c1f3378184da866580ed51885"
+        },
+        {
+          "status": "??",
+          "path": "MAX_BACK/max-backend/src/test/java/com/max/maxbackend/contexts/pacientes/application/PacienteServiceUnitTest.java",
+          "sha256": "b36132598e5bea2e1ab3aac76b78a36732e9d9ce3e17a9834462f96221c225e5"
+        },
+        {
+          "status": "??",
+          "path": "MAX_BACK/max-backend/src/test/java/com/max/maxbackend/shared/config/MySqlMigrationIntegrationTest.java",
+          "sha256": "2f05ce00915e5356b4cb39682fb48da828a0b0ae92e1ec1b7bea880a7e7dc5ff"
+        }
+      ]
+    },
+    {
+      "repository": "MAX_FRONT/MAX",
+      "files": [
+        {
+          "status": "M",
+          "path": "MAX_FRONT/MAX/.gitignore",
+          "sha256": "898aa0e5a4f9f211b3ef62de34d75384f5505548cc244ff6c6a6fd737849edde"
+        },
+        {
+          "status": "M",
+          "path": "MAX_FRONT/MAX/package-lock.json",
+          "sha256": "3297336e41474ee937a1d3389e25b48a0c5d82b64e1912ceab0be7ce4d51e3f3"
+        },
+        {
+          "status": "M",
+          "path": "MAX_FRONT/MAX/package.json",
+          "sha256": "ec6e1d8cf60c88b4f83852c431874e401008d3d5ec4eaeaecdaa273cbceb4623"
+        },
+        {
+          "status": "M",
+          "path": "MAX_FRONT/MAX/playwright.config.ts",
+          "sha256": "342ace03a24c6a0997e39424e5a1c44b8037e6f7f18587cf5d6310f714b2e9e9"
+        },
+        {
+          "status": "??",
+          "path": "MAX_FRONT/MAX/.github/workflows/ci.yml",
+          "sha256": "12cf07ec12fa5f27b0b9fd45751ee47428e3329ef3efdfc2e6841cfb5592ede0"
+        },
+        {
+          "status": "??",
+          "path": "MAX_FRONT/MAX/.github/workflows/delivery.yml",
+          "sha256": "7f8bdc0f8201a70850cde53e7a173b83003bacdfc0975e16420cefc0e99d8577"
+        },
+        {
+          "status": "??",
+          "path": "MAX_FRONT/MAX/.github/workflows/integration.yml",
+          "sha256": "e046138123f54da2e524e0ca80963177311a9bb5c80b31ea777f97c6623f8f08"
+        },
+        {
+          "status": "??",
+          "path": "MAX_FRONT/MAX/bdd/features/iam.feature",
+          "sha256": "94ce7a4ade1d407eab342b9171abadda265207319de87a86ebd22cd8e253ea22"
+        },
+        {
+          "status": "??",
+          "path": "MAX_FRONT/MAX/bdd/features/patients.feature",
+          "sha256": "864964666dbe7517b09e13ed618d3738ea74200e833332e7008c0a97d9f5370f"
+        },
+        {
+          "status": "??",
+          "path": "MAX_FRONT/MAX/bdd/features/studies.feature",
+          "sha256": "06c421bf7628ffb2002b205087a498df04a0cb55d4557591de8910562cff20b8"
+        },
+        {
+          "status": "??",
+          "path": "MAX_FRONT/MAX/bdd/run.cjs",
+          "sha256": "35d5f14c5598e1ebe1a2e2d37c8ab009f4b9c1fd4608bf0b6f3684a8b4c73700"
+        },
+        {
+          "status": "??",
+          "path": "MAX_FRONT/MAX/bdd/steps/max.steps.cjs",
+          "sha256": "73871951fa73f2cd27b8d4c154db2c39004e64e9e7a89571f7c741f70522625b"
+        },
+        {
+          "status": "??",
+          "path": "MAX_FRONT/MAX/cucumber.cjs",
+          "sha256": "26d712fdaaac9e6450195fa9c024ead710dbf30963d0cbe6807c0ee6f40e5931"
+        },
+        {
+          "status": "??",
+          "path": "MAX_FRONT/MAX/e2e-system/clinical-workflow.spec.ts",
+          "sha256": "51598d60fd7047f8a136ffd68fbd7e529b23f0a405ef8a5fac2396dcc3d0f727"
+        },
+        {
+          "status": "??",
+          "path": "MAX_FRONT/MAX/playwright.system.config.ts",
+          "sha256": "8167cf667138822b2cc41daa17bb670961923aa913bbb7eece9595740a3a041d"
+        },
+        {
+          "status": "??",
+          "path": "MAX_FRONT/MAX/proxy.evidence.json",
+          "sha256": "f9cf844c3d03bab2c8294c41dd7a0c15616b791c4e8974970ee511f91d4fd282"
+        },
+        {
+          "status": "??",
+          "path": "MAX_FRONT/MAX/src/app/contexts/estudios/application/estudios.store.spec.ts",
+          "sha256": "42783672bb989b948b7f16755b473b47651c26f4d83064f1a32c0c8316eb737e"
+        },
+        {
+          "status": "??",
+          "path": "MAX_FRONT/MAX/src/app/contexts/estudios/infrastructure/estudios.api-client.spec.ts",
+          "sha256": "ca0d482df330b9bfadf0ec4b1b37cf844182ae63562db7ef5b5d7e6b9f7d5932"
+        },
+        {
+          "status": "??",
+          "path": "MAX_FRONT/MAX/src/app/core/state/clinical-data.service.spec.ts",
+          "sha256": "50613e2ef4f73b7741cec92762d091ba6fb182fa5325664175901b56ba44c3a5"
+        }
+      ]
+    },
+    {
+      "repository": "MAX_MOBILE",
+      "files": [
+        {
+          "status": "M",
+          "path": "MAX_MOBILE/.gitignore",
+          "sha256": "411f45eb1485b70fe0d8de696eeb0b9203466d22037c824aa3127fcfcf00c123"
+        },
+        {
+          "status": "M",
+          "path": "MAX_MOBILE/lib/data/max_api.dart",
+          "sha256": "124d02891c3b476086db320fa98694e5a241ea77e5d32f1cfed6899fabe54de4"
+        },
+        {
+          "status": "M",
+          "path": "MAX_MOBILE/lib/features/shared/study_viewer.dart",
+          "sha256": "e0263ee1ddf42a048f8a13a22402a0ce65505bf336d5698a6bff9bb869455d02"
+        },
+        {
+          "status": "M",
+          "path": "MAX_MOBILE/pubspec.lock",
+          "sha256": "dc3b8aeb4275a19d861c6172012b95a435e421e37f2e9dd9b7ebf9fbeaab2a10"
+        },
+        {
+          "status": "M",
+          "path": "MAX_MOBILE/pubspec.yaml",
+          "sha256": "35b742690f1a3957641e0ee6ef8b2d09d10239194baa986e0e266f409682a99f"
+        },
+        {
+          "status": "??",
+          "path": "MAX_MOBILE/.github/workflows/ci.yml",
+          "sha256": "83b4ab0bda1d8151d6e911178879cb7f028c45b292094b8b66bd9614a5a3a814"
+        },
+        {
+          "status": "??",
+          "path": "MAX_MOBILE/.github/workflows/delivery.yml",
+          "sha256": "f526494724b3e7fb2ada94d6494cd339a3ba91967c7852f6b55fab28ce76f000"
+        },
+        {
+          "status": "??",
+          "path": "MAX_MOBILE/integration_test/max_system_test.dart",
+          "sha256": "4032cb2b40bf09046c3936ab3365845086aa520c3fda9b8f7e8a9be42a30229e"
+        },
+        {
+          "status": "??",
+          "path": "MAX_MOBILE/test/iam_test.dart",
+          "sha256": "375e79219265abf4d1ba03d72315b0aaa27096230f3cf0c88a93f3b7320a60da"
+        },
+        {
+          "status": "??",
+          "path": "MAX_MOBILE/test/patients_test.dart",
+          "sha256": "eea94652e64deaca1c5127962d42c6836930e707954b8206a5f68933de0e4ab4"
+        },
+        {
+          "status": "??",
+          "path": "MAX_MOBILE/test/studies_test.dart",
+          "sha256": "077a7ae4062210290b8c31eae306f89f9c09fc48b6c5ee459be134dd3d3962eb"
+        },
+        {
+          "status": "??",
+          "path": "MAX_MOBILE/test/study_transport_test.dart",
+          "sha256": "c1f4a21bf6b11ab800010946043200cb3a88c1f52f814dee12bc41b933190bfd"
+        },
+        {
+          "status": "??",
+          "path": "MAX_MOBILE/test/study_viewer_test.dart",
+          "sha256": "5816c15b6301ce67109860c6d67c87991550196dc297871f8cc6310c0743df62"
+        },
+        {
+          "status": "??",
+          "path": "MAX_MOBILE/test/support/fake_api.dart",
+          "sha256": "d1edc05b96daffd5463054174bd68b5d9fddf887f8857b03ef678ff7b1ef1f94"
+        },
+        {
+          "status": "??",
+          "path": "MAX_MOBILE/test_driver/integration_test.dart",
+          "sha256": "ee3526d15fe1db9ec87e9ea217c5211d096e6cd616468ff8b40418c4d0ef3257"
+        }
+      ]
+    },
+    {
+      "repository": "MAX_LANDING",
+      "files": [
+        {
+          "status": "M",
+          "path": "MAX_LANDING/.gitignore",
+          "sha256": "847f9f802855193557daefefd9f53cb0f5726969c72ddf8e097c6d9bf7863cf8"
+        },
+        {
+          "status": "M",
+          "path": "MAX_LANDING/package.json",
+          "sha256": "6a84907529dda3c2a3efccbe7e96caa138e2bc29644ac07b8458d7f7eefb76ba"
+        },
+        {
+          "status": "??",
+          "path": "MAX_LANDING/.github/workflows/ci.yml",
+          "sha256": "9c5af0ef9f14649d5f1fee0d6f597ba22668300d1c3aab418274bb96cc9f3423"
+        },
+        {
+          "status": "??",
+          "path": "MAX_LANDING/.github/workflows/delivery.yml",
+          "sha256": "37773d0dc770cd6f989367cc91c2b9a731e4b183d3c46c2205d078866345be21"
+        },
+        {
+          "status": "??",
+          "path": "MAX_LANDING/tests/appointment.test.ts",
+          "sha256": "8f4e393be4c0887ce6a5e9191ec521261635a012caadbb9abc456fa5f1825b74"
+        }
+      ]
+    }
+  ],
+  "rootFiles": [
+    ".gitignore",
+    "scripts/Collect-MaxEvidence.ps1",
+    "scripts/Invoke-MaxEvidence.ps1",
+    "scripts/Package-MaxLocalCandidate.ps1",
+    "scripts/render_max_evidence.py",
+    "scripts/Start-MaxTestApi.ps1",
+    "scripts/Start-MaxTestMySQL.ps1",
+    "scripts/Stop-MaxTestEnvironment.ps1",
+    "scripts/write_max_report.py",
+    "docs/pipelines/README.md"
+  ],
+  "deliveryFiles": [
+    "docs/evidencias/MAX-Cap6-Cap7-Evidencias.md",
+    "docs/evidencias/MAX-Casos-Ejecutados.md",
+    "assets/*.png",
+    "docs/evidencias/reportes/",
+    "docs/evidencias/artefactos/manifest.json"
+  ]
+}

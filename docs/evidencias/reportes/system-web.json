@@ -1,0 +1,186 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\oscar\\OneDrive\\Desktop\\PROJECTS\\MAX\\MAX_FRONT\\MAX\\playwright.system.config.ts",
+    "rootDir": "C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_FRONT/MAX/e2e-system",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/system-web.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "reports/system-web-html",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_FRONT/MAX/reports/system-web-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop-chromium",
+        "name": "desktop-chromium",
+        "testDir": "C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_FRONT/MAX/e2e-system",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_FRONT/MAX/reports/system-web-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile-web-chromium",
+        "name": "mobile-web-chromium",
+        "testDir": "C:/Users/oscar/OneDrive/Desktop/PROJECTS/MAX/MAX_FRONT/MAX/e2e-system",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node node_modules/@angular/cli/bin/ng.js serve --host 127.0.0.1 --port 14200 --proxy-config proxy.evidence.json",
+      "url": "http://127.0.0.1:14200",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "clinical-workflow.spec.ts",
+      "file": "clinical-workflow.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "recorrido real: registro, paciente, edición, estudio y cierre de sesión",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop-chromium",
+              "projectName": "desktop-chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6605,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T20:28:42.718Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "entorno",
+                      "contentType": "application/json",
+                      "body": "eyJicm93c2VyIjoiMTQwLjAuNzMzOS4xODYiLCJ2aWV3cG9ydCI6eyJ3aWR0aCI6MTI4MCwiaGVpZ2h0Ijo3MjB9LCJhcGkiOiJodHRwOi8vMTI3LjAuMC4xOjE4MDgwIiwiZGF0YWJhc2UiOiJNeVNRTCBhaXNsYWRvIiwic3RvcmFnZSI6ImFyY2hpdm8gZW1iZWJpZG87IFIyIG5vIHBhcnRpY2lwYWRvIn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "eb248d528cf9877eabfb-e4a85f08eca152c03075",
+          "file": "clinical-workflow.spec.ts",
+          "line": 10,
+          "column": 5
+        },
+        {
+          "title": "recorrido real: registro, paciente, edición, estudio y cierre de sesión",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile-web-chromium",
+              "projectName": "mobile-web-chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6546,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T20:28:50.245Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "entorno",
+                      "contentType": "application/json",
+                      "body": "eyJicm93c2VyIjoiMTQwLjAuNzMzOS4xODYiLCJ2aWV3cG9ydCI6eyJ3aWR0aCI6NDEyLCJoZWlnaHQiOjgzOX0sImFwaSI6Imh0dHA6Ly8xMjcuMC4wLjE6MTgwODAiLCJkYXRhYmFzZSI6Ik15U1FMIGFpc2xhZG8iLCJzdG9yYWdlIjoiYXJjaGl2byBlbWJlYmlkbzsgUjIgbm8gcGFydGljaXBhZG8ifQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "eb248d528cf9877eabfb-6b3b6e5319395ca1d526",
+          "file": "clinical-workflow.spec.ts",
+          "line": 10,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-07T20:28:36.779Z",
+    "duration": 20686.091999999997,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
