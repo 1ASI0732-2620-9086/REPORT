@@ -3106,35 +3106,37 @@ IAM, Patients y Studies son **áreas funcionales del informe**, no nombres nuevo
 
 ## 6.1. Testing Suites & Validation
 
-La verificación y validación de MAX se documenta mediante suites unitarias y de integración, escenarios BDD y recorridos de sistema. Se evaluaron la lógica de los componentes y las interacciones de los clientes con la API y la base de datos en un entorno local aislado. Los resultados siguientes acreditan exclusivamente los casos y ambientes descritos.
+La verificación y validación de MAX comprende pruebas unitarias y de componentes, integración con base de datos, escenarios Behavior-Driven Development (BDD) y recorridos de sistema. Esta entrega, correspondiente al **7 de octubre de 2026**, incorpora las ejecuciones aprobadas de GitHub Actions y conserva, como antecedente separado, la validación local del cliente Android.
 
-| Suite final | Alcance y entorno | Ejecutadas | Aprobadas | Fallidas | Omitidas | Fuente |
+El sistema utiliza Angular y Flutter como clientes de una API Spring Boot, que persiste la información en MySQL. IAM, Patients y Studies identifican las áreas funcionales evaluadas. Los entornos de integración utilizan datos sintéticos y una API de pruebas; los resultados no corresponden a operaciones sobre información clínica de producción.
+
+| Suite | Alcance | Ejecutadas | Aprobadas | Fallidas | Omitidas | Evidencia |
 |---|---|---:|---:|---:|---:|---|
-| Backend JUnit | 26 unidades con dependencias sustituidas + 37 integración/contexto, H2 y MySQL nativo | 63 | 63 | 0 | 0 | `backend-final-isolated.log`, `backend-final-surefire/` |
-| Web Vitest | Validadores, stores, coordinación y cliente HTTP con transporte sustituido | 24 | 24 | 0 | 0 | `web-expanded-unit.log`, `web-vitest.json` |
-| Flutter unidades | Dart en VM Windows; fake API y transporte sustituido; no requiere servidor | 22 | 22 | 0 | 0 | `android-unit-final.log` |
-| Landing unidades | Node test runner; reloj sustituido; reglas existentes de fechas | 6 | 6 | 0 | 0 | `landing-unit.log` |
-| BDD Cucumber | API, CSRF, MySQL y archivo embebido reales; 9 escenarios | 9 escenarios | 9 | 0 | 0 | `bdd-final.log`, `bdd.json`, `bdd.html` |
-| Sistema web | UI Angular + API + MySQL; Chromium escritorio y viewport móvil | 2 recorridos | 2 | 0 | 0 | `web-system-final.log`, `system-web.json` |
-| Sistema Android | Flutter en emulador Android 14 + API + MySQL | 1 recorrido | 1 | 0 | 0 | `android-system-evidence-final.log` |
-| Navegador con API sustituida | Login, política de contraseña y recarga protegida, dos viewports | 6 | 6 | 0 | 0 | `web-browser-mocked.log`, `browser-mocked.json` |
-| iOS | No hay plataforma iOS activa en este proyecto | No aplica | — | — | — | `.metadata` y ausencia de carpeta iOS |
+| Backend JUnit | 26 unitarias y 37 de integración/contexto, con H2, MySQL y migraciones | 63 | 63 | 0 | 0 | [MAX Backend CI](https://github.com/PersonalProjects5443/MAX_DEV_BACK/actions/runs/37694651919); XML Surefire de la integración remota |
+| Web Vitest | Validadores, stores, servicios y clientes HTTP con transporte sustituido | 24 | 24 | 0 | 0 | [MAX Web CI](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/actions/runs/37694826162), `web-vitest.json` |
+| Flutter | Unidades y componentes con API o transporte sustituido | 22 | 22 | 0 | 0 | [MAX Android CI](https://github.com/1ASI0732-2620-9086/MOBILE/actions/runs/37694655470), `android-unit.jsonl` |
+| Landing académica HTML | Contratos de HTML, navegación, recursos y HTTP local | 7 | 7 | 0 | 0 | [MAX Academic Landing CI](https://github.com/1ASI0732-2620-9086/LANDING-PAGE/actions/runs/37694657336), `landing-tests.json` |
+| Playwright con API sustituida | Tres casos de navegador en escritorio y viewport móvil | 6 | 6 | 0 | 0 | `browser-mocked.json` del CI web |
+| BDD con API y MySQL reales | Nueve escenarios HTTP sobre un entorno aislado dentro del runner | 9 escenarios | 9 | 0 | 0 | [Integración web](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/actions/runs/37701471163), `web/reports/bdd.json` |
+| Sistema web con API y MySQL reales | Recorrido completo desde la UI, en escritorio y viewport móvil | 2 recorridos | 2 | 0 | 0 | `web/reports/system-web.json` del artefacto de integración |
+| Sistema Android, validación local previa | Aplicación Flutter en emulador Android 14 con API y MySQL de pruebas | 1 recorrido | 1 | 0 | 0 | `android-system-evidence-final.log` de la entrega local |
+| iOS | Sin plataforma iOS activa en la entrega evaluada | No aplica | — | — | — | Alcance del repositorio móvil |
 
-Las **115 pruebas JUnit/Vitest/Flutter/Node** no incluyen BDD ni recorridos de sistema. Los 6 casos de Playwright con `page.route` no acreditan integración real. No se midió cobertura con JaCoCo/Istanbul: no interpretar el número de casos como porcentaje de cobertura.
+Los **72 casos unitarios o de componentes clínicos** corresponden a 26 de backend, 24 de web y 22 de Flutter. Las 37 pruebas de integración/contexto completan los 63 casos JUnit del backend. Las siete comprobaciones de la landing, los seis casos de navegador con API sustituida, BDD y los recorridos de sistema se presentan por separado para evitar duplicidades. La repetición de JUnit en el workflow de integración no añade casos diferentes al total de 63.
 
-Las pruebas iniciales existentes se conservaron: backend 19, web 15, Flutter 6. Las ejecuciones iniciales están en `baseline-*`. No se validó todo MAX: no se recorrieron exhaustivamente administración/suplantación, agenda, configuración, todos los formatos/visores, dispositivos físicos, R2 ni producción.
+La landing académica HTML de `1ASI0732-2620-9086/LANDING-PAGE` es distinta de la landing React `PersonalProjects5443/LANDING-PAGE-MAX`, revisada previamente de forma local. Los siete resultados remotos corresponden exclusivamente a la primera. No se midió cobertura de código, por lo que estos recuentos no representan un porcentaje de cobertura.
 
 ## 6.1.1. Core Entities Unit Tests
 
 Herramientas: backend JUnit Jupiter 6.0.3/Mockito 5.20.0; web Vitest 4.1.11 con Angular TestBed/HttpTestingController y jsdom; Android `flutter_test` del SDK 3.41.9. Arrange–Act–Assert se refleja en configuración de dependencias, operación y aserciones. Los clientes HTTP que usan dobles se clasifican como pruebas de unidad/componente, no como integración contra una API real.
 
-Los IDs UT de este documento identifican evidencia, no historias nuevas. Cada caso conserva su nombre original y resultado. Las tablas completas también están en [MAX-Casos-Ejecutados.md](docs/evidencias/MAX-Casos-Ejecutados.md). Los validadores de búsqueda y `ClinicalDataService` se contabilizan una sola vez en Patients por coordinar sus listados; también prestan servicio a otras pantallas.
+Los IDs UT de este documento identifican evidencia, no historias nuevas. Cada caso conserva su nombre original y resultado. Los validadores de búsqueda y `ClinicalDataService` se contabilizan una sola vez en Patients por coordinar sus listados; también prestan servicio a otras pantallas.
 
 ### 6.1.1.1. IAM
 
 #### 6.1.1.1.1. Backend
 
-Unidades: **AuthService; AvatarValidator; PasswordPolicy**. Archivos: `AuthServiceUnitTest.java, AvatarValidatorUnitTest.java, shared/security/PasswordPolicyTest.java`; raíz de pruebas backend `MAX_BACK/max-backend/src/test/java/com/max/maxbackend/`, web `MAX_FRONT/MAX/src/app/`, Android `MAX_MOBILE/`. El archivo completo representativo es `MAX_BACK/max-backend/src/test/java/com/max/maxbackend/contexts/auth/application/AuthServiceUnitTest.java`.
+Unidades: **AuthService; AvatarValidator; PasswordPolicy**. Archivos: `AuthServiceUnitTest.java, AvatarValidatorUnitTest.java, shared/security/PasswordPolicyTest.java`; raíz de pruebas backend `MAX_DEV_BACK/src/test/java/com/max/maxbackend/`, web `MAX_DEV_FRONT/src/app/`, Android `MOBILE/`. El archivo completo representativo es `MAX_DEV_BACK/src/test/java/com/max/maxbackend/contexts/auth/application/AuthServiceUnitTest.java`.
 
 Fragmento real:
 
@@ -3160,25 +3162,19 @@ Fragmento real:
 
 | ID | Unidad | Caso | Resultado esperado | Resultado obtenido | Estado |
 |---|---|---|---|---|---|
-| UT-IAM-Backend-01 | AuthServiceUnitTest | duplicateRegistrationDoesNotHashOrSave | Correo duplicado: conflicto; no calcular hash ni guardar. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Backend-02 | AuthServiceUnitTest | wrongCurrentPasswordDoesNotRevokeSessions | Contraseña actual incorrecta: rechazo sin revocar sesiones. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Backend-03 | AuthServiceUnitTest | rejectsUnknownAccountWithoutIssuingSession | Cuenta desconocida: 401 y ninguna sesión nueva. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Backend-04 | AuthServiceUnitTest | loginNormalizesEmailAndPreservesIdentityAndCreatedAt | Correo normalizado; conservar ID y createdAt al acceder. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Backend-05 | AuthServiceUnitTest | rejectsWrongPasswordWithoutChangingUserOrSession | Contraseña incorrecta: 401 sin modificar usuario ni sesión. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Backend-06 | AvatarValidatorUnitTest | rejectsInvalidBase64UnsupportedTypeAndOversize | Rechazar avatar inválido, tipo no permitido y exceso de 5 MiB. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Backend-07 | AvatarValidatorUnitTest | acceptsPngSignatureAndRejectsMimeMismatch | Aceptar PNG válido y rechazar MIME incompatible con contenido. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Backend-08 | AvatarValidatorUnitTest | historicalUnchangedValueIsPreserved | Conservar la referencia histórica de avatar sin alteración. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Backend-09 | AvatarValidatorUnitTest | emptyValueRemovesAvatar | Valor vacío elimina la referencia del avatar. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Backend-10 | PasswordPolicyTest | acceptsTheCompletePolicy | Aceptar más de ocho caracteres, mayúscula, número y signo. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Backend-11 | PasswordPolicyTest | rejectsEveryMissingRequirement | Rechazar cada requisito faltante de contraseña. | Aserciones verificadas en el reporte original | Aprobada |
+| UT-IAM-Backend-01 | AuthServiceUnitTest | duplicateRegistrationDoesNotHashOrSave | Correo duplicado: conflicto; no calcular hash ni guardar. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Backend-02 | AuthServiceUnitTest | wrongCurrentPasswordDoesNotRevokeSessions | Contraseña actual incorrecta: rechazo sin revocar sesiones. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Backend-03 | AuthServiceUnitTest | rejectsUnknownAccountWithoutIssuingSession | Cuenta desconocida: 401 y ninguna sesión nueva. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Backend-04 | AuthServiceUnitTest | loginNormalizesEmailAndPreservesIdentityAndCreatedAt | Correo normalizado; conservar ID y createdAt al acceder. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Backend-05 | AuthServiceUnitTest | rejectsWrongPasswordWithoutChangingUserOrSession | Contraseña incorrecta: 401 sin modificar usuario ni sesión. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Backend-06 | AvatarValidatorUnitTest | rejectsInvalidBase64UnsupportedTypeAndOversize | Rechazar avatar inválido, tipo no permitido y exceso de 5 MiB. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Backend-07 | AvatarValidatorUnitTest | acceptsPngSignatureAndRejectsMimeMismatch | Aceptar PNG válido y rechazar MIME incompatible con contenido. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Backend-08 | AvatarValidatorUnitTest | historicalUnchangedValueIsPreserved | Conservar la referencia histórica de avatar sin alteración. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Backend-09 | AvatarValidatorUnitTest | emptyValueRemovesAvatar | Valor vacío elimina la referencia del avatar. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Backend-10 | PasswordPolicyTest | acceptsTheCompletePolicy | Aceptar más de ocho caracteres, mayúscula, número y signo. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Backend-11 | PasswordPolicyTest | rejectsEveryMissingRequirement | Rechazar cada requisito faltante de contraseña. | Caso aprobado en el reporte automatizado | Aprobada |
 
-Comando: `cd MAX_BACK\max-backend; .\mvnw.cmd -B verify`. Reportes: `docs/evidencias/reportes/backend-final-isolated.log y backend-final-surefire/`. Metadatos con fecha, comando y versión base en los JSON del mismo ID de ejecución.
-
-<p align="center">
-  <img src="assets/MAX-UT-IAM-Backend.png" alt="Reporte de resultados: UT IAM Backend." width="1000">
-</p>
-
-<p align="center"><em>Figura 1. Reporte de resultados: UT IAM Backend.</em></p>
+Comando: `./mvnw -B verify`, desde la raíz de `MAX_DEV_BACK`, con el entorno MySQL de pruebas configurado. Reportes: XML y TXT de Surefire en los artefactos de Actions.
 
 #### 6.1.1.1.2. iOS
 
@@ -3186,7 +3182,7 @@ Comando: `cd MAX_BACK\max-backend; .\mvnw.cmd -B verify`. Reportes: `docs/eviden
 
 #### 6.1.1.1.3. Android
 
-Unidades: **AppController; MaxValidators.password; API sustituida**. Archivos: `test/iam_test.dart; test/validators_test.dart`; raíz de pruebas backend `MAX_BACK/max-backend/src/test/java/com/max/maxbackend/`, web `MAX_FRONT/MAX/src/app/`, Android `MAX_MOBILE/`. El archivo completo representativo es `MAX_MOBILE/test/iam_test.dart`.
+Unidades: **AppController; MaxValidators.password; API sustituida**. Archivos: `test/iam_test.dart; test/validators_test.dart`; raíz de pruebas backend `MAX_DEV_BACK/src/test/java/com/max/maxbackend/`, web `MAX_DEV_FRONT/src/app/`, Android `MOBILE/`. El archivo completo representativo es `MOBILE/test/iam_test.dart`.
 
 Fragmento real:
 
@@ -3212,23 +3208,17 @@ Fragmento real:
 
 | ID | Unidad | Caso | Resultado esperado | Resultado obtenido | Estado |
 |---|---|---|---|---|---|
-| UT-IAM-Android-01 | iam_test.dart | IAM rechaza correo inválido y exige correo al registrarse | IAM rechaza correo inválido y exige correo al registrarse | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Android-02 | iam_test.dart | IAM credenciales inválidas no crean identidad autenticada | IAM credenciales inválidas no crean identidad autenticada | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Android-03 | iam_test.dart | IAM login y logout limpian datos e identidad | IAM login y logout limpian datos e identidad | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Android-04 | iam_test.dart | IAM contraseña actual incorrecta conserva la sesión | IAM contraseña actual incorrecta conserva la sesión | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Android-05 | validators_test.dart | seguridad de contraseña exige longitud, mayúscula, número y signo | seguridad de contraseña exige longitud, mayúscula, número y signo | Aserciones verificadas en el reporte original | Aprobada |
+| UT-IAM-Android-01 | iam_test.dart | IAM rechaza correo inválido y exige correo al registrarse | IAM rechaza correo inválido y exige correo al registrarse | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Android-02 | iam_test.dart | IAM credenciales inválidas no crean identidad autenticada | IAM credenciales inválidas no crean identidad autenticada | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Android-03 | iam_test.dart | IAM login y logout limpian datos e identidad | IAM login y logout limpian datos e identidad | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Android-04 | iam_test.dart | IAM contraseña actual incorrecta conserva la sesión | IAM contraseña actual incorrecta conserva la sesión | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Android-05 | validators_test.dart | seguridad de contraseña exige longitud, mayúscula, número y signo | seguridad de contraseña exige longitud, mayúscula, número y signo | Caso aprobado en el reporte automatizado | Aprobada |
 
-Comando: `cd MAX_MOBILE; C:\src\flutter\bin\flutter.bat test --reporter=json`. Reportes: `docs/evidencias/reportes/android-unit-final.log (eventos JSON originales)`. Metadatos con fecha, comando y versión base en los JSON del mismo ID de ejecución.
-
-<p align="center">
-  <img src="assets/MAX-UT-IAM-Android.png" alt="Reporte de resultados: UT IAM Android." width="1000">
-</p>
-
-<p align="center"><em>Figura 2. Reporte de resultados: UT IAM Android.</em></p>
+Comando: `flutter test --reporter=json`, desde la raíz de `MOBILE`. Reporte: `android-unit.jsonl` en el artefacto `android-reports-<SHA>`.
 
 #### 6.1.1.1.4. Web
 
-Unidades: **AuthStore; validación de contraseña y confirmación**. Archivos: `contexts/usuarios/application/auth-store.spec.ts; core/validation/password.validation.spec.ts`; raíz de pruebas backend `MAX_BACK/max-backend/src/test/java/com/max/maxbackend/`, web `MAX_FRONT/MAX/src/app/`, Android `MAX_MOBILE/`. El archivo completo representativo es `MAX_FRONT/MAX/src/app/contexts/usuarios/application/auth-store.spec.ts`.
+Unidades: **AuthStore; validación de contraseña y confirmación**. Archivos: `contexts/usuarios/application/auth-store.spec.ts; core/validation/password.validation.spec.ts`; raíz de pruebas backend `MAX_DEV_BACK/src/test/java/com/max/maxbackend/`, web `MAX_DEV_FRONT/src/app/`, Android `MOBILE/`. El archivo completo representativo es `MAX_DEV_FRONT/src/app/contexts/usuarios/application/auth-store.spec.ts`.
 
 Fragmento real:
 
@@ -3249,37 +3239,31 @@ Fragmento real:
 
 | ID | Unidad | Caso | Resultado esperado | Resultado obtenido | Estado |
 |---|---|---|---|---|---|
-| UT-IAM-Web-01 | app/core/validation/password.validation.spec.ts | accepts a password with more than eight characters, uppercase, number and sign | accepts a password with more than eight characters, uppercase, number and sign | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Web-02 | app/core/validation/password.validation.spec.ts | rejects a password that does not satisfy the full policy: clave#123 | rejects a password that does not satisfy the full policy: clave#123 | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Web-03 | app/core/validation/password.validation.spec.ts | rejects a password that does not satisfy the full policy: Clave#abc | rejects a password that does not satisfy the full policy: Clave#abc | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Web-04 | app/core/validation/password.validation.spec.ts | rejects a password that does not satisfy the full policy: Clave1234 | rejects a password that does not satisfy the full policy: Clave1234 | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Web-05 | app/core/validation/password.validation.spec.ts | rejects a password that does not satisfy the full policy: Cla#1234 | rejects a password that does not satisfy the full policy: Cla#1234 | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Web-06 | app/core/validation/password.validation.spec.ts | rejects a password that does not satisfy the full policy: Clave #123 | rejects a password that does not satisfy the full policy: Clave #123 | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Web-07 | app/core/validation/password.validation.spec.ts | detects different confirmation values | detects different confirmation values | Aserciones verificadas en el reporte original | Aprobada |
-| UT-IAM-Web-08 | app/contexts/usuarios/application/auth-store.spec.ts | elimina credenciales antiguas sin borrar preferencias ajenas a la sesión | elimina credenciales antiguas sin borrar preferencias ajenas a la sesión | Aserciones verificadas en el reporte original | Aprobada |
+| UT-IAM-Web-01 | app/core/validation/password.validation.spec.ts | accepts a password with more than eight characters, uppercase, number and sign | accepts a password with more than eight characters, uppercase, number and sign | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Web-02 | app/core/validation/password.validation.spec.ts | rejects a password that does not satisfy the full policy: clave#123 | rejects a password that does not satisfy the full policy: clave#123 | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Web-03 | app/core/validation/password.validation.spec.ts | rejects a password that does not satisfy the full policy: Clave#abc | rejects a password that does not satisfy the full policy: Clave#abc | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Web-04 | app/core/validation/password.validation.spec.ts | rejects a password that does not satisfy the full policy: Clave1234 | rejects a password that does not satisfy the full policy: Clave1234 | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Web-05 | app/core/validation/password.validation.spec.ts | rejects a password that does not satisfy the full policy: Cla#1234 | rejects a password that does not satisfy the full policy: Cla#1234 | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Web-06 | app/core/validation/password.validation.spec.ts | rejects a password that does not satisfy the full policy: Clave #123 | rejects a password that does not satisfy the full policy: Clave #123 | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Web-07 | app/core/validation/password.validation.spec.ts | detects different confirmation values | detects different confirmation values | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-IAM-Web-08 | app/contexts/usuarios/application/auth-store.spec.ts | elimina credenciales antiguas sin borrar preferencias ajenas a la sesión | elimina credenciales antiguas sin borrar preferencias ajenas a la sesión | Caso aprobado en el reporte automatizado | Aprobada |
 
-Comando: `cd MAX_FRONT\MAX; npm.cmd run test:ci`. Reportes: `docs/evidencias/reportes/web-expanded-unit.log y web-vitest.json`. Metadatos con fecha, comando y versión base en los JSON del mismo ID de ejecución.
-
-<p align="center">
-  <img src="assets/MAX-UT-IAM-Web.png" alt="Reporte de resultados: UT IAM Web." width="1000">
-</p>
-
-<p align="center"><em>Figura 3. Reporte de resultados: UT IAM Web.</em></p>
+Comando: `npm run test:ci`, desde la raíz de `MAX_DEV_FRONT`. Reporte: `web-vitest.json` en el artefacto `web-reports-<SHA>`.
 
 #### 6.1.1.1.5. Resumen agregado de IAM
 
 | Plataforma | Ejecutadas | Aprobadas | Fallidas | Omitidas | Evidencia |
 |---|---:|---:|---:|---:|---|
-| Backend | 11 | 11 | 0 | 0 | `MAX-UT-IAM-Backend.png` |
-| Android | 5 | 5 | 0 | 0 | `MAX-UT-IAM-Android.png` |
-| Web | 8 | 8 | 0 | 0 | `MAX-UT-IAM-Web.png` |
+| Backend | 11 | 11 | 0 | 0 | `JUnit XML / Surefire` |
+| Android | 5 | 5 | 0 | 0 | `android-unit.jsonl` |
+| Web | 8 | 8 | 0 | 0 | `web-vitest.json` |
 | iOS | No aplica | — | — | — | Sin implementación |
 
 ### 6.1.1.2. Patients
 
 #### 6.1.1.2.1. Backend
 
-Unidades: **PacienteService y validación Bean Validation**. Archivos: `contexts/pacientes/application/PacienteServiceUnitTest.java`; raíz de pruebas backend `MAX_BACK/max-backend/src/test/java/com/max/maxbackend/`, web `MAX_FRONT/MAX/src/app/`, Android `MAX_MOBILE/`. El archivo completo representativo es `MAX_BACK/max-backend/src/test/java/com/max/maxbackend/contexts/pacientes/application/PacienteServiceUnitTest.java`.
+Unidades: **PacienteService y validación Bean Validation**. Archivos: `contexts/pacientes/application/PacienteServiceUnitTest.java`; raíz de pruebas backend `MAX_DEV_BACK/src/test/java/com/max/maxbackend/`, web `MAX_DEV_FRONT/src/app/`, Android `MOBILE/`. El archivo completo representativo es `MAX_DEV_BACK/src/test/java/com/max/maxbackend/contexts/pacientes/application/PacienteServiceUnitTest.java`.
 
 Fragmento real:
 
@@ -3305,21 +3289,15 @@ Fragmento real:
 
 | ID | Unidad | Caso | Resultado esperado | Resultado obtenido | Estado |
 |---|---|---|---|---|---|
-| UT-Patients-Backend-01 | PacienteServiceUnitTest | missingRecordCannotBeUpdated | ID inexistente: rechazar actualización sin guardar. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Backend-02 | PacienteServiceUnitTest | validatesRequiredNamesDniEmailAndPhone | Validar nombres obligatorios y formatos DNI, correo y teléfono. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Backend-03 | PacienteServiceUnitTest | invalidBirthDateIsRejectedBeforeSave | Rechazar fecha inválida/futura antes de guardar. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Backend-04 | PacienteServiceUnitTest | emptyCollectionIsAnEmptyResult | Listado vacío devuelve una colección vacía. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Backend-05 | PacienteServiceUnitTest | staleVersionCannotOverwrite | Versión antigua: conflicto; no sobrescribir datos. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Backend-06 | PacienteServiceUnitTest | updateKeepsPathIdentityAndAuthenticatedOwner | Conservar ID de la ruta y propietario autenticado. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Backend-07 | PacienteServiceUnitTest | creationUsesAuthenticatedOwnerAndNormalizesOptionalFields | Asignar propietario autenticado y normalizar campos opcionales. | Aserciones verificadas en el reporte original | Aprobada |
+| UT-Patients-Backend-01 | PacienteServiceUnitTest | missingRecordCannotBeUpdated | ID inexistente: rechazar actualización sin guardar. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Backend-02 | PacienteServiceUnitTest | validatesRequiredNamesDniEmailAndPhone | Validar nombres obligatorios y formatos DNI, correo y teléfono. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Backend-03 | PacienteServiceUnitTest | invalidBirthDateIsRejectedBeforeSave | Rechazar fecha inválida/futura antes de guardar. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Backend-04 | PacienteServiceUnitTest | emptyCollectionIsAnEmptyResult | Listado vacío devuelve una colección vacía. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Backend-05 | PacienteServiceUnitTest | staleVersionCannotOverwrite | Versión antigua: conflicto; no sobrescribir datos. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Backend-06 | PacienteServiceUnitTest | updateKeepsPathIdentityAndAuthenticatedOwner | Conservar ID de la ruta y propietario autenticado. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Backend-07 | PacienteServiceUnitTest | creationUsesAuthenticatedOwnerAndNormalizesOptionalFields | Asignar propietario autenticado y normalizar campos opcionales. | Caso aprobado en el reporte automatizado | Aprobada |
 
-Comando: `cd MAX_BACK\max-backend; .\mvnw.cmd -B verify`. Reportes: `docs/evidencias/reportes/backend-final-isolated.log y backend-final-surefire/`. Metadatos con fecha, comando y versión base en los JSON del mismo ID de ejecución.
-
-<p align="center">
-  <img src="assets/MAX-UT-Patients-Backend.png" alt="Reporte de resultados: UT Patients Backend." width="1000">
-</p>
-
-<p align="center"><em>Figura 4. Reporte de resultados: UT Patients Backend.</em></p>
+Comando: `./mvnw -B verify`, desde la raíz de `MAX_DEV_BACK`, con el entorno MySQL de pruebas configurado. Reportes: XML y TXT de Surefire en los artefactos de Actions.
 
 #### 6.1.1.2.2. iOS
 
@@ -3327,7 +3305,7 @@ Comando: `cd MAX_BACK\max-backend; .\mvnw.cmd -B verify`. Reportes: `docs/eviden
 
 #### 6.1.1.2.3. Android
 
-Unidades: **Patient, AppController y MaxValidators**. Archivos: `test/patients_test.dart; test/models_test.dart; test/validators_test.dart`; raíz de pruebas backend `MAX_BACK/max-backend/src/test/java/com/max/maxbackend/`, web `MAX_FRONT/MAX/src/app/`, Android `MAX_MOBILE/`. El archivo completo representativo es `MAX_MOBILE/test/patients_test.dart`.
+Unidades: **Patient, AppController y MaxValidators**. Archivos: `test/patients_test.dart; test/models_test.dart; test/validators_test.dart`; raíz de pruebas backend `MAX_DEV_BACK/src/test/java/com/max/maxbackend/`, web `MAX_DEV_FRONT/src/app/`, Android `MOBILE/`. El archivo completo representativo es `MOBILE/test/patients_test.dart`.
 
 Fragmento real:
 
@@ -3353,27 +3331,21 @@ Fragmento real:
 
 | ID | Unidad | Caso | Resultado esperado | Resultado obtenido | Estado |
 |---|---|---|---|---|---|
-| UT-Patients-Android-01 | models_test.dart | paciente conserva contrato JSON del backend | paciente conserva contrato JSON del backend | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Android-02 | patients_test.dart | Patients nombres y DNI se normalizan sin cambiar identidad o versión | Patients nombres y DNI se normalizan sin cambiar identidad o versión | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Android-03 | patients_test.dart | Patients registro inexistente y listado vacío mantienen estado vacío | Patients registro inexistente y listado vacío mantienen estado vacío | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Android-04 | patients_test.dart | Patients un fallo de persistencia no agrega pacientes ficticios | Patients un fallo de persistencia no agrega pacientes ficticios | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Android-05 | patients_test.dart | Patients bloquea doble envío mientras la operación está pendiente | Patients bloquea doble envío mientras la operación está pendiente | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Android-06 | patients_test.dart | Patients descarta pacientes recibidos después del logout | Patients descarta pacientes recibidos después del logout | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Android-07 | validators_test.dart | validaciones de paciente DNI acepta exactamente ocho dígitos | validaciones de paciente DNI acepta exactamente ocho dígitos | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Android-08 | validators_test.dart | validaciones de paciente nombres no aceptan números ni signos arbitrarios | validaciones de paciente nombres no aceptan números ni signos arbitrarios | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Android-09 | validators_test.dart | validaciones de paciente teléfono acepta entre siete y quince dígitos | validaciones de paciente teléfono acepta entre siete y quince dígitos | Aserciones verificadas en el reporte original | Aprobada |
+| UT-Patients-Android-01 | models_test.dart | paciente conserva contrato JSON del backend | paciente conserva contrato JSON del backend | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Android-02 | patients_test.dart | Patients nombres y DNI se normalizan sin cambiar identidad o versión | Patients nombres y DNI se normalizan sin cambiar identidad o versión | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Android-03 | patients_test.dart | Patients registro inexistente y listado vacío mantienen estado vacío | Patients registro inexistente y listado vacío mantienen estado vacío | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Android-04 | patients_test.dart | Patients un fallo de persistencia no agrega pacientes ficticios | Patients un fallo de persistencia no agrega pacientes ficticios | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Android-05 | patients_test.dart | Patients bloquea doble envío mientras la operación está pendiente | Patients bloquea doble envío mientras la operación está pendiente | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Android-06 | patients_test.dart | Patients descarta pacientes recibidos después del logout | Patients descarta pacientes recibidos después del logout | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Android-07 | validators_test.dart | validaciones de paciente DNI acepta exactamente ocho dígitos | validaciones de paciente DNI acepta exactamente ocho dígitos | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Android-08 | validators_test.dart | validaciones de paciente nombres no aceptan números ni signos arbitrarios | validaciones de paciente nombres no aceptan números ni signos arbitrarios | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Android-09 | validators_test.dart | validaciones de paciente teléfono acepta entre siete y quince dígitos | validaciones de paciente teléfono acepta entre siete y quince dígitos | Caso aprobado en el reporte automatizado | Aprobada |
 
-Comando: `cd MAX_MOBILE; C:\src\flutter\bin\flutter.bat test --reporter=json`. Reportes: `docs/evidencias/reportes/android-unit-final.log (eventos JSON originales)`. Metadatos con fecha, comando y versión base en los JSON del mismo ID de ejecución.
-
-<p align="center">
-  <img src="assets/MAX-UT-Patients-Android.png" alt="Reporte de resultados: UT Patients Android." width="1000">
-</p>
-
-<p align="center"><em>Figura 5. Reporte de resultados: UT Patients Android.</em></p>
+Comando: `flutter test --reporter=json`, desde la raíz de `MOBILE`. Reporte: `android-unit.jsonl` en el artefacto `android-reports-<SHA>`.
 
 #### 6.1.1.2.4. Web
 
-Unidades: **PacientesStore; campos y búsquedas; ClinicalDataService**. Archivos: `contexts/pacientes/application/*.spec.ts; core/validation/search-input.validation.spec.ts; core/state/clinical-data.service.spec.ts`; raíz de pruebas backend `MAX_BACK/max-backend/src/test/java/com/max/maxbackend/`, web `MAX_FRONT/MAX/src/app/`, Android `MAX_MOBILE/`. El archivo completo representativo es `MAX_FRONT/MAX/src/app/core/state/clinical-data.service.spec.ts`.
+Unidades: **PacientesStore; campos y búsquedas; ClinicalDataService**. Archivos: `contexts/pacientes/application/*.spec.ts; core/validation/search-input.validation.spec.ts; core/state/clinical-data.service.spec.ts`; raíz de pruebas backend `MAX_DEV_BACK/src/test/java/com/max/maxbackend/`, web `MAX_DEV_FRONT/src/app/`, Android `MOBILE/`. El archivo completo representativo es `MAX_DEV_FRONT/src/app/core/state/clinical-data.service.spec.ts`.
 
 Fragmento real:
 
@@ -3399,39 +3371,33 @@ Fragmento real:
 
 | ID | Unidad | Caso | Resultado esperado | Resultado obtenido | Estado |
 |---|---|---|---|---|---|
-| UT-Patients-Web-01 | app/core/state/clinical-data.service.spec.ts | reutiliza la carga pendiente y evita llamadas duplicadas | reutiliza la carga pendiente y evita llamadas duplicadas | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Web-02 | app/core/state/clinical-data.service.spec.ts | descarta la respuesta de la sesión anterior después de reset | descarta la respuesta de la sesión anterior después de reset | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Web-03 | app/core/state/clinical-data.service.spec.ts | expone fallo de pacientes y permite que otros módulos terminen | expone fallo de pacientes y permite que otros módulos terminen | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Web-04 | app/core/validation/search-input.validation.spec.ts | allows only letters and spaces in name searches | allows only letters and spaces in name searches | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Web-05 | app/core/validation/search-input.validation.spec.ts | allows at most eight digits in DNI searches | allows at most eight digits in DNI searches | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Web-06 | app/core/validation/search-input.validation.spec.ts | allows letters, digits and spaces in combined searches | allows letters, digits and spaces in combined searches | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Web-07 | app/contexts/pacientes/application/pacientes.store.spec.ts | expone estados explícitos y elimina los datos al cambiar de sesión | expone estados explícitos y elimina los datos al cambiar de sesión | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Web-08 | app/contexts/pacientes/application/patient-input.validation.spec.ts | keeps only letters and spaces in names | keeps only letters and spaces in names | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Web-09 | app/contexts/pacientes/application/patient-input.validation.spec.ts | keeps only the allowed amount of digits | keeps only the allowed amount of digits | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Patients-Web-10 | app/contexts/pacientes/application/patient-input.validation.spec.ts | accepts only real, non-future birth dates within 120 years | accepts only real, non-future birth dates within 120 years | Aserciones verificadas en el reporte original | Aprobada |
+| UT-Patients-Web-01 | app/core/state/clinical-data.service.spec.ts | reutiliza la carga pendiente y evita llamadas duplicadas | reutiliza la carga pendiente y evita llamadas duplicadas | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Web-02 | app/core/state/clinical-data.service.spec.ts | descarta la respuesta de la sesión anterior después de reset | descarta la respuesta de la sesión anterior después de reset | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Web-03 | app/core/state/clinical-data.service.spec.ts | expone fallo de pacientes y permite que otros módulos terminen | expone fallo de pacientes y permite que otros módulos terminen | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Web-04 | app/core/validation/search-input.validation.spec.ts | allows only letters and spaces in name searches | allows only letters and spaces in name searches | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Web-05 | app/core/validation/search-input.validation.spec.ts | allows at most eight digits in DNI searches | allows at most eight digits in DNI searches | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Web-06 | app/core/validation/search-input.validation.spec.ts | allows letters, digits and spaces in combined searches | allows letters, digits and spaces in combined searches | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Web-07 | app/contexts/pacientes/application/pacientes.store.spec.ts | expone estados explícitos y elimina los datos al cambiar de sesión | expone estados explícitos y elimina los datos al cambiar de sesión | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Web-08 | app/contexts/pacientes/application/patient-input.validation.spec.ts | keeps only letters and spaces in names | keeps only letters and spaces in names | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Web-09 | app/contexts/pacientes/application/patient-input.validation.spec.ts | keeps only the allowed amount of digits | keeps only the allowed amount of digits | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Patients-Web-10 | app/contexts/pacientes/application/patient-input.validation.spec.ts | accepts only real, non-future birth dates within 120 years | accepts only real, non-future birth dates within 120 years | Caso aprobado en el reporte automatizado | Aprobada |
 
-Comando: `cd MAX_FRONT\MAX; npm.cmd run test:ci`. Reportes: `docs/evidencias/reportes/web-expanded-unit.log y web-vitest.json`. Metadatos con fecha, comando y versión base en los JSON del mismo ID de ejecución.
-
-<p align="center">
-  <img src="assets/MAX-UT-Patients-Web.png" alt="Reporte de resultados: UT Patients Web." width="1000">
-</p>
-
-<p align="center"><em>Figura 6. Reporte de resultados: UT Patients Web.</em></p>
+Comando: `npm run test:ci`, desde la raíz de `MAX_DEV_FRONT`. Reporte: `web-vitest.json` en el artefacto `web-reports-<SHA>`.
 
 #### 6.1.1.2.5. Resumen agregado de Patients
 
 | Plataforma | Ejecutadas | Aprobadas | Fallidas | Omitidas | Evidencia |
 |---|---:|---:|---:|---:|---|
-| Backend | 7 | 7 | 0 | 0 | `MAX-UT-Patients-Backend.png` |
-| Android | 9 | 9 | 0 | 0 | `MAX-UT-Patients-Android.png` |
-| Web | 10 | 10 | 0 | 0 | `MAX-UT-Patients-Web.png` |
+| Backend | 7 | 7 | 0 | 0 | `JUnit XML / Surefire` |
+| Android | 9 | 9 | 0 | 0 | `android-unit.jsonl` |
+| Web | 10 | 10 | 0 | 0 | `web-vitest.json` |
 | iOS | No aplica | — | — | — | Sin implementación |
 
 ### 6.1.1.3. Studies
 
 #### 6.1.1.3.1. Backend
 
-Unidades: **EstudioService, FileUpload y contrato de almacenamiento**. Archivos: `contexts/estudios/application/EstudioServiceUnitTest.java`; raíz de pruebas backend `MAX_BACK/max-backend/src/test/java/com/max/maxbackend/`, web `MAX_FRONT/MAX/src/app/`, Android `MAX_MOBILE/`. El archivo completo representativo es `MAX_BACK/max-backend/src/test/java/com/max/maxbackend/contexts/estudios/application/EstudioServiceUnitTest.java`.
+Unidades: **EstudioService, FileUpload y contrato de almacenamiento**. Archivos: `contexts/estudios/application/EstudioServiceUnitTest.java`; raíz de pruebas backend `MAX_DEV_BACK/src/test/java/com/max/maxbackend/`, web `MAX_DEV_FRONT/src/app/`, Android `MOBILE/`. El archivo completo representativo es `MAX_DEV_BACK/src/test/java/com/max/maxbackend/contexts/estudios/application/EstudioServiceUnitTest.java`.
 
 Fragmento real:
 
@@ -3457,22 +3423,16 @@ Fragmento real:
 
 | ID | Unidad | Caso | Resultado esperado | Resultado obtenido | Estado |
 |---|---|---|---|---|---|
-| UT-Studies-Backend-01 | EstudioServiceUnitTest | rejectsOversizeBeforeReadingContent | Rechazar más de 20 MiB antes de leer el contenido. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Backend-02 | EstudioServiceUnitTest | nonexistentOrForeignPatientNeverUploads | Paciente ajeno/inexistente: no ejecutar carga del objeto. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Backend-03 | EstudioServiceUnitTest | acceptsExactly20MiBAndGeneratesServerOwnedKey | Aceptar exactamente 20 MiB; generar clave desde servidor. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Backend-04 | EstudioServiceUnitTest | createCannotAdoptAnArbitraryObjectKey | Rechazar claves arbitrarias al crear un estudio. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Backend-05 | EstudioServiceUnitTest | rejectsUnsupportedExtensionAndForgedContent | Rechazar extensión no admitida y firma de contenido inválida. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Backend-06 | EstudioServiceUnitTest | storageFailureDoesNotSaveStudyMetadata | Fallo de almacenamiento: no guardar metadatos ficticios. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Backend-07 | EstudioServiceUnitTest | localStoragePreservesBytesAndMetadata | Conservar bytes, paciente y metadatos en modo embebido. | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Backend-08 | EstudioServiceUnitTest | unauthorizedAccessNeverSignsOrDeletesAnObject | Acceso ajeno: no firmar ni eliminar objetos. | Aserciones verificadas en el reporte original | Aprobada |
+| UT-Studies-Backend-01 | EstudioServiceUnitTest | rejectsOversizeBeforeReadingContent | Rechazar más de 20 MiB antes de leer el contenido. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Backend-02 | EstudioServiceUnitTest | nonexistentOrForeignPatientNeverUploads | Paciente ajeno/inexistente: no ejecutar carga del objeto. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Backend-03 | EstudioServiceUnitTest | acceptsExactly20MiBAndGeneratesServerOwnedKey | Aceptar exactamente 20 MiB; generar clave desde servidor. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Backend-04 | EstudioServiceUnitTest | createCannotAdoptAnArbitraryObjectKey | Rechazar claves arbitrarias al crear un estudio. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Backend-05 | EstudioServiceUnitTest | rejectsUnsupportedExtensionAndForgedContent | Rechazar extensión no admitida y firma de contenido inválida. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Backend-06 | EstudioServiceUnitTest | storageFailureDoesNotSaveStudyMetadata | Fallo de almacenamiento: no guardar metadatos ficticios. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Backend-07 | EstudioServiceUnitTest | localStoragePreservesBytesAndMetadata | Conservar bytes, paciente y metadatos en modo embebido. | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Backend-08 | EstudioServiceUnitTest | unauthorizedAccessNeverSignsOrDeletesAnObject | Acceso ajeno: no firmar ni eliminar objetos. | Caso aprobado en el reporte automatizado | Aprobada |
 
-Comando: `cd MAX_BACK\max-backend; .\mvnw.cmd -B verify`. Reportes: `docs/evidencias/reportes/backend-final-isolated.log y backend-final-surefire/`. Metadatos con fecha, comando y versión base en los JSON del mismo ID de ejecución.
-
-<p align="center">
-  <img src="assets/MAX-UT-Studies-Backend.png" alt="Reporte de resultados: UT Studies Backend." width="1000">
-</p>
-
-<p align="center"><em>Figura 7. Reporte de resultados: UT Studies Backend.</em></p>
+Comando: `./mvnw -B verify`, desde la raíz de `MAX_DEV_BACK`, con el entorno MySQL de pruebas configurado. Reportes: XML y TXT de Surefire en los artefactos de Actions.
 
 #### 6.1.1.3.2. iOS
 
@@ -3480,7 +3440,7 @@ Comando: `cd MAX_BACK\max-backend; .\mvnw.cmd -B verify`. Reportes: `docs/eviden
 
 #### 6.1.1.3.3. Android
 
-Unidades: **Study, MaxApi.uploadStudy, AppController y StudyImage**. Archivos: `test/studies_test.dart; test/study_transport_test.dart; test/study_viewer_test.dart`; raíz de pruebas backend `MAX_BACK/max-backend/src/test/java/com/max/maxbackend/`, web `MAX_FRONT/MAX/src/app/`, Android `MAX_MOBILE/`. El archivo completo representativo es `MAX_MOBILE/test/study_transport_test.dart`.
+Unidades: **Study, MaxApi.uploadStudy, AppController y StudyImage**. Archivos: `test/studies_test.dart; test/study_transport_test.dart; test/study_viewer_test.dart`; raíz de pruebas backend `MAX_DEV_BACK/src/test/java/com/max/maxbackend/`, web `MAX_DEV_FRONT/src/app/`, Android `MOBILE/`. El archivo completo representativo es `MOBILE/test/study_transport_test.dart`.
 
 Fragmento real:
 
@@ -3506,25 +3466,19 @@ Fragmento real:
 
 | ID | Unidad | Caso | Resultado esperado | Resultado obtenido | Estado |
 |---|---|---|---|---|---|
-| UT-Studies-Android-01 | studies_test.dart | Studies conserva relaciones y metadatos del contrato JSON | Studies conserva relaciones y metadatos del contrato JSON | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Android-02 | studies_test.dart | Studies identifica imágenes y PDF histórico por extensión | Studies identifica imágenes y PDF histórico por extensión | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Android-03 | studies_test.dart | Studies informa archivos fallidos y reintenta sin duplicar atención | Studies informa archivos fallidos y reintenta sin duplicar atención | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Android-04 | study_transport_test.dart | multipart conserva el día y el contrato de fecha/hora: 2026-10-07 | multipart conserva el día y el contrato de fecha/hora: 2026-10-07 | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Android-05 | study_transport_test.dart | multipart conserva el día y el contrato de fecha/hora: 2026-10-07T16:45:00 | multipart conserva el día y el contrato de fecha/hora: 2026-10-07T16:45:00 | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Android-06 | study_viewer_test.dart | la imagen histórica embebida usa bytes y conserva el visor | la imagen histórica embebida usa bytes y conserva el visor | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Android-07 | study_viewer_test.dart | referencia embebida no imagen muestra un error accionable | referencia embebida no imagen muestra un error accionable | Aserciones verificadas en el reporte original | Aprobada |
+| UT-Studies-Android-01 | studies_test.dart | Studies conserva relaciones y metadatos del contrato JSON | Studies conserva relaciones y metadatos del contrato JSON | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Android-02 | studies_test.dart | Studies identifica imágenes y PDF histórico por extensión | Studies identifica imágenes y PDF histórico por extensión | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Android-03 | studies_test.dart | Studies informa archivos fallidos y reintenta sin duplicar atención | Studies informa archivos fallidos y reintenta sin duplicar atención | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Android-04 | study_transport_test.dart | multipart conserva el día y el contrato de fecha/hora: 2026-10-07 | multipart conserva el día y el contrato de fecha/hora: 2026-10-07 | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Android-05 | study_transport_test.dart | multipart conserva el día y el contrato de fecha/hora: 2026-10-07T16:45:00 | multipart conserva el día y el contrato de fecha/hora: 2026-10-07T16:45:00 | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Android-06 | study_viewer_test.dart | la imagen histórica embebida usa bytes y conserva el visor | la imagen histórica embebida usa bytes y conserva el visor | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Android-07 | study_viewer_test.dart | referencia embebida no imagen muestra un error accionable | referencia embebida no imagen muestra un error accionable | Caso aprobado en el reporte automatizado | Aprobada |
 
-Comando: `cd MAX_MOBILE; C:\src\flutter\bin\flutter.bat test --reporter=json`. Reportes: `docs/evidencias/reportes/android-unit-final.log (eventos JSON originales)`. Metadatos con fecha, comando y versión base en los JSON del mismo ID de ejecución.
-
-<p align="center">
-  <img src="assets/MAX-UT-Studies-Android.png" alt="Reporte de resultados: UT Studies Android." width="1000">
-</p>
-
-<p align="center"><em>Figura 8. Reporte de resultados: UT Studies Android.</em></p>
+Comando: `flutter test --reporter=json`, desde la raíz de `MOBILE`. Reporte: `android-unit.jsonl` en el artefacto `android-reports-<SHA>`.
 
 #### 6.1.1.3.4. Web
 
-Unidades: **EstudiosStore y EstudiosApiClient**. Archivos: `contexts/estudios/application/estudios.store.spec.ts; contexts/estudios/infrastructure/estudios.api-client.spec.ts`; raíz de pruebas backend `MAX_BACK/max-backend/src/test/java/com/max/maxbackend/`, web `MAX_FRONT/MAX/src/app/`, Android `MAX_MOBILE/`. El archivo completo representativo es `MAX_FRONT/MAX/src/app/contexts/estudios/infrastructure/estudios.api-client.spec.ts`.
+Unidades: **EstudiosStore y EstudiosApiClient**. Archivos: `contexts/estudios/application/estudios.store.spec.ts; contexts/estudios/infrastructure/estudios.api-client.spec.ts`; raíz de pruebas backend `MAX_DEV_BACK/src/test/java/com/max/maxbackend/`, web `MAX_DEV_FRONT/src/app/`, Android `MOBILE/`. El archivo completo representativo es `MAX_DEV_FRONT/src/app/contexts/estudios/infrastructure/estudios.api-client.spec.ts`.
 
 Fragmento real:
 
@@ -3546,41 +3500,45 @@ Fragmento real:
 
 | ID | Unidad | Caso | Resultado esperado | Resultado obtenido | Estado |
 |---|---|---|---|---|---|
-| UT-Studies-Web-01 | app/contexts/estudios/application/estudios.store.spec.ts | conserva el error y los datos sin simular un guardado | conserva el error y los datos sin simular un guardado | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Web-02 | app/contexts/estudios/application/estudios.store.spec.ts | revoca URLs temporales y vacía datos al cerrar sesión | revoca URLs temporales y vacía datos al cerrar sesión | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Web-03 | app/contexts/estudios/application/estudios.store.spec.ts | elimina únicamente los estudios del paciente seleccionado | elimina únicamente los estudios del paciente seleccionado | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Web-04 | app/contexts/estudios/infrastructure/estudios.api-client.spec.ts | envía un multipart asociado al paciente sin inventar consulta | envía un multipart asociado al paciente sin inventar consulta | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Web-05 | app/contexts/estudios/infrastructure/estudios.api-client.spec.ts | propaga un fallo HTTP sin devolver un estudio ficticio | propaga un fallo HTTP sin devolver un estudio ficticio | Aserciones verificadas en el reporte original | Aprobada |
-| UT-Studies-Web-06 | app/contexts/estudios/infrastructure/estudios.api-client.spec.ts | solicita una URL vigente al abrir un estudio | solicita una URL vigente al abrir un estudio | Aserciones verificadas en el reporte original | Aprobada |
+| UT-Studies-Web-01 | app/contexts/estudios/application/estudios.store.spec.ts | conserva el error y los datos sin simular un guardado | conserva el error y los datos sin simular un guardado | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Web-02 | app/contexts/estudios/application/estudios.store.spec.ts | revoca URLs temporales y vacía datos al cerrar sesión | revoca URLs temporales y vacía datos al cerrar sesión | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Web-03 | app/contexts/estudios/application/estudios.store.spec.ts | elimina únicamente los estudios del paciente seleccionado | elimina únicamente los estudios del paciente seleccionado | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Web-04 | app/contexts/estudios/infrastructure/estudios.api-client.spec.ts | envía un multipart asociado al paciente sin inventar consulta | envía un multipart asociado al paciente sin inventar consulta | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Web-05 | app/contexts/estudios/infrastructure/estudios.api-client.spec.ts | propaga un fallo HTTP sin devolver un estudio ficticio | propaga un fallo HTTP sin devolver un estudio ficticio | Caso aprobado en el reporte automatizado | Aprobada |
+| UT-Studies-Web-06 | app/contexts/estudios/infrastructure/estudios.api-client.spec.ts | solicita una URL vigente al abrir un estudio | solicita una URL vigente al abrir un estudio | Caso aprobado en el reporte automatizado | Aprobada |
 
-Comando: `cd MAX_FRONT\MAX; npm.cmd run test:ci`. Reportes: `docs/evidencias/reportes/web-expanded-unit.log y web-vitest.json`. Metadatos con fecha, comando y versión base en los JSON del mismo ID de ejecución.
-
-<p align="center">
-  <img src="assets/MAX-UT-Studies-Web.png" alt="Reporte de resultados: UT Studies Web." width="1000">
-</p>
-
-<p align="center"><em>Figura 9. Reporte de resultados: UT Studies Web.</em></p>
+Comando: `npm run test:ci`, desde la raíz de `MAX_DEV_FRONT`. Reporte: `web-vitest.json` en el artefacto `web-reports-<SHA>`.
 
 #### 6.1.1.3.5. Resumen agregado de Studies
 
 | Plataforma | Ejecutadas | Aprobadas | Fallidas | Omitidas | Evidencia |
 |---|---:|---:|---:|---:|---|
-| Backend | 8 | 8 | 0 | 0 | `MAX-UT-Studies-Backend.png` |
-| Android | 7 | 7 | 0 | 0 | `MAX-UT-Studies-Android.png` |
-| Web | 6 | 6 | 0 | 0 | `MAX-UT-Studies-Web.png` |
+| Backend | 8 | 8 | 0 | 0 | `JUnit XML / Surefire` |
+| Android | 7 | 7 | 0 | 0 | `android-unit.jsonl` |
+| Web | 6 | 6 | 0 | 0 | `web-vitest.json` |
 | iOS | No aplica | — | — | — | Sin implementación |
 
 ### 6.1.1.4. Pruebas complementarias de la landing y del cliente móvil
 
-La landing React local incluye seis pruebas con Node test runner sobre las reglas de fecha del formulario. Se verificaron fechas laborables futuras, el día actual cuando es laborable, fechas pasadas, fines de semana, entradas inválidas y la representación de la fecha local. El reporte `landing-unit.log` registra seis casos aprobados. Estas comprobaciones no acreditan el envío de citas a un backend ni corresponden a la landing HTML académica publicada.
+La landing académica utiliza una suite Python de siete comprobaciones. El reporte `landing-tests.json` registra **7 ejecutadas, 7 aprobadas, 0 fallos, 0 errores y 0 omitidas**.
 
-<p align="center">
-  <img src="assets/MAX-UT-Landing-Web.png" alt="Reporte de seis pruebas de fechas de la landing React local." width="1000">
-</p>
+| Comprobación | Resultado esperado | Estado |
+|---|---|---|
+| Enlaces de entrada a MAX | Mantener un destino de autenticación consistente | Aprobada |
+| Referencias externas | Utilizar HTTPS | Aprobada |
+| Referencias locales | Resolver los recursos dentro del sitio | Aprobada |
+| Fragmentos de navegación | Apuntar a identificadores existentes | Aprobada |
+| Identificadores de sección | No presentar duplicados | Aprobada |
+| Documento principal | Declarar español, título y viewport móvil | Aprobada |
+| HTTP local con prefijo de proyecto | Servir la entrada y sus recursos bajo el prefijo esperado | Aprobada |
 
-<p align="center"><em>Figura 10. Reporte de seis pruebas de fechas de la landing React local.</em></p>
+Estas comprobaciones verifican el sitio estático y su servicio HTTP local; no prueban una conexión con el backend ni el funcionamiento de los servicios externos enlazados. Las seis pruebas de fechas de la landing React pertenecen a la validación local previa y no se suman a esta suite académica.
 
-La suite Flutter incluye además el caso `perfil administrativo usa id como userId compatible`, aprobado en `android-unit-final.log`. Este caso de compatibilidad de modelo se contabiliza por separado de los tres grupos funcionales, sin acreditar un recorrido completo de administración.
+![Siete comprobaciones aprobadas de la landing académica en GitHub Actions](assets/MAX-CI-Landing-Pruebas.png)
+
+*Figura 6.1. El comando `python3 scripts/test_ci.py` finaliza con siete pruebas y resultado OK.*
+
+La suite Flutter incorpora además el caso `perfil administrativo usa id como userId compatible`. Se contabiliza como una comprobación de modelo complementaria, sin atribuirle la validación de un recorrido administrativo completo.
 
 ### 6.1.1.5. Resumen consolidado de unidades y componentes
 
@@ -3590,13 +3548,21 @@ La suite Flutter incluye además el caso `perfil administrativo usa id como user
 | Patients | 7 | 10 | 9 | 26 |
 | Studies | 8 | 6 | 7 | 21 |
 | Modelo administrativo complementario | 0 | 0 | 1 | 1 |
-| **Subtotal** | **26** | **24** | **22** | **72** |
+| **Total** | **26** | **24** | **22** | **72** |
 
-A estos 72 casos se agregan **6 pruebas de la landing React**, para un total de **78 pruebas unitarias o de componente**. El total de 115 de la tabla general añade las **37 pruebas de integración/contexto del backend**. BDD, recorridos de sistema y las seis pruebas de navegador con API sustituida se informan por separado. No se calculó un porcentaje de cobertura de código.
+Los reportes JSON permiten comprobar los recuentos completos aunque las capturas de consola no enumeren todos los casos. En Flutter se excluyen los eventos internos de carga de suites del conteo de pruebas funcionales.
+
+![Ejecución de Vitest en MAX Web CI](assets/MAX-CI-Web-Pruebas.png)
+
+*Figura 6.2. Paso `npm run test:ci`. El archivo `web-vitest.json` del artefacto confirma 24 pruebas aprobadas.*
+
+![Finalización correcta de las pruebas Flutter en Actions](assets/MAX-CI-Mobile-Pruebas.png)
+
+*Figura 6.3. El reporte `android-unit.jsonl` confirma 22 pruebas aprobadas; el evento final comunica el éxito de la ejecución.*
 
 ## 6.1.2. Core Integration Tests
 
-Límites reales: servidor HTTP Spring y seguridad, repositorios JPA y BD; MySQL nativo 8.0.45 en esquemas efímeros por suite, además de H2. No hay Testcontainers ni Docker. Se usó la instalación nativa para respetar la condición del proyecto. `MySqlWorkflowIntegrationTest` hereda los 16 contratos HTTP existentes y añade bcrypt persistido; `MySqlMigrationIntegrationTest` ejecuta tres pruebas de esquema. Los esquemas creados por estas clases se eliminan al finalizar. La API de BDD/sistema conserva datos sintéticos solo en su instancia independiente para inspección.
+Límites reales: servidor HTTP Spring y seguridad, repositorios JPA y BD; MySQL nativo en esquemas efímeros por suite, además de H2. No hay Testcontainers ni Docker. El workflow prepara MySQL nativo en el runner para ejecutar los contratos contra una base de datos real. `MySqlWorkflowIntegrationTest` hereda los 16 contratos HTTP existentes y añade bcrypt persistido; `MySqlMigrationIntegrationTest` ejecuta tres pruebas de esquema. Los esquemas creados por estas clases se eliminan al finalizar. BDD y sistema utilizan una instancia de pruebas independiente dentro del runner.
 
 El total de integración/contexto del backend es **37**: 19 casos de IAM, 12 de Patients, 2 de Studies, 3 de migraciones MySQL y 1 de inicio del contexto de aplicación. Los últimos cuatro son comprobaciones compartidas y no se duplican dentro de las áreas funcionales.
 
@@ -3604,104 +3570,72 @@ El total de integración/contexto del backend es **37**: 19 casos de IAM, 12 de 
 
 19 casos JUnit: nueve contratos con H2 y los mismos nueve con MySQL, más el caso MySQL de bcrypt. Registro/cookie, CSRF, contraseñas débiles, logout, revocación por cambio de contraseña, contraseña actual incorrecta, avatar y limitación de acceso. El bcrypt se leyó desde `usuarios.password_hash`, se comprobó que no contiene texto plano y se verificaron claves correcta/incorrecta con el encoder real. Los casos HTTP de credenciales correctas/incorrectas también están en BDD y no se suman nuevamente a JUnit.
 
-Archivos: `AuthIntegrationTest.java`, `MySqlWorkflowIntegrationTest.java`. Resultados por caso en [tabla de integración](docs/evidencias/MAX-Casos-Ejecutados.md#integración-junit-api-y-bd).
-<p align="center">
-  <img src="assets/MAX-IT-IAM.png" alt="Reporte de resultados: IT IAM." width="1000">
-</p>
-
-<p align="center"><em>Figura 11. Reporte de resultados: IT IAM.</em></p>
+Archivos: `AuthIntegrationTest.java`, `MySqlWorkflowIntegrationTest.java`. Los resultados por caso se registran en los XML de Surefire.
 
 ### 6.1.2.2. Integración de Patients
 
 12 casos JUnit (seis H2 y seis MySQL): alta con historial atómica/idempotente, validaciones, versiones, cascadas, atención/cita/ultimaConsulta y desvinculación de consulta al eliminar una cita. BDD complementa creación/listado/edición e ID ajeno. El recorrido web demuestra búsqueda por DNI desde la UI y lectura posterior real.
 
 No se afirma que la API implemente un endpoint separado de búsqueda: Angular/Flutter filtran sus listados autorizados. El caso BDD localiza el DNI en el listado; no acredita por sí solo el buscador visual.
-<p align="center">
-  <img src="assets/MAX-IT-Patients.png" alt="Reporte de resultados: IT Patients." width="1000">
-</p>
-
-<p align="center"><em>Figura 12. Reporte de resultados: IT Patients.</em></p>
 
 ### 6.1.2.3. Integración de Studies
 
-Dos casos JUnit (uno H2 y uno MySQL) comprueban el aislamiento de registros y acceso al archivo entre perfiles. Los tres escenarios BDD de Estudios complementan multipart PDF, recuperación exacta de bytes, extensión prohibida y paciente inexistente. El recorrido web carga PNG y comprueba `naturalWidth=480`; Android usa el cliente nativo para cargar y el visor UI para mostrarlo. La prueba unitaria de fallo de almacenamiento comprueba que no se persisten metadatos cuando el doble de R2 falla.
+Dos casos JUnit (uno H2 y uno MySQL) comprueban el aislamiento de registros y acceso al archivo entre perfiles. Los tres escenarios BDD de Estudios complementan multipart PDF, recuperación exacta de bytes, extensión prohibida y paciente inexistente. El recorrido web carga PNG y comprueba `naturalWidth=480`; la validación local previa de Android utilizó el cliente nativo para cargar y el visor UI para mostrarlo. La prueba unitaria de fallo de almacenamiento comprueba que no se persisten metadatos cuando el doble de R2 falla.
 
 **R2 no fue integrado realmente:** proveedor `none`, archivo embebido en BD. El límite de 20 MiB se probó a nivel unitario; no se realizó un multipart real de ese tamaño. No se acredita recuperación ante un fallo real de red de R2, permisos del bucket, procesador de eliminaciones ni reintentos físicos. Hace falta un bucket de prueba y credenciales limitadas, sin usar el bucket clínico.
-<p align="center">
-  <img src="assets/MAX-IT-Studies.png" alt="Reporte de resultados: IT Studies." width="1000">
-</p>
-
-<p align="center"><em>Figura 13. Reporte de resultados: IT Studies.</em></p>
 
 ### 6.1.2.4. Comandos de ejecución
 
-Desde la raíz del workspace local de MAX, en PowerShell. Requisitos: Java 21, MySQL 8 nativo, Node 24, SDK Flutter y Android SDK/emulador para la parte móvil. Puertos 33307, 18080, 14200 y 4200 libres. No usar URLs/credenciales de producción.
+Cada comando se ejecuta en la raíz del repositorio correspondiente. La reproducción de las pruebas reales requiere configurar previamente el entorno aislado que utiliza el workflow; instalar dependencias por sí solo no inicia la API ni MySQL.
 
-```powershell
-# Crea un datadir nuevo y una instancia MySQL loopback; no usa MySQL de 3306.
-.\scripts\Start-MaxTestMySQL.ps1
-$env:JAVA_HOME='C:\Users\oscar\AppData\Local\Programs\Android Studio\jbr'
-$env:PATH="$env:JAVA_HOME\bin;$env:PATH"
-$state=Get-Content .max-test-runtime\mysql-state.json -Raw | ConvertFrom-Json
-$env:MAX_TEST_MYSQL_URL=$state.url
-$env:MAX_TEST_MYSQL_USER='root'
-$env:MAX_TEST_MYSQL_PASSWORD='' # Solo instancia sintética recién creada.
-Push-Location MAX_BACK\max-backend
-.\mvnw.cmd -B verify
-Pop-Location
-.\scripts\Start-MaxTestApi.ps1
+| Repositorio | Comando | Propósito y condición |
+|---|---|---|
+| Backend | `./mvnw -B verify` | Ejecutar JUnit y construir el JAR; requiere las variables MySQL del entorno de pruebas |
+| Frontend | `npm ci` y `npm run test:ci` | Instalar desde el lockfile y ejecutar Vitest |
+| Frontend | `npm run test:e2e` | Ejecutar seis casos Playwright con API sustituida; requiere Chromium |
+| Frontend | `npm run test:bdd` | Ejecutar escenarios contra la API y MySQL reales de pruebas |
+| Frontend | `npm run test:system` | Ejecutar el recorrido UI con Angular, API y MySQL de pruebas |
+| Mobile | `flutter pub get --enforce-lockfile` y `flutter test --reporter=json` | Instalar dependencias y ejecutar las 22 pruebas Flutter |
+| Landing académica | `python3 scripts/test_ci.py` | Ejecutar las siete comprobaciones de HTML y HTTP local |
 
-Push-Location MAX_FRONT\MAX
-npm.cmd ci
-npm.cmd run test:ci
-npm.cmd run build
-npx.cmd playwright install chromium
-npm.cmd run test:e2e       # API sustituida, 6 casos.
-npm.cmd run test:bdd       # API 18080/MySQL reales.
-npm.cmd run test:system    # Angular 14200/API 18080/MySQL reales.
-Pop-Location
-
-Push-Location MAX_MOBILE
-C:\src\flutter\bin\flutter.bat pub get --enforce-lockfile
-C:\src\flutter\bin\flutter.bat analyze
-C:\src\flutter\bin\flutter.bat test --reporter=json
-C:\src\flutter\bin\flutter.bat drive --driver=test_driver/integration_test.dart --target=integration_test/max_system_test.dart -d emulator-5554 --dart-define=API_BASE_URL=http://10.0.2.2:18080/api
-Pop-Location
-```
-
-Variables de la suite backend: `MAX_TEST_MYSQL_URL`, `MAX_TEST_MYSQL_USER`, `MAX_TEST_MYSQL_PASSWORD`; URL protegida por guardas de localhost/esquema `max_evidence`. La API se inicia con perfil `test`, cookies locales, CORS explícito de 14200, JWT sintético, administrador bootstrap desactivado y sin R2. `API_BASE_URL` móvil se proporciona por `--dart-define`; el HTTP permitido es exclusivamente local. El número de serie del emulador puede variar: comprobarlo con `flutter devices`. Al terminar se ejecutó `scripts/Stop-MaxTestEnvironment.ps1`: solo detuvo API 18080 y MySQL sintético 33307, conservando datadir, MySQL habitual 3306 y emulador. Fuente: `local-test-teardown.json`.
-
-Para generar log y metadatos como en esta entrega:
-
-```powershell
-.\scripts\Invoke-MaxEvidence.ps1 -Id mi-verificacion -Component Backend -Section 6.1.2 -WorkingDirectory "$PWD\MAX_BACK\max-backend" -Executable .\mvnw.cmd -Arguments @('-B','verify')
-```
-
-Usar un ID nuevo por ejecución. `Collect-MaxEvidence.ps1` conserva los resultados finales; filtra XML de Surefire por las clases del log final, porque Surefire deja archivos antiguos. El renderizador requiere Pillow y las fuentes Segoe UI de Windows. Los informes/imágenes entregados ya están generados; no es necesario repetir pruebas para leerlos.
+La suite backend utiliza `MAX_TEST_MYSQL_URL`, `MAX_TEST_MYSQL_USER` y `MAX_TEST_MYSQL_PASSWORD`. La integración web prepara la API en loopback, puerto **18080**, y la web en el puerto **14200**. Los valores concretos se establecen en el entorno de pruebas, sin utilizar credenciales ni destinos de producción. La configuración reproducible se encuentra en [el CI del backend](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/ci/max-tests-actions/.github/workflows/ci.yml) y [el workflow de integración web](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/ci/max-tests-actions/.github/workflows/integration.yml).
 
 ### 6.1.2.5. Evidencias de ejecución
 
-Originales: XML/txt de Surefire, JSON de Vitest, eventos JSON de Flutter, JSON/HTML de Cucumber y Playwright, trazas ZIP y logs completos. Los PNG de resultados son **reportes renderizados desde esos originales**, no capturas ficticias de terminal. Los PNG de recorrido proceden de la aplicación real.
-<p align="center">
-  <img src="assets/MAX-IT-Ejecucion-Backend.png" alt="Reporte de resultados: IT Ejecucion Backend." width="1000">
-</p>
+Las siguientes capturas proceden de la ejecución real de GitHub Actions. El resultado se contrasta con los reportes XML de Surefire, que también están incluidos en el artefacto del workflow de integración web.
 
-<p align="center"><em>Figura 14. Reporte de resultados: IT Ejecucion Backend.</em></p>
+| Clase JUnit | Casos aprobados | Clasificación |
+|---|---:|---|
+| `AuthServiceUnitTest` | 5 | Unidad |
+| `AvatarValidatorUnitTest` | 4 | Unidad |
+| `PasswordPolicyTest` | 2 | Unidad |
+| `PacienteServiceUnitTest` | 7 | Unidad |
+| `EstudioServiceUnitTest` | 8 | Unidad |
+| `AuthIntegrationTest` | 16 | Integración con H2 |
+| `MySqlWorkflowIntegrationTest` | 17 | Integración con MySQL |
+| `MySqlMigrationIntegrationTest` | 3 | Migraciones MySQL |
+| `MaxBackendApplicationTests` | 1 | Inicio del contexto |
+| **Total** | **63** | **0 fallos, 0 errores, 0 omitidas** |
 
-<p align="center">
-  <img src="assets/MAX-IT-Ejecucion-Web.png" alt="Reporte de resultados: IT Ejecucion Web." width="1000">
-</p>
+![Inicio del entorno H2 durante las pruebas del backend](assets/MAX-CI-Backend-Entorno.png)
 
-<p align="center"><em>Figura 15. Reporte de resultados: IT Ejecucion Web.</em></p>
+*Figura 6.4. Preparación del contexto de aplicación y del entorno H2 utilizado por la suite de integración.*
+
+![Contratos HTTP y migraciones MySQL en Actions](assets/MAX-CI-Backend-Integracion.png)
+
+*Figura 6.5. La ejecución muestra los contratos de integración y la validación de once migraciones Flyway; once migraciones no equivalen a once casos JUnit adicionales.*
+
+![Resumen JUnit con 63 pruebas aprobadas](assets/MAX-CI-Backend-Pruebas.png)
+
+*Figura 6.6. Maven finaliza con `Tests run: 63`, sin fallos, errores ni pruebas omitidas, y `BUILD SUCCESS`.*
 
 ## 6.1.3. Core Behavior-Driven Development
 
-Herramientas: Cucumber 13.3.0, Playwright APIRequestContext 1.55.1, Node 24.13.1. Archivos: `MAX_FRONT/MAX/cucumber.cjs`, `bdd/run.cjs`, `bdd/features/*.feature`, `bdd/steps/max.steps.cjs`. Los pasos llaman endpoints reales, crean cuentas/pacientes sintéticos, inicializan CSRF y comprueban datos posteriores; no usan `page.route`. La guarda bloquea destinos que no sean loopback de pruebas. La limpieza por escenario elimina los pacientes accesibles del usuario activo; el caso de propietario ajeno queda aislado en el datadir sintético hasta su eliminación manual controlada.
+Herramientas: Cucumber y Playwright APIRequestContext. Archivos del frontend: `cucumber.cjs`, `bdd/run.cjs`, `bdd/features/*.feature` y `bdd/steps/max.steps.cjs`. Los pasos llaman endpoints reales, preparan cuentas y pacientes sintéticos, inicializan CSRF y comprueban las respuestas y los datos persistidos. La ejecución remota aprobada utiliza la API y MySQL del mismo runner.
 
 ### 6.1.3.1. IAM
 
 `bdd/features/iam.feature`: credenciales válidas/identidad, credenciales incorrectas y login sin CSRF. Tres escenarios aprobados. US-01 se acredita a nivel HTTP; la redirección visual es un criterio de UI separado.
-
 
 **Escenarios registrados en el reporte**
 
@@ -3732,20 +3666,13 @@ Feature: IAM - acceso a MAX
 
 **Definiciones de pasos**
 
-El reporte identifica implementaciones en `MAX_FRONT/MAX/bdd/steps/max.steps.cjs`. Los pasos preparan cuentas o pacientes sintéticos, ejecutan solicitudes HTTP y comprueban códigos de respuesta y datos posteriores. Las implementaciones JavaScript completas no están adjuntas en este paquete; deben incorporarse desde el repositorio para mostrar un ejemplo de código reproducible.
+El reporte identifica implementaciones en `MAX_DEV_FRONT/bdd/steps/max.steps.cjs`. Los pasos preparan cuentas o pacientes sintéticos, ejecutan solicitudes HTTP y comprueban códigos de respuesta y datos posteriores. Las implementaciones se consultan en [la rama evaluada del frontend](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/tree/ci/max-tests-actions/bdd).
 
-**Evidencia de ejecución**
-
-<p align="center">
-  <img src="assets/MAX-BDD-IAM-Resultados.png" alt="Reporte de resultados: BDD IAM Resultados. El conteo gráfico incluye los hooks de preparación y limpieza; el consolidado distingue 32 pasos y 18 hooks." width="1000">
-</p>
-
-<p align="center"><em>Figura 16. Reporte de resultados: BDD IAM Resultados. El conteo gráfico incluye los hooks de preparación y limpieza; el consolidado distingue 32 pasos y 18 hooks.</em></p>
+Evidencia: `web/reports/bdd.json` y `web/reports/bdd.html` del artefacto de integración; captura consolidada en 6.1.3.4.
 
 ### 6.1.3.2. Patients
 
 `bdd/features/patients.feature`: registrar/listar por DNI, editar/reconsultar y rechazo de ID ajeno. Tres escenarios aprobados. Los escenarios llevan tags de las historias verificadas; solo se acredita la parte HTTP, no todo el modal o búsqueda visual.
-
 
 **Escenarios registrados en el reporte**
 
@@ -3777,22 +3704,15 @@ Feature: Patients - persistencia de pacientes
 
 **Definiciones de pasos**
 
-El reporte identifica implementaciones en `MAX_FRONT/MAX/bdd/steps/max.steps.cjs`. Los pasos preparan cuentas o pacientes sintéticos, ejecutan solicitudes HTTP y comprueban códigos de respuesta y datos posteriores. Las implementaciones JavaScript completas no están adjuntas en este paquete; deben incorporarse desde el repositorio para mostrar un ejemplo de código reproducible.
+El reporte identifica implementaciones en `MAX_DEV_FRONT/bdd/steps/max.steps.cjs`. Los pasos preparan cuentas o pacientes sintéticos, ejecutan solicitudes HTTP y comprueban códigos de respuesta y datos posteriores. Las implementaciones se consultan en [la rama evaluada del frontend](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/tree/ci/max-tests-actions/bdd).
 
-**Evidencia de ejecución**
-
-<p align="center">
-  <img src="assets/MAX-BDD-Patients-Resultados.png" alt="Reporte de resultados: BDD Patients Resultados. El conteo gráfico incluye los hooks de preparación y limpieza; el consolidado distingue 32 pasos y 18 hooks." width="1000">
-</p>
-
-<p align="center"><em>Figura 17. Reporte de resultados: BDD Patients Resultados. El conteo gráfico incluye los hooks de preparación y limpieza; el consolidado distingue 32 pasos y 18 hooks.</em></p>
+Evidencia: `web/reports/bdd.json` y `web/reports/bdd.html` del artefacto de integración; captura consolidada en 6.1.3.4.
 
 ### 6.1.3.3. Studies
 
 `bdd/features/studies.feature`: cargar/recuperar PDF permitido, rechazar `.exe` sin persistir estudio y rechazar paciente inexistente. Tres escenarios aprobados.
 
-Comando: desde `MAX_FRONT/MAX`, `npm.cmd run test:bdd`, API de pruebas activa. Resultado final: **9 escenarios aprobados**. El log informa «50 steps»; el JSON contiene 50 entradas aprobadas, de las cuales **32 son pasos Given/When/Then/And y 18 son hooks Before/After**. Esta distinción evita contar preparación y limpieza como comportamientos adicionales. [Reporte HTML original](docs/evidencias/reportes/bdd.html), [JSON](docs/evidencias/reportes/bdd.json), [log/metadatos](docs/evidencias/reportes/bdd-final.log).
-
+Comando: `npm run test:bdd`, desde la raíz del frontend, con la API y MySQL de pruebas activos. La ejecución remota confirma **9 escenarios aprobados**. El log indica «50 steps»; el JSON distingue **32 pasos Given/When/Then/And y 18 hooks Before/After**, todos aprobados. Los hooks preparan y limpian el entorno y no representan comportamientos adicionales. Reportes: `web/reports/bdd.html` y `web/reports/bdd.json`.
 
 **Escenarios registrados en el reporte**
 
@@ -3824,15 +3744,9 @@ Feature: Studies - documentos del paciente
 
 **Definiciones de pasos**
 
-El reporte identifica implementaciones en `MAX_FRONT/MAX/bdd/steps/max.steps.cjs`. Los pasos preparan cuentas o pacientes sintéticos, ejecutan solicitudes HTTP y comprueban códigos de respuesta y datos posteriores. Las implementaciones JavaScript completas no están adjuntas en este paquete; deben incorporarse desde el repositorio para mostrar un ejemplo de código reproducible.
+El reporte identifica implementaciones en `MAX_DEV_FRONT/bdd/steps/max.steps.cjs`. Los pasos preparan cuentas o pacientes sintéticos, ejecutan solicitudes HTTP y comprueban códigos de respuesta y datos posteriores. Las implementaciones se consultan en [la rama evaluada del frontend](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/tree/ci/max-tests-actions/bdd).
 
-**Evidencia de ejecución**
-
-<p align="center">
-  <img src="assets/MAX-BDD-Studies-Resultados.png" alt="Reporte de resultados: BDD Studies Resultados. El conteo gráfico incluye los hooks de preparación y limpieza; el consolidado distingue 32 pasos y 18 hooks." width="1000">
-</p>
-
-<p align="center"><em>Figura 18. Reporte de resultados: BDD Studies Resultados. El conteo gráfico incluye los hooks de preparación y limpieza; el consolidado distingue 32 pasos y 18 hooks.</em></p>
+Evidencia: `web/reports/bdd.json` y `web/reports/bdd.html` del artefacto de integración; captura consolidada en 6.1.3.4.
 
 ### 6.1.3.4. Trazabilidad
 
@@ -3849,7 +3763,7 @@ Identificadores comprobados en [REPORT, sección 3.2](https://github.com/1ASI073
 | US-08 | Buscar por DNI/nombre | Listado por DNI BDD; filtro DNI UI web | HTTP y UI web | DNI aprobado; búsqueda visual por nombre no recorrida end-to-end | Patients BDD; web trace |
 | US-10 | Editar paciente | Editar/reconsultar | HTTP/Web/Android | ID y observaciones conservados | BDD Patients; sistema |
 | US-12/US-15 | Adjuntar/visualizar | PDF BDD; PNG UI web/native | API/BD, visor UI | Aprobado en almacenamiento embebido; PDF externo y picker nativo pendientes | Studies BDD; visores PNG |
-| TS-04 | Archivo y referencia | Recuperar bytes exactos | API/MySQL | Aprobado local; integración R2 no acreditada | BDD Studies |
+| TS-04 | Archivo y referencia | Recuperar bytes exactos | API/MySQL | Aprobado en el runner; integración R2 no acreditada | BDD Studies |
 | TS-05 | Formatos | Rechazo .exe y firma/MIME unitarios | API + unidades | Aprobado para casos enumerados | BDD Studies; UT Studies |
 | Aislamiento por propietario (alcance) | Cuenta ajena / archivo ajeno | Patients feature + HTTP integración | API/MySQL/H2 | Rechazo aprobado | Surefire, BDD Patients |
 | CSRF (alcance) | Login sin token | IAM feature | API/MySQL | 403 aprobado | BDD IAM |
@@ -3857,11 +3771,15 @@ Identificadores comprobados en [REPORT, sección 3.2](https://github.com/1ASI073
 
 US-19/US-20 tienen comprobaciones HTTP de atención/cita; no se acredita aquí todo su recorrido UI ni la historia US-17 de cruces de horario. Las pruebas no cubren automáticamente todos los criterios de una historia solo por llevar su tag.
 
+![BDD y Playwright con API y MySQL reales aprobados en GitHub Actions](assets/MAX-CI-Web-BDD-Playwright-Integracion.png)
+
+*Figura 6.7. El workflow remoto registra nueve escenarios BDD y dos recorridos Playwright aprobados. El detalle de los pasos BDD se interpreta según el JSON, distinguiendo los hooks.*
+
 ## 6.1.4. Core System Tests
 
 ### 6.1.4.1. Aplicación web
 
-`MAX_FRONT/MAX/e2e-system/clinical-workflow.spec.ts`, configuración `playwright.system.config.ts`. Playwright 1.55.1, Chromium **140.0.7339.186**, escritorio **1280×720** y viewport móvil **412×839** (Pixel 7 emulado en navegador). Ambas ejecuciones aprobaron. El navegador móvil es evidencia web, no Android nativo.
+`MAX_DEV_FRONT/e2e-system/clinical-workflow.spec.ts`, con configuración `playwright.system.config.ts`. El workflow de integración ejecuta los proyectos **desktop-chromium** y **mobile-web-chromium** contra Angular, la API Spring Boot y MySQL reales dentro del runner. Ambos recorridos aprobaron. El viewport móvil constituye una prueba de la aplicación web y no de Flutter nativo.
 
 | ID | Acción | Esperado | Obtenido | Estado |
 |---|---|---|---|---|
@@ -3873,28 +3791,19 @@ US-19/US-20 tienen comprobaciones HTTP de atención/cita; no se acredita aquí t
 | SYS-W-06 | Adjuntar PNG y visualizar | Archivo persistido y decodificado | 480px naturalWidth y mismos bytes en access-url | Aprobado |
 | SYS-W-07 | Logout y ruta protegida | Acceso rechazado sin sesión | `/auth`; API 401; sin token en localStorage | Aprobado |
 
-Estos IDs son pasos de **un recorrido por viewport**, no siete pruebas independientes. Archivo de estudio sintético marcado dentro de la imagen; no contiene datos clínicos reales. [Reporte Playwright](docs/evidencias/reportes/system-web-html/index.html), [JSON](docs/evidencias/reportes/system-web.json) y estado final en `reportes/system-web-artifacts/`. Las trazas incluidas corresponden a los intentos fallidos anteriores; no se adjunta una traza ZIP del recorrido final aprobado.
-<p align="center">
-  <img src="assets/MAX-System-Web-Resultados.png" alt="Reporte de resultados: System Web Resultados." width="1000">
-</p>
+Estos IDs representan pasos de **un recorrido por viewport**, por lo que el total es de dos recorridos de sistema. Los archivos sintéticos no contienen información clínica real. El artefacto de integración conserva `web/reports/system-web.json` y `web/reports/system-web-html/index.html`; el JSON registra dos aprobados y ningún resultado omitido, inesperado o inestable.
 
-<p align="center"><em>Figura 19. Reporte de resultados: System Web Resultados.</em></p>
+**Pruebas de navegador con API sustituida**
 
-<p align="center">
-  <img src="assets/MAX-System-Web-Recorrido.png" alt="Captura de la aplicación web durante la validación del visor de estudios." width="1000">
-</p>
+El CI básico también ejecuta seis pruebas Playwright: acceso sin credenciales en `localStorage`, rechazo de contraseña débil y recarga de una ruta clínica protegida, cada caso en escritorio y viewport móvil. Se utiliza `page.route` para sustituir las respuestas de la API. Esta suite comprueba el comportamiento del frontend; los dos recorridos anteriores son los que verifican la integración real con backend y MySQL.
 
-<p align="center"><em>Figura 20. Captura de la aplicación web durante la validación del visor de estudios.</em></p>
+![Seis pruebas de navegador aprobadas con API sustituida](assets/MAX-CI-Web-Playwright.png)
 
-<p align="center">
-  <img src="assets/MAX-System-Web-Mobile-Recorrido.png" alt="Captura de la aplicación web con viewport móvil; no representa una aplicación nativa." width="420">
-</p>
-
-<p align="center"><em>Figura 21. Captura de la aplicación web con viewport móvil; no representa una aplicación nativa.</em></p>
+*Figura 6.8. Resultado Playwright del CI web básico: seis casos aprobados. Su alcance se diferencia del workflow de integración real.*
 
 ### 6.1.4.2. Aplicación Android
 
-Flutter `integration_test` en `Medium_Phone`, modelo `sdk_gphone64_x86_64`, Android **14/API 34**, serial `emulator-5554`. Resolución física informada 1080×2400 y override 1080×1920. App `com.max.max_mobile` **1.0.0+1**. Se construyó e instaló un APK instrumental de `integration_test/max_system_test.dart`; el recorrido usa `MaxApp` real, cookies en almacenamiento seguro y API local `10.0.2.2:18080/api`.
+**Validación local previa:** se ejecutó Flutter `integration_test` en `Medium_Phone`, modelo `sdk_gphone64_x86_64`, Android **14/API 34**, serial `emulator-5554`. Resolución física informada 1080×2400 y override 1080×1920. App `com.max.max_mobile` **1.0.0+1**. Se construyó e instaló un APK instrumental de `integration_test/max_system_test.dart`; el recorrido usa `MaxApp` real, cookies en almacenamiento seguro y API local `10.0.2.2:18080/api`.
 
 | ID | Acción | Esperado | Obtenido | Estado |
 |---|---|---|---|---|
@@ -3905,256 +3814,250 @@ Flutter `integration_test` en `Medium_Phone`, modelo `sdk_gphone64_x86_64`, Andr
 | SYS-A-05 | Listado y visor desde la UI | PNG decodificado | Imagen visible, sin error del visor | Aprobado |
 | SYS-A-06 | Logout | Pantalla acceso; /me rechazado | Ingresar visible y ApiException | Aprobado |
 
-Es **un recorrido funcional**. Flutter anuncia `+2` por incluir `tearDownAll`; no se cuentan dos recorridos. No acredita teléfono físico, PDF en app externa, instalación release firmada, selector de archivos del sistema operativo ni R2 real. Reportes: `android-system-evidence-final.log`, `android-system-response.json`, `android-environment.json`. Las capturas fueron tomadas con `binding.takeScreenshot` y conservadas por `test_driver/integration_test.dart`.
-<p align="center">
-  <img src="assets/MAX-System-Android-Resultados.png" alt="Reporte de resultados: System Android Resultados." width="1000">
-</p>
-
-<p align="center"><em>Figura 22. Reporte de resultados: System Android Resultados.</em></p>
-
-<p align="center">
-  <img src="assets/MAX-System-Android-Recorrido.png" alt="Captura de MAX Flutter en el emulador Android durante el recorrido." width="420">
-</p>
-
-<p align="center"><em>Figura 23. Captura de MAX Flutter en el emulador Android durante el recorrido.</em></p>
-
-<p align="center">
-  <img src="assets/MAX-System-Android-Estudio.png" alt="Captura del visor de imágenes en MAX Flutter para Android." width="420">
-</p>
-
-<p align="center"><em>Figura 24. Captura del visor de imágenes en MAX Flutter para Android.</em></p>
+Es **un recorrido funcional**. Flutter anuncia `+2` por incluir `tearDownAll`; no se cuentan dos recorridos. No acredita teléfono físico, PDF en app externa, instalación release firmada, selector de archivos del sistema operativo ni R2 real. Reportes: `android-system-evidence-final.log`, `android-system-response.json`, `android-environment.json`. Esta evidencia pertenece al paquete local previo. Las 26 capturas actuales de Actions no incluyen el recorrido del emulador. El CI Android remoto confirma las 22 pruebas, el análisis estático y la construcción del APK debug; no ejecuta este recorrido nativo.
 
 ### 6.1.4.3. Aplicación iOS
 
 **No aplica al estado del repositorio:** no existe plataforma iOS activa. No se construyó, simuló ni capturó iOS. Para habilitar ese alcance posteriormente se necesitan implementación/plataforma iOS, macOS/Xcode y un simulador/dispositivo; los resultados Android no se sustituyen por iOS.
-
----
 
 
 # Capítulo VII: DevOps Practices
 
 ## 7.1. Continuous Integration
 
-La integración continua de MAX se documenta mediante configuraciones locales de construcción y pruebas para los cuatro proyectos. Se verificaron comandos locales y la sintaxis de los workflows. La ejecución de esos workflows en GitHub Actions todavía no está acreditada; por ello se distingue entre configuración preparada y automatización remota ejecutada.
+MAX implementó integración continua en GitHub Actions para backend, aplicación web Angular, aplicación Android Flutter y landing académica HTML. Los cambios se publicaron en la rama **`ci/max-tests-actions`** de cada repositorio, manteniendo `main` sin fusionar. Las cuatro ejecuciones por `push` finalizaron correctamente.
+
+También se comprobaron los checks de los pull requests del backend, frontend y mobile. En el frontend se aprobó, además, una integración con API y MySQL reales dentro del runner. La evidencia disponible de la landing académica corresponde al evento `push`; esta entrega no incorpora un PR aprobado de ese repositorio.
 
 ### 7.1.1. Tools and Practices
 
-| Categoría | Herramienta/version | Uso concreto | Evidencia |
-|---|---|---|---|
-| Versionado | Git; cuatro repositorios locales en main | SHA base + cambios locales; sin publicación | `source-state-final.json`, `changed-files.json` |
-| Automatización | GitHub Actions, configuración nueva local | PR/push main/manual; reportes always; candidatos condicionados | Nueve YAML bajo `.github/workflows/` |
-| Construcción backend | Java 21, Maven 3.9.12 Wrapper, Boot 4.0.8 | `verify`, JAR ejecutable | `backend-final-isolated.log` |
-| Construcción web | Node 24.13.1, npm 10.9.3 configurado, Angular CLI 21.2.24 | Lockfile, bundle/browser y proxy | `web-build.log` |
-| Construcción Android | Flutter 3.41.9/Java21/Gradle del proyecto | Analyze, unidades, APK debug interno | `android-analysis-final.log`, `android-build-internal.log` |
-| Pruebas | JUnit6/Mockito5; Vitest4; Playwright1.55; Cucumber13; flutter_test | Unidades e integración locales reales según cada suite | XML/JSON/logs originales |
-| Análisis de workflows | actionlint 1.7.11, binario oficial con checksum comprobado | Sintaxis y expresiones GitHub; shellcheck/pyflakes desactivados por no estar instalados | `workflows-actionlint.log/json` |
-| Reportes | Surefire, JSON/HTML/eventos; Pillow para PNG | Preservar originales y renderizar tablas identificadas | `render_max_evidence.py`, PNG y fuentes |
-| Artefactos | JAR, browser/functions, dist y APK debug | SHA-256 e identificación del código | `docs/evidencias/artefactos/manifest.json` |
-| Dependencias | package-lock/pubspec.lock/Maven BOM | Instalar desde lock; registrar auditoría | `web-audit-*.json`, `web-audit-run.log` |
+| Herramienta o práctica | Aplicación en MAX |
+|---|---|
+| Git y GitHub | Versionado en repositorios separados, rama de trabajo y revisión mediante pull requests hacia `main` |
+| GitHub Actions | Workflows en `.github/workflows/ci.yml`, ubicados en la raíz de cada repositorio |
+| Java 21 y Maven Wrapper | Compilación y verificación del backend Spring Boot; generación de JAR |
+| H2, MySQL nativo y Flyway | Contratos de integración y comprobación de migraciones en bases de datos de pruebas |
+| Node, npm y Angular | Instalación mediante lockfile, pruebas y construcción del frontend |
+| Vitest y Playwright | Pruebas unitarias/de componentes, navegación con API sustituida y recorridos con integración real |
+| Cucumber | Nueve escenarios BDD contra la API y MySQL de pruebas |
+| Flutter y Dart | Pruebas, análisis estático y construcción del APK debug |
+| Python | Siete comprobaciones de la landing académica HTML |
+| Reportes y artefactos | Conservación de resultados y candidatos identificados por SHA |
+| Secrets y variables de Actions | Acceso de lectura al backend privado y selección explícita del commit de pruebas |
 
-Las Actions se fijaron al SHA consultado de checkout v5, setup-node v6, setup-java v5, upload-artifact v4 y flutter-action v2. Fuentes y SHAs: `actions-pins.json`, [documentación de herramientas](docs/pipelines/README.md).
+La versión web entregada utiliza **Angular 21.2.25** y **CLI/build 21.2.26**. Las auditorías completas y de dependencias de ejecución registraron **cero vulnerabilidades** en la ejecución evaluada. El resultado corresponde al estado de dependencias y a la fecha de la ejecución; no reemplaza las pruebas funcionales ni constituye una garantía general de seguridad.
 
-La auditoría detectó **7 avisos totales (5 high, 2 critical)** y **1 high en dependencias de ejecución**, Angular Router GHSA-ff3f-86qr-9cv3. El advisory se refiere a SSR; la aplicación inspeccionada es cliente Angular y no se demostró explotación. Revisar aplicabilidad y parches antes de promover; no se ejecutó `npm audit fix --force` ni se actualizaron dependencias fuera del objetivo de pruebas. El gate configurado de auditoría fallaría con este lockfile. [Advisory original](https://github.com/advisories/GHSA-ff3f-86qr-9cv3).
+![Auditoría npm completa sin vulnerabilidades reportadas](assets/MAX-CI-Web-Auditoria-Completa.png)
 
-Ramas/PR: el trabajo siguió en main local, no se integró a remoto. Protección de rama, revisiones obligatorias y requerimientos de checks remotos **no verificados**. Configurar esos controles requiere acceso al repositorio; un YAML por sí solo no configura la protección de main.
-<p align="center">
-  <img src="assets/MAX-CI-Tools-Practices.png" alt="Resumen de herramientas y configuración de CI revisadas localmente." width="1000">
-</p>
+*Figura 7.1. El reporte de `npm audit` registra cero vulnerabilidades en el conjunto de dependencias evaluado.*
 
-<p align="center"><em>Figura 25. Resumen de herramientas y configuración de CI revisadas localmente.</em></p>
+![Auditoría npm de dependencias de ejecución sin vulnerabilidades](assets/MAX-CI-Web-Auditoria-Produccion.png)
+
+*Figura 7.2. El reporte de `npm audit --omit=dev` registra cero vulnerabilidades en las dependencias de ejecución.*
+
+Los pull requests permiten revisar los resultados antes de integrar los cambios. Las capturas prueban la ejecución de los checks; no demuestran, por sí solas, que se hayan configurado revisiones obligatorias o reglas de protección de `main`.
 
 ### 7.1.2. Build & Test Suite Pipeline Components
 
-| Workflow local | Eventos/jobs | Comprobaciones y artefactos | Estado |
-|---|---|---|---|
-| `MAX_BACK/max-backend/.github/workflows/ci.yml` | PR/push main/manual → verify | MySQL nativo del runner; Maven verify; guard de pruebas MySQL no omitidas; Surefire always; JAR+SHA | actionlint aprobado; comandos locales aprobados; Actions pendiente |
-| `MAX_FRONT/MAX/.github/workflows/ci.yml` | PR/push main/manual → verify | npm ci, test:ci, build, Playwright con API sustituida, audit; browser+functions+SHA | actionlint aprobado; auditoría local fallida; Actions pendiente |
-| `MAX_MOBILE/.github/workflows/ci.yml` | PR/push main/manual → verify | lock, analyze, flutter test JSON, APK debug interno+SHA; sin emulador remoto | actionlint/comandos locales aprobados; Actions pendiente |
-| `MAX_LANDING/.github/workflows/ci.yml` | PR/push main/manual → verify | React local: npm ci/lint/test/build; sitio+SHA | actionlint/comandos locales aprobados; Actions pendiente |
-| `MAX_FRONT/MAX/.github/workflows/integration.yml` | Solo manual; SHA backend | token de lectura limitado; checkout backend; verify; API/MySQL del runner; BDD/UI real; reportes always | actionlint aprobado; equivalente local aprobado; requiere secreto de acceso |
+**Workflows básicos y ejecuciones aprobadas**
 
-Los cuatro CI básicos tienen timeout, permisos `contents:read` y cancelación de ejecuciones supersedidas. Un comando fallido impide pasos posteriores de candidato; los reportes se suben incluso ante fallo. El workflow manual de integración conserva también logs backend y capturas UI. Los candidatos no contienen credenciales de producción. La shell local usó npm 11.8.0; packageManager y el CI preparado fijan npm 10.9.3. Las versiones originales constan en `reportes/tool-versions.json`. El build web pasó con tres avisos de presupuesto CSS, conservados en el log; no se modificaron esos estilos.
+| Componente | Workflow | Evento acreditado | Comprobaciones | Ejecución real |
+|---|---|---|---|---|
+| Backend | MAX Backend CI | `push` y checks de `pull_request` | 63 JUnit, H2, MySQL, migraciones y construcción | [Run 37694651919 por push](https://github.com/PersonalProjects5443/MAX_DEV_BACK/actions/runs/37694651919) |
+| Angular | MAX Web CI | `push` y checks de `pull_request` | 24 Vitest, seis Playwright con API sustituida, build y auditorías | [Run 37694826162 por push](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/actions/runs/37694826162) |
+| Mobile | MAX Android CI | `push` y checks de `pull_request` | 22 Flutter, análisis estático y APK debug | [Run 37694655470 por push](https://github.com/1ASI0732-2620-9086/MOBILE/actions/runs/37694655470) |
+| Landing académica | MAX Academic Landing CI | `push` | Siete comprobaciones de HTML, navegación y recursos HTTP locales | [Run 37694657336 por push](https://github.com/1ASI0732-2620-9086/LANDING-PAGE/actions/runs/37694657336) |
 
-Ejecuciones remotas consultadas: MOBILE y REPORT no tenían runs; los back/front devolvieron 404 en la consulta pública sin autenticación (no prueba que no tengan workflows). La landing académica tiene runs históricos de Pages, descritos en 7.3; no ejecutaron estas suites ni pertenecen a la landing React local. No existe ID de Actions para los YAML nuevos porque no se publicaron. **No se generó `MAX-CI-Resultados.png` como si hubiera una ejecución remota clínica.**
-<p align="center">
-  <img src="assets/MAX-CI-Pipeline.png" alt="Diagrama de la configuración de CI preparada; no acredita ejecución remota." width="1000">
-</p>
+Fuentes publicadas: [CI backend](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/ci/max-tests-actions/.github/workflows/ci.yml), [CI frontend](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/ci/max-tests-actions/.github/workflows/ci.yml), [CI mobile](https://github.com/1ASI0732-2620-9086/MOBILE/blob/ci/max-tests-actions/.github/workflows/ci.yml) y [CI landing académica](https://github.com/1ASI0732-2620-9086/LANDING-PAGE/blob/ci/max-tests-actions/.github/workflows/ci.yml).
 
-<p align="center"><em>Figura 26. Diagrama de la configuración de CI preparada; no acredita ejecución remota.</em></p>
+![MAX Backend CI aprobado](assets/MAX-CI-Backend-Resultado.png)
+
+*Figura 7.3. Ejecución por push del backend aprobada, con artefactos de reportes y candidato.*
+
+![MAX Web CI aprobado](assets/MAX-CI-Web-Resultado.png)
+
+*Figura 7.4. Ejecución por push del frontend aprobada, con reportes y candidato web.*
+
+![MAX Android CI aprobado](assets/MAX-CI-Mobile-Resultado.png)
+
+*Figura 7.5. Ejecución por push del cliente móvil aprobada, con reportes y APK interno.*
+
+![MAX Academic Landing CI aprobado](assets/MAX-CI-Landing-Resultado.png)
+
+*Figura 7.6. Ejecución por push de la landing académica aprobada. La captura corresponde a CI y no acredita una nueva publicación de GitHub Pages.*
+
+**Etapas de construcción y verificación**
+
+| Componente | Secuencia verificada | Salida |
+|---|---|---|
+| Backend | Preparación de Java/MySQL → Maven verify → reportes → candidato | JAR, resultados JUnit y sumas SHA-256 |
+| Frontend | Instalación de dependencias → Vitest/Playwright → build y auditorías → artefactos | Bundle web, proxy y reportes |
+| Mobile | Dependencias Flutter → analyze → pruebas → construcción debug → artefactos | APK debug y reporte de pruebas |
+| Landing académica | Preparación Python → comprobaciones HTML/HTTP → artefactos | Sitio estático y reportes |
+
+![Construcción Maven finalizada correctamente](assets/MAX-CI-Backend-Build.png)
+
+*Figura 7.7. El backend alcanza BUILD SUCCESS y conserva sus reportes en Actions.*
+
+![Análisis estático Flutter sin incidencias](assets/MAX-CI-Mobile-Analisis.png)
+
+*Figura 7.8. El paso `flutter analyze` finaliza con No issues found.*
+
+![Construcción del APK debug completada](assets/MAX-CI-Mobile-Build.png)
+
+*Figura 7.9. El workflow genera el APK debug para pruebas internas. Este archivo no constituye una release publicada en una tienda.*
+
+**Integración web con backend privado y MySQL real**
+
+El frontend contiene un workflow adicional, [`.github/workflows/integration.yml`](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/ci/max-tests-actions/.github/workflows/integration.yml), llamado **MAX Web Integration (local en runner)**. La expresión «local en runner» indica que la API, MySQL y la web se ejecutan dentro del entorno de GitHub Actions.
+
+La configuración se almacenó en el repositorio frontend, en *Settings → Secrets and variables → Actions*:
+
+| Tipo | Nombre | Función |
+|---|---|---|
+| Secreto | `MAX_BACKEND_READ_TOKEN` | Permitir leer el repositorio privado del backend con permiso `Contents: read`; su valor permanece oculto |
+| Variable | `MAX_BACKEND_TEST_REF` | Fijar el commit del backend que se utilizará en la integración |
+
+Valor de `MAX_BACKEND_TEST_REF`:
+
+```text
+c789ac5f65248d5e24838fb12c9046e3b4666332
+```
+
+El token y la referencia cumplen funciones diferentes: la variable contiene el SHA del backend, no el contenido del secreto. Los CI básicos funcionan sin este token; el acceso privado es necesario para el workflow de integración.
+
+![Secreto de lectura del backend registrado en Actions](assets/MAX-CI-Web-Secreto-Backend.png)
+
+*Figura 7.10. Configuración del secreto MAX_BACKEND_READ_TOKEN en el frontend, sin exponer su valor.*
+
+![Variable con el commit del backend para la integración](assets/MAX-CI-Web-Variable-Backend-Ref.png)
+
+*Figura 7.11. MAX_BACKEND_TEST_REF fija el commit completo utilizado durante las pruebas reales.*
+
+La [ejecución 37701471163](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/actions/runs/37701471163), correspondiente al evento **`pull_request`** del [PR #1 del frontend](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/pull/1), terminó correctamente en su **tercer intento**. El workflow prepara MySQL nativo, descarga y verifica el backend, inicia la API de pruebas sin R2 y ejecuta BDD y los recorridos web.
+
+| Resultado de integración | Valor comprobado |
+|---|---|
+| JUnit del backend | 63 aprobadas, 0 fallos, 0 errores y 0 omitidas |
+| BDD | Nueve escenarios aprobados; 32 pasos de comportamiento y 18 hooks aprobados |
+| Playwright real | Dos recorridos aprobados: escritorio y web móvil |
+| Entorno | API y MySQL de pruebas dentro del runner, con datos sintéticos |
+| Artefacto | `real-integration-c33ba65c3fd13f95fecd37259c2a5e22ac8a0d01` |
+| Reportes conservados | Cucumber JSON/HTML, Playwright JSON/HTML, Surefire XML/TXT y log de la API |
+
+El SHA `c33ba65c3fd13f95fecd37259c2a5e22ac8a0d01` identifica el commit de combinación utilizado para probar el PR. Su presencia no significa que el equipo haya fusionado la rama en `main`.
+
+![Pasos aprobados de integración web con backend y MySQL reales](assets/MAX-CI-Web-Integracion-Pasos.png)
+
+*Figura 7.12. El job integra preparación de MySQL, validación del backend, inicio de la API y pruebas BDD/UI reales.*
+
+![Integración aprobada y artefacto real-integration disponible](assets/MAX-CI-Web-Integracion-Resultado-Artefacto.png)
+
+*Figura 7.13. El tercer intento finaliza con Success y conserva el artefacto de integración. La advertencia visible sobre una acción basada en Node 20 no impidió esta ejecución.*
+
+**Verificación mediante pull requests**
+
+| Repositorio | Pull request | Evidencia al cierre |
+|---|---|---|
+| Frontend | [PR #1](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/pull/1) | CI y workflow de integración aprobados; PR abierto |
+| Backend | [PR #1](https://github.com/PersonalProjects5443/MAX_DEV_BACK/pull/1) | Checks de CI por push y pull_request aprobados; PR abierto |
+| Mobile | [PR #1](https://github.com/1ASI0732-2620-9086/MOBILE/pull/1) | Checks de CI por push y pull_request aprobados; PR abierto |
+| Landing académica | Sin PR acreditado en esta entrega | Se conserva la ejecución aprobada por push |
+
+![Apertura del pull request del frontend](assets/MAX-CI-Web-PR-Abierto.png)
+
+*Figura 7.14. Registro inicial del PR #1 del frontend. Los checks en cola corresponden a ese momento y no al resultado final.*
+
+![Checks finales del pull request del frontend aprobados](assets/MAX-CI-Web-PR-Checks-Aprobados.png)
+
+*Figura 7.15. Estado posterior del PR: CI e integración aprobados. El check visible de Cloudflare no demuestra por sí solo un nuevo despliegue a producción.*
+
+![Checks del pull request del backend aprobados](assets/MAX-CI-Backend-PR-Checks-Aprobados.png)
+
+*Figura 7.16. El PR del backend presenta verificaciones aprobadas de los eventos push y pull_request.*
+
+![Checks del pull request móvil aprobados](assets/MAX-CI-Mobile-PR-Checks-Aprobados.png)
+
+*Figura 7.17. La lista del PR móvil muestra checks aprobados para push y pull_request. El detalle seleccionado a la derecha corresponde a la ejecución por push.*
 
 ## 7.2. Continuous Delivery
 
-La entrega continua se encuentra en fase de preparación de candidatos identificables. Se empaquetaron artefactos locales y se describió cómo recuperar una construcción validada conservando su versión y sus sumas de comprobación. No se acredita despliegue en staging ni promoción remota de una versión.
+La entrega continua alcanzó la **construcción y conservación de candidatos verificables en GitHub Actions**. Cada componente genera reportes y un artefacto asociado al SHA evaluado. Esta entrega no acredita una promoción a staging ni la ejecución de un workflow de entrega a un entorno externo.
 
 ### 7.2.1. Tools and Practices
 
-Artefactos internos locales en `docs/evidencias/artefactos/`: `backend-local.jar`, `web-browser/`, `web-functions/`, `landing-react/` y `android-interno-debug.apk`. `manifest.json` registra tamaños y SHA-256. El JAR de la API evaluada tiene SHA **2198991ECE94BA42FF59BED26026CE90AE51EFFC92B548C2906B9803CA24A422**, con health UP. La fuente web fue recorrida con servidor de desarrollo; no se afirma verificación del Service Worker del bundle de producción. El APK normal debug construido al final es distinto del APK instrumental utilizado por el recorrido; no es una release firmada ni se presenta como publicación móvil validada.
+Los artefactos de Actions separan los resultados de las pruebas de los archivos construidos. La referencia al commit permite relacionar código, ejecución y candidato; las sumas SHA-256 del empaquetado permiten comprobar la integridad de los archivos cuando corresponda.
 
-No se encontró staging confirmado en configuración/documentación ni fue proporcionada una URL. Los resultados corresponden a Windows/MySQL/API/emulador locales. Ambiente clínico previsto: Pages/Railway/R2; configuración separada mediante variables, no secretos guardados. Falta canal de distribución de Android y credenciales de firma/canal de pruebas. iOS no aplica.
-<p align="center">
-  <img src="assets/MAX-Delivery-Tools-Practices.png" alt="Configuración de entrega y límites de la validación local." width="1000">
-</p>
+| Componente | Artefacto de reportes | Artefacto candidato | Contenido principal |
+|---|---|---|---|
+| Backend | `backend-reports-<SHA>` | `backend-candidate-<SHA>` | Reportes, JAR y sumas SHA-256 |
+| Frontend | `web-reports-<SHA>` | `web-candidate-<SHA>` | Vitest, Playwright, auditorías, bundle y proxy |
+| Mobile | `android-reports-<SHA>` | `android-internal-<SHA>` | Eventos de pruebas y APK debug interno |
+| Landing académica | `landing-academic-reports-<SHA>` | `landing-academic-candidate-<SHA>` | Reportes de contratos y sitio estático |
+| Integración web | `real-integration-<SHA>` | No genera un candidato de producción separado | Reportes de BDD, Playwright, JUnit y log backend |
 
-<p align="center"><em>Figura 27. Configuración de entrega y límites de la validación local.</em></p>
+Los identificadores de código de las cuatro ejecuciones por push son:
+
+| Repositorio | SHA |
+|---|---|
+| Backend | `c789ac5f65248d5e24838fb12c9046e3b4666332` |
+| Frontend | `e8e395ce4784d2fa166f49acbca0c8e673688842` |
+| Mobile | `ea321f92755050bf531eef0be973808a9abf312d` |
+| Landing académica | `a4aeab2ab48dade34d2aed0cce153285cc462d63` |
+
+![Artefacto candidato del backend cargado correctamente](assets/MAX-CI-Backend-Artefacto.png)
+
+*Figura 7.18. El candidato del backend queda disponible en la ejecución de Actions junto con su identificación de versión.*
 
 ### 7.2.2. Stages Deployment Pipeline Components
 
-Se añadieron cuatro `.github/workflows/delivery.yml`. Solo manual: recibe `ci_run_id`; exige run completado y success de `ci.yml`, main y evento push/manual; recupera el candidato del mismo SHA; verifica `commit.txt` y `SHA256SUMS`; conserva el JSON del run y el candidato. No reconstruye ni despliega, no usa `pull_request_target`, permisos limitados a lectura de código/Actions. Sin staging, la etapa remota permanece pendiente.
+| Etapa | Estado de la entrega | Evidencia o requisito |
+|---|---|---|
+| Construcción | Completada en los cuatro repositorios | Ejecuciones CI aprobadas |
+| Verificación automática | Completada para las suites descritas | Reportes y capturas de los capítulos VI y VII |
+| Empaquetado | Completado | Candidatos y reportes en Actions |
+| Validación integrada | Completada para backend/web/MySQL de pruebas | Nueve escenarios BDD y dos recorridos UI en el runner |
+| Preparación de una entrega a un entorno externo | Pendiente de ejecución acreditada | Seleccionar candidato, entorno y controles de promoción |
+| Despliegue y validación en staging | No acreditados | Destino de staging, configuración y ejecución verificable |
+| Promoción a producción | No ejecutada en esta entrega | Revisión de disparadores, autorización y plan de recuperación |
 
-La versión local fue iniciada con `Start-MaxTestApi.ps1`, validada con health/BDD/UI y empaquetada con `Package-MaxLocalCandidate.ps1`. El manifest declara **no elegible para producción**: auditoría y validaciones externas pendientes. No se ejecutó delivery en Actions ni se presentó aprobación/transferencia a staging.
-<p align="center">
-  <img src="assets/MAX-Delivery-Pipeline.png" alt="Diagrama de preparación de candidatos; sin despliegue de staging acreditado." width="1000">
-</p>
+La documentación previa describe workflows de preparación manual de entrega (`delivery.yml`). Las capturas actuales corresponden a CI y a integración, por lo que no se les atribuye una ejecución de esos workflows ni un despliegue de staging. El entorno aislado de integración en Actions permite probar componentes juntos, pero no constituye un ambiente de staging publicado.
 
-<p align="center"><em>Figura 28. Diagrama de preparación de candidatos; sin despliegue de staging acreditado.</em></p>
-
-<p align="center">
-  <img src="assets/MAX-Delivery-Local-Validacion.png" alt="Reporte de la validación local del candidato; no es evidencia de staging." width="1000">
-</p>
-
-<p align="center"><em>Figura 29. Reporte de la validación local del candidato; no es evidencia de staging.</em></p>
-
-`MAX-Delivery-Staging.png` no se generó: no hay un despliegue de staging comprobado. Para continuar, proporcionar URL/ubicación de staging, permisos limitados y configuración protegida; usar una copia restaurada y bucket de prueba, sin modificar producción.
+El APK generado es de tipo debug para pruebas internas. Permanecen fuera de esta evidencia la firma de una versión release, su distribución en un canal móvil y la validación en un dispositivo físico.
 
 ## 7.3. Continuous Deployment
 
-El despliegue continuo clínico no queda demostrado con la entrega recibida. La evidencia remota disponible corresponde a ejecuciones históricas de la landing académica y a lecturas de disponibilidad. Estas observaciones se conservan como antecedentes, diferenciadas de una publicación nueva del backend, de la aplicación web o de Android.
+La entrega conserva las integraciones de publicación existentes del proyecto y documenta sus límites. Los resultados de CI confirman pruebas y construcción; **no acreditan un nuevo despliegue clínico a producción**. Los PR se conservaron abiertos y no se fusionó la rama de trabajo en `main`.
 
 ### 7.3.1. Tools and Practices
 
-Aplicación clínica: Cloudflare Pages, Railway/MySQL y R2 son los destinos descritos por el proyecto. El proxy Pages real está en `MAX_FRONT/MAX/functions/api/[[path]].ts`, destino fijo `MAX_API_ORIGIN`, cookies y `Set-Cookie`, con `MAX_PROXY_SECRET` opcional compartido con backend. Variables backend: `MYSQLHOST`, `MYSQLPORT`, `MYSQLDATABASE`, `MYSQLUSER`, `MYSQLPASSWORD`, `MAX_JWT_SECRET`, `MAX_JWT_EXPIRATION_MINUTES`, `MAX_CORS_ALLOWED_ORIGINS`, `MAX_PROXY_SECRET` y `MAX_R2_*` según README/configuración. Configurar valores en la plataforma; no incluir secretos en el informe.
+| Componente | Plataforma o integración existente | Situación y revisión pendiente |
+|---|---|---|
+| Backend | Railway | Existe integración; falta confirmar el disparador y la rama de despliegue antes de una futura fusión |
+| Frontend Angular | Cloudflare Pages | Existe integración y un check visible en el PR; deben confirmarse la rama de producción y las condiciones de publicación |
+| Mobile Flutter | Sin despliegue existente identificado | El resultado disponible es el APK debug del CI |
+| Landing académica HTML | GitHub Pages | Publicación existente desde `main`, según el registro de configuración del proyecto; esta entrega conserva solo la nueva evidencia de CI por push |
+| Landing React | Repositorio diferente | Revisada previamente de forma local y sin publicación en esta entrega |
 
-Los disparadores/branch seleccionada, checks antes de publicar, aprobaciones y revisión activa de Pages/Railway **no pudieron verificarse en sus dashboards**. No se afirma despliegue continuo clínico. Esta entrega configura **CI y preparación manual de candidatos**; no publica automáticamente en producción. El historial de GitHub Pages acredita una automatización anterior de la landing estática académica, no del backend/Angular/Flutter.
-<p align="center">
-  <img src="assets/MAX-Deployment-Tools-Practices.png" alt="Revisión de configuración de publicación; sin nuevo despliegue clínico." width="1000">
-</p>
-
-<p align="center"><em>Figura 30. Revisión de configuración de publicación; sin nuevo despliegue clínico.</em></p>
+La configuración de producción del backend, la base de datos, el proxy y el almacenamiento debe mantenerse en las plataformas correspondientes. El secreto de lectura usado por la integración web sirve para obtener el código del backend privado y no se utiliza como credencial de producción.
 
 ### 7.3.2. Production Deployment Pipeline Components
 
-Evidencia histórica real: [run Pages 35287404692](https://github.com/1ASI0732-2620-9086/LANDING-PAGE/actions/runs/35287404692), `pages build and deployment`, success, **17/09/2026 23:33:56 UTC**, SHA `e7352a7e834445a174568f22c5d54217ebcc5c48`. JSON original del run/listado y jobs: `landing-academic-actions.json`, `landing-academic-actions-jobs.json`. Hubo otro run success y uno cancelled; no se ocultaron. El workflow dinámico de Pages demuestra esa ejecución, pero sin acceso a settings no se verifica aquí qué aprobación/evento regula futuras publicaciones.
+Para una futura publicación, la secuencia prevista comprende seleccionar una versión aprobada, revisar la compatibilidad de migraciones, confirmar el respaldo y la recuperación, ejecutar el despliegue autorizado y verificar la versión publicada. En esta entrega, el estado de esos componentes es el siguiente:
 
-Lecturas del 07/10/2026 15:31:40 America/Lima: landing académica HTTP 200 con título MAX HealthTech; Railway `/actuator/health` HTTP 200 y UP. No se verificó el SHA activo de ninguno. Estas lecturas no acreditan funcionamiento clínico completo, integración Cloudflare/Railway ni publicación de los cambios locales. Fuente original: `remote-health-readonly.json`.
-<p align="center">
-  <img src="assets/MAX-Production-Pipeline.png" alt="Reporte de ejecuciones históricas de la landing académica en GitHub Pages." width="1000">
-</p>
+| Componente del proceso | Estado al cierre |
+|---|---|
+| Código y pruebas identificados por SHA | Disponibles en la rama de trabajo y las ejecuciones de Actions |
+| Revisión de PR y checks | Checks aprobados en backend, frontend y mobile; PR sin fusionar |
+| Protección de `main` y aprobaciones obligatorias | Configuración no verificada en esta entrega |
+| Disparadores de Railway y Cloudflare | Revisión pendiente antes de fusionar |
+| Entorno de staging y ensayo de migración | Sin ejecución acreditada |
+| Nuevo despliegue de estos candidatos a producción | No ejecutado |
+| Comprobación del SHA activo después de publicar | No aplica a esta entrega, al no haberse realizado una nueva publicación |
+| Ensayo de recuperación o rollback de producción | No ejecutado |
 
-<p align="center"><em>Figura 31. Reporte de ejecuciones históricas de la landing académica en GitHub Pages.</em></p>
+La evidencia presentada acredita integración continua, verificación funcional automatizada y preparación de artefactos. Permanecen pendientes la entrega a un staging confirmado y la validación de una publicación nueva a producción.
 
-<p align="center">
-  <img src="assets/MAX-Production-Validacion.png" alt="Lecturas HTTP y health registradas; no verifican la versión activa ni el flujo clínico completo." width="1000">
-</p>
-
-<p align="center"><em>Figura 32. Lecturas HTTP y health registradas; no verifican la versión activa ni el flujo clínico completo.</em></p>
-
-Secuencia preparada para revisión (sin ejecutar): candidato aprobado → copia protegida/backup y ensayo de restauración → preflight/migraciones compatibles → backend y proxy → Angular → verificaciones sintéticas autorizadas → registrar versiones y reabrir. Antes de cualquier publicación nueva se necesita autorización explícita, destinos y acceso a controles remotos.
-
-Recuperación documentada en `docs/pipelines/README.md`: restablecer aplicaciones a una versión compatible previa, conservar ampliaciones de esquema y no restaurar un backup antiguo sobre nuevas escrituras. No se ensayó rollback en producción ni se eliminó contenido de R2. Ninguna automatización nueva de producción se activó.
-
-## Defectos encontrados y correcciones verificadas
-
-| Hallazgo | Tipo | Corrección/estado | Archivo y evidencia |
-|---|---|---|---|
-| Estudio Flutter enviaba fecha sin hora; API devolvía Invalid date/time | Producto, dentro del flujo probado | Añadir T00:00:00 únicamente a yyyy-MM-dd; conservar fechas ya completas | `lib/data/max_api.dart`; regression red 1 fallo/1 pass, green 2 pass; recorrido nativo aprobado |
-| Visor Flutter usaba Image.network para data URI | Producto, lectura histórica/local | Image.memory para data:image; conservar HTTP network y error visible para referencia inválida | `lib/features/shared/study_viewer.dart`; `test/study_viewer_test.dart`; intento3 fallido y final aprobado |
-| Puerto web 14200 no incluido en CORS de entorno de prueba | Configuración de prueba | CORS local explícito, sin ampliar producción | `scripts/Start-MaxTestApi.ps1`; intento1 web 403, final aprobado |
-| Selector DNI Android encontraba búsqueda y modal | Automatización | Seleccionar campo del modal (último visible) | `integration_test/max_system_test.dart`; intento1 Too many elements |
-| Test usaba texto “Registrar estudio”; botón real “Adjuntar estudio” | Automatización | Selector corregido; UI sin cambios | Web intento2 vs final |
-| Host Angular del visor no tiene caja visible; modal hijo sí | Automatización | Aserción sobre modal real y naturalWidth | Web intento3 vs final |
-| Repetir suite MySQL reutilizaba DNI de pruebas | Aislamiento de pruebas | Crear esquema UUID por ejecución y eliminar solo ese esquema guardado | `MySqlWorkflowIntegrationTest.java`; ejecución fallida 5, final 63/63 |
-| Surefire conserva XML antiguos | Recopilación de evidencia | Copiar solo clases nombradas por log final; total corroborado en log | `Collect-MaxEvidence.ps1`; final 63, no sumar archivo obsoleto |
-| Capturas Android se perdían al reemplazar reportData | Automatización/evidencia | Conservar campos existentes y screenshots | `integration_test/max_system_test.dart`; dos capturas reales del run final |
-| Auditoría Angular | Dependencias, pendiente de revisión | 1 high de ejecución/7 total; applicability SSR por revisar; sin force update | JSON/log audit; CI de candidatos bloqueará con este lockfile |
-
-Los intentos fallidos están conservados y no forman parte del total final aprobado: `web-system-attempt1/2/3`, logs Android attempts 1/2/3, `backend-final.log` y `backend-final-failed-surefire/`. No hubo cambios visuales, renombre de paquetes, endpoints ni reglas clínicas; las dos correcciones de producto adaptan transporte/visor a contratos existentes.
-
-## Pendientes y datos necesarios
-
-Los archivos fuente de las pruebas, los nueve workflows y los scripts PowerShell mencionados permanecen en el workspace del equipo; no se incluyeron en `docs.zip` ni en `assets.zip`. Para permitir la reproducción, deben conservarse en los repositorios correspondientes y enlazarse desde el informe. Los reportes por sí solos no sustituyen esos archivos.
-
-No hay implementación iOS activa en la entrega inspeccionada. Esta constatación describe el alcance técnico disponible; no sustituye los requisitos de diseño o implementación que correspondan según el enunciado y el alcance acordado del proyecto.
-
-| Pendiente | Qué hace falta | Estado verificable |
-|---|---|---|
-| Staging clínico | URL/ubicación confirmada, configuración y permisos limitados | Bloqueado externamente; validación local completada |
-| Actions remoto nuevo | Autorizar publicación de los cambios; acceso a repo/Actions y MAX_BACKEND_READ_TOKEN para integración web | Workflows locales y actionlint aprobados; sin run nuevo |
-| Gates/PR | Configurar protección de main/checks/revisiones con acceso al repositorio | No verificado |
-| R2 integración | Bucket de pruebas, credenciales limitadas e inventario sintético | No ejecutado; no tocar bucket real |
-| Copia real para migración | Backup protegido/restaurable y entorno aislado autorizado | Se probó legacy sintético; no copia clínica real |
-| Android release/dispositivo | Keystore/canal de pruebas y dispositivo físico | Emulador y debug local aprobados; release/distribución pendientes |
-| Picker/PDF/escenarios restantes | Automatización del selector del SO, lector PDF disponible y casos ampliados | Parcial, explicitado en 6.1.4 |
-| Auditoría | Revisar avisos/aplicabilidad, autorizar parche compatible y repetir gates | Fallo audit conservado |
-| Publicación clínica | Acceso a dashboards, destino, SHA candidato, respaldo/recuperación y autorización expresa | No se realizó despliegue |
-| iOS | Nueva plataforma/configuración, macOS/Xcode si se decide soportar | No aplica al producto actual |
-
-## Archivos modificados y cómo comprobarlos
-
-Inventario preciso en `reportes/changed-files.json`. Backend: pruebas nuevas y workflows; código principal conservado. Web: tres specs nuevos, BDD, recorridos UI, proxies/config de pruebas, scripts/dependencia Cucumber/lock y workflows. Flutter: cinco suites nuevas + fake API, integración/driver, SDK integration_test, dos correcciones pequeñas y workflows. Landing React: prueba de fecha, script test y workflows. Raíz: scripts, documentos, reportes y assets. No se cambió el remoto de landing ni se sobrescribió el README remoto de REPORT.
-
-Además de los comandos anteriores:
-
-```powershell
-Push-Location MAX_LANDING
-npm.cmd test
-npm.cmd run lint
-npm.cmd run build
-Pop-Location
-# Verificación estática (requiere actionlint instalado):
-$flows=Get-ChildItem MAX_BACK\max-backend\.github\workflows,MAX_FRONT\MAX\.github\workflows,MAX_MOBILE\.github\workflows,MAX_LANDING\.github\workflows -Filter *.yml
-actionlint -shellcheck= -pyflakes= @($flows.FullName)
-# Auditoría actual: el fallo queda visible, no significa que las pruebas funcionales fallen.
-Push-Location MAX_FRONT\MAX
-npm.cmd audit --omit=dev
-Pop-Location
-```
-
-## Inventario de imágenes y ubicación en el informe
-
-Cada PNG de resultados se identifica como reporte renderizado; cada diagrama como configuración. Ninguno sustituye una ejecución que no ocurrió. Las fuentes están en `reportes/` y los archivos UI provienen de Playwright/Flutter.
-
-| Apartado | Evidencia requerida | Archivo | Fuente | Estado | Pendiente |
-|---|---|---|---|---|---|
-| 6.1.1.1.1 | Unidades IAM/Backend | `assets/MAX-UT-IAM-Backend.png` | XML/JSON/eventos reales | Generada | — |
-| 6.1.1.1.2 | Unidades IAM/iOS | `assets/MAX-UT-IAM-iOS.png` | Sin plataforma iOS | No aplica; no generada | Decidir soporte iOS |
-| 6.1.1.1.3 | Unidades IAM/Android | `assets/MAX-UT-IAM-Android.png` | XML/JSON/eventos reales | Generada | — |
-| 6.1.1.1.4 | Unidades IAM/Web | `assets/MAX-UT-IAM-Web.png` | XML/JSON/eventos reales | Generada | — |
-| 6.1.1.2.1 | Unidades Patients/Backend | `assets/MAX-UT-Patients-Backend.png` | XML/JSON/eventos reales | Generada | — |
-| 6.1.1.2.2 | Unidades Patients/iOS | `assets/MAX-UT-Patients-iOS.png` | Sin plataforma iOS | No aplica; no generada | Decidir soporte iOS |
-| 6.1.1.2.3 | Unidades Patients/Android | `assets/MAX-UT-Patients-Android.png` | XML/JSON/eventos reales | Generada | — |
-| 6.1.1.2.4 | Unidades Patients/Web | `assets/MAX-UT-Patients-Web.png` | XML/JSON/eventos reales | Generada | — |
-| 6.1.1.3.1 | Unidades Studies/Backend | `assets/MAX-UT-Studies-Backend.png` | XML/JSON/eventos reales | Generada | — |
-| 6.1.1.3.2 | Unidades Studies/iOS | `assets/MAX-UT-Studies-iOS.png` | Sin plataforma iOS | No aplica; no generada | Decidir soporte iOS |
-| 6.1.1.3.3 | Unidades Studies/Android | `assets/MAX-UT-Studies-Android.png` | XML/JSON/eventos reales | Generada | — |
-| 6.1.1.3.4 | Unidades Studies/Web | `assets/MAX-UT-Studies-Web.png` | XML/JSON/eventos reales | Generada | — |
-| 6.1.2.1 | MAX-IT-IAM | `assets/MAX-IT-IAM.png` | docs/evidencias/reportes/backend-final-surefire/ | REPORTE RENDERIZADO · VALIDACIÓN LOCAL | — |
-| 6.1.2.2 | MAX-IT-Patients | `assets/MAX-IT-Patients.png` | docs/evidencias/reportes/backend-final-surefire/ | REPORTE RENDERIZADO · VALIDACIÓN LOCAL | — |
-| 6.1.2.3 | MAX-IT-Studies | `assets/MAX-IT-Studies.png` | docs/evidencias/reportes/backend-final-surefire/ | REPORTE RENDERIZADO · VALIDACIÓN LOCAL | — |
-| 6.1.2.5 | MAX-IT-Ejecucion-Backend | `assets/MAX-IT-Ejecucion-Backend.png` | docs/evidencias/reportes/backend-final-isolated.log | REPORTE RENDERIZADO · VALIDACIÓN LOCAL | — |
-| 6.1.2.5 | MAX-IT-Ejecucion-Web | `assets/MAX-IT-Ejecucion-Web.png` | bdd.json; system-web.json; bdd-final.log; web-system-final.log | REPORTE RENDERIZADO · VALIDACIÓN LOCAL | — |
-| 6.1.3.1 | MAX-BDD-IAM-Resultados | `assets/MAX-BDD-IAM-Resultados.png` | docs/evidencias/reportes/bdd.json | REPORTE RENDERIZADO · VALIDACIÓN LOCAL | — |
-| 6.1.3.2 | MAX-BDD-Patients-Resultados | `assets/MAX-BDD-Patients-Resultados.png` | docs/evidencias/reportes/bdd.json | REPORTE RENDERIZADO · VALIDACIÓN LOCAL | — |
-| 6.1.3.3 | MAX-BDD-Studies-Resultados | `assets/MAX-BDD-Studies-Resultados.png` | docs/evidencias/reportes/bdd.json | REPORTE RENDERIZADO · VALIDACIÓN LOCAL | — |
-| 6.1.4.1 | MAX-System-Web-Resultados | `assets/MAX-System-Web-Resultados.png` | docs/evidencias/reportes/system-web.json; system-web-artifacts/ | REPORTE RENDERIZADO · VALIDACIÓN LOCAL | — |
-| 6.1.4.1 | MAX-System-Web-Recorrido | `assets/MAX-System-Web-Recorrido.png` | Playwright/Flutter captura de UI | Captura real UI | — |
-| 6.1.4.1 | MAX-System-Web-Mobile-Recorrido | `assets/MAX-System-Web-Mobile-Recorrido.png` | Playwright/Flutter captura de UI | Captura real UI | — |
-| 6.1.4.2 | MAX-System-Android-Resultados | `assets/MAX-System-Android-Resultados.png` | android-system-evidence-final.log; android-system-response.json; android-environment.json | REPORTE RENDERIZADO · VALIDACIÓN LOCAL | — |
-| 6.1.4.2 | MAX-System-Android-Recorrido | `assets/MAX-System-Android-Recorrido.png` | Playwright/Flutter captura de UI | Captura real UI | — |
-| 6.1.4.2 | MAX-System-Android-Estudio | `assets/MAX-System-Android-Estudio.png` | Playwright/Flutter captura de UI | Captura real UI | — |
-| 6.1.4.3 | MAX-System-iOS-Resultados | `assets/MAX-System-iOS-Resultados.png` | Sin ejecución/plataforma | No generada | iOS no aplica |
-| 7.1.1 | MAX-CI-Tools-Practices | `assets/MAX-CI-Tools-Practices.png` | workflows-actionlint.log; actions-pins.json; web-audit-production.json; archivos CI locales | CONFIGURACIÓN PREPARADA · NO EJECUCIÓN REMOTA | — |
-| 7.1.2 | MAX-CI-Pipeline | `assets/MAX-CI-Pipeline.png` | MAX_BACK/max-backend/.github/workflows/ci.yml; MAX_BACK/max-backend/.github/workflows/delivery.yml; MAX_FRONT/MAX/.github/workflows/ci.yml; MAX_FRONT/MAX/.github/workflows/delivery.yml; MAX_FRONT/MAX/.github/workflows/integration.yml; MAX_LANDING/.github/workflows/ci.yml; MAX_LANDING/.github/workflows/delivery.yml; MAX_MOBILE/.github/workflows/ci.yml; MAX_MOBILE/.github/workflows/delivery.yml | DIAGRAMA DE CONFIGURACIÓN · ACTIONS SIN EJECUTAR | — |
-| 7.1.2 | MAX-CI-Resultados | `assets/MAX-CI-Resultados.png` | Sin ejecución/plataforma | No generada | Publicar y ejecutar CI con autorización |
-| 7.2.1 | MAX-Delivery-Tools-Practices | `assets/MAX-Delivery-Tools-Practices.png` | docs/pipelines/README.md; delivery.yml; local-candidate.json | CONFIGURACIÓN REVISADA · VALIDACIÓN LOCAL | — |
-| 7.2.2 | MAX-Delivery-Pipeline | `assets/MAX-Delivery-Pipeline.png` | Los cuatro .github/workflows/delivery.yml; docs/pipelines/README.md | DIAGRAMA DE CONFIGURACIÓN · SIN DESPLIEGUE | — |
-| 7.2.2 | MAX-Delivery-Local-Validacion | `assets/MAX-Delivery-Local-Validacion.png` | local-candidate.json; bdd-final.log; web-system-final.log; android-system-evidence-final.log | REPORTE RENDERIZADO · CANDIDATO LOCAL REAL | — |
-| 7.2.2 | MAX-Delivery-Staging | `assets/MAX-Delivery-Staging.png` | Sin ejecución/plataforma | No generada | Staging confirmado |
-| 7.3.1 | MAX-Deployment-Tools-Practices | `assets/MAX-Deployment-Tools-Practices.png` | docs/pipelines/README.md; Functions API; landing-academic-actions.json | REVISIÓN DE CONFIGURACIÓN · SIN PUBLICACIÓN NUEVA | — |
-| 7.3.2 | MAX-Production-Pipeline | `assets/MAX-Production-Pipeline.png` | landing-academic-actions.json; landing-academic-actions-jobs.json | REPORTE RENDERIZADO · EJECUCIONES REMOTAS HISTÓRICAS | — |
-| 7.3.2 | MAX-Production-Validacion | `assets/MAX-Production-Validacion.png` | docs/evidencias/reportes/remote-health-readonly.json | REPORTE RENDERIZADO · SOLO HTTP / HEALTH | — |
-| 6.1 complementario | MAX-UT-Landing-Web | `assets/MAX-UT-Landing-Web.png` | docs/evidencias/reportes/landing-unit.log | REPORTE RENDERIZADO · VALIDACIÓN LOCAL | — |
-
----
 
 ## Conclusiones
 
