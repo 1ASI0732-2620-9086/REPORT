@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-11-12T23:27:48.586+00:00",
+  "scope": "drill",
+  "channel": "github_issues",
+  "delivery": "no_notification_needed",
+  "dispatched_events": 0,
+  "email_receipt": "not_verified",
+  "events": [
+    {
+      "target_id": "exercise-43329041988",
+      "status": "healthy",
+      "action": "healthy"
+    }
+  ]
+}

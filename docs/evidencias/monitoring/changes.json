@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-11-12T23:25:20.804505+00:00",
+  "checked_at": "2026-11-12T23:33:18.401399+00:00",
   "branch": "feature/report-chapter-7",
   "base_commit": "1fa501e925ecf97289df27652a4066bbb4992cc2",
-  "scope": "REPORT: sección 7.4, monitor y evidencias locales",
+  "scope": "REPORT: sección 7.4, monitor y evidencias locales y remotas",
   "files": [
     {
       "path": ".github/workflows/monitoring.yml",
@@ -100,6 +100,141 @@
       "sha256": null
     },
     {
+      "path": "docs/evidencias/monitoring/final-local-validation-2026-11-12/actionlint.log",
+      "change": "added",
+      "sha256": "27e5df617a47228b172e75d81ad33908b97044b4c205fc606bf0c12de8a01972"
+    },
+    {
+      "path": "docs/evidencias/monitoring/final-local-validation-2026-11-12/tests.log",
+      "change": "added",
+      "sha256": "e14855cc2158fab765a7aff831e56eb0aa49d9b8798f32e47310d4dbd217130e"
+    },
+    {
+      "path": "docs/evidencias/monitoring/final-local-validation-2026-11-12/validation.json",
+      "change": "added",
+      "sha256": "b9f2bd876aef9605e64ce71dee03f172bd81f09e6ecbb8e2e6b443b44135b4da"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/README.md",
+      "change": "added",
+      "sha256": "262f8e9cd3e54ac2a4a1c62d97cec7098a957e2862c76bec81a5ad9e3e17fdbd"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/archives/drill.zip",
+      "change": "added",
+      "sha256": "ec8a2ecaf546517c367c931c42c6ee084e7795a65b7ca5e78baa45db95fb1809"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/archives/production.zip",
+      "change": "added",
+      "sha256": "ba728769da6f62f544ca53a8ccaeb0351f7642e1890b351982e5057662695985"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/artifacts.json",
+      "change": "added",
+      "sha256": "7b0c7b1196bbbb80da50c439ea78081778c63a484857f9b3d5c74bff3befa342"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/cleanup.json",
+      "change": "added",
+      "sha256": "728f9bbadd636f0882b746818845536a0c01dc62775c7a6951ffaba1e5920511"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/drill/01-healthy/notifications.json",
+      "change": "added",
+      "sha256": "60cfe72dfc8215216cbbda929a8b0e745acb4f560b93425d01dc991b0881d1fd"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/drill/01-healthy/report.json",
+      "change": "added",
+      "sha256": "467d4ff710ae6c3c7c373b318e08c55571523b0d9455943216c21800f875da19"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/drill/01-healthy/report.md",
+      "change": "added",
+      "sha256": "f02b2b9cdfbedebd95a40f1130652ffc60b4c7b0b2caa52829c18aafbf1a38f6"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/drill/02-failure/notifications.json",
+      "change": "added",
+      "sha256": "27bfacf84c7007d580df9df5501745e36baadc0e5bdac7daa30987684e0d16e2"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/drill/02-failure/report.json",
+      "change": "added",
+      "sha256": "28904bb14c80067b279f14dc554fd29b37cf051f3969f5161f8cc78f0a3c72a2"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/drill/02-failure/report.md",
+      "change": "added",
+      "sha256": "17b9e17c5993a7d3dc3f30fc4e26aa9348859e0628dc33583ea15871b62e8684"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/drill/03-recovery/notifications.json",
+      "change": "added",
+      "sha256": "da68d020c9369de014842f2de12c9e7b795c5aa3ac4d3d892daa79e9c32581d5"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/drill/03-recovery/report.json",
+      "change": "added",
+      "sha256": "e055e379549e3a99c6f77475862781beb2eafefa9f69ae6129bd25986bdf8ac8"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/drill/03-recovery/report.md",
+      "change": "added",
+      "sha256": "9c713c35964b4bfa91a24feeeaf7412d191b03abdfde5775ad5c79c410dfcbd9"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/drill/exercise.json",
+      "change": "added",
+      "sha256": "c5fb105a294fb9ea60a375f267303851c83f8fa774a97462caf1ca64dd82b863"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/issue-after-cleanup.json",
+      "change": "added",
+      "sha256": "fbbe2e0f66537fc96a7caaf51cb3e842a70e7462c62c3f3e813e23586a47ca59"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/issue-events-after-cleanup.json",
+      "change": "added",
+      "sha256": "808fe76c3a57716bf9f56e19905679911bed19e43c4745025e5719cdb989dfe5"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/issue-events.json",
+      "change": "added",
+      "sha256": "86c54729a772d11a120c09171a3f8f23f02b24e496129388293e03dadada2015"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/issue.json",
+      "change": "added",
+      "sha256": "c10a1a444c334d2cc59f4e2e2e578c6efb3e19959c8d2aec140f53ad2cbe906d"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/jobs.json",
+      "change": "added",
+      "sha256": "55b001c500a32c286dd9939075f8941d856cd2fca2bcc5013477c0b189a75edd"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/production/notifications.json",
+      "change": "added",
+      "sha256": "ac95d0bdb977ea6f83010eef1368c1580d29aa4d0cf359975919970b3acd729e"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/production/report.json",
+      "change": "added",
+      "sha256": "cc7b04f422080f54cd7aa2870d3838844206913aeab58bc674f694b3d21341ef"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/production/report.md",
+      "change": "added",
+      "sha256": "1ea5b0747f17c34ba9a1ba8001091cb1de7937552c972b4fcda23add9ca0bcbf"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329041988/run.json",
+      "change": "added",
+      "sha256": "60301bbe8809ade68aba99e7feb91f17c97bc499b73c401b2d19f16d139ccf23"
+    },
+    {
       "path": "monitoring/check_services.py",
       "change": "added",
       "sha256": "e76676e601ea2b0a66feb22d6f2475376fea3f1dd7b88e053c2de8593b29f77a"
@@ -107,12 +242,12 @@
     {
       "path": "monitoring/exercise.py",
       "change": "added",
-      "sha256": "e06d4a5fedaffaa4a29bed81fc7880fb709ef9f84249c411862e7b1c1752f474"
+      "sha256": "a07a5d039db5968edab6080069845a3067d0e1f7e0732074b7f5a0a63bb479be"
     },
     {
       "path": "monitoring/sync_incidents.py",
       "change": "added",
-      "sha256": "7ef3d42b7f384361e1ca38d2271942115e18eb6a61bb72ad4d5f04ee48af56a5"
+      "sha256": "d433f048ae156a8bd1076ac117fb8d6a37cfb34007f6a5bbc8e5bf760ed1b04c"
     },
     {
       "path": "monitoring/targets.json",
@@ -122,7 +257,7 @@
     {
       "path": "monitoring/test_monitoring.py",
       "change": "added",
-      "sha256": "f227f1fd28f91da2afc4628903cc18774c7b4b2dcdebd405bf497aa1891aa86c"
+      "sha256": "e2b70602c048e9bc6dea6d6b71e4080d76346da48bdaa58961bc2c4bd12d5a3d"
     }
   ],
   "self_hash_note": "El inventario se enumera sin hash propio para evitar una referencia circular"

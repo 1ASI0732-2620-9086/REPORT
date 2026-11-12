@@ -33,7 +33,10 @@ def exercise(output, notify=False):
     if notify and (os.environ.get("GITHUB_ACTIONS") != "true" or not run_id.isdigit()):
         raise ValueError("Las notificaciones del simulacro solo se activan explícitamente en Actions")
     api = GitHubAPI(repository, os.environ.get("GITHUB_TOKEN", "")) if notify else None
-    identifier = "exercise-" + (run_id if notify else "local")
+    attempt = os.environ.get("GITHUB_RUN_ATTEMPT", "1")
+    if notify and not attempt.isdigit():
+        raise ValueError("Intento de ejecución inválido")
+    identifier = "exercise-" + (run_id + "-" + attempt if notify else "local")
     server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
     worker = threading.Thread(target=server.serve_forever, daemon=True)
     worker.start()
@@ -60,6 +63,11 @@ def exercise(output, notify=False):
                     (output / phase / "notifications.json").write_text(
                         json.dumps(notification, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
                     entry["notification_events"] = notification["events"]
+                    expected_action = {"01-healthy": "healthy", "02-failure": "opened", "03-recovery": "recovered"}[phase]
+                    entry["expected_notification_action"] = expected_action
+                    entry["passed"] = entry["passed"] and any(
+                        event["target_id"] == identifier and event["action"] == expected_action
+                        for event in notification["events"])
                 except (RuntimeError, ValueError, KeyError, OSError) as error:
                     entry.update(passed=False, notification_error=type(error).__name__)
             manifest["phases"].append(entry)

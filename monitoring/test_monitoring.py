@@ -4,6 +4,7 @@ import contextlib
 import copy
 import io
 import json
+import os
 import sys
 import tempfile
 import threading
@@ -195,7 +196,8 @@ class IncidentTests(unittest.TestCase):
                 if cls.reject:
                     self.respond(403, {"message": "denied"})
                 else:
-                    self.respond(200, [copy.deepcopy(issue) for issue in cls.issues if issue["state"] == "open"])
+                    self.respond(200, cls.list_override if cls.list_override is not None else
+                                 [copy.deepcopy(issue) for issue in cls.issues if issue["state"] == "open"])
 
             def do_POST(self):
                 payload = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
@@ -210,6 +212,9 @@ class IncidentTests(unittest.TestCase):
                 payload = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
                 cls.writes.append(("PATCH", copy.deepcopy(payload)))
                 issue = next(issue for issue in cls.issues if issue["number"] == int(self.path.rsplit("/", 1)[1]))
+                if cls.ignore_close:
+                    payload.pop("state", None)
+                    payload.pop("state_reason", None)
                 issue.update(payload)
                 self.respond(200, issue)
 
@@ -231,6 +236,8 @@ class IncidentTests(unittest.TestCase):
         type(self).writes = []
         type(self).reject = False
         type(self).drop_assignment = False
+        type(self).list_override = None
+        type(self).ignore_close = False
         self.api = incidents.GitHubAPI("test/report", "synthetic-test-token",
                                        f"http://127.0.0.1:{self.server.server_port}", test_api=True)
 
@@ -274,7 +281,9 @@ class IncidentTests(unittest.TestCase):
 
     def test_duplicate_incidents_require_review_instead_of_more_writes(self):
         incidents.sync(self.report("down"), self.api, "production")
-        type(self).issues.append(copy.deepcopy(type(self).issues[0]))
+        duplicate = copy.deepcopy(type(self).issues[0])
+        duplicate["number"] = 2
+        type(self).issues.append(duplicate)
         with self.assertRaises(RuntimeError):
             incidents.sync(self.report("down"), self.api, "production")
         self.assertEqual(len(type(self).writes), 1)
@@ -302,6 +311,54 @@ class IncidentTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "revisar su asignación"):
             incidents.sync(self.report("down"), self.api, "production", assignee="test-user")
         self.assertEqual(len(type(self).writes), 1)
+
+    def test_new_incident_is_closed_even_when_listing_is_stale(self):
+        type(self).list_override = []
+        opened = incidents.sync(self.report("down"), self.api, "production")
+        repeated = incidents.sync(self.report("down"), self.api, "production")
+        recovered = incidents.sync(self.report("healthy"), self.api, "production")
+        self.assertEqual([opened["events"][0]["action"], repeated["events"][0]["action"],
+                          recovered["events"][0]["action"]], ["opened", "unchanged", "recovered"])
+        self.assertEqual(type(self).issues[0]["state"], "closed")
+        self.assertEqual(len(type(self).writes), 2)
+
+    def test_stale_open_listing_does_not_repeat_a_confirmed_close(self):
+        incidents.sync(self.report("down"), self.api, "production")
+        snapshot = copy.deepcopy(type(self).issues)
+        incidents.sync(self.report("healthy"), self.api, "production")
+        type(self).list_override = snapshot
+        result = incidents.sync(self.report("healthy"), self.api, "production")
+        self.assertEqual(result["events"][0]["action"], "healthy")
+        self.assertEqual(len(type(self).writes), 2)
+
+    def test_api_must_confirm_closed_state(self):
+        incidents.sync(self.report("down"), self.api, "production")
+        type(self).ignore_close = True
+        with self.assertRaisesRegex(RuntimeError, "no confirmó el cierre"):
+            incidents.sync(self.report("healthy"), self.api, "production")
+        self.assertEqual(type(self).issues[0]["state"], "open")
+
+    def run_remote_exercise_against_local_api(self):
+        environment = {"GITHUB_ACTIONS": "true", "GITHUB_RUN_ID": "12345", "GITHUB_RUN_ATTEMPT": "2",
+                       "GITHUB_REPOSITORY": "test/report", "MONITORING_ASSIGNEE": "test-user"}
+        with tempfile.TemporaryDirectory() as directory, mock.patch.dict(os.environ, environment), \
+                mock.patch.object(drill, "GitHubAPI", return_value=self.api):
+            return drill.exercise(directory, notify=True)
+
+    def test_remote_exercise_requires_open_and_close_despite_stale_listing(self):
+        type(self).list_override = []
+        result = self.run_remote_exercise_against_local_api()
+        self.assertTrue(result["passed"])
+        self.assertEqual([phase["notification_events"][0]["action"] for phase in result["phases"]],
+                         ["healthy", "opened", "recovered"])
+        self.assertEqual(type(self).issues[0]["state"], "closed")
+        self.assertIn("exercise-12345-2", type(self).issues[0]["body"])
+
+    def test_remote_exercise_fails_when_api_does_not_close(self):
+        type(self).ignore_close = True
+        result = self.run_remote_exercise_against_local_api()
+        self.assertFalse(result["passed"])
+        self.assertEqual(result["phases"][-1]["notification_error"], "RuntimeError")
 
     def test_cli_without_apply_never_calls_github(self):
         with tempfile.TemporaryDirectory() as directory:

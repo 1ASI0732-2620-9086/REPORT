@@ -22,6 +22,7 @@ class GitHubAPI:
             raise ValueError("Falta GITHUB_TOKEN")
         self.base = f"{api_base}/repos/{repository}"
         self.token = token
+        self.known_issues = {}
 
     def request(self, method, path, payload=None):
         body = None if payload is None else json.dumps(payload).encode("utf-8")
@@ -33,7 +34,11 @@ class GitHubAPI:
         opener = urllib.request.build_opener(NoRedirect())
         try:
             with opener.open(request, timeout=20) as response:
-                return json.loads(response.read())
+                result = json.loads(response.read())
+            if method in {"POST", "PATCH"} and isinstance(result, dict) and "number" in result and "state" in result:
+                # La respuesta de escritura evita depender de la actualización inmediata del listado.
+                self.known_issues[result["number"]] = result
+            return result
         except urllib.error.HTTPError as error:
             code = error.code
             error.close()
@@ -47,7 +52,9 @@ class GitHubAPI:
             batch = self.request("GET", f"/issues?state=open&per_page=100&page={page}")
             issues.extend(issue for issue in batch if "pull_request" not in issue)
             if len(batch) < 100:
-                return issues
+                combined = {issue["number"]: issue for issue in issues}
+                combined.update(self.known_issues)
+                return [issue for issue in combined.values() if issue["state"] == "open"]
         raise RuntimeError("Demasiadas incidencias: no se crearán posibles duplicados")
 
 
@@ -115,9 +122,11 @@ def sync(report, api, scope, run_url="", assignee=""):
         elif result["status"] != "healthy":
             event["action"] = "unchanged"
         elif issue is not None:
-            api.request("PATCH", f"/issues/{issue['number']}", {
+            closed = api.request("PATCH", f"/issues/{issue['number']}", {
                 "state": "closed", "state_reason": "completed",
                 "body": issue["body"] + "\n\n## Recuperación observada\n\n" + summary})
+            if closed.get("state") != "closed":
+                raise RuntimeError("GitHub no confirmó el cierre del incidente")
             event["action"] = "recovered"
             issues.remove(issue)
         if issue is not None:

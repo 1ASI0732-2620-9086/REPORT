@@ -1,0 +1,56 @@
+{
+  "started_at": "2026-11-12T23:27:48.269+00:00",
+  "scope": "drill",
+  "production_outage": false,
+  "notification_mode": "github_issues",
+  "phases": [
+    {
+      "phase": "01-healthy",
+      "expected_http": 200,
+      "observed_http": 200,
+      "healthy": true,
+      "passed": true,
+      "attempts": 1,
+      "notification_events": [
+        {
+          "target_id": "exercise-43329041988",
+          "status": "healthy",
+          "action": "healthy"
+        }
+      ]
+    },
+    {
+      "phase": "02-failure",
+      "expected_http": 503,
+      "observed_http": 503,
+      "healthy": false,
+      "passed": true,
+      "attempts": 3,
+      "notification_events": [
+        {
+          "target_id": "exercise-43329041988",
+          "status": "down",
+          "action": "opened",
+          "issue_url": "https://github.com/1ASI0732-2620-9086/REPORT/issues/1"
+        }
+      ]
+    },
+    {
+      "phase": "03-recovery",
+      "expected_http": 200,
+      "observed_http": 200,
+      "healthy": true,
+      "passed": true,
+      "attempts": 1,
+      "notification_events": [
+        {
+          "target_id": "exercise-43329041988",
+          "status": "healthy",
+          "action": "healthy"
+        }
+      ]
+    }
+  ],
+  "finished_at": "2026-11-12T23:27:50.574+00:00",
+  "passed": true
+}

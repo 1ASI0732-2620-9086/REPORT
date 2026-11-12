@@ -1,0 +1,39 @@
+test_api_must_confirm_closed_state (test_monitoring.IncidentTests.test_api_must_confirm_closed_state) ... ok
+test_api_rejection_is_not_a_confirmed_notification (test_monitoring.IncidentTests.test_api_rejection_is_not_a_confirmed_notification) ... ok
+test_cli_without_apply_never_calls_github (test_monitoring.IncidentTests.test_cli_without_apply_never_calls_github) ... ok
+test_degradation_opens_an_incident (test_monitoring.IncidentTests.test_degradation_opens_an_incident) ... ok
+test_drill_cannot_close_a_production_incident (test_monitoring.IncidentTests.test_drill_cannot_close_a_production_incident) ... ok
+test_duplicate_incidents_require_review_instead_of_more_writes (test_monitoring.IncidentTests.test_duplicate_incidents_require_review_instead_of_more_writes) ... ok
+test_failure_repeat_and_recovery_have_only_two_mutations (test_monitoring.IncidentTests.test_failure_repeat_and_recovery_have_only_two_mutations) ... ok
+test_healthy_service_does_not_create_notification (test_monitoring.IncidentTests.test_healthy_service_does_not_create_notification) ... ok
+test_new_incident_is_closed_even_when_listing_is_stale (test_monitoring.IncidentTests.test_new_incident_is_closed_even_when_listing_is_stale) ... ok
+test_recovery_cannot_close_an_unobserved_service (test_monitoring.IncidentTests.test_recovery_cannot_close_an_unobserved_service) ... ok
+test_remote_exercise_fails_when_api_does_not_close (test_monitoring.IncidentTests.test_remote_exercise_fails_when_api_does_not_close) ... ok
+test_remote_exercise_requires_open_and_close_despite_stale_listing (test_monitoring.IncidentTests.test_remote_exercise_requires_open_and_close_despite_stale_listing) ... ok
+test_report_scope_and_empty_report_are_rejected (test_monitoring.IncidentTests.test_report_scope_and_empty_report_are_rejected) ... ok
+test_requested_assignee_cannot_be_silently_ignored (test_monitoring.IncidentTests.test_requested_assignee_cannot_be_silently_ignored) ... ok
+test_stale_open_listing_does_not_repeat_a_confirmed_close (test_monitoring.IncidentTests.test_stale_open_listing_does_not_repeat_a_confirmed_close) ... ok
+test_token_destination_is_fixed (test_monitoring.IncidentTests.test_token_destination_is_fixed) ... ok
+test_bad_json_is_reported_without_aborting_other_checks (test_monitoring.MonitoringTests.test_bad_json_is_reported_without_aborting_other_checks) ... ok
+test_duplicate_targets_are_rejected (test_monitoring.MonitoringTests.test_duplicate_targets_are_rejected) ... ok
+test_evidence_preserves_attempts_without_response_bodies (test_monitoring.MonitoringTests.test_evidence_preserves_attempts_without_response_bodies) ... ok
+test_exercise_uses_real_loopback_without_dispatching_notifications (test_monitoring.MonitoringTests.test_exercise_uses_real_loopback_without_dispatching_notifications) ... ok
+test_html_requires_expected_content_not_just_200 (test_monitoring.MonitoringTests.test_html_requires_expected_content_not_just_200) ... ok
+test_http_200_with_down_health_is_not_healthy (test_monitoring.MonitoringTests.test_http_200_with_down_health_is_not_healthy) ... ok
+test_interrupted_response_does_not_abort_the_report (test_monitoring.MonitoringTests.test_interrupted_response_does_not_abort_the_report) ... ok
+test_invalid_config_cannot_send_requests (test_monitoring.MonitoringTests.test_invalid_config_cannot_send_requests) ... ok
+test_latency_threshold_creates_degraded_status (test_monitoring.MonitoringTests.test_latency_threshold_creates_degraded_status) ... ok
+test_login_or_error_html_cannot_pass_as_health (test_monitoring.MonitoringTests.test_login_or_error_html_cannot_pass_as_health) ... ok
+test_production_rejects_http_and_credentials (test_monitoring.MonitoringTests.test_production_rejects_http_and_credentials) ... ok
+test_redirect_outside_origin_is_not_followed (test_monitoring.MonitoringTests.test_redirect_outside_origin_is_not_followed) ... ok
+test_three_http_failures_make_service_down (test_monitoring.MonitoringTests.test_three_http_failures_make_service_down) ... ok
+test_timeout_is_recorded_as_failure (test_monitoring.MonitoringTests.test_timeout_is_recorded_as_failure) ... ok
+test_transient_failure_recovers_before_alert (test_monitoring.MonitoringTests.test_transient_failure_recovers_before_alert) ... ok
+test_unbounded_response_is_rejected (test_monitoring.MonitoringTests.test_unbounded_response_is_rejected) ... ok
+test_unexpected_json_types_are_not_healthy (test_monitoring.MonitoringTests.test_unexpected_json_types_are_not_healthy) ... ok
+test_up_requires_only_one_request (test_monitoring.MonitoringTests.test_up_requires_only_one_request) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 5.666s
+
+OK
