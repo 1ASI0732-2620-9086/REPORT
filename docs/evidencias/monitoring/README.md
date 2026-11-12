@@ -1,19 +1,29 @@
 # Evidencias de Continuous Monitoring de MAX
 
-Trabajo local en `feature/report-chapter-7`, sobre el commit base `1fa501e925ecf97289df27652a4066bbb4992cc2`. Fecha: 12/11/2026, America/Lima. Esta incorporación corresponde a 7.4; se conservaron las secciones anteriores del capítulo VII. MAX_COMERCIAL no forma parte del alcance.
+Trabajo publicado en `feature/report-chapter-7`, sobre el commit base `1fa501e925ecf97289df27652a4066bbb4992cc2`. Fecha: 12/11/2026, America/Lima. El código aprobado en Actions corresponde a `9e81225054ca93351fe6541cdc39777109b2b37e`. Esta incorporación corresponde a 7.4; se conservaron las secciones anteriores del capítulo VII. MAX_COMERCIAL no forma parte del alcance.
 
 ## Qué está acreditado
 
-- GET reales a landing académica, frontend y salud del backend, observados desde el equipo local.
-- Simulacro con HTTP real en loopback: 200, tres respuestas 503 y recuperación a 200.
-- 29 pruebas automatizadas aprobadas; las pruebas de gestión de incidentes utilizan una API HTTP local de pruebas.
+- [Run 43329875776 aprobado](https://github.com/1ASI0732-2620-9086/REPORT/actions/runs/43329875776), con jobs `monitor` y `exercise` ejecutados en GitHub Actions.
+- GET reales a landing académica, frontend y salud del backend, observados desde el runner; los tres devolvieron HTTP 200 y el backend `UP`.
+- Simulacro con HTTP real en loopback: 200, tres respuestas 503 y recuperación a 200; incidencia #2 abierta y cerrada automáticamente.
+- Asignación a `Carbocnito5443` y aviso correspondiente observado en el buzón de GitHub de esa cuenta. La verificación conservada no publica IDs privados ni estado de lectura.
+- Recepción por correo evidenciada mediante dos capturas originales aportadas por el destinatario: detección y recuperación; asignación y cierre. Una tercera captura muestra el resumen real de Actions y sus artefactos.
+- 34 pruebas automatizadas aprobadas localmente y en Actions, incluidas regresiones sobre listados atrasados y cierres no confirmados.
 - Validación del YAML y expresiones con actionlint 1.7.11. Shellcheck y pyflakes no estaban instalados y se desactivaron explícitamente.
+- ZIP originales de los dos artefactos descargados y contrastados con los SHA-256 publicados por GitHub.
 
-No se acredita todavía una ejecución de este workflow en Actions, su programación activa, una incidencia real en GitHub ni recepción de correo. Los registros locales lo indican expresamente. Los tiempos de respuesta son muestras puntuales y no mediciones continuas de un SLA.
+La programación no está activa porque el workflow permanece en la rama indicada y no en la predeterminada. La recepción por correo se acredita mediante las capturas aportadas por el usuario; los registros originales del script conservan `not_verified` porque se generaron antes de recibirlas. Los tiempos de respuesta son muestras puntuales y no mediciones continuas de un SLA.
 
 ## Archivos originales
 
-Todos los enlaces siguientes apuntan a resultados locales conservados, no a capturas de interfaces de GitHub:
+La evidencia principal es la [ejecución remota aprobada](github-43329875776/README.md), con [resumen verificado](github-43329875776/verification.json), [log original de las 34 pruebas](github-43329875776/remote-tests.log), [incidencia e historial](github-43329875776/issue-events.json) y [verificación del aviso](github-43329875776/notification-verification.json). La [validación local final](final-local-validation-2026-11-12/validation.json) conserva las pruebas y hashes del código antes de publicar la corrección.
+
+Las figuras 33–35 del informe utilizan estas capturas sin modificar: [resumen de Actions](../../../assets/MAX-Monitoring-Resultado-GitHub.png), [correo de incidente y recuperación](../../../assets/MAX-Monitoring-Correo-Incidente.png) y [correo de asignación y cierre](../../../assets/MAX-Monitoring-Correo-Asignacion-Cierre.png). Su procedencia, dimensiones y hashes están en [screenshots.json](github-43329875776/screenshots.json).
+
+La [primera ejecución](github-43329041988/README.md) se conserva con su defecto de cierre y la limpieza operativa. No forma parte de la evidencia de recuperación automática aceptada.
+
+La fase previa local se conserva a continuación. Sus 29 pruebas y registros `not_dispatched` corresponden a esa etapa anterior, no al estado final:
 
 - [Validación, rama, commit base y hashes del código](2026-11-12/validation.json).
 - [Salida original de las 29 pruebas](2026-11-12/tests.log).
@@ -57,13 +67,13 @@ La ubicación corresponde al runtime instalado durante esta validación; puede c
 git diff --check
 ```
 
-## Revisión y activación remota pendiente
+## Estado de publicación y programación
 
-1. Autorizar explícitamente commit y push a `feature/report-chapter-7`. El destinatario confirmado es `Carbocnito5443`; su cuenta personal y asignabilidad se comprobaron mediante la API pública (HTTP 204). No se requiere modificar backend, frontend, MOBILE ni la landing.
-2. Antes del push, comprobar que la variable opcional `MONITORING_ASSIGNEE` no sustituya el destinatario confirmado por otro. El workflow usa `Carbocnito5443` cuando esa variable no está definida. El primer push que incorpore `monitoring/**` o el workflow disparará `MAX Continuous Monitoring`: consultará los destinos publicados y ejecutará el simulacro aislado con apertura y cierre de una incidencia `[SIMULACRO]` asignada al responsable configurado.
-3. El repositorio debe permitir Actions, Issues y el permiso `issues: write` del token. El usuario elegido debe poder ser asignado. Un rechazo de permisos quedará registrado como error, no como entrega confirmada.
-4. Conservar URL y resultado de la ejecución, artefactos `monitoring-production-<run_id>-<attempt>` y `monitoring-drill-<run_id>-<attempt>`, y URL/historial de la incidencia de prueba. Verificar la notificación personal desde la cuenta destinataria antes de afirmar su recepción.
-5. Agregar esas evidencias reales a 7.4 y actualizar su estado. Una ejecución por push acredita ese instante, no una programación activa.
+1. Se autorizó y realizó commit y push a `feature/report-chapter-7`, sin fusionar ni cambiar `main`. No se modificó backend, frontend, MOBILE, landing ni MAX_COMERCIAL.
+2. El workflow usa `Carbocnito5443` cuando no hay variable `MONITORING_ASSIGNEE`. Se comprobó antes de publicar que no existiera un valor diferente; la incidencia real confirma el responsable.
+3. La ejecución acredita los permisos de Actions e Issues utilizados: creación y cierre confirmados por la API. El sincronizador verifica asignación y estado de cierre, y el simulacro exige ambos eventos para aprobar.
+4. Los artefactos conservados son `monitoring-production-43329875776-1` y `monitoring-drill-43329875776-1`. La incidencia de aceptación es [#2](https://github.com/1ASI0732-2620-9086/REPORT/issues/2), cerrada automáticamente y verificada directamente. Se observó también la notificación de asignación en el buzón de la cuenta destinataria.
+5. El apartado 7.4 incorpora esos resultados. Una ejecución por push acredita ese instante, no una programación activa. Los cambios únicamente en documentación o evidencias no disparan otro simulacro, según los filtros `paths` del workflow.
 6. Para activar `schedule`, el workflow debe existir en la rama predeterminada. Esa integración o cualquier planificador externo necesita una decisión y autorización posteriores. GitHub puede retrasar ejecuciones y desactiva horarios de repositorios públicos tras 60 días sin actividad.
 
 Configurar `MONITORING_ASSIGNEE` en las variables del repositorio permite elegir otro responsable sin cambiar el script. El valor predeterminado del workflow es `Carbocnito5443`. La retención de artefactos preparada es de 30 días; las evidencias requeridas para una entrega deben conservarse antes de su expiración.

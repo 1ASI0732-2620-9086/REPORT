@@ -1,0 +1,89 @@
+{
+  "checked_at": "2026-11-12T23:35:39.447075+00:00",
+  "run_id": 43329875776,
+  "run_url": "https://github.com/1ASI0732-2620-9086/REPORT/actions/runs/43329875776",
+  "head_sha": "9e81225054ca93351fe6541cdc39777109b2b37e",
+  "conclusion": "success",
+  "started_at": "2026-11-12T23:33:38Z",
+  "jobs": [
+    {
+      "name": "monitor",
+      "conclusion": "success"
+    },
+    {
+      "name": "exercise",
+      "conclusion": "success"
+    }
+  ],
+  "tests_passed": 34,
+  "production_results": [
+    {
+      "id": "landing-academic",
+      "status": "healthy",
+      "http_status": 200,
+      "duration_ms": 189.07,
+      "health_status": null
+    },
+    {
+      "id": "frontend-web",
+      "status": "healthy",
+      "http_status": 200,
+      "duration_ms": 426.23,
+      "health_status": null
+    },
+    {
+      "id": "backend-health",
+      "status": "healthy",
+      "http_status": 200,
+      "duration_ms": 138.19,
+      "health_status": "UP"
+    }
+  ],
+  "drill_actions": [
+    "healthy",
+    "opened",
+    "recovered"
+  ],
+  "issue_url": "https://github.com/1ASI0732-2620-9086/REPORT/issues/2",
+  "issue_number": 2,
+  "issue_state": "closed",
+  "assignees": [
+    "Carbocnito5443"
+  ],
+  "issue_created_at": "2026-11-12T23:33:46Z",
+  "issue_closed_at": "2026-11-12T23:33:47Z",
+  "artifacts": [
+    {
+      "name": "monitoring-production-43329875776-1",
+      "id": 13995245285,
+      "sha256": "ab347de142dbe4487309b4cbaeee5e233351554ab4c7acfaa085bf094b17a064",
+      "github_digest_verified": true
+    },
+    {
+      "name": "monitoring-drill-43329875776-1",
+      "id": 13994866919,
+      "sha256": "a68901cf71df5cbdf0a87539c98fee492be8978f7f6e3bf330bae396446282c6",
+      "github_digest_verified": true
+    }
+  ],
+  "notification_verification": {
+    "checked_at": "2026-11-12T23:35:38.817590+00:00",
+    "recipient": "Carbocnito5443",
+    "issue_url": "https://github.com/1ASI0732-2620-9086/REPORT/issues/2",
+    "assignment_confirmed": true,
+    "issue_close_confirmed": true,
+    "email_receipt": "evidenced_by_user_supplied_screenshots",
+    "github_inbox_thread_observed": true,
+    "github_inbox_reasons": [
+      "assign"
+    ],
+    "email_evidence_added_at": "2026-11-12T23:40:48.759791+00:00",
+    "email_evidence": [
+      "assets/MAX-Monitoring-Correo-Incidente.png",
+      "assets/MAX-Monitoring-Correo-Asignacion-Cierre.png"
+    ],
+    "email_evidence_basis": "Capturas del correo recibido para la incidencia #2, con detección, recuperación, asignación y cierre"
+  },
+  "schedule_active": false,
+  "user_supplied_screenshots": "screenshots.json"
+}

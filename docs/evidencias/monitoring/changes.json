@@ -1,8 +1,9 @@
 {
-  "checked_at": "2026-11-12T23:33:18.401399+00:00",
+  "checked_at": "2026-11-12T23:42:31.380257+00:00",
   "branch": "feature/report-chapter-7",
   "base_commit": "1fa501e925ecf97289df27652a4066bbb4992cc2",
-  "scope": "REPORT: sección 7.4, monitor y evidencias locales y remotas",
+  "tested_code_commit": "9e81225054ca93351fe6541cdc39777109b2b37e",
+  "scope": "REPORT: sección 7.4, monitor, capturas aportadas por el usuario y evidencias locales y remotas",
   "files": [
     {
       "path": ".github/workflows/monitoring.yml",
@@ -17,7 +18,22 @@
     {
       "path": "README.md",
       "change": "modified",
-      "sha256": "523590b4eff252f334b582fbc7e911de5ea001506c0834b8595b68f35e07e677"
+      "sha256": "a6e239de12c1bfebd629b9d15f034de3b9f5859ad3122c4b803a412f2f859c4d"
+    },
+    {
+      "path": "assets/MAX-Monitoring-Correo-Asignacion-Cierre.png",
+      "change": "added",
+      "sha256": "2033042fdd750fb703156100fdf8b4415fa328b4bafb3362fedc350edea5af74"
+    },
+    {
+      "path": "assets/MAX-Monitoring-Correo-Incidente.png",
+      "change": "added",
+      "sha256": "98bd4ed3df854ac50c3b96e311e58678a5a9c59160f90d494d22dd59605a393d"
+    },
+    {
+      "path": "assets/MAX-Monitoring-Resultado-GitHub.png",
+      "change": "added",
+      "sha256": "e41abfd61ae6df99dff94b92ee8580989f566fb722a34b458e6d54627fc40540"
     },
     {
       "path": "docs/evidencias/monitoring/2026-11-12/actionlint.log",
@@ -92,7 +108,7 @@
     {
       "path": "docs/evidencias/monitoring/README.md",
       "change": "added",
-      "sha256": "fbc062e81e4aefb0f3593e4a144044648d7308462f700d95d89143d81ddccc24"
+      "sha256": "798c8d511e304227ed11880dee7a2b4c242f5860336c178dbccd4bfaf397feff"
     },
     {
       "path": "docs/evidencias/monitoring/changes.json",
@@ -233,6 +249,141 @@
       "path": "docs/evidencias/monitoring/github-43329041988/run.json",
       "change": "added",
       "sha256": "60301bbe8809ade68aba99e7feb91f17c97bc499b73c401b2d19f16d139ccf23"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/README.md",
+      "change": "added",
+      "sha256": "45060c2821185f53b8f553933aa3c9094e2735c8a6e59866f65651eea064bd04"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/archives/drill.zip",
+      "change": "added",
+      "sha256": "a68901cf71df5cbdf0a87539c98fee492be8978f7f6e3bf330bae396446282c6"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/archives/logs.zip",
+      "change": "added",
+      "sha256": "777ecfa08474f4ae2ba43332bb5fd81e90af5bcb008d732b2020d374d9945b9c"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/archives/production.zip",
+      "change": "added",
+      "sha256": "ab347de142dbe4487309b4cbaeee5e233351554ab4c7acfaa085bf094b17a064"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/artifacts.json",
+      "change": "added",
+      "sha256": "1db8f7af706847e7a9ce3f4458c8e1a128df0d8b88964bc589c66cf1658fc40c"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/drill/01-healthy/notifications.json",
+      "change": "added",
+      "sha256": "da50580813d334479353f14ecc79aa7475446781991fd40213e2817295804eb0"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/drill/01-healthy/report.json",
+      "change": "added",
+      "sha256": "62d408db6472b98dd89d98d03c0b3055baee15ae96dd6b39e597e8f6778cc8e6"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/drill/01-healthy/report.md",
+      "change": "added",
+      "sha256": "396b0dd2f58d3ae9689576ea8ae0f921cea548bcd53120b3cb35e34faf84a1a1"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/drill/02-failure/notifications.json",
+      "change": "added",
+      "sha256": "ee532281ed264a77a5fa8f330ad4d97fda7352c025dacdadd318b4729723c91f"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/drill/02-failure/report.json",
+      "change": "added",
+      "sha256": "638f10c0cae653c101d6973bd729dbe9fb96b157da7bc1d54de1f26fdd7d2e6c"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/drill/02-failure/report.md",
+      "change": "added",
+      "sha256": "e27ca3aea8fcf81ca331a1e50a8463a5d98d0bbbe5111f705654fb9a33bc844d"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/drill/03-recovery/notifications.json",
+      "change": "added",
+      "sha256": "9b34d51e7fc216d4edfab133c64039673f352a8528201e30abba83bf65da2f1a"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/drill/03-recovery/report.json",
+      "change": "added",
+      "sha256": "e5140bae1cbff85562f5926b32c431fb6d9b306f6f8f9c4f535d44584de6c107"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/drill/03-recovery/report.md",
+      "change": "added",
+      "sha256": "30ae2fffa39a8ff8bbbec2e708c23bfecb48e832c2b056ddc58917dba76e76c7"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/drill/exercise.json",
+      "change": "added",
+      "sha256": "26e559570f22d83489acda4aa581b0e010ca054f7b0dde65a77bf5b6278958c5"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/issue-events.json",
+      "change": "added",
+      "sha256": "3f59b57855a770801e4d47c92cf7c3b5d6843794e435aebd1a93a6477b4b1a92"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/issue.json",
+      "change": "added",
+      "sha256": "49d2fcd0f08264681e439ab3c913cce75833c4af362ee67fc2e0876cf563e38d"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/jobs.json",
+      "change": "added",
+      "sha256": "387b067f77881a6caa478396927068a57d8a5af77578f637b4a11cc14f40b7ee"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/logs-source.json",
+      "change": "added",
+      "sha256": "b48ac0cdf8ec03b292fc0f85b03bddac3b6101b6223530998ead42f2dde3925d"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/notification-verification.json",
+      "change": "added",
+      "sha256": "51e58d8da982ac449b4b2f8f0581977144eacc2f6301fdc0532c17264efd2a16"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/production/notifications.json",
+      "change": "added",
+      "sha256": "ecf8c87c1c7ee8dc4056a09a7379925d6176515d15c4c2c0ff560d8aa61cdef9"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/production/report.json",
+      "change": "added",
+      "sha256": "5e87714f1f5325ba9a3c9e666d073986e0e67b8f12f65408b87b3ed852a9f9f6"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/production/report.md",
+      "change": "added",
+      "sha256": "6a381d3543e0603cd1a98c03f3781cf5b78f066feccaae55a3986cd29b46aa77"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/remote-tests.log",
+      "change": "added",
+      "sha256": "f809b2f889593f398346412f42510c26b669275cb5769f844a1c9cb5775b48b9"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/run.json",
+      "change": "added",
+      "sha256": "22f167ef5fcb897dd24ce1c33ab0f48e6ec1113edb0e8b3a154e8bea1c9a38e1"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/screenshots.json",
+      "change": "added",
+      "sha256": "163a45a248f9e7aaeb7b574c7c864b97721e9fbd3c07e6a931898a5c884a007f"
+    },
+    {
+      "path": "docs/evidencias/monitoring/github-43329875776/verification.json",
+      "change": "added",
+      "sha256": "f1583714df432bcae3aa46662f39d865e693f2c683871700b0c8a6ebbd952fdb"
     },
     {
       "path": "monitoring/check_services.py",

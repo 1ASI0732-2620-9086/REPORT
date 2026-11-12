@@ -1,0 +1,189 @@
+{
+  "total_count": 2,
+  "jobs": [
+    {
+      "id": 131571614742,
+      "run_id": 43329875776,
+      "workflow_name": "MAX Continuous Monitoring",
+      "head_branch": "feature/report-chapter-7",
+      "run_url": "https://api.github.com/repos/1ASI0732-2620-9086/REPORT/actions/runs/43329875776",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOUV9KEM8AAAAeokeEFg",
+      "head_sha": "9e81225054ca93351fe6541cdc39777109b2b37e",
+      "url": "https://api.github.com/repos/1ASI0732-2620-9086/REPORT/actions/jobs/131571614742",
+      "html_url": "https://github.com/1ASI0732-2620-9086/REPORT/actions/runs/43329875776/job/131571614742",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-12T23:33:38Z",
+      "started_at": "2026-11-12T23:33:41Z",
+      "completed_at": "2026-11-12T23:33:52Z",
+      "name": "monitor",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-12T23:33:42Z",
+          "completed_at": "2026-11-12T23:33:42Z"
+        },
+        {
+          "name": "Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-12T23:33:42Z",
+          "completed_at": "2026-11-12T23:33:44Z"
+        },
+        {
+          "name": "Verificar detector y gestión de incidentes con pruebas aisladas",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-12T23:33:44Z",
+          "completed_at": "2026-11-12T23:33:48Z"
+        },
+        {
+          "name": "Consultar los servicios publicados",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-12T23:33:48Z",
+          "completed_at": "2026-11-12T23:33:49Z"
+        },
+        {
+          "name": "Registrar incidentes y recuperaciones en GitHub",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-12T23:33:49Z",
+          "completed_at": "2026-11-12T23:33:49Z"
+        },
+        {
+          "name": "Resumen de las comprobaciones",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-12T23:33:49Z",
+          "completed_at": "2026-11-12T23:33:49Z"
+        },
+        {
+          "name": "Conservar resultados incluso ante fallos",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-11-12T23:33:49Z",
+          "completed_at": "2026-11-12T23:33:50Z"
+        },
+        {
+          "name": "Comunicar fallo o degradación al workflow",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 8,
+          "started_at": "2026-11-12T23:33:50Z",
+          "completed_at": "2026-11-12T23:33:50Z"
+        },
+        {
+          "name": "Post Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-11-12T23:33:50Z",
+          "completed_at": "2026-11-12T23:33:51Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-11-12T23:33:51Z",
+          "completed_at": "2026-11-12T23:33:51Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/1ASI0732-2620-9086/REPORT/check-runs/131571614742",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000000014,
+      "runner_name": "GitHub Actions 1000000014",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 131571615062,
+      "run_id": 43329875776,
+      "workflow_name": "MAX Continuous Monitoring",
+      "head_branch": "feature/report-chapter-7",
+      "run_url": "https://api.github.com/repos/1ASI0732-2620-9086/REPORT/actions/runs/43329875776",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOUV9KEM8AAAAeokeFVg",
+      "head_sha": "9e81225054ca93351fe6541cdc39777109b2b37e",
+      "url": "https://api.github.com/repos/1ASI0732-2620-9086/REPORT/actions/jobs/131571615062",
+      "html_url": "https://github.com/1ASI0732-2620-9086/REPORT/actions/runs/43329875776/job/131571615062",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-12T23:33:38Z",
+      "started_at": "2026-11-12T23:33:41Z",
+      "completed_at": "2026-11-12T23:33:52Z",
+      "name": "exercise",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-12T23:33:42Z",
+          "completed_at": "2026-11-12T23:33:43Z"
+        },
+        {
+          "name": "Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-12T23:33:43Z",
+          "completed_at": "2026-11-12T23:33:45Z"
+        },
+        {
+          "name": "HTTP 200, HTTP 503 e HTTP 200 con incidencia aislada",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-12T23:33:45Z",
+          "completed_at": "2026-11-12T23:33:48Z"
+        },
+        {
+          "name": "Conservar las tres fases del simulacro",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-12T23:33:48Z",
+          "completed_at": "2026-11-12T23:33:49Z"
+        },
+        {
+          "name": "Post Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-11-12T23:33:49Z",
+          "completed_at": "2026-11-12T23:33:50Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-11-12T23:33:50Z",
+          "completed_at": "2026-11-12T23:33:50Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/1ASI0732-2620-9086/REPORT/check-runs/131571615062",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000000015,
+      "runner_name": "GitHub Actions 1000000015",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

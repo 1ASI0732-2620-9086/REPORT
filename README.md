@@ -121,21 +121,21 @@ Recuperación documentada en `docs/pipelines/README.md`: restablecer aplicacione
 
 ## 7.4. Continuous Monitoring
 
-MAX incorpora una implementación de monitoreo externo de la landing académica, el frontend web y el endpoint de salud del backend. El objetivo es observar disponibilidad HTTP, contenido esperado y tiempo de respuesta, detectar incidentes y registrar su recuperación. El código, las pruebas y las evidencias de esta sección se prepararon en la rama **`feature/report-chapter-7`** de REPORT.
+MAX incorpora una implementación de monitoreo externo de la landing académica, el frontend web y el endpoint de salud del backend. El objetivo es observar disponibilidad HTTP, contenido esperado y tiempo de respuesta, detectar incidentes y registrar su recuperación. El código, las pruebas y las evidencias de esta sección se publicaron en la rama **`feature/report-chapter-7`** de REPORT.
 
-**Estado al 12/11/2026:** implementación validada localmente, consultas reales a los servicios publicados y simulacro HTTP aislado completados. La publicación del workflow, sus ejecuciones en GitHub Actions y las notificaciones reales de GitHub permanecen pendientes de autorización. Las comprobaciones locales no se presentan como ejecuciones remotas ni como un historial continuo de disponibilidad.
+**Estado al 12/11/2026:** [ejecución remota 43329875776 aprobada](https://github.com/1ASI0732-2620-9086/REPORT/actions/runs/43329875776), sobre el commit `9e81225054ca93351fe6541cdc39777109b2b37e`. Pasaron 34 pruebas; los tres destinos respondieron correctamente; el simulacro abrió y cerró automáticamente la [incidencia #2](https://github.com/1ASI0732-2620-9086/REPORT/issues/2), asignada a `Carbocnito5443`. Se comprobó el aviso en el buzón de GitHub y el destinatario aportó las capturas del correo recibido. La programación periódica permanece inactiva porque el workflow está en esta rama y no en la predeterminada; no se acredita un historial continuo de disponibilidad.
 
 ### 7.4.1. Tools and Practices
 
 | Herramienta o práctica | Aplicación en MAX | Estado acreditado |
 |---|---|---|
 | Spring Boot Actuator | Consulta de lectura a `/actuator/health`; se exige HTTP 200 y estado `UP` | Endpoint publicado consultado correctamente |
-| Python y biblioteca estándar | Solicitudes HTTP, validación de respuestas, medición de duración y reportes JSON/Markdown | Ejecutados localmente; sin dependencias adicionales |
-| GitHub Actions | Workflow de monitoreo separado de los pipelines de construcción y despliegue | Archivo preparado y validado con actionlint |
-| GitHub Issues | Apertura de un incidente por servicio y cierre al observar recuperación | Lógica probada contra una API HTTP local de pruebas; entrega a GitHub pendiente |
-| Responsable de alertas | `Carbocnito5443`, configurable con la variable de Actions `MONITORING_ASSIGNEE` | Cuenta personal y asignabilidad verificadas: HTTP 204; aviso remoto pendiente |
-| Artefactos de Actions | Conservación de resultados por ejecución e intento, incluso ante fallo, durante 30 días | Configurada; carga remota pendiente |
-| Pruebas automatizadas | Casos de fallo, recuperación, latencia, respuestas inválidas, reintentos y aislamiento de incidentes | 29 pruebas locales aprobadas |
+| Python y biblioteca estándar | Solicitudes HTTP, validación de respuestas, medición de duración y reportes JSON/Markdown | Ejecutados localmente y en el runner; sin dependencias adicionales |
+| GitHub Actions | Workflow de monitoreo separado de los pipelines de construcción y despliegue | Jobs `monitor` y `exercise` aprobados; YAML validado con actionlint |
+| GitHub Issues | Apertura de un incidente por servicio y cierre al observar recuperación | Alta y cierre automáticos de la incidencia #2 comprobados |
+| Responsable de alertas | `Carbocnito5443`, configurable con la variable de Actions `MONITORING_ASSIGNEE` | Asignación y aviso en GitHub comprobados; correo recibido evidenciado con capturas |
+| Artefactos de Actions | Conservación de resultados por ejecución e intento durante 30 días | Dos artefactos descargados; SHA-256 contrastados con GitHub |
+| Pruebas automatizadas | Casos de fallo, recuperación, latencia, respuestas inválidas, reintentos y aislamiento de incidentes | 34 pruebas aprobadas localmente y en GitHub Actions |
 
 La configuración de destinos y umbrales se encuentra en [`monitoring/targets.json`](monitoring/targets.json). El monitor solo realiza solicitudes GET sin iniciar sesión ni acceder a expedientes, archivos o datos clínicos.
 
@@ -149,7 +149,7 @@ La aplicación Flutter comparte la dependencia del backend. Este monitoreo obser
 
 ### 7.4.2. Monitoring Pipeline Components
 
-El workflow preparado está en [`.github/workflows/monitoring.yml`](.github/workflows/monitoring.yml) y utiliza [`monitoring/check_services.py`](monitoring/check_services.py). Sus componentes son:
+El workflow publicado está en [`.github/workflows/monitoring.yml`](.github/workflows/monitoring.yml) y utiliza [`monitoring/check_services.py`](monitoring/check_services.py). Sus componentes son:
 
 1. **Disparador:** publicación de cambios del monitor en `feature/report-chapter-7`, ejecución manual o programación cada 15 minutos, en los minutos 7, 22, 37 y 52.
 2. **Verificación del monitor:** pruebas automatizadas antes de consultar los servicios.
@@ -158,17 +158,21 @@ El workflow preparado está en [`.github/workflows/monitoring.yml`](.github/work
 5. **Clasificación:** `healthy`, `degraded` o `down`, conservando cada intento y su fecha UTC, duración, código HTTP y motivo.
 6. **Registro:** generación de `report.json` y `report.md`; sincronización de incidentes; conservación de artefactos y resumen del job. Los fallos o degradaciones dejan el workflow en estado fallido después de conservar los resultados.
 
-**Restricción de activación:** GitHub ejecuta los eventos `schedule` únicamente desde la rama predeterminada y puede retrasarlos. Mientras el workflow permanezca solo en `feature/report-chapter-7`, la programación no estará activa. La primera publicación autorizada de estos archivos en esa rama podrá producir evidencia por `push`; no acredita por sí sola monitoreo periódico. Su activación permanente requiere una decisión posterior sobre la rama predeterminada o un planificador externo. [Fuente: eventos de GitHub Actions](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
+**Restricción de activación:** GitHub ejecuta los eventos `schedule` únicamente desde la rama predeterminada y puede retrasarlos. Las ejecuciones acreditadas se dispararon por `push` a `feature/report-chapter-7`; la programación no está activa. Su activación permanente requiere una decisión posterior sobre la rama predeterminada o un planificador externo. No se fusionó esta rama ni se cambió `main`. [Fuente: eventos de GitHub Actions](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
 
-La muestra real del **12/11/2026 a las 18:12:40–18:12:42, America/Lima** registró:
+La muestra real obtenida desde el runner el **12/11/2026 a las 18:33:48–18:33:49, America/Lima** registró:
 
 | Servicio | HTTP | Tiempo observado | Resultado |
 |---|---|---|---|
-| Landing académica | 200 | 62 ms | HTML y título esperado |
-| Frontend Angular | 200 | 954 ms | HTML y `app-root` |
-| Backend Spring Boot | 200 | 1156 ms | JSON con `status: UP` |
+| Landing académica | 200 | 189.07 ms | HTML y título esperado |
+| Frontend Angular | 200 | 426.23 ms | HTML y `app-root` |
+| Backend Spring Boot | 200 | 138.19 ms | JSON con `status: UP` |
 
-Fuente original: [JSON de comprobación](docs/evidencias/monitoring/2026-11-12/production/report.json) y [reporte legible](docs/evidencias/monitoring/2026-11-12/production/report.md). El observador fue el equipo local; son muestras puntuales, no porcentajes de disponibilidad ni medidas de un SLA. Los archivos contienen estados y tiempos, sin cuerpos HTML, credenciales ni información clínica.
+Fuente original del artefacto: [JSON de comprobación](docs/evidencias/monitoring/github-43329875776/production/report.json) y [reporte legible](docs/evidencias/monitoring/github-43329875776/production/report.md). Son muestras puntuales, no porcentajes de disponibilidad ni medidas de un SLA. Los archivos contienen estados y tiempos, sin cuerpos HTML, credenciales ni información clínica.
+
+![Resumen real de GitHub Actions con los jobs monitor y exercise aprobados, resultados HTTP y artefactos](assets/MAX-Monitoring-Resultado-GitHub.png)
+
+*Figura 33. Captura original de la ejecución 43329875776: ambos jobs aprobados, los tres servicios saludables y los artefactos de monitoreo y simulacro con sus digest.*
 
 ### 7.4.3. Alerting Pipeline Components
 
@@ -183,27 +187,37 @@ Las reglas iniciales, ajustables en `targets.json`, son decisiones operativas pa
 | Ya existe un incidente abierto para ese servicio y ámbito | Se reutiliza; no se crean incidencias ni avisos repetidos por cada comprobación |
 | Una comprobación posterior alcanza `healthy` | Se registra la recuperación y se cierra el incidente correspondiente |
 
-La gestión se implementa en [`monitoring/sync_incidents.py`](monitoring/sync_incidents.py). Los incidentes se identifican por servicio y ámbito. Un resultado de simulacro no cierra incidentes de producción; un servicio no observado tampoco se declara recuperado. Las pruebas cubren estas condiciones y el rechazo de la API de notificaciones: un error de envío no se presenta como entrega confirmada.
+La gestión se implementa en [`monitoring/sync_incidents.py`](monitoring/sync_incidents.py). Los incidentes se identifican por servicio y ámbito. Un resultado de simulacro no cierra incidentes de producción; un servicio no observado tampoco se declara recuperado. El sincronizador conserva las respuestas de escritura de la API durante el proceso para tolerar listados que todavía no muestran cambios recientes y exige confirmación de `state: closed`. Las pruebas cubren estas condiciones y el rechazo de la API: un error de envío o cierre no se presenta como entrega confirmada.
 
-El [simulacro local](docs/evidencias/monitoring/2026-11-12/drill/exercise.json), ejecutado mediante [`monitoring/exercise.py`](monitoring/exercise.py), utilizó un servidor HTTP real en `127.0.0.1`:
+El [simulacro remoto](docs/evidencias/monitoring/github-43329875776/drill/exercise.json), ejecutado mediante [`monitoring/exercise.py`](monitoring/exercise.py), utilizó un servidor HTTP real en `127.0.0.1` dentro del runner de GitHub Actions:
 
 | Fase | Respuesta observada | Intentos | Resultado |
 |---|---|---|---|
-| Estado inicial | HTTP 200 y `UP` | 1 | Saludable |
-| Fallo controlado | HTTP 503 | 3 | Fallo detectado |
-| Recuperación | HTTP 200 y `UP` | 1 | Recuperación detectada |
+| Estado inicial | HTTP 200 y `UP` | 1 | `healthy`; no se crea incidente |
+| Fallo controlado | HTTP 503 | 3 | `opened`; incidencia #2 creada y asignada |
+| Recuperación | HTTP 200 y `UP` | 1 | `recovered`; la misma incidencia se cierra |
 
-El fallo ocurrió únicamente en el servidor de prueba. No se provocó una caída de los servicios publicados. La detección HTTP y recuperación se comprobaron localmente; el alta y cierre de un incidente en GitHub aún requieren ejecución remota autorizada.
+El fallo ocurrió únicamente en el servidor de prueba; no se provocó una caída de los servicios publicados. La incidencia #2 se abrió a las **18:33:46** y se cerró a las **18:33:47, America/Lima**. Se verificó su estado final mediante una consulta directa a GitHub, además del reporte del workflow.
+
+La [primera ejecución](docs/evidencias/monitoring/github-43329041988/README.md) quedó conservada como antecedente: aunque Actions mostraba `success`, la verificación posterior encontró la incidencia #1 abierta. Se corrigió el manejo del listado y se endureció el simulacro para exigir apertura y cierre; #1 se cerró como limpieza operativa y no forma parte de la evidencia de recuperación automática aprobada.
 
 ### 7.4.4. Notification Pipeline Components
 
-El canal preparado es **GitHub Issues**, con asignación a **`Carbocnito5443`**, configurable mediante **`MONITORING_ASSIGNEE`**. La consulta pública confirmó que la cuenta es personal y puede recibir incidencias de REPORT (HTTP 204). El workflow utiliza `GITHUB_TOKEN` con permisos `contents: read` e `issues: write`; el token solo se entrega al paso que gestiona incidentes. No requiere guardar credenciales de correo ni exponer información clínica.
+El canal implementado es **GitHub Issues**, con asignación a **`Carbocnito5443`**, configurable mediante **`MONITORING_ASSIGNEE`**. La cuenta personal y su asignabilidad se verificaron antes de publicar; la incidencia real confirma la asignación. El workflow utiliza `GITHUB_TOKEN` con permisos `contents: read` e `issues: write`; el token solo se entrega al paso que gestiona incidentes. No requiere guardar credenciales de correo ni exponer información clínica.
 
-El aviso incluye servicio, ámbito, estado, código HTTP, duración, motivo, número de intentos, fecha UTC y enlace a la ejecución. Una recuperación actualiza y cierra esa misma incidencia. El simulacro remoto utilizará una incidencia independiente identificada como **`[SIMULACRO]`**, con su ID asociado a la ejecución.
+El aviso incluye servicio, ámbito, estado, código HTTP, duración, motivo, número de intentos, fecha UTC y enlace a la ejecución. Una recuperación actualiza y cierra esa misma incidencia. El simulacro remoto utiliza una incidencia independiente identificada como **`[SIMULACRO]`**, con su ID asociado a la ejecución y al intento.
 
-Una respuesta exitosa de la API permitirá acreditar la creación o cierre en GitHub y conservar la URL en `notifications.json`. El script comprueba que GitHub haya asignado realmente el responsable solicitado; una asignación ignorada se registra como fallo. La recepción de correo o avisos personales depende de las preferencias de notificación del destinatario y debe verificarse por separado. [Fuente: configuración de notificaciones de GitHub](https://docs.github.com/en/subscriptions-and-notifications/get-started/configuring-notifications).
+Las respuestas exitosas de la API acreditan la creación y el cierre y conservan la URL en `notifications.json`. El script comprueba que GitHub haya asignado realmente el responsable solicitado; una asignación ignorada se registra como fallo. También se consultaron las notificaciones del destinatario para este repositorio: se observó el hilo correspondiente a la incidencia #2 con motivo `assign`. La [verificación del canal](docs/evidencias/monitoring/github-43329875776/notification-verification.json) conserva ese resultado sin publicar identificadores privados del buzón ni su estado de lectura. Las capturas originales aportadas por el destinatario evidencian además la recepción de los correos de detección, recuperación, asignación y cierre. Los registros `email_receipt: not_verified` dentro de los artefactos originales describen el estado conocido por el script antes de que el usuario aportara estas capturas. [Fuente sobre las preferencias de entrega: configuración de notificaciones de GitHub](https://docs.github.com/en/subscriptions-and-notifications/get-started/configuring-notifications).
 
-**Evidencia actual:** el [registro local del canal](docs/evidencias/monitoring/2026-11-12/production/notifications.json) indica `not_dispatched`. No se enviaron avisos ni se abrieron incidencias reales durante la validación local. El [registro de validación](docs/evidencias/monitoring/2026-11-12/validation.json) conserva los resultados de las 29 pruebas, actionlint y los hashes SHA-256 del código evaluado; las pruebas de la API utilizaron un servidor local, no GitHub real. La [comprobación remota de lectura](docs/evidencias/monitoring/2026-11-12/remote-preflight.json) registra el destinatario confirmado, su asignabilidad y la ausencia de workflows registrados en la consulta inicial.
+![Correo recibido de github-actions con detección HTTP 503 del simulacro y recuperación HTTP 200 de la incidencia 2](assets/MAX-Monitoring-Correo-Incidente.png)
+
+*Figura 34. Correo recibido para la incidencia #2: fallo controlado HTTP 503 tras tres intentos y recuperación HTTP 200. El servicio mostrado es el endpoint del simulacro en el runner, no una caída de producción.*
+
+![Correos recibidos con asignación de la incidencia 2 a Carbocnito5443 y cierre como completada](assets/MAX-Monitoring-Correo-Asignacion-Cierre.png)
+
+*Figura 35. Correos que confirman la asignación de la incidencia #2 a Carbocnito5443 y su cierre como completada. Las tres capturas se conservaron sin modificaciones; sus hashes están en el [registro de capturas](docs/evidencias/monitoring/github-43329875776/screenshots.json).*
+
+**Evidencia actual:** [apertura](docs/evidencias/monitoring/github-43329875776/drill/02-failure/notifications.json), [cierre](docs/evidencias/monitoring/github-43329875776/drill/03-recovery/notifications.json), [estado e historial de la incidencia](docs/evidencias/monitoring/github-43329875776/issue-events.json), [log de las 34 pruebas ejecutadas en Actions](docs/evidencias/monitoring/github-43329875776/remote-tests.log) y [resumen de verificación](docs/evidencias/monitoring/github-43329875776/verification.json). Los ZIP originales se descargaron y sus SHA-256 se contrastaron con los publicados por GitHub. La [validación local final](docs/evidencias/monitoring/final-local-validation-2026-11-12/validation.json) acredita las mismas 34 pruebas antes de publicar la corrección. La carpeta `2026-11-12/` conserva la fase previa local, cuyos registros `not_dispatched` describen únicamente esa fase.
 
 Comandos de reproducción desde la raíz de REPORT, con Python 3.12 o posterior:
 
@@ -214,7 +228,7 @@ python monitoring/exercise.py --output monitoring-results/drill
 python monitoring/sync_incidents.py --report monitoring-results/production/report.json --scope production --output monitoring-results/production
 ```
 
-El último comando, sin `--apply`, registra que no se despacharon notificaciones y no consulta ni modifica GitHub. Los detalles para revisar y activar el workflow están en el [índice de evidencias](docs/evidencias/monitoring/README.md). Al publicar el código del monitor en esta rama, su workflow está configurado para ejecutar las comprobaciones y el simulacro con una incidencia real; esa publicación permanece pendiente de autorización.
+El último comando, sin `--apply`, registra que no se despacharon notificaciones y no consulta ni modifica GitHub. El [índice de evidencias](docs/evidencias/monitoring/README.md) distingue la fase local, el primer intento y la ejecución remota aprobada. El workflow ya se publicó y ejecutó por `push` en la rama indicada; permanece pendiente la decisión de activar la programación periódica.
 
 ## Defectos encontrados y correcciones verificadas
 

@@ -1,0 +1,35 @@
+{
+  "added_at": "2026-11-12T23:40:48.759791+00:00",
+  "source": "Capturas originales aportadas por el usuario en este chat",
+  "run_id": 43329875776,
+  "issue_number": 2,
+  "images": [
+    {
+      "path": "assets/MAX-Monitoring-Correo-Incidente.png",
+      "source_filename": "codex-clipboard-c89fb082-6ee2-4d20-bd2e-40b99904d8e5.png",
+      "kind": "email_incident_and_recovery",
+      "sha256": "98bd4ed3df854ac50c3b96e311e58678a5a9c59160f90d494d22dd59605a393d",
+      "width": 1619,
+      "height": 795,
+      "unchanged_copy": true
+    },
+    {
+      "path": "assets/MAX-Monitoring-Correo-Asignacion-Cierre.png",
+      "source_filename": "codex-clipboard-cf104941-a1fb-4e39-bbc5-81463d307e08.png",
+      "kind": "email_assignment_and_close",
+      "sha256": "2033042fdd750fb703156100fdf8b4415fa328b4bafb3362fedc350edea5af74",
+      "width": 957,
+      "height": 539,
+      "unchanged_copy": true
+    },
+    {
+      "path": "assets/MAX-Monitoring-Resultado-GitHub.png",
+      "source_filename": "codex-clipboard-c709f5ce-2f77-45d6-9f49-6c8fe7edf6bf.png",
+      "kind": "github_actions_overview",
+      "sha256": "e41abfd61ae6df99dff94b92ee8580989f566fb722a34b458e6d54627fc40540",
+      "width": 1878,
+      "height": 899,
+      "unchanged_copy": true
+    }
+  ]
+}
