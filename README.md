@@ -852,3 +852,399 @@ Es **un recorrido funcional**. Flutter anuncia `+2` por incluir `tearDownAll`; n
 
 **No aplica al estado del repositorio:** no existe plataforma iOS activa. No se construyó, simuló ni capturó iOS. Para habilitar ese alcance posteriormente se necesitan implementación/plataforma iOS, macOS/Xcode y un simulador/dispositivo; los resultados Android no se sustituyen por iOS.
 
+## 6.2. Static Testing & Verification
+
+La fase de *Static Testing & Verification* del proyecto **MAX (Medical Assistance Expert)** tiene como propósito evaluar la calidad, mantenibilidad, consistencia y seguridad del código fuente sin depender exclusivamente de la ejecución funcional de la aplicación.
+
+Esta actividad complementa las pruebas unitarias, de integración, BDD y de sistema descritas en la sección 6.1, permitiendo identificar problemas relacionados con convenciones de programación, configuración del proyecto, dependencias vulnerables y procesos de revisión de cambios.
+
+El alcance de la evaluación comprende los siguientes componentes:
+
+- **Frontend Web:** aplicación desarrollada con Angular y TypeScript.
+- **Backend:** API REST desarrollada con Java 21 y Spring Boot.
+- **Aplicación móvil:** cliente Android desarrollado con Flutter y Dart.
+- **Landing Page:** sitio web académico utilizado para presentar el producto MAX.
+
+Para la elaboración de esta sección se inspeccionaron configuraciones de los repositorios, archivos de código fuente, reportes de auditoría y evidencias de integración continua conservadas en GitHub.
+
+Se diferencia entre las comprobaciones ejecutadas, los controles observados en el código y las verificaciones adicionales pendientes. De esta manera, los resultados presentados mantienen trazabilidad con las evidencias reales del proyecto.
+
+### 6.2.1. Static Code Analysis
+
+El análisis estático de código permite evaluar aspectos estructurales, reglas de programación, prácticas de seguridad y dependencias de software sin ejecutar necesariamente los escenarios funcionales del sistema.
+
+En MAX se revisaron los mecanismos de estandarización de código y las herramientas de verificación utilizadas en los principales componentes del producto.
+
+#### 6.2.1.1. Coding Standard & Code Conventions
+
+El establecimiento de estándares y convenciones de programación facilita la colaboración entre los integrantes del equipo, mejora la legibilidad y reduce las diferencias de estilo entre los módulos del sistema.
+
+MAX utiliza tecnologías distintas para sus componentes web, backend y móvil, por lo que cada uno dispone de configuraciones y prácticas particulares.
+
+**A. Convenciones del Frontend Web**
+
+El frontend de MAX está desarrollado con Angular y TypeScript.
+
+El repositorio contiene el archivo `.editorconfig`, donde se establecen las siguientes convenciones:
+
+| Convención | Configuración |
+|---|---|
+| Codificación | UTF-8 |
+| Indentación | Espacios |
+| Tamaño de indentación | 2 espacios |
+| Final de archivo | Nueva línea obligatoria |
+| Espacios finales | Eliminación automática |
+| Comillas en TypeScript | Simples |
+| Formato adicional | Configuración Prettier |
+
+El archivo `package.json` también contiene una configuración de Prettier con una longitud objetivo de 100 caracteres por línea y reglas específicas para archivos HTML de Angular.
+
+Estas configuraciones contribuyen a mantener uniformidad en la escritura del código y facilitan su mantenimiento.
+
+No obstante, la presencia de estas reglas no demuestra que todo el repositorio haya superado una ejecución automática de formato. En la versión `FRONT/main` inspeccionada no se identificó un script de lint ni una configuración de ESLint que permita acreditar dicha comprobación.
+
+**Evidencia de configuración:**
+
+- [Archivo .editorconfig del frontend](https://github.com/1ASI0732-2620-9086/FRONT/blob/main/.editorconfig)
+- [Archivo package.json del frontend](https://github.com/1ASI0732-2620-9086/FRONT/blob/main/package.json)
+
+**B. Convenciones del Backend**
+
+El backend de MAX está implementado mediante Java 21 y Spring Boot.
+
+El código se encuentra organizado por contextos funcionales, incluyendo autenticación, pacientes, citas, consultas y estudios clínicos.
+
+Dentro de dichos contextos se identifican responsabilidades relacionadas con:
+
+- Controladores y endpoints REST.
+- Servicios de aplicación.
+- Entidades y modelos de dominio.
+- Repositorios e infraestructura de persistencia.
+- Validaciones y controles de seguridad.
+
+Esta organización permite separar responsabilidades y facilita la comprensión de las funcionalidades del sistema.
+
+La configuración de Maven establece Java 21 como versión del lenguaje y administra las dependencias necesarias para la implementación.
+
+Durante la inspección del archivo `pom.xml` no se identificó una integración específica de herramientas como Checkstyle, PMD o SpotBugs. En consecuencia, no se atribuyen resultados de esas herramientas a la versión examinada.
+
+**Evidencia de configuración:**
+
+- [Archivo pom.xml del backend](https://github.com/1ASI0732-2620-9086/BACK/blob/main/pom.xml)
+- [Repositorio del backend](https://github.com/1ASI0732-2620-9086/BACK)
+
+**C. Convenciones de la Aplicación Móvil**
+
+La aplicación móvil de MAX está desarrollada utilizando Flutter y Dart.
+
+El repositorio contiene el archivo `analysis_options.yaml`, que incorpora las reglas de análisis proporcionadas por `flutter_lints`.
+
+Estas reglas permiten detectar problemas relacionados con el estilo del código, prácticas desaconsejadas y determinadas inconsistencias de programación.
+
+Además, el workflow de integración continua denominado `MAX Android CI` ejecuta el comando:
+
+`flutter analyze`
+
+La ejecución documentada en GitHub Actions finalizó correctamente y la captura conservada registra el resultado **No issues found**.
+
+Este resultado acredita el cumplimiento de las reglas configuradas para la versión evaluada, aunque no representa una garantía de ausencia de defectos funcionales o vulnerabilidades.
+
+![Resultado del análisis estático Flutter](assets/MAX-CI-Mobile-Analisis.png)
+
+*Figura 6.2.1. Resultado del análisis estático del cliente Flutter mediante flutter analyze, con ausencia de incidencias reportadas en la ejecución documentada.*
+
+Como evidencia complementaria se presenta la ejecución aprobada del workflow correspondiente.
+
+![Ejecución satisfactoria de Android CI](assets/MAX-CI-Mobile-Resultado.png)
+
+*Figura 6.2.2. Resultado de la ejecución de MAX Android CI, que incluye análisis estático, pruebas automatizadas y construcción del APK de pruebas.*
+
+**Evidencias adicionales:**
+
+- [Archivo analysis_options.yaml](https://github.com/1ASI0732-2620-9086/MOBILE/blob/main/analysis_options.yaml)
+- [Workflow de integración continua Android](https://github.com/1ASI0732-2620-9086/MOBILE/blob/ci/max-tests-actions/.github/workflows/ci.yml)
+- [Ejecución aprobada de GitHub Actions](https://github.com/1ASI0732-2620-9086/MOBILE/actions/runs/37703835684)
+
+**D. Convenciones de la Landing Page**
+
+La Landing Page académica de MAX utiliza HTML y recursos estáticos.
+
+El proyecto cuenta con comprobaciones automatizadas relacionadas con la estructura del sitio, la navegación y la disponibilidad de recursos.
+
+Estas verificaciones permiten identificar problemas básicos de integridad de la página. Sin embargo, no constituyen por sí solas una evaluación integral de convenciones de programación, accesibilidad o calidad del código.
+
+![Resultado de comprobaciones de Landing Page](assets/MAX-CI-Landing-Pruebas.png)
+
+*Figura 6.2.3. Evidencia de las comprobaciones automatizadas de la Landing Page académica.*
+
+**E. Resumen de cumplimiento de convenciones**
+
+| Componente | Estándar o herramienta | Evidencia | Estado |
+|---|---|---|---|
+| Frontend | EditorConfig y Prettier | Archivos de configuración | Configurado |
+| Backend | Java 21 y organización por contextos | Código fuente y pom.xml | Estructura revisada |
+| Android | Flutter Lints | analysis_options.yaml | Configurado |
+| Android | flutter analyze | GitHub Actions y captura | Ejecución aprobada |
+| Landing Page | Comprobaciones HTML | Workflow y reportes | Ejecución aprobada |
+| Frontend | ESLint u otro análisis equivalente | Sin resultado acreditado en FRONT/main | Pendiente |
+| Backend | Checkstyle, PMD o SpotBugs | Sin resultado acreditado | Pendiente |
+
+**Conclusión de la sección 6.2.1.1**
+
+MAX dispone de convenciones de programación documentables en sus componentes principales. La aplicación Flutter cuenta, además, con evidencia de ejecución satisfactoria de análisis estático.
+
+Para completar una verificación integral del cumplimiento de estándares se requiere incorporar o ejecutar herramientas específicas sobre el frontend y backend, conservar sus resultados e identificar el commit utilizado durante la evaluación.
+
+#### 6.2.1.2. Code Quality & Code Security
+
+La evaluación de calidad y seguridad tiene como finalidad identificar riesgos técnicos que puedan afectar la mantenibilidad, confiabilidad, integridad y protección de la información procesada por MAX.
+
+Debido a que el sistema administra información relacionada con pacientes y atención clínica, se consideran relevantes los controles de autenticación, autorización, validación de datos y seguridad de las dependencias.
+
+**A. Evaluación de calidad del código**
+
+MAX incorpora mecanismos de verificación automatizada en sus componentes principales.
+
+Entre las actividades documentadas se encuentran:
+
+- Compilación y validación del backend mediante Maven.
+- Pruebas automatizadas con JUnit.
+- Pruebas del frontend utilizando Vitest y Playwright.
+- Análisis estático del cliente Flutter.
+- Comprobaciones automatizadas de la Landing Page.
+- Conservación de reportes y artefactos mediante GitHub Actions.
+
+Estas herramientas permiten detectar determinados defectos y comprobar que los componentes satisfacen las condiciones evaluadas por sus respectivos pipelines.
+
+La ejecución del backend documentada en el informe incluye una construcción Maven satisfactoria.
+
+![Construcción satisfactoria del backend](assets/MAX-CI-Backend-Build.png)
+
+*Figura 6.2.4. Evidencia del proceso de construcción del backend mediante Maven, con resultado satisfactorio.*
+
+Es importante señalar que una construcción aprobada no reemplaza las mediciones específicas de mantenibilidad.
+
+En la revisión realizada no se identificó un reporte consolidado que permita acreditar valores de complejidad ciclomática, duplicación de código, deuda técnica o cobertura estática mediante SonarQube o una herramienta equivalente.
+
+Por ello, dichas métricas se mantienen pendientes de evaluación.
+
+**B. Evaluación de seguridad del Frontend**
+
+Se identificaron reportes de auditoría de dependencias generados mediante npm.
+
+Los reportes históricos conservados en `REPORT` contienen los siguientes resultados:
+
+| Evaluación | Resultado registrado |
+|---|---|
+| Auditoría completa de dependencias | 7 vulnerabilidades: 2 críticas y 5 altas |
+| Auditoría de dependencias de producción | 1 vulnerabilidad alta |
+| Ejecución local documentada de npm audit --omit=dev | Código de salida 1 |
+| Auditoría posterior documentada en CI | Capturas que reportan cero vulnerabilidades en el entorno evaluado |
+
+Entre los hallazgos históricos se identificó una vulnerabilidad asociada con la dependencia `@angular/router`.
+
+El repositorio `FRONT/main` contiene la versión `21.2.23`, incluida en el rango señalado en el reporte histórico. La alerta corresponde a una condición relacionada con Angular Server-Side Rendering.
+
+La configuración `angular.json` inspeccionada no muestra una implementación SSR, por lo que no se ha demostrado que las condiciones de explotación de dicha alerta estén presentes en MAX.
+
+Aun así, la dependencia debe ser revisada y actualizada según corresponda.
+
+**Auditoría completa de dependencias**
+
+![Auditoría completa de dependencias del frontend](assets/MAX-CI-Web-Auditoria-Completa.png)
+
+*Figura 6.2.5. Captura correspondiente a una auditoría posterior del conjunto de dependencias del frontend. Su resultado debe interpretarse según el commit y las versiones evaluadas.*
+
+**Auditoría de dependencias de producción**
+
+![Auditoría de dependencias de producción](assets/MAX-CI-Web-Auditoria-Produccion.png)
+
+*Figura 6.2.6. Captura de auditoría de dependencias de ejecución del frontend correspondiente a una verificación posterior.*
+
+Las capturas de una ejecución posterior no invalidan los resultados históricos almacenados en los reportes anteriores. Para declarar subsanada una vulnerabilidad en la rama principal es necesario comprobar la versión corregida y ejecutar nuevamente el análisis sobre el commit definitivo.
+
+**Reportes originales:**
+
+- [Reporte JSON de auditoría completa](https://github.com/1ASI0732-2620-9086/REPORT/blob/main/docs/evidencias/reportes/web-audit-all.json)
+- [Reporte JSON de auditoría de producción](https://github.com/1ASI0732-2620-9086/REPORT/blob/main/docs/evidencias/reportes/web-audit-production.json)
+- [Registro de ejecución local de auditoría](https://github.com/1ASI0732-2620-9086/REPORT/blob/main/docs/evidencias/reportes/web-audit-run.json)
+
+**C. Evaluación de seguridad del Backend**
+
+La inspección del código fuente del backend permitió identificar mecanismos de protección implementados mediante Spring Security.
+
+Entre ellos se encuentran:
+
+| Control | Implementación identificada |
+|---|---|
+| Autenticación | Sesiones JWT |
+| Protección de contraseñas | BCrypt |
+| Cookies de sesión | HttpOnly, Secure y SameSite |
+| Protección CSRF | Configuración de repositorio de tokens |
+| Autorización | Restricciones por autenticación y roles |
+| Control de sesiones | Validación y revocación |
+| Control de orígenes | Configuración CORS |
+
+Los controles se identificaron en archivos como `SecurityConfig.java`, `SessionCookieService.java` y `JwtTokenService.java`.
+
+Adicionalmente, las pruebas del apartado 6.1 documentan escenarios relacionados con el rechazo de credenciales incorrectas, restricciones de acceso y validación de sesiones.
+
+Estas evidencias demuestran la existencia de mecanismos de seguridad y su comportamiento en determinados casos de prueba.
+
+Sin embargo, no sustituyen un análisis especializado de vulnerabilidades mediante herramientas SAST, SCA o una auditoría de seguridad completa.
+
+**Archivos de referencia:**
+
+- [SecurityConfig.java](https://github.com/1ASI0732-2620-9086/BACK/blob/main/src/main/java/com/max/maxbackend/shared/security/SecurityConfig.java)
+- [SessionCookieService.java](https://github.com/1ASI0732-2620-9086/BACK/blob/main/src/main/java/com/max/maxbackend/shared/security/SessionCookieService.java)
+- [JwtTokenService.java](https://github.com/1ASI0732-2620-9086/BACK/blob/main/src/main/java/com/max/maxbackend/shared/security/JwtTokenService.java)
+
+**D. Matriz de hallazgos y acciones recomendadas**
+
+| ID | Componente | Hallazgo | Acción recomendada | Estado |
+|---|---|---|---|---|
+| CA-01 | Frontend | Dependencias vulnerables en auditoría histórica | Actualizar dependencias y repetir auditoría sobre main | Pendiente de verificación |
+| CA-02 | Frontend | Sin resultado de ESLint acreditado en la rama examinada | Configurar y ejecutar análisis estático | Pendiente |
+| CA-03 | Backend | Sin reporte de análisis de mantenibilidad | Incorporar herramienta de análisis de calidad | Pendiente |
+| CA-04 | Android | Análisis estático Flutter aprobado | Mantener comprobación en CI | Verificado en rama de pruebas |
+| CA-05 | Backend | Controles de autenticación y autorización implementados | Complementar con auditoría de seguridad estática | Parcial |
+| CA-06 | Proyecto | Resultados distribuidos entre diferentes ramas y versiones | Asociar cada evidencia con su commit | Pendiente de consolidación |
+
+**Conclusión de la sección 6.2.1.2**
+
+MAX presenta avances verificables en controles de seguridad, pruebas automatizadas y revisión de dependencias.
+
+Los resultados documentados permiten identificar mecanismos de protección y ejecuciones satisfactorias de verificación. No obstante, persisten actividades necesarias para acreditar integralmente la calidad estática del código y el tratamiento de los hallazgos históricos de seguridad.
+
+La principal recomendación consiste en consolidar una nueva evaluación sobre las versiones definitivas de los componentes y conservar los reportes correspondientes.
+
+### 6.2.2. Reviews
+
+Las revisiones de código constituyen una actividad de verificación estática orientada a evaluar la calidad de los cambios antes de su integración en una versión principal del software.
+
+Estas revisiones permiten identificar defectos que podrían no detectarse mediante pruebas automatizadas, incluyendo problemas de mantenibilidad, incumplimiento de convenciones, riesgos de seguridad y diferencias con los requerimientos definidos.
+
+En MAX se utiliza GitHub para administrar los repositorios, las ramas de desarrollo y los pull requests.
+
+**A. Mecanismos de revisión disponibles**
+
+El proyecto dispone de mecanismos de control de versiones que facilitan la revisión de cambios:
+
+- Ramas de trabajo para desarrollar funcionalidades y pruebas.
+- Pull requests para proponer cambios hacia la rama principal.
+- GitHub Actions para ejecutar verificaciones automáticas.
+- Registro de commits para identificar modificaciones.
+- Reportes y artefactos asociados con las ejecuciones.
+
+Se identificó el pull request número 1 del repositorio MOBILE, denominado `test: publish Android suites and study transport fixes`.
+
+El pull request contiene cambios relacionados con pruebas Android y el transporte de estudios clínicos.
+
+Al momento de la consulta, este PR permanecía abierto y no registraba revisiones humanas aprobadas.
+
+**B. Evidencia de Pull Request y verificaciones automáticas**
+
+El repositorio REPORT conserva una captura de las comprobaciones automáticas asociadas al trabajo del cliente Android.
+
+![Comprobaciones automáticas aprobadas del Pull Request Android](assets/MAX-CI-Mobile-PR-Checks-Aprobados.png)
+
+*Figura 6.2.7. Evidencia de comprobaciones automáticas aprobadas correspondientes al proceso de integración del cliente Android.*
+
+El resultado de estos checks permite comprobar que las verificaciones configuradas se ejecutaron correctamente para la versión evaluada.
+
+No obstante, las comprobaciones automáticas no deben confundirse con una revisión manual formal ni con una aprobación de cambios por parte de otro integrante.
+
+**Referencias:**
+
+- [Pull Request #1 de MOBILE](https://github.com/1ASI0732-2620-9086/MOBILE/pull/1)
+- [Ejecución de Android CI](https://github.com/1ASI0732-2620-9086/MOBILE/actions/runs/37703835684)
+
+**C. Revisión técnica documental**
+
+Como complemento de los mecanismos automatizados, se realizó una inspección técnica de configuraciones y archivos representativos de los repositorios de MAX.
+
+Se identificaron observaciones relacionadas con dependencias, estándares de programación, herramientas de calidad y trazabilidad de las revisiones.
+
+| ID | Componente | Observación | Recomendación |
+|---|---|---|---|
+| REV-01 | Frontend | Dependencia Angular Router dentro de un rango señalado por una alerta histórica | Actualizar y verificar aplicabilidad |
+| REV-02 | Frontend | No se identificó una ejecución acreditada de ESLint sobre FRONT/main | Incorporar comprobación automática de convenciones |
+| REV-03 | Backend | No se identificó un reporte de Checkstyle, PMD, SpotBugs o equivalente | Incorporar análisis específico |
+| REV-04 | Android | PR #1 abierto, sin aprobación humana registrada | Solicitar revisión por pares |
+| REV-05 | Proyecto | Resultados de verificación distribuidos entre diferentes ramas | Consolidar evidencias por commit |
+| REV-06 | Proyecto | No se acreditaron métricas consolidadas de mantenibilidad | Generar informe de calidad |
+
+Estas observaciones constituyen una revisión técnica documental preliminar y no una revisión formal aprobada por el equipo.
+
+**D. Procedimiento propuesto de revisión de código**
+
+Para completar el proceso de revisión y garantizar la trazabilidad de los cambios, se establece el siguiente procedimiento:
+
+1. **Preparación:** el desarrollador registra sus cambios en una rama independiente.
+2. **Creación del Pull Request:** se documenta el objetivo, alcance y archivos modificados.
+3. **Verificación automática:** se ejecutan los workflows de integración continua disponibles.
+4. **Revisión por pares:** un integrante diferente al autor inspecciona el código y registra observaciones.
+5. **Corrección:** el autor atiende las observaciones y actualiza el Pull Request.
+6. **Revalidación:** se comprueba nuevamente el funcionamiento de los cambios.
+7. **Aprobación:** el revisor registra su conformidad en GitHub.
+8. **Integración:** se realiza el merge únicamente después de cumplir los criterios establecidos por el equipo.
+
+Este procedimiento representa la práctica de revisión propuesta para MAX. Su aplicación completa deberá acreditarse mediante los registros reales de GitHub.
+
+**E. Criterios de evaluación de las revisiones**
+
+| Criterio | Descripción |
+|---|---|
+| Cumplimiento funcional | El cambio satisface el requerimiento o historia de usuario |
+| Convenciones | Respeta los estándares establecidos para la tecnología |
+| Legibilidad | El código presenta nombres claros y responsabilidades comprensibles |
+| Mantenibilidad | Evita duplicación innecesaria y dependencias incorrectas |
+| Seguridad | No introduce vulnerabilidades evidentes ni expone información sensible |
+| Pruebas | Incorpora o conserva las verificaciones necesarias |
+| Documentación | Mantiene actualizados los artefactos relacionados |
+| Trazabilidad | Permite identificar autor, commit, revisión y resultado |
+
+**F. Estado de las revisiones**
+
+| Actividad | Estado comprobado |
+|---|---|
+| Uso de Git y repositorios | Implementado |
+| Desarrollo mediante ramas | Identificado |
+| Pull Request de Android | Creado y abierto |
+| Comprobaciones automáticas Android | Aprobadas en ejecución consultada |
+| Inspección documental preliminar | Realizada |
+| Aprobación humana del PR de Android | No registrada |
+| Revisión formal de todos los componentes | No acreditada |
+| Resolución y aprobación de todas las observaciones | Pendiente de documentar |
+
+**Conclusión de la sección 6.2.2**
+
+MAX cuenta con mecanismos de control de versiones y herramientas automatizadas que facilitan la revisión de cambios.
+
+La inspección realizada permitió identificar configuraciones, comprobar resultados de CI y registrar observaciones técnicas que pueden utilizarse para mejorar el producto.
+
+Sin embargo, para acreditar un proceso formal de *Code Review* es necesario registrar revisiones humanas reales, observaciones, acciones correctivas y aprobaciones en los pull requests correspondientes.
+
+### 6.2.3. Resumen de Static Testing & Verification
+
+Las actividades analizadas evidencian que MAX dispone de una base técnica para establecer procesos de verificación estática y revisión continua del código.
+
+Entre los resultados más relevantes se encuentran las convenciones de programación configuradas para Angular, la verificación estática aprobada mediante Flutter Analyze, los controles de seguridad identificados en Spring Boot y la disponibilidad de reportes históricos de auditoría de dependencias.
+
+Asimismo, se identificaron actividades pendientes relacionadas con la incorporación de herramientas de análisis de calidad en el frontend y backend, la validación del estado de vulnerabilidades en las versiones definitivas y la formalización de las revisiones por pares.
+
+| Área evaluada | Resultado general |
+|---|---|
+| Convenciones del frontend | Configuradas |
+| Convenciones del backend | Organización identificada; verificación automática pendiente |
+| Análisis estático Android | Ejecución aprobada |
+| Seguridad de dependencias web | Auditorías disponibles; versiones pendientes de conciliación |
+| Controles de seguridad backend | Implementaciones identificadas |
+| Métricas de mantenibilidad | Pendientes |
+| Revisión automatizada | Evidencia de CI disponible |
+| Revisión humana formal | Pendiente de acreditación |
+
+En conclusión, **MAX presenta avances documentados en verificación estática, seguridad y mecanismos de revisión, aunque todavía no se acredita el cierre completo de todos los controles exigidos**.
+
+La consolidación de estas actividades permitirá fortalecer la calidad del producto, mejorar la trazabilidad y proporcionar evidencias adicionales para la evaluación del proyecto en la Semana 12.
+
