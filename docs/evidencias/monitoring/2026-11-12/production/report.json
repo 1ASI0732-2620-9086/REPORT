@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "scope": "production",
+  "started_at": "2026-11-12T23:12:40.100+00:00",
+  "observer": "local",
+  "policy": {
+    "timeout_seconds": 15,
+    "attempts": 3,
+    "retry_delay_seconds": 2,
+    "latency_warning_ms": 3000
+  },
+  "results": [
+    {
+      "id": "landing-academic",
+      "name": "Landing académica",
+      "url": "https://1asi0732-2620-9086.github.io/LANDING-PAGE/",
+      "checked_at": "2026-11-12T23:12:40.100+00:00",
+      "http_status": 200,
+      "status": "healthy",
+      "reason": "ok",
+      "duration_ms": 62.0,
+      "attempts": [
+        {
+          "checked_at": "2026-11-12T23:12:40.100+00:00",
+          "http_status": 200,
+          "status": "healthy",
+          "reason": "ok",
+          "duration_ms": 62.0
+        }
+      ]
+    },
+    {
+      "id": "frontend-web",
+      "name": "Frontend Angular",
+      "url": "https://max-dev-front.pages.dev/auth",
+      "checked_at": "2026-11-12T23:12:40.162+00:00",
+      "http_status": 200,
+      "status": "healthy",
+      "reason": "ok",
+      "duration_ms": 954.0,
+      "attempts": [
+        {
+          "checked_at": "2026-11-12T23:12:40.162+00:00",
+          "http_status": 200,
+          "status": "healthy",
+          "reason": "ok",
+          "duration_ms": 954.0
+        }
+      ]
+    },
+    {
+      "id": "backend-health",
+      "name": "Backend Spring Boot",
+      "url": "https://maxdevback-production.up.railway.app/actuator/health",
+      "checked_at": "2026-11-12T23:12:41.112+00:00",
+      "http_status": 200,
+      "status": "healthy",
+      "health_status": "UP",
+      "reason": "ok",
+      "duration_ms": 1156.0,
+      "attempts": [
+        {
+          "checked_at": "2026-11-12T23:12:41.112+00:00",
+          "http_status": 200,
+          "status": "healthy",
+          "health_status": "UP",
+          "reason": "ok",
+          "duration_ms": 1156.0
+        }
+      ]
+    }
+  ],
+  "finished_at": "2026-11-12T23:12:42.273+00:00",
+  "healthy": true
+}

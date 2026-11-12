@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "scope": "drill",
+  "started_at": "2026-11-12T23:12:40.343+00:00",
+  "observer": "local",
+  "policy": {
+    "timeout_seconds": 2,
+    "attempts": 3,
+    "retry_delay_seconds": 0.05,
+    "latency_warning_ms": 3000
+  },
+  "results": [
+    {
+      "id": "exercise-local",
+      "name": "Endpoint HTTP de prueba",
+      "url": "http://127.0.0.1:64200/health",
+      "checked_at": "2026-11-12T23:12:40.343+00:00",
+      "http_status": 200,
+      "status": "healthy",
+      "health_status": "UP",
+      "reason": "ok",
+      "duration_ms": 31.0,
+      "attempts": [
+        {
+          "checked_at": "2026-11-12T23:12:40.343+00:00",
+          "http_status": 200,
+          "status": "healthy",
+          "health_status": "UP",
+          "reason": "ok",
+          "duration_ms": 31.0
+        }
+      ]
+    }
+  ],
+  "finished_at": "2026-11-12T23:12:40.373+00:00",
+  "healthy": true
+}

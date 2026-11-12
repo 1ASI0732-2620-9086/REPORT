@@ -1,0 +1,129 @@
+{
+  "checked_at": "2026-11-12T23:25:20.804505+00:00",
+  "branch": "feature/report-chapter-7",
+  "base_commit": "1fa501e925ecf97289df27652a4066bbb4992cc2",
+  "scope": "REPORT: sección 7.4, monitor y evidencias locales",
+  "files": [
+    {
+      "path": ".github/workflows/monitoring.yml",
+      "change": "added",
+      "sha256": "71e2ea5ba7de4e76ebdaba628d425f98c64ea5b421b2c2e407e80282bef532d3"
+    },
+    {
+      "path": ".gitignore",
+      "change": "added",
+      "sha256": "0cc05adb4f65864842aa3b50ccf668b4123fcf24689f0d0728d69b8697efd6e6"
+    },
+    {
+      "path": "README.md",
+      "change": "modified",
+      "sha256": "523590b4eff252f334b582fbc7e911de5ea001506c0834b8595b68f35e07e677"
+    },
+    {
+      "path": "docs/evidencias/monitoring/2026-11-12/actionlint.log",
+      "change": "added",
+      "sha256": "27e5df617a47228b172e75d81ad33908b97044b4c205fc606bf0c12de8a01972"
+    },
+    {
+      "path": "docs/evidencias/monitoring/2026-11-12/drill/01-healthy/report.json",
+      "change": "added",
+      "sha256": "c376f0b001f483c7c6c2a16291835615539d4ca05bbee36e053764036dfb35a0"
+    },
+    {
+      "path": "docs/evidencias/monitoring/2026-11-12/drill/01-healthy/report.md",
+      "change": "added",
+      "sha256": "4b0de552070f03418a41c29958cf2c5690630b351118f8cc93958e386a87e7e0"
+    },
+    {
+      "path": "docs/evidencias/monitoring/2026-11-12/drill/02-failure/report.json",
+      "change": "added",
+      "sha256": "d01bd385187aafd4168b73dbd7127cb94c8fbca612f164a3ac16164d06b1a241"
+    },
+    {
+      "path": "docs/evidencias/monitoring/2026-11-12/drill/02-failure/report.md",
+      "change": "added",
+      "sha256": "112f1bca2c458b081578379e07749ca38df44abce26dd4b38d9442a08d290f12"
+    },
+    {
+      "path": "docs/evidencias/monitoring/2026-11-12/drill/03-recovery/report.json",
+      "change": "added",
+      "sha256": "ad63ff66a8e4254a74102f42b3a2a91691a53fab25aae04c1bdfe600eb503a63"
+    },
+    {
+      "path": "docs/evidencias/monitoring/2026-11-12/drill/03-recovery/report.md",
+      "change": "added",
+      "sha256": "3442106be82e31d386bfe9379bc4c703d08959528ed8362611cdaad0b15ad18f"
+    },
+    {
+      "path": "docs/evidencias/monitoring/2026-11-12/drill/exercise.json",
+      "change": "added",
+      "sha256": "72e04ad61d4b5788af69a7b3db627c1d50cb8ca13d52856f3307d90f84008bd3"
+    },
+    {
+      "path": "docs/evidencias/monitoring/2026-11-12/production/notifications.json",
+      "change": "added",
+      "sha256": "8c2afbcc1d8a4eb39d7633a16777eb965f5eae6e5788f9f13d435154ffec385f"
+    },
+    {
+      "path": "docs/evidencias/monitoring/2026-11-12/production/report.json",
+      "change": "added",
+      "sha256": "cfcae9e03d085dd83f14ea8f73f99c84d39bb9e2dd16f90bb06066b398b45ffc"
+    },
+    {
+      "path": "docs/evidencias/monitoring/2026-11-12/production/report.md",
+      "change": "added",
+      "sha256": "5073e0ce9d5dbeb3f175d01420583c9b6da0884a5ba6ed39c71c4b57f6d69226"
+    },
+    {
+      "path": "docs/evidencias/monitoring/2026-11-12/remote-preflight.json",
+      "change": "added",
+      "sha256": "4abe7aad16018c0b72335c6c035f56851fe885a9ba0c0d30b86e083435cbf51e"
+    },
+    {
+      "path": "docs/evidencias/monitoring/2026-11-12/tests.log",
+      "change": "added",
+      "sha256": "957d31b02c9f177048ae94022c032709c0c43a2b42f28ea7a1885b3291aebb4a"
+    },
+    {
+      "path": "docs/evidencias/monitoring/2026-11-12/validation.json",
+      "change": "added",
+      "sha256": "aad7ae1151f48cc63dae404dc9f2415d6befaa089365562458d418680b8809fa"
+    },
+    {
+      "path": "docs/evidencias/monitoring/README.md",
+      "change": "added",
+      "sha256": "fbc062e81e4aefb0f3593e4a144044648d7308462f700d95d89143d81ddccc24"
+    },
+    {
+      "path": "docs/evidencias/monitoring/changes.json",
+      "change": "added",
+      "sha256": null
+    },
+    {
+      "path": "monitoring/check_services.py",
+      "change": "added",
+      "sha256": "e76676e601ea2b0a66feb22d6f2475376fea3f1dd7b88e053c2de8593b29f77a"
+    },
+    {
+      "path": "monitoring/exercise.py",
+      "change": "added",
+      "sha256": "e06d4a5fedaffaa4a29bed81fc7880fb709ef9f84249c411862e7b1c1752f474"
+    },
+    {
+      "path": "monitoring/sync_incidents.py",
+      "change": "added",
+      "sha256": "7ef3d42b7f384361e1ca38d2271942115e18eb6a61bb72ad4d5f04ee48af56a5"
+    },
+    {
+      "path": "monitoring/targets.json",
+      "change": "added",
+      "sha256": "88c4869282ab7b97b4e154fb363c9ae2f9067006903c4cea8eb071cacdad181b"
+    },
+    {
+      "path": "monitoring/test_monitoring.py",
+      "change": "added",
+      "sha256": "f227f1fd28f91da2afc4628903cc18774c7b4b2dcdebd405bf497aa1891aa86c"
+    }
+  ],
+  "self_hash_note": "El inventario se enumera sin hash propio para evitar una referencia circular"
+}
