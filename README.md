@@ -1248,3 +1248,96 @@ En conclusión, **MAX presenta avances documentados en verificación estática, 
 
 La consolidación de estas actividades permitirá fortalecer la calidad del producto, mejorar la trazabilidad y proporcionar evidencias adicionales para la evaluación del proyecto en la Semana 12.
 
+## 6.3. Validation Interviews
+
+En esta sección se documenta el proceso de validación del prototipo de alta fidelidad de la plataforma MAX mediante pruebas con usuarios reales. El objetivo es evaluar la usabilidad, eficiencia y nivel de satisfacción de nuestros dos segmentos objetivos al interactuar con las funcionalidades clave del sistema.
+
+### 6.3.1. Diseño de Entrevistas
+
+El diseño de las entrevistas de validación se estructuró para simular escenarios de uso reales. Cada sesión constó de una breve introducción, la ejecución de tareas específicas en el prototipo y preguntas de cierre para recopilar feedback cualitativo.
+
+**1. Perfil de los Usuarios a Entrevistar:**
+*   **Segmento 1:** Personas entre 18 y 60 años que asisten a consultas médicas, manejan recetas y requieren organizar su historial clínico.
+*   **Segmento 2:** Profesionales de la salud que necesitan gestionar su agenda de citas, historiales de pacientes y emitir documentos médicos.
+
+**2. Tareas a evaluar (Segmento 1):**
+*   **Tarea 1:** Iniciar sesión y buscar un médico de una especialidad específica.
+*   **Tarea 2:** Seleccionar un horario disponible y confirmar la reserva de la cita.
+*   **Tarea 3:** Acceder al perfil personal y localizar la última receta médica o resultado de examen.
+
+**3. Tareas a evaluar (Segmento 2):**
+*   **Tarea 1:** Visualizar el calendario de citas programadas para la semana.
+*   **Tarea 2:** Subir un informe médico y una receta al expediente de un paciente específico.
+*   **Tarea 3:** Cancelar una cita programada.
+
+**4. Preguntas de Cierre:**
+*   ¿Qué tan fácil o difícil fue completar las tareas asignadas?
+*   ¿Hubo alguna pantalla o botón que te resultara confuso?
+*   ¿Qué funcionalidad agregarías o cambiarías para mejorar tu experiencia?
+  
+### 6.3.2. Registro de entrevistas
+
+#### Segmento 2: Pacientes
+
+##### Entrevista 1
+
+| Campo | Información |
+| --- | --- |
+| **Nombre** | Fernanda Valderrama |
+| **Edad** | 20 años |
+| **Ocupación** | Estudiante universitaria |
+| **Duración** | 00:00 - 12:45 |
+| **Resumen** | Fernanda Valderrama, de 20 años, interactuó con el prototipo de alta fidelidad de MAX para evaluar las funcionalidades del paciente. Durante la prueba, logró completar el flujo de búsqueda de un médico y reserva de cita de manera rápida. Al revisar la sección de historial clínico, destacó positivamente que la plataforma centralice recetas e informes, indicando que esto soluciona su problema actual de extraviar documentos físicos en su clóset. Sin embargo, recordando su necesidad de buscar información de tratamientos pasados, sugirió incorporar una barra de búsqueda dentro del historial que permita filtrar documentos escribiendo el nombre de un medicamento específico. También mencionó que le gustaría ver las notificaciones de recordatorio de citas de forma más llamativa en la pantalla de inicio, para evitar olvidarlas por sus actividades universitarias. |
+
+**Entrevista 1:** 
+
+##### Entrevista 2
+
+| Campo | Información |
+| --- | --- |
+| **Nombre** | Maricielo Bravo |
+| **Edad** | 21 años |
+| **Ocupación** | No especificada |
+| **Duración** | 00:00 - 14:10 |
+| **Resumen** | Maricielo Bravo, de 21 años, probó las funcionalidades de MAX orientadas a la gestión de citas y documentos. Logró navegar por el historial de citas y resultados organizados por especialidad de manera fluida, validando que la plataforma cumple su expectativa de no tener que buscar información entre WhatsApp y el correo electrónico. Al evaluar la sección de configuración de citas, verificó las opciones de recordatorios, pero sugirió que las opciones para personalizar la anticipación del aviso (ej. un día antes, 30 minutos antes) fuesen más visibles y fáciles de activar. Dado su alto interés en la privacidad, al momento de interactuar con sus informes médicos, buscó una opción que le permitiera configurar explícitamente qué documentos compartir con otros médicos, sugiriendo que se añada un botón de "Permisos de visualización" para sentir mayor control y confianza sobre su información. |
+
+**Entrevista 2:**
+
+#### Segmento 1: Médicos
+
+##### Entrevista 3
+
+| Campo | Información |
+| --- | --- |
+| **Nombre** | Francesca Durand Alba |
+| **Edad** | 25 años |
+| **Ocupación** | Médica cirujana |
+| **Duración** | 00:00 - 16:30 |
+| **Resumen** | Francesca Durand Alba, médica cirujana de 25 años, evaluó el prototipo de MAX desde la perspectiva del profesional de la salud. Al revisar la funcionalidad de agenda, indicó que la vista del calendario centralizado facilita enormemente la gestión de confirmaciones y cancelaciones, resolviendo el desorden que actualmente experimenta al coordinar por WhatsApp. Durante la tarea de subir un informe médico y una receta al expediente de un paciente, logró adjuntar los archivos correctamente; no obstante, debido a su preocupación por la seguridad y respaldo de los datos, señaló que le gustaría recibir un mensaje de confirmación visual más claro (ej. "Documento guardado y respaldado exitosamente") al finalizar la carga. Además, consideró que la interfaz es fácil de utilizar y cumple con su expectativa de disponer de toda la historia clínica virtual del paciente en un solo lugar. |
+
+**Entrevista 3:** 
+
+##### Entrevista 4
+
+| Campo | Información |
+| --- | --- |
+| **Nombre** | Aixa Valle |
+| **Edad** | 21 años |
+| **Ocupación** | Doctora |
+| **Duración** | 00:00 - 15:20 |
+| **Resumen** | Aixa Valle, doctora de 21 años, interactuó con las herramientas de gestión de citas e información de pacientes en MAX. Completó la tarea de reprogramar una cita de manera eficiente, resaltando que la plataforma le permite ahorrar mucho tiempo en comparación con revisar diferentes conversaciones de WhatsApp. Al momento de cargar resultados de laboratorio e indicaciones médicas en el perfil de un paciente, recomendó habilitar una función para "arrastrar y soltar" (drag and drop) archivos PDF o fotografías directamente en la pantalla, ya que esto agilizaría aún más el proceso durante una consulta. Como comentario final, destacó que el diseño de MAX es sencillo y cumple con su principal necesidad de centralizar la agenda y los documentos, evitando la dispersión de información que actualmente padece con sus pacientes. |
+
+**Entrevista 4:** 
+
+### 6.3.3. Evaluaciones según heurísticas
+
+A partir de los hallazgos en las entrevistas y la revisión de todos los wireframes del Panel Clínico web, se realizó una evaluación de usabilidad utilizando las **10 Heurísticas de Jakob Nielsen**. Los problemas y oportunidades de mejora se clasificaron según su nivel de severidad (0 = Sin importancia, 4 = Catástrofe de usabilidad) para aplicar ajustes precisos antes del desarrollo final.
+
+| N° | Problema / Oportunidad de mejora identificada | Heurística Violada / Afectada | Severidad (0-4) | Recomendación de Mejora para el Prototipo |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | **Inconsistencia en los requisitos de contraseña:** En la pantalla "Crear cuenta" no se muestran las reglas para la contraseña (caracteres, mayúsculas, etc.) mientras que en la vista "Cambiar contraseña" sí se detallan claramente estas instrucciones. | **H4: Consistencia y estándares** | 2 | Incluir el mismo texto de ayuda ("Usa al menos 9 caracteres...") debajo del campo de contraseña en el formulario de registro inicial. |
+| 2 | **Falta de indicadores de campos obligatorios:** En formularios extensos como "Nuevo paciente" y en el registro de estudios, no hay diferenciación visual entre los datos estrictamente necesarios y los opcionales. | **H6: Reconocer antes que recordar** | 2 | Añadir asteriscos (*) o la etiqueta "(Opcional)" en los títulos de los campos para guiar al médico y evitar errores de validación al intentar guardar |
+| 3 | **Estados vacíos sin "Call to Action" directo:** Las vistas de "Consultas" y "Pacientes" muestran un bloque en blanco con textos como "Sin citas programadas" o "Sin pacientes registrados" cuando no hay datos, obligando al usuario a buscar el botón principal de creación fuera de esa zona de enfoque. | **H7: Flexibilidad y eficiencia de uso** | 1 | Incluir un botón de acción rápida (ej. "Agendar cita" o "Registrar paciente") dentro del mismo recuadro del estado vacío. |
+| 4 | **Ambigüedad en la selección para eliminar:** En el modal de "Eliminar paciente" (Paso 2), tras ingresar el nombre en el buscador, solo aparece el botón "Cancelar" en la parte inferior. Esto puede hacer dudar al usuario sobre cómo proceder para que aparezca el botón de "Eliminar". | **H1: Visibilidad del estado del sistema** | 2 | Incluir un botón "Buscar" junto al campo de texto o asegurar que los resultados de búsqueda tengan un indicador visual claro (como un ícono de flecha o un estado "hover") que invite a seleccionarlos. |
+| 5 | **Pacientes - Búsqueda de recetas (Móvil):** Según las entrevistas (Fernanda), la vista móvil del historial clínico carece de una barra de búsqueda rápida para encontrar medicamentos específicos o indicaciones pasadas. | **H7: Flexibilidad y eficiencia de uso** | 2 | Incorporar un campo de búsqueda (Search bar) en la interfaz móvil del paciente para filtrar documentos o recetas por palabras clave. |
+| 6 | **Pacientes - Privacidad de informes (Móvil):** La app del paciente no cuenta con controles explícitos para gestionar qué médicos tienen acceso a su historial clínico completo (necesidad expresada por Maricielo). | **H3: Control y libertad del usuario** | 3 | Añadir una sección de "Permisos" o un botón de visibilidad en los documentos, permitiendo a la paciente habilitar o revocar el acceso a su información. |
