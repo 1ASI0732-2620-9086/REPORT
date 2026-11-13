@@ -13,8 +13,8 @@
   <br>
   <h2>Informe de Trabajo Final</h2>
   <br>
-  <h3>Startup: [Nuevo Nombre de la Startup]</h3>
-  <h3>Producto: [Nuevo Nombre del Producto]</h3>
+  <h3>Startup: MAX </h3>
+  <h3>Producto: MAX </h3>
   <br>
   <h4>Integrantes:</h4>
   <ul style="list-style-type: none; padding: 0;">
