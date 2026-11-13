@@ -1,0 +1,94 @@
+name: MAX Continuous Monitoring
+
+on:
+  push:
+    branches: [feature/report-chapter-7]
+    paths:
+      - '.github/workflows/monitoring.yml'
+      - 'monitoring/**'
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+    inputs:
+      exercise:
+        description: 'Ejecutar también el simulacro aislado y su incidencia GitHub'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: max-continuous-monitoring
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Verificar detector y gestión de incidentes con pruebas aisladas
+        run: python3 -m unittest discover -s monitoring -p 'test_*.py' -v
+      - name: Consultar los servicios publicados
+        id: probe
+        continue-on-error: true
+        run: python3 monitoring/check_services.py --config monitoring/targets.json --output monitoring-results/production
+      - name: Registrar incidentes y recuperaciones en GitHub
+        if: ${{ !cancelled() && steps.probe.outcome != 'skipped' }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          MONITORING_ASSIGNEE: ${{ vars.MONITORING_ASSIGNEE || 'Carbocnito5443' }}
+        run: >-
+          python3 monitoring/sync_incidents.py
+          --report monitoring-results/production/report.json
+          --scope production --output monitoring-results/production --apply
+      - name: Resumen de las comprobaciones
+        if: always()
+        shell: bash
+        run: |
+          if [ -f monitoring-results/production/report.md ]; then
+            cat monitoring-results/production/report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Conservar resultados incluso ante fallos
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: monitoring-production-${{ github.run_id }}-${{ github.run_attempt }}
+          path: monitoring-results/production/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Comunicar fallo o degradación al workflow
+        if: ${{ always() && steps.probe.outcome == 'failure' }}
+        run: exit 1
+
+  exercise:
+    if: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.exercise) }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: HTTP 200, HTTP 503 e HTTP 200 con incidencia aislada
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          MONITORING_ASSIGNEE: ${{ vars.MONITORING_ASSIGNEE || 'Carbocnito5443' }}
+        run: python3 monitoring/exercise.py --output monitoring-results/drill --notify
+      - name: Conservar las tres fases del simulacro
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: monitoring-drill-${{ github.run_id }}-${{ github.run_attempt }}
+          path: monitoring-results/drill/
+          if-no-files-found: warn
+          retention-days: 30

@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-11-12T23:27:53.250+00:00",
+  "scope": "production",
+  "channel": "github_issues",
+  "delivery": "no_notification_needed",
+  "dispatched_events": 0,
+  "email_receipt": "not_verified",
+  "events": [
+    {
+      "target_id": "landing-academic",
+      "status": "healthy",
+      "action": "healthy"
+    },
+    {
+      "target_id": "frontend-web",
+      "status": "healthy",
+      "action": "healthy"
+    },
+    {
+      "target_id": "backend-health",
+      "status": "healthy",
+      "action": "healthy"
+    }
+  ]
+}

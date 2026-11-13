@@ -1,0 +1,28 @@
+{
+  "timeout_seconds": 15,
+  "attempts": 3,
+  "retry_delay_seconds": 2,
+  "latency_warning_ms": 3000,
+  "targets": [
+    {
+      "id": "landing-academic",
+      "name": "Landing académica",
+      "url": "https://1asi0732-2620-9086.github.io/LANDING-PAGE/",
+      "kind": "html",
+      "expected_text": "<title>MAX HealthTech</title>"
+    },
+    {
+      "id": "frontend-web",
+      "name": "Frontend Angular",
+      "url": "https://max-dev-front.pages.dev/auth",
+      "kind": "html",
+      "expected_text": "<app-root"
+    },
+    {
+      "id": "backend-health",
+      "name": "Backend Spring Boot",
+      "url": "https://maxdevback-production.up.railway.app/actuator/health",
+      "kind": "health"
+    }
+  ]
+}

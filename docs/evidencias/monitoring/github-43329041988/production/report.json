@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "scope": "production",
+  "started_at": "2026-11-12T23:27:51.893+00:00",
+  "observer": "github-actions",
+  "policy": {
+    "timeout_seconds": 15,
+    "attempts": 3,
+    "retry_delay_seconds": 2,
+    "latency_warning_ms": 3000
+  },
+  "results": [
+    {
+      "id": "landing-academic",
+      "name": "Landing académica",
+      "url": "https://1asi0732-2620-9086.github.io/LANDING-PAGE/",
+      "checked_at": "2026-11-12T23:27:51.893+00:00",
+      "http_status": 200,
+      "status": "healthy",
+      "reason": "ok",
+      "duration_ms": 339.41,
+      "attempts": [
+        {
+          "checked_at": "2026-11-12T23:27:51.893+00:00",
+          "http_status": 200,
+          "status": "healthy",
+          "reason": "ok",
+          "duration_ms": 339.41
+        }
+      ]
+    },
+    {
+      "id": "frontend-web",
+      "name": "Frontend Angular",
+      "url": "https://max-dev-front.pages.dev/auth",
+      "checked_at": "2026-11-12T23:27:52.232+00:00",
+      "http_status": 200,
+      "status": "healthy",
+      "reason": "ok",
+      "duration_ms": 299.27,
+      "attempts": [
+        {
+          "checked_at": "2026-11-12T23:27:52.232+00:00",
+          "http_status": 200,
+          "status": "healthy",
+          "reason": "ok",
+          "duration_ms": 299.27
+        }
+      ]
+    },
+    {
+      "id": "backend-health",
+      "name": "Backend Spring Boot",
+      "url": "https://maxdevback-production.up.railway.app/actuator/health",
+      "checked_at": "2026-11-12T23:27:52.531+00:00",
+      "http_status": 200,
+      "status": "healthy",
+      "health_status": "UP",
+      "reason": "ok",
+      "duration_ms": 243.6,
+      "attempts": [
+        {
+          "checked_at": "2026-11-12T23:27:52.531+00:00",
+          "http_status": 200,
+          "status": "healthy",
+          "health_status": "UP",
+          "reason": "ok",
+          "duration_ms": 243.6
+        }
+      ]
+    }
+  ],
+  "finished_at": "2026-11-12T23:27:52.775+00:00",
+  "healthy": true
+}

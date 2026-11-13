@@ -1,0 +1,45 @@
+{
+  "total_count": 2,
+  "artifacts": [
+    {
+      "id": 13993857197,
+      "node_id": "MDg6QXJ0aWZhY3QxMzk5Mzg1NzE5Nw==",
+      "name": "monitoring-production-43329041988-1",
+      "size_in_bytes": 1535,
+      "url": "https://api.github.com/repos/1ASI0732-2620-9086/REPORT/actions/artifacts/13993857197",
+      "archive_download_url": "https://api.github.com/repos/1ASI0732-2620-9086/REPORT/actions/artifacts/13993857197/zip",
+      "expired": false,
+      "digest": "sha256:ba728769da6f62f544ca53a8ccaeb0351f7642e1890b351982e5057662695985",
+      "created_at": "2026-11-12T23:27:54Z",
+      "updated_at": "2026-11-12T23:27:54Z",
+      "expires_at": "2026-12-12T23:27:53Z",
+      "workflow_run": {
+        "id": 43329041988,
+        "repository_id": 1365199376,
+        "head_repository_id": 1365199376,
+        "head_branch": "feature/report-chapter-7",
+        "head_sha": "aa18e3f4a7c424274125f3c46eb21110a8a7bdd8"
+      }
+    },
+    {
+      "id": 13993851870,
+      "node_id": "MDg6QXJ0aWZhY3QxMzk5Mzg1MTg3MA==",
+      "name": "monitoring-drill-43329041988-1",
+      "size_in_bytes": 4623,
+      "url": "https://api.github.com/repos/1ASI0732-2620-9086/REPORT/actions/artifacts/13993851870",
+      "archive_download_url": "https://api.github.com/repos/1ASI0732-2620-9086/REPORT/actions/artifacts/13993851870/zip",
+      "expired": false,
+      "digest": "sha256:ec8a2ecaf546517c367c931c42c6ee084e7795a65b7ca5e78baa45db95fb1809",
+      "created_at": "2026-11-12T23:27:51Z",
+      "updated_at": "2026-11-12T23:27:51Z",
+      "expires_at": "2026-12-12T23:27:50Z",
+      "workflow_run": {
+        "id": 43329041988,
+        "repository_id": 1365199376,
+        "head_repository_id": 1365199376,
+        "head_branch": "feature/report-chapter-7",
+        "head_sha": "aa18e3f4a7c424274125f3c46eb21110a8a7bdd8"
+      }
+    }
+  ]
+}

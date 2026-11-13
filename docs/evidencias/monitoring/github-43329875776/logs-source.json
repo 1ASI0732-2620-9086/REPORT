@@ -1,0 +1,5 @@
+{
+  "archive": "archives/logs.zip",
+  "sha256": "777ecfa08474f4ae2ba43332bb5fd81e90af5bcb008d732b2020d374d9945b9c",
+  "test_log_member": "monitor/3_Verificar detector y gestión de incidentes con pruebas aisladas.txt"
+}

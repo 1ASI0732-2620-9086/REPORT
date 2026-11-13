@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-11-12T23:27:50.054+00:00",
+  "scope": "drill",
+  "channel": "github_issues",
+  "delivery": "github_api_confirmed",
+  "dispatched_events": 1,
+  "email_receipt": "not_verified",
+  "events": [
+    {
+      "target_id": "exercise-43329041988",
+      "status": "down",
+      "action": "opened",
+      "issue_url": "https://github.com/1ASI0732-2620-9086/REPORT/issues/1"
+    }
+  ]
+}

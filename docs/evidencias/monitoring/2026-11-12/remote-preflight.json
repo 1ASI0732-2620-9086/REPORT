@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-11-12T23:16:22.490375+00:00",
+  "authentication": "anonymous",
+  "read_only": true,
+  "assignee_PersonalProjects5443": {
+    "http_status": 404
+  },
+  "repository": {
+    "http_status": 200,
+    "has_issues": true,
+    "default_branch": "main"
+  },
+  "registered_workflows": {
+    "http_status": 200,
+    "total_count": 0
+  },
+  "recipient_inspection": {
+    "checked_at": "2026-11-12T23:19:04.829745+00:00",
+    "http_status": 200,
+    "login": "PersonalProjects5443",
+    "account_type": "Organization",
+    "assignment_supported": false
+  },
+  "confirmed_recipient": {
+    "checked_at": "2026-11-12T23:24:02.5093335Z",
+    "login": "Carbocnito5443",
+    "account_type": "User",
+    "assignment_http_status": 204,
+    "assignment_supported": true
+  }
+}

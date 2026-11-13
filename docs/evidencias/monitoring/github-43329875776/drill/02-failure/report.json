@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "scope": "drill",
+  "started_at": "2026-11-12T23:33:45.460+00:00",
+  "observer": "github-actions",
+  "policy": {
+    "timeout_seconds": 2,
+    "attempts": 3,
+    "retry_delay_seconds": 0.05,
+    "latency_warning_ms": 3000
+  },
+  "results": [
+    {
+      "id": "exercise-43329875776-1",
+      "name": "Endpoint HTTP de prueba",
+      "url": "http://127.0.0.1:41299/health",
+      "checked_at": "2026-11-12T23:33:45.597+00:00",
+      "http_status": 503,
+      "status": "down",
+      "reason": "http_error",
+      "duration_ms": 19.41,
+      "attempts": [
+        {
+          "checked_at": "2026-11-12T23:33:45.460+00:00",
+          "http_status": 503,
+          "status": "down",
+          "reason": "http_error",
+          "duration_ms": 18.19
+        },
+        {
+          "checked_at": "2026-11-12T23:33:45.529+00:00",
+          "http_status": 503,
+          "status": "down",
+          "reason": "http_error",
+          "duration_ms": 18.5
+        },
+        {
+          "checked_at": "2026-11-12T23:33:45.597+00:00",
+          "http_status": 503,
+          "status": "down",
+          "reason": "http_error",
+          "duration_ms": 19.41
+        }
+      ]
+    }
+  ],
+  "finished_at": "2026-11-12T23:33:45.617+00:00",
+  "healthy": false
+}
