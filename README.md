@@ -4624,7 +4624,7 @@ Los entregables previstos son el protocolo versionado, los diccionarios de métr
 
 La experimentación propuesta materializa las intervenciones mínimas de EXP-01, EXP-02 y EXP-03 mediante variantes To-Be y requisitos verificables. Se mantienen las preguntas, hipótesis, métricas y condiciones de 8.1 y 8.2. El objetivo es preparar una comparación controlada del producto actual con alternativas concretas, y posteriormente recoger evidencia para decidir sobre su incorporación.
 
-**Estado:** esta sección especifica el trabajo por realizar. Las variantes, la instrumentación y las sesiones con participantes todavía no están implementadas ni ejecutadas para estos experimentos. Las historias y el backlog no constituyen evidencia de beneficios obtenidos, despliegues, reclutamiento o mediciones. Tampoco se sustituyen por las pruebas de disponibilidad del capítulo VII.
+**Estado de la experimentación:** las variantes, la instrumentación y las sesiones con participantes de EXP-01 a EXP-03 continúan pendientes. En cambio, 8.3.1 y 8.3.2 catalogan funcionalidades ya implementadas en el código revisado de MAX, con énfasis en web de escritorio, landing y backend. Ese catálogo no demuestra beneficios experimentales, reclutamiento ni mediciones, y no sustituye la evidencia de pruebas y disponibilidad del capítulo VII.
 
 #### Experimentos y variables
 
@@ -4662,179 +4662,458 @@ La ejecución solo podrá declararse acreditada cuando existan versiones de las 
 
 ### 8.3.1. To-Be User Stories.
 
-Las historias To-Be expresan el incremento necesario para las tres intervenciones y su medición. Los identificadores `US-TB`, `TS-TB` y `SP-TB` distinguen historias funcionales, técnicas y spikes de las historias del capítulo III. Las épicas EP-03, EP-04 y EP-05 conservan sus nombres y alcance de referencia; no se renumeran las épicas ni se reemplazan las historias As-Is.
+Este catálogo recoge **28 historias funcionales y 7 historias técnicas respaldadas por capacidades presentes en el código de MAX**. El foco es la aplicación web de escritorio, la landing académica y el backend con sus controles de seguridad. La aplicación móvil comparte parte de esos servicios, pero no se amplía aquí con historias exclusivas.
 
-El cuadro central identifica las épicas y las historias. La prioridad numérica coincide con el orden por valor del backlog de 8.3.2; los criterios completos se desarrollan en el texto enlazado, en presente y con estructura Dado–Cuando–Entonces. Las épicas agrupan historias y no reciben puntos adicionales que dupliquen la estimación de sus componentes.
+La denominación To-Be conserva la estructura del informe: los criterios describen el comportamiento objetivo de las funcionalidades que ya se encuentran implementadas en las versiones revisadas. El catálogo sustituye el listado anterior de intervenciones e instrumentos propuestos, por lo que se reorganizan sus identificadores `US-TB` y `TS-TB`. La valoración experimental, el tracking de comportamiento, los spikes y las variantes guiadas todavía no implementadas no se contabilizan como historias terminadas.
+
+Las épicas EP-01 a EP-05 conservan sus nombres. Se utiliza el agrupador documental **EP-LP: Landing Page de MAX** para incorporar la landing ya presentada en los capítulos IV y V, sin modificar las épicas ni las historias del capítulo III. Las prioridades coinciden con el orden de 8.3.2. Los criterios mantienen la estructura Dado–Cuando–Entonces y se vinculan al código de respaldo.
+
+**Estado del catálogo:** implementado en el código revisado. Esta constatación no equivale a una nueva ejecución de pruebas, a comprobar todos los escenarios en producción ni a haber realizado los experimentos de 8.1 y 8.2. Las referencias fijan las versiones consultadas para que el alcance sea revisable.
+
+#### Fuentes de implementación
+
+| Referencia | Área | Código de respaldo |
+|---|---|---|
+| `S-IAM` | Acceso y sesión | [auth-forms.facade.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/contexts/usuarios/application/auth-forms.facade.ts); [auth-session.service.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/contexts/usuarios/application/auth-session.service.ts); [AuthService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/auth/application/AuthService.java); [AuthController.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/auth/api/AuthController.java) |
+| `S-PERFIL` | Perfil médico | [profile.facade.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/contexts/usuarios/application/profile.facade.ts); [AuthService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/auth/application/AuthService.java) |
+| `S-ADMIN` | Administración | [admin.facade.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/contexts/admin/application/admin.facade.ts); [AdminService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/admin/application/AdminService.java); [ProfileLimitService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/auth/application/ProfileLimitService.java) |
+| `S-INICIO` | Dashboard | [dashboard.facade.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/contexts/inicio/application/dashboard.facade.ts) |
+| `S-PACIENTES` | Pacientes | [pacientes.facade.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/contexts/pacientes/application/pacientes.facade.ts); [pacientes-application.service.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/contexts/pacientes/application/pacientes-application.service.ts); [PacienteService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/pacientes/application/PacienteService.java); [ClinicalWorkflowService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/consultas/application/ClinicalWorkflowService.java) |
+| `S-ESTUDIOS` | Estudios | [estudios.facade.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/contexts/estudios/application/estudios.facade.ts); [consultas.component.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/features/consultas/consultas.component.ts); [EstudioService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/estudios/application/EstudioService.java) |
+| `S-VISOR` | Visor web | [estudios.component.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/features/estudios/estudios.component.ts); [study-viewer.component.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/shared/ui/study-viewer/study-viewer.component.ts); [study-viewer.component.html](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/shared/ui/study-viewer/study-viewer.component.html); [EstudioService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/estudios/application/EstudioService.java) |
+| `S-AGENDA` | Agenda | [agenda.facade.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/contexts/consultas/agenda/application/agenda.facade.ts); [CitaService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/citas/application/CitaService.java) |
+| `S-CONSULTAS` | Atenciones e historial | [consultas.facade.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/contexts/consultas/clinicas/application/consultas.facade.ts); [consultas-application.service.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/contexts/consultas/clinicas/application/consultas-application.service.ts); [ClinicalWorkflowService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/consultas/application/ClinicalWorkflowService.java); [ConsultaService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/consultas/application/ConsultaService.java) |
+| `S-PREFERENCIAS` | Preferencias web | [configuracion.component.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/features/configuracion/configuracion.component.ts); [settings.service.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/core/settings/settings.service.ts); [i18n.service.ts](https://github.com/PersonalProjects5443/MAX_DEV_FRONT/blob/e8e395ce4784d2fa166f49acbca0c8e673688842/src/app/core/i18n/i18n.service.ts) |
+| `S-LANDING` | Landing académica | [index.html](https://github.com/1ASI0732-2620-9086/LANDING-PAGE/blob/a4aeab2ab48dade34d2aed0cce153285cc462d63/index.html) |
+| `S-SEGURIDAD` | Sesiones, credenciales y seguridad web | [JwtTokenService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/shared/security/JwtTokenService.java); [SessionCookieService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/shared/security/SessionCookieService.java); [SecurityConfig.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/shared/security/SecurityConfig.java) |
+| `S-LIMITADOR` | Control de intentos | [AccessLimiter.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/shared/security/AccessLimiter.java); [AuthController.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/auth/api/AuthController.java) |
+| `S-INTEGRIDAD` | Propietario, versiones y operaciones compuestas | [SecurityConfig.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/shared/security/SecurityConfig.java); [RecordValidation.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/shared/api/RecordValidation.java); [IdempotentOperations.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/shared/api/IdempotentOperations.java); [PacienteService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/pacientes/application/PacienteService.java); [ClinicalWorkflowService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/consultas/application/ClinicalWorkflowService.java) |
+| `S-STORAGE` | Archivos y ciclo de almacenamiento | [EstudioService.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/estudios/application/EstudioService.java); [EstudioStorageLifecycle.java](https://github.com/PersonalProjects5443/MAX_DEV_BACK/blob/c789ac5f65248d5e24838fb12c9046e3b4666332/src/main/java/com/max/maxbackend/contexts/estudios/application/EstudioStorageLifecycle.java) |
+
+Se utiliza exclusivamente la landing académica `1ASI0732-2620-9086/LANDING-PAGE`, cuyo `index.html` contiene las secciones de MAX y los enlaces al frontend. No se mezclan sus historias con la landing React de otro repositorio.
+
+#### Cuadro de Epics, User Stories y Technical Stories
 
 | Story ID | User | Priority | Epic | Title | Description | Acceptance Criteria |
 |---|---|---|---|---|---|---|
-| EP-03 | Médico | — | EP-03 | Gestión de Placas y Estudios | Agrupa la localización y consulta contextual de estudios de EXP-01 | Historias US-TB-01 y US-TB-02 |
-| US-TB-01 | Médico | 1 | EP-03 | Localizar estudios por paciente | Como médico, deseo localizar los estudios del paciente consultado conservando su contexto, para reducir la carga de búsqueda | [CA-01.1 a CA-01.3](#us-tb-01-localizar-estudios-por-paciente) |
-| US-TB-02 | Médico | 2 | EP-03 | Consultar el estudio correcto | Como médico, deseo comprobar la correspondencia de un estudio y consultar su archivo, para utilizar la documentación del paciente adecuado | [CA-02.1 a CA-02.3](#us-tb-02-consultar-el-estudio-correcto) |
-| EP-04 | Médico | — | EP-04 | Gestión de Consultas y Agenda Clínica | Agrupa las mejoras de programación y reprogramación de EXP-02 | Historias US-TB-03 y US-TB-04 |
-| US-TB-03 | Médico | 3 | EP-04 | Programar una cita con un recorrido guiado | Como médico, deseo programar una cita con disponibilidad y datos revisados antes de confirmarla, para completar correctamente la gestión de agenda | [CA-03.1 a CA-03.3](#us-tb-03-programar-una-cita-con-un-recorrido-guiado) |
-| US-TB-04 | Médico | 4 | EP-04 | Reprogramar una cita conservando su integridad | Como médico, deseo cambiar el horario de una cita conservando su identidad y sus restricciones, para reorganizar la agenda sin duplicaciones ni cambios incorrectos | [CA-04.1 a CA-04.3](#us-tb-04-reprogramar-una-cita-conservando-su-integridad) |
-| EP-05 | Médico | — | EP-05 | Configuración y Preferencias del Sistema | Agrupa la legibilidad de EXP-03 y el apoyo a la valoración de experiencia | Historias US-TB-05 y US-TB-06 |
-| US-TB-05 | Médico | 5 | EP-05 | Configurar la legibilidad en Android | Como médico, deseo configurar y previsualizar los ajustes permitidos de legibilidad, para realizar las tareas móviles con una configuración adecuada | [CA-05.1 a CA-05.3](#us-tb-05-configurar-la-legibilidad-en-android) |
-| US-TB-06 | Médico participante | 6 | EP-05 | Valorar la facilidad del recorrido | Como médico participante, deseo valorar opcionalmente la facilidad de cada recorrido, para aportar información sobre mi experiencia con la variante evaluada | [CA-06.1 a CA-06.3](#us-tb-06-valorar-la-facilidad-del-recorrido) |
-| TS-TB-01 | Developer | 7 | Transversal: EP-03, EP-04 y EP-05 | Preparar condiciones y casos aislados | Como desarrollador, deseo preparar asignaciones y casos sintéticos versionados y aislados, para comparar A y B bajo condiciones equivalentes | [CA-T01.1 a CA-T01.3](#ts-tb-01-preparar-condiciones-y-casos-aislados) |
-| TS-TB-02 | Developer | 8 | Transversal: EP-03, EP-04 y EP-05 | Registrar eventos experimentales | Como desarrollador, deseo registrar los eventos mínimos del protocolo con validación y deduplicación, para obtener mediciones trazables sin información clínica real | [CA-T02.1 a CA-T02.3](#ts-tb-02-registrar-eventos-experimentales) |
-| TS-TB-03 | Developer | 9 | Transversal: EP-03, EP-04 y EP-05 | Generar registros e indicadores reproducibles | Como desarrollador, deseo transformar los registros válidos en pares e indicadores del catálogo, para preparar un análisis reproducible con pérdidas explícitas | [CA-T03.1 a CA-T03.3](#ts-tb-03-generar-registros-e-indicadores-reproducibles) |
-| SP-TB-01 | Developer | 10 | Transversal: EP-03, EP-04 y EP-05 | Verificar contratos y viabilidad de las variantes | Como desarrollador, deseo investigar los contratos y capacidades existentes de los tres recorridos, para identificar restricciones y preparar las variantes sin cambios de arquitectura no evaluados | [CA-S01.1 a CA-S01.3](#sp-tb-01-verificar-contratos-y-viabilidad-de-las-variantes) |
-| SP-TB-02 | Developer | 11 | Transversal: EP-03, EP-04 y EP-05 | Calibrar instrumentos de captura y tiempo | Como desarrollador, deseo investigar la medición de duración y captura mínima en web y Android, para elegir instrumentos adecuados antes de integrar el tracking | [CA-S02.1 a CA-S02.3](#sp-tb-02-calibrar-instrumentos-de-captura-y-tiempo) |
+| EP-01 | Médico y administrador | — | EP-01 | Gestión de Identidad y Acceso | Acceso, perfil, resumen del consultorio y administración de perfiles | US-TB-01, US-TB-02, US-TB-03, US-TB-04, US-TB-05, US-TB-06, US-TB-07, US-TB-08, US-TB-09 |
+| US-TB-01 | Médico o administrador | 1 | EP-01 | Iniciar sesión en MAX | Como usuario registrado, deseo iniciar sesión con mi correo y contraseña, para acceder al área correspondiente a mi perfil | [CA-01.1 a CA-01.3](#us-tb-01-iniciar-sesión-en-max) |
+| US-TB-02 | Profesional médico | 2 | EP-01 | Registrar una cuenta médica | Como profesional médico, deseo registrar mi cuenta con mis datos y credenciales, para utilizar MAX | [CA-02.1 a CA-02.3](#us-tb-02-registrar-una-cuenta-médica) |
+| US-TB-03 | Usuario autenticado | 3 | EP-01 | Cerrar sesión de forma segura | Como usuario autenticado, deseo cerrar mi sesión, para finalizar el acceso desde el navegador | [CA-03.1 a CA-03.3](#us-tb-03-cerrar-sesión-de-forma-segura) |
+| US-TB-04 | Médico | 4 | EP-01 | Consultar y actualizar el perfil médico | Como médico, deseo consultar y actualizar mis datos de perfil y fotografía, para mantener correcta mi identificación en MAX | [CA-04.1 a CA-04.3](#us-tb-04-consultar-y-actualizar-el-perfil-médico) |
+| US-TB-05 | Médico | 5 | EP-01 | Cambiar la contraseña | Como médico, deseo cambiar mi contraseña comprobando la actual, para actualizar mis credenciales de acceso | [CA-05.1 a CA-05.3](#us-tb-05-cambiar-la-contraseña) |
+| US-TB-06 | Médico | 6 | EP-01 | Consultar el resumen del consultorio | Como médico, deseo consultar el dashboard con pacientes, estudios, atenciones y próximas citas, para revisar la actividad de mi espacio | [CA-06.1 a CA-06.3](#us-tb-06-consultar-el-resumen-del-consultorio) |
+| US-TB-07 | Administrador | 7 | EP-01 | Consultar perfiles y configurar su límite | Como administrador, deseo consultar los perfiles y configurar el límite de cuentas médicas, para controlar el cupo de MAX | [CA-07.1 a CA-07.3](#us-tb-07-consultar-perfiles-y-configurar-su-límite) |
+| US-TB-08 | Administrador | 8 | EP-01 | Ingresar al contexto de un perfil médico | Como administrador, deseo ingresar al contexto de un perfil médico registrado, para acceder a su espacio mediante la operación administrativa existente | [CA-08.1 a CA-08.3](#us-tb-08-ingresar-al-contexto-de-un-perfil-médico) |
+| US-TB-09 | Administrador | 9 | EP-01 | Eliminar un perfil con confirmación explícita | Como administrador, deseo confirmar la eliminación de un perfil y sus datos asociados, para gestionar una baja con conocimiento de su alcance | [CA-09.1 a CA-09.3](#us-tb-09-eliminar-un-perfil-con-confirmación-explícita) |
+| EP-02 | Médico | — | EP-02 | Gestión de Pacientes | Registro, localización, consulta, actualización y eliminación de pacientes | US-TB-10, US-TB-11, US-TB-12, US-TB-13, US-TB-14 |
+| US-TB-10 | Médico | 10 | EP-02 | Registrar un paciente con historial inicial | Como médico, deseo registrar los datos personales y médicos de un paciente, para crear su expediente con el historial inicial que genera MAX | [CA-10.1 a CA-10.3](#us-tb-10-registrar-un-paciente-con-historial-inicial) |
+| US-TB-11 | Médico | 11 | EP-02 | Consultar y buscar pacientes por nombre o DNI | Como médico, deseo consultar mis pacientes y filtrarlos por nombre o DNI, para localizar su expediente | [CA-11.1 a CA-11.3](#us-tb-11-consultar-y-buscar-pacientes-por-nombre-o-dni) |
+| US-TB-12 | Médico | 12 | EP-02 | Consultar el detalle del paciente sin editarlo | Como médico, deseo abrir la información de un paciente en modo de consulta, para revisar su expediente sin modificarlo | [CA-12.1 a CA-12.3](#us-tb-12-consultar-el-detalle-del-paciente-sin-editarlo) |
+| US-TB-13 | Médico | 13 | EP-02 | Editar la información personal y médica del paciente | Como médico, deseo actualizar los datos personales, antecedentes, alergias, diagnóstico y riesgo del paciente, para mantener su expediente al día | [CA-13.1 a CA-13.3](#us-tb-13-editar-la-información-personal-y-médica-del-paciente) |
+| US-TB-14 | Médico | 14 | EP-02 | Eliminar un paciente con confirmación | Como médico, deseo confirmar la eliminación de un paciente y conocer que alcanza a sus registros asociados, para evitar una baja involuntaria | [CA-14.1 a CA-14.3](#us-tb-14-eliminar-un-paciente-con-confirmación) |
+| EP-03 | Médico | — | EP-03 | Gestión de Placas y Estudios | Carga, organización, consulta y eliminación de estudios clínicos | US-TB-15, US-TB-16, US-TB-17, US-TB-18 |
+| US-TB-15 | Médico | 15 | EP-03 | Adjuntar un estudio al paciente y a su consulta | Como médico, deseo cargar un estudio indicando paciente y, cuando corresponda, una consulta de ese paciente, para centralizar su documentación clínica | [CA-15.1 a CA-15.3](#us-tb-15-adjuntar-un-estudio-al-paciente-y-a-su-consulta) |
+| US-TB-16 | Médico | 16 | EP-03 | Buscar e identificar estudios por paciente y fecha | Como médico, deseo filtrar los estudios por paciente y fecha e identificar su tipo, para localizar el documento necesario | [CA-16.1 a CA-16.3](#us-tb-16-buscar-e-identificar-estudios-por-paciente-y-fecha) |
+| US-TB-17 | Médico | 17 | EP-03 | Abrir y explorar un estudio autorizado en la web | Como médico, deseo abrir un PDF o explorar la imagen de un estudio autorizado, para revisar su contenido desde la web | [CA-17.1 a CA-17.3](#us-tb-17-abrir-y-explorar-un-estudio-autorizado-en-la-web) |
+| US-TB-18 | Médico | 18 | EP-03 | Eliminar un estudio desde la consulta | Como médico, deseo eliminar un estudio asociado que ya no corresponda, para mantener organizada la documentación de la consulta | [CA-18.1 a CA-18.3](#us-tb-18-eliminar-un-estudio-desde-la-consulta) |
+| EP-04 | Médico | — | EP-04 | Gestión de Consultas y Agenda Clínica | Citas, atenciones, historial y documentación asociada | US-TB-19, US-TB-20, US-TB-21, US-TB-22, US-TB-23, US-TB-24 |
+| US-TB-19 | Médico | 19 | EP-04 | Consultar las citas de un paciente | Como médico, deseo consultar las citas y sus estados por paciente, para revisar su agenda registrada | [CA-19.1 a CA-19.3](#us-tb-19-consultar-las-citas-de-un-paciente) |
+| US-TB-20 | Médico | 20 | EP-04 | Programar una cita futura | Como médico, deseo registrar una cita futura con paciente, fecha, motivo y notas, para organizar su atención | [CA-20.1 a CA-20.3](#us-tb-20-programar-una-cita-futura) |
+| US-TB-21 | Médico | 21 | EP-04 | Editar la fecha, motivo y notas de una cita | Como médico, deseo editar la fecha, motivo y notas de una cita existente, para actualizar la agenda conservando su identidad | [CA-21.1 a CA-21.3](#us-tb-21-editar-la-fecha-motivo-y-notas-de-una-cita) |
+| US-TB-22 | Médico | 22 | EP-04 | Eliminar una cita registrada | Como médico, deseo eliminar una cita de la agenda mediante la acción disponible, para retirar ese registro | [CA-22.1 a CA-22.3](#us-tb-22-eliminar-una-cita-registrada) |
+| US-TB-23 | Médico | 23 | EP-04 | Registrar una atención clínica y sus adjuntos | Como médico, deseo registrar una atención con sus notas y archivos, con o sin cita previa, para documentar la atención del paciente | [CA-23.1 a CA-23.3](#us-tb-23-registrar-una-atención-clínica-y-sus-adjuntos) |
+| US-TB-24 | Médico | 24 | EP-04 | Consultar el historial y editar una atención | Como médico, deseo revisar el historial del paciente y corregir las notas de una atención, para recuperar y actualizar su información clínica | [CA-24.1 a CA-24.3](#us-tb-24-consultar-el-historial-y-editar-una-atención) |
+| EP-05 | Médico | — | EP-05 | Configuración y Preferencias del Sistema | Idioma, tema, tamaño de texto y preferencia local de notificaciones | US-TB-25 |
+| US-TB-25 | Médico | 25 | EP-05 | Configurar las preferencias de la interfaz web | Como médico, deseo configurar idioma, tema, tamaño de texto y preferencia de notificaciones, para adaptar el uso de MAX en el navegador | [CA-25.1 a CA-25.3](#us-tb-25-configurar-las-preferencias-de-la-interfaz-web) |
+| EP-LP | Visitante | — | EP-LP | Landing Page de MAX | Información pública, navegación de escritorio e ingreso a la aplicación | US-TB-26, US-TB-27, US-TB-28 |
+| US-TB-26 | Visitante | 26 | EP-LP | Conocer la propuesta y las funcionalidades de MAX | Como visitante, deseo consultar la presentación, funcionalidades, misión, visión y valores de MAX, para conocer la propuesta del proyecto | [CA-26.1 a CA-26.3](#us-tb-26-conocer-la-propuesta-y-las-funcionalidades-de-max) |
+| US-TB-27 | Visitante | 27 | EP-LP | Navegar por las secciones de la landing | Como visitante, deseo utilizar la navegación de la landing, para acceder a sus secciones informativas | [CA-27.1 a CA-27.3](#us-tb-27-navegar-por-las-secciones-de-la-landing) |
+| US-TB-28 | Visitante | 28 | EP-LP | Ingresar a la aplicación desde la landing | Como visitante, deseo acceder al inicio de sesión desde las llamadas a la acción de la landing, para comenzar a utilizar MAX | [CA-28.1 a CA-28.3](#us-tb-28-ingresar-a-la-aplicación-desde-la-landing) |
+| TS-TB-01 | Developer | 29 | Transversal: EP-01 | Proteger las credenciales y la sesión web | Como desarrollador, deseo almacenar hashes bcrypt y gestionar sesiones web con JWT y cookies protegidas, para controlar el acceso a MAX | [CA-T01.1 a CA-T01.3](#ts-tb-01-proteger-las-credenciales-y-la-sesión-web) |
+| TS-TB-02 | Developer | 30 | Transversal: EP-01 | Aplicar protección CSRF y configuración CORS | Como desarrollador, deseo aplicar la protección CSRF y la política de orígenes configurada, para controlar las solicitudes web a la API | [CA-T02.1 a CA-T02.3](#ts-tb-02-aplicar-protección-csrf-y-configuración-cors) |
+| TS-TB-03 | Developer | 31 | Transversal: EP-01 | Limitar intentos de acceso y registro | Como desarrollador, deseo aplicar el limitador de intentos por cuenta e IP, para restringir solicitudes repetidas de autenticación | [CA-T03.1 a CA-T03.3](#ts-tb-03-limitar-intentos-de-acceso-y-registro) |
+| TS-TB-04 | Developer | 32 | Transversal: EP-01, EP-02, EP-03 y EP-04 | Aplicar permisos, aislamiento y control de versiones | Como desarrollador, deseo filtrar por propietario, restringir la administración y comprobar versiones, para proteger los registros de MAX | [CA-T04.1 a CA-T04.3](#ts-tb-04-aplicar-permisos-aislamiento-y-control-de-versiones) |
+| TS-TB-05 | Developer | 33 | Transversal: EP-02 y EP-04 | Procesar las operaciones clínicas compuestas con idempotencia | Como desarrollador, deseo procesar el alta con historial y la atención mediante una clave idempotente, para controlar la repetición de esas operaciones | [CA-T05.1 a CA-T05.3](#ts-tb-05-procesar-las-operaciones-clínicas-compuestas-con-idempotencia) |
+| TS-TB-06 | Developer | 34 | Transversal: EP-03 y EP-04 | Validar y gestionar los archivos clínicos | Como desarrollador, deseo validar los archivos y gestionar sus URLs de acceso y limpieza, para mantener los adjuntos asociados a los estudios autorizados | [CA-T06.1 a CA-T06.3](#ts-tb-06-validar-y-gestionar-los-archivos-clínicos) |
+| TS-TB-07 | Developer | 35 | Transversal: EP-05 | Persistir las preferencias visuales y de notificaciones localmente | Como desarrollador, deseo conservar tema, tamaño de texto y preferencia de notificaciones en el navegador, para recuperarlos al iniciar MAX | [CA-T07.1 a CA-T07.3](#ts-tb-07-persistir-las-preferencias-visuales-y-de-notificaciones-localmente) |
 
-#### US-TB-01. Localizar estudios por paciente
+#### US-TB-01. Iniciar sesión en MAX
 
-**Relación As-Is:** US-08, US-09 y US-13. **Trazabilidad:** ERQ-01 → EXP-01 → H-01; M-01, M-02 y M-05. Su valor consiste en mantener el contexto de búsqueda; no se presenta la búsqueda básica existente como una funcionalidad nueva.
+**Relación As-Is:** US-01. **Respaldo implementado:** `S-IAM`; `AuthService.login; AuthSessionService.initializeSession`.
 
-- **CA-01.1, caso favorable:** **Dado** que el médico tiene una sesión autorizada y un caso sintético asignado, **cuando** localiza los estudios del paciente de ese caso, **entonces** el resultado corresponde a ese paciente e incluye la información de contexto prevista en la rúbrica para identificar el estudio solicitado.
-- **CA-01.2, restricción:** **Dado** que un documento no está dentro del ámbito autorizado del médico, **cuando** se solicita su localización, **entonces** el sistema conserva la restricción de acceso y no entrega ese documento ni sus metadatos protegidos.
-- **CA-01.3, ausencia de coincidencias:** **Dado** que el conjunto asignado no contiene un estudio coincidente, **cuando** se realiza la búsqueda, **entonces** se comunica la ausencia de resultado y no se selecciona ni se asocia automáticamente un estudio de otro paciente.
+- **CA-01.1, acceso válido:** **Dado** que existe una cuenta registrada, **cuando** el usuario envía sus credenciales válidas, **entonces** se establece la sesión y se accede al área permitida para su perfil.
+- **CA-01.2, credenciales incorrectas:** **Dado** que la contraseña no corresponde a la cuenta, **cuando** el usuario intenta ingresar, **entonces** el backend rechaza las credenciales y no crea una sesión autenticada.
+- **CA-01.3, sesión vigente:** **Dado** que el navegador mantiene una sesión válida, **cuando** se vuelve a abrir la aplicación web, **entonces** se comprueba el usuario mediante la API y se recupera su contexto; si la sesión es rechazada, se limpia el estado local.
 
-#### US-TB-02. Consultar el estudio correcto
+#### US-TB-02. Registrar una cuenta médica
 
-**Relación As-Is:** US-14 y US-15. **Trazabilidad:** ERQ-01 → EXP-01 → H-01; M-01, M-02 y M-05. La historia completa el recorrido focalizado con una correspondencia verificable entre paciente, estudio y archivo.
+**Relación As-Is:** US-02. **Respaldo implementado:** `S-IAM`; `AuthService.register; ProfileLimitService.canCreateProfile`.
 
-- **CA-02.1, caso favorable:** **Dado** que existe un estudio autorizado en el contexto del paciente consultado, **cuando** el médico solicita su consulta, **entonces** se recupera el archivo asociado a ese estudio y se conserva la información necesaria para verificar su correspondencia con el caso.
-- **CA-02.2, archivo no disponible:** **Dado** que el archivo no está disponible o su recuperación falla, **cuando** se solicita consultarlo, **entonces** se informa el fallo y no se sustituye el contenido por otro archivo ni se declara completada la consulta.
-- **CA-02.3, cambio de contexto:** **Dado** que una solicitud sigue pendiente y el contexto autorizado cambia, **cuando** llega su respuesta, **entonces** un archivo ajeno al contexto vigente no se presenta como el estudio solicitado actualmente.
+- **CA-02.1, registro válido:** **Dado** que hay cupo disponible y el correo no está registrado, **cuando** el profesional envía los datos válidos del formulario, **entonces** se crea una cuenta con rol MEDICO y se establece su sesión.
+- **CA-02.2, correo repetido:** **Dado** que el correo ya pertenece a una cuenta, **cuando** se solicita registrar otra cuenta con el mismo correo normalizado, **entonces** el sistema rechaza el registro sin crear un segundo usuario.
+- **CA-02.3, límite alcanzado:** **Dado** que se ha alcanzado el límite de perfiles médicos configurado, **cuando** se solicita un nuevo registro, **entonces** el backend rechaza la creación y conserva los perfiles existentes.
 
-#### US-TB-03. Programar una cita con un recorrido guiado
+#### US-TB-03. Cerrar sesión de forma segura
 
-**Relación As-Is:** US-16 y US-17. **Trazabilidad:** ERQ-02 → EXP-02 → H-02; M-03, M-04 y M-05. El tratamiento modifica el recorrido, conservando las restricciones de agenda de la condición de referencia.
+**Relación As-Is:** US-03. **Respaldo implementado:** `S-IAM`; `AuthSessionService.logout; AuthController.logout`.
 
-- **CA-03.1, caso favorable:** **Dado** que el médico está autorizado, el paciente sintético corresponde al caso y el horario está disponible, **cuando** se revisan los datos y se confirma la programación, **entonces** queda una única cita con el paciente, fecha y horario solicitados y con confirmación del servicio correspondiente.
-- **CA-03.2, horario ocupado:** **Dado** que el horario solicitado está ocupado, **cuando** se intenta confirmar la cita, **entonces** se rechaza esa programación sin modificar la cita existente ni aceptar un cruce de horario.
-- **CA-03.3, corrección previa:** **Dado** que los datos todavía no se han confirmado, **cuando** el médico los corrige o cancela la operación, **entonces** la validación se realiza sobre los datos definitivos y no se crea una cita por una operación cancelada.
+- **CA-03.1, cierre confirmado:** **Dado** que existe una sesión activa y el backend responde, **cuando** el usuario cierra sesión, **entonces** el backend revoca el token recibido, elimina la cookie y el cliente limpia su estado.
+- **CA-03.2, fallo de red:** **Dado** que el backend no responde durante el cierre, **cuando** finaliza el intento de cerrar sesión, **entonces** el cliente limpia igualmente su sesión y sus datos clínicos locales sin afirmar que recibió confirmación del servidor.
+- **CA-03.3, otras pestañas:** **Dado** que hay otra pestaña suscrita a los eventos de sesión, **cuando** se publica el evento de cierre, **entonces** esa pestaña elimina su contexto autenticado y vuelve al acceso.
 
-#### US-TB-04. Reprogramar una cita conservando su integridad
+#### US-TB-04. Consultar y actualizar el perfil médico
 
-**Relación As-Is:** complementa US-16 y US-17; conserva la separación con la cancelación de US-18. **Trazabilidad:** ERQ-02 → EXP-02 → H-02; M-03, M-04 y M-05. La viabilidad del contrato actual se resuelve en SP-TB-01 antes de implementar esta historia.
+**Relación As-Is:** US-05. **Respaldo implementado:** `S-PERFIL`; `ProfileFacade.saveProfile; handleAvatarChange; AuthService.updateProfile`.
 
-- **CA-04.1, caso favorable:** **Dado** que existe una cita sintética autorizada y un nuevo horario permitido, **cuando** el médico confirma su reprogramación, **entonces** la misma cita queda asociada al horario solicitado sin generar una segunda cita activa para representar el cambio.
-- **CA-04.2, cambio inválido:** **Dado** que la nueva fecha u hora no cumple las restricciones, **cuando** se solicita reprogramar, **entonces** se rechaza el cambio y se conserva el estado válido anterior de la cita.
-- **CA-04.3, respuesta no confirmada:** **Dado** que se interrumpe la respuesta de una reprogramación, **cuando** el resultado aún no está confirmado, **entonces** el sistema no afirma éxito ni repite automáticamente una operación que pueda duplicar el cambio; primero verifica el estado de la cita mediante las capacidades disponibles del servicio.
+- **CA-04.1, datos personales:** **Dado** que el médico modifica sus nombres o apellidos con valores válidos, **cuando** guarda el perfil y el servicio confirma, **entonces** se actualiza el usuario mostrado en la sesión.
+- **CA-04.2, cambio de correo:** **Dado** que se solicita un correo distinto del actual, **cuando** el backend valida la actualización, **entonces** exige la contraseña actual correcta y un correo que no pertenezca a otro usuario.
+- **CA-04.3, fotografía:** **Dado** que se selecciona una imagen JPEG o PNG no vacía de hasta 5 MiB, **cuando** se guarda el perfil, **entonces** se envía la fotografía seleccionada; el formulario rechaza tipos y tamaños no permitidos.
 
-#### US-TB-05. Configurar la legibilidad en Android
+#### US-TB-05. Cambiar la contraseña
 
-**Relación As-Is:** US-24 y US-25. **Trazabilidad:** ERQ-03 → EXP-03 → H-03; M-06, M-07 y M-05. La historia facilita configurar y comprobar ajustes existentes; no atribuye un beneficio de salud visual a la variante.
+**Relación As-Is:** Complementa EP-01 y TS-02. **Respaldo implementado:** `S-PERFIL`; `ProfileFacade.changePassword; AuthService.changePassword`.
 
-- **CA-05.1, caso favorable:** **Dado** que el médico parte de una configuración segura y tiene disponibles los ajustes permitidos, **cuando** configura y previsualiza su elección, **entonces** los ajustes se reflejan coherentemente en el contenido de prueba y las funciones requeridas por las tareas permanecen disponibles.
-- **CA-05.2, ajuste no permitido:** **Dado** que se recibe un valor fuera de las opciones admitidas para el caso, **cuando** se intenta aplicarlo, **entonces** se rechaza el valor y se conserva una configuración válida.
-- **CA-05.3, restauración y accesibilidad:** **Dado** que se necesita iniciar otra condición del estudio, **cuando** se restablece la configuración de referencia acordada, **entonces** permanecen disponibles las ayudas habituales del participante y no se mantienen ajustes experimentales de la condición anterior que alteren la comparación.
+- **CA-05.1, cambio válido:** **Dado** que la contraseña actual es correcta y la nueva cumple las validaciones, **cuando** el médico confirma el cambio, **entonces** se guarda su nuevo hash y se renueva la sesión emitida para la operación.
+- **CA-05.2, confirmación diferente:** **Dado** que la nueva contraseña y su confirmación son distintas, **cuando** se intenta confirmar el formulario web, **entonces** se muestra el error y no se envía el cambio.
+- **CA-05.3, credencial actual incorrecta:** **Dado** que la contraseña actual no corresponde a la cuenta, **cuando** el backend procesa la solicitud, **entonces** se rechaza el cambio y no se reemplaza el hash.
 
-#### US-TB-06. Valorar la facilidad del recorrido
+#### US-TB-06. Consultar el resumen del consultorio
 
-**Relación As-Is:** apoyo a la evaluación de experiencia asociada con las preferencias de EP-05; no sustituye historias clínicas. **Trazabilidad:** EXP-01, EXP-02 y EXP-03; M-09. La valoración es opcional y separada de la ejecución cronometrada.
+**Relación As-Is:** US-04. **Respaldo implementado:** `S-INICIO`; `DashboardFacade.totalPacientes; activePacientesCount; latestEstudios; recentConsultas; upcomingCitas`.
 
-- **CA-06.1, respuesta válida:** **Dado** que finaliza una condición y el participante acepta responder, **cuando** comunica una puntuación entera de 1 a 7, **entonces** se registra la respuesta con su código seudónimo, experimento y variante, sin datos clínicos.
-- **CA-06.2, respuesta inválida:** **Dado** que una respuesta no pertenece a la escala admitida, **cuando** se valida, **entonces** no se acepta como puntuación válida ni se transforma silenciosamente en otro valor.
-- **CA-06.3, respuesta omitida o retiro:** **Dado** que el participante decide no valorar o retirar su participación, **cuando** comunica esa decisión, **entonces** no se le exige una puntuación ni se registra cero como si fuera una respuesta; los datos se tratan según el consentimiento aplicable.
+- **CA-06.1, indicadores:** **Dado** que se han cargado los datos clínicos de la sesión, **cuando** se muestra Inicio, **entonces** se calculan los pacientes totales y activos del conjunto cargado.
+- **CA-06.2, actividad y agenda:** **Dado** que existen estudios, atenciones y citas programadas futuras, **cuando** se construye el resumen, **entonces** se muestran los listados recientes y las citas futuras ordenadas según sus fechas.
+- **CA-06.3, carga fallida:** **Dado** que algún conjunto clínico informa un error de carga, **cuando** termina la inicialización del dashboard, **entonces** se activa el estado de fallo de carga en lugar de acreditar una carga correcta.
 
-#### TS-TB-01. Preparar condiciones y casos aislados
+#### US-TB-07. Consultar perfiles y configurar su límite
 
-**Trazabilidad:** los tres experimentos; esquema de asignación y M-10. Habilita las comparaciones sin introducir un rol de paciente ni alterar datos de producción.
+**Relación As-Is:** Capacidad administrativa existente de EP-01. **Respaldo implementado:** `S-ADMIN`; `AdminFacade.loadPanel; saveProfileLimit; AdminService.listProfiles; ProfileLimitService`.
 
-- **CA-T01.1, asignación válida:** **Dado** que existe un protocolo y un caso versionados, **cuando** se prepara una asignación para el participante seudónimo, **entonces** el registro identifica experimento, plataforma, secuencia AB/BA, variantes y conjuntos de casos reproducibles conforme al balance previsto.
-- **CA-T01.2, entorno no autorizado:** **Dado** que un destino no corresponde al entorno experimental autorizado, **cuando** se solicita preparar sus casos, **entonces** se rechaza la operación y no se escriben datos en ese destino.
-- **CA-T01.3, aislamiento entre condiciones:** **Dado** que una condición modifica un caso de agenda o ajustes de prueba, **cuando** se prepara la siguiente condición, **entonces** esta parte de su estado aislado equivalente y no de las modificaciones dejadas por otro bloque o participante.
+- **CA-07.1, listado válido:** **Dado** que el administrador abre su panel, **cuando** se cargan los perfiles y el límite, **entonces** se muestran los perfiles no administrativos y el cupo utilizado y configurado.
+- **CA-07.2, límite válido:** **Dado** que el administrador introduce un máximo permitido y el servicio confirma, **cuando** se guarda el nuevo límite, **entonces** el panel presenta el valor confirmado y el registro médico aplica ese cupo.
+- **CA-07.3, valor inválido:** **Dado** que se introduce en el formulario web un máximo inferior a 1 o superior a 10000, **cuando** se intenta guardar, **entonces** se impide enviar el cambio.
 
-#### TS-TB-02. Registrar eventos experimentales
+#### US-TB-08. Ingresar al contexto de un perfil médico
 
-**Trazabilidad:** catálogo de eventos de 8.2.8, M-01 a M-10 y los tres experimentos. Integra la captura con los recorridos una vez disponibles; no presupone un endpoint de analítica ya publicado. El contrato de `ease_answered` puede verificarse con registros sintéticos en esta historia; la interacción para obtener una respuesta del médico se incorpora después mediante US-TB-06.
+**Relación As-Is:** Capacidad administrativa existente de EP-01. **Respaldo implementado:** `S-ADMIN`; `AdminFacade.enterProfile; AdminService.impersonateProfile`.
 
-- **CA-T02.1, registro válido:** **Dado** que existe consentimiento aplicable y se emite un evento permitido de un caso sintético, **cuando** se valida y acepta, **entonces** queda un registro con los campos requeridos, su identificador, variante y versión, y se confirma su aceptación sin incorporar información clínica real.
-- **CA-T02.2, registro inválido:** **Dado** que el evento carece de campos obligatorios, tiene una duración incoherente o incluye información prohibida por 8.2.8, **cuando** se procesa, **entonces** se rechaza como registro válido y se conserva una causa de validación sin almacenar el contenido sensible rechazado.
-- **CA-T02.3, duplicación o ausencia de final:** **Dado** que un identificador se recibe de nuevo o falta el cierre de un bloque, **cuando** se valida el conjunto, **entonces** el duplicado no incrementa los conteos y el bloque incompleto no se declara exitoso por ausencia de un resultado contrario.
+- **CA-08.1, cambio válido:** **Dado** que el administrador selecciona un perfil no administrativo existente, **cuando** el servicio confirma el cambio de contexto, **entonces** se acepta la sesión de ese perfil y se navega a Inicio.
+- **CA-08.2, perfil no permitido:** **Dado** que el perfil de destino es administrativo, **cuando** se solicita el cambio mediante el servicio, **entonces** el backend rechaza la operación.
+- **CA-08.3, solicitud fallida:** **Dado** que el cambio de perfil no se confirma, **cuando** el panel recibe el error, **entonces** muestra el fallo sin aceptar una nueva sesión.
 
-#### TS-TB-03. Generar registros e indicadores reproducibles
+#### US-TB-09. Eliminar un perfil con confirmación explícita
 
-**Trazabilidad:** M-01 a M-10 y preparación de la evaluación de 8.2.7. No realiza anticipadamente el análisis de resultados reales ni añade métricas no definidas.
+**Relación As-Is:** Capacidad administrativa existente de EP-01. **Respaldo implementado:** `S-ADMIN`; `AdminFacade.canDeleteSelectedProfile; deleteSelectedProfile; AdminService.deleteProfile`.
 
-- **CA-T03.1, transformación reproducible:** **Dado** un conjunto sintético versionado con pares completos, fallos de tarea y respuestas opcionales, **cuando** se aplica la transformación documentada, **entonces** se obtienen los indicadores del catálogo con sus unidades, numeradores y denominadores, y el mismo conjunto produce el mismo resultado.
-- **CA-T03.2, pérdidas y tiempos penalizados:** **Dado** que hay una tarea fallida medible y otro bloque con captura incompleta, **cuando** se preparan los datos, **entonces** el primero conserva el tiempo penalizado de su tarjeta y el segundo se informa como pérdida, sin convertir ninguno en tiempo cero o éxito.
-- **CA-T03.3, exportación y protección:** **Dado** que se solicita un conjunto para análisis, **cuando** se genera la salida estructurada, **entonces** se conserva la trazabilidad necesaria del estudio y la salida agregada no publica identidades, contenido clínico ni registros excluidos contra el consentimiento.
+- **CA-09.1, confirmación completa:** **Dado** que se selecciona un perfil no administrativo, **cuando** coinciden su correo, la frase ELIMINAR TODO y la aceptación del alcance, **entonces** la web permite solicitar la eliminación y recarga el panel tras confirmación.
+- **CA-09.2, confirmación incompleta:** **Dado** que falta alguna de las confirmaciones del formulario web, **cuando** se intenta confirmar la baja, **entonces** no se envía la solicitud de eliminación.
+- **CA-09.3, alcance existente:** **Dado** que el backend acepta la eliminación del perfil, **cuando** procesa sus dependencias, **entonces** elimina sus estudios, consultas, citas y pacientes, y encola la limpieza de archivos asociados; no modifica el perfil administrador.
 
-#### SP-TB-01. Verificar contratos y viabilidad de las variantes
+#### US-TB-10. Registrar un paciente con historial inicial
 
-**Objetivo de investigación:** determinar cómo reutilizar las funciones actuales de búsqueda, consulta, agenda y preferencias para preparar A y B. El spike no genera por sí solo una funcionalidad terminada.
+**Relación As-Is:** US-06. **Respaldo implementado:** `S-PACIENTES`; `PacientesFacade.savePaciente; PacientesApplicationService.createWithHistory; ClinicalWorkflowService.register`.
 
-- **CA-S01.1, revisión documentada:** **Dado** que se dispone de las fuentes y contratos existentes, **cuando** se revisa la viabilidad de cada recorrido, **entonces** se documentan capacidades, restricciones de autorización y alternativas compatibles con el alcance de los tres experimentos.
-- **CA-S01.2, incertidumbre de reprogramación:** **Dado** que no se ha acreditado el contrato necesario para conservar una cita al cambiarla, **cuando** se estudian sus solicitudes, respuestas y fallos, **entonces** se registra una conclusión respaldada por un ejemplo controlado o un bloqueo explícito; no se inventa una operación existente ni se ejecuta un cambio clínico real.
-- **CA-S01.3, cambio fuera de alcance:** **Dado** que la solución requiere un endpoint, esquema o cambio de arquitectura adicional, **cuando** se identifica esa necesidad, **entonces** se presenta su justificación, impacto y propuesta para revisión antes de implementar; no se declara resuelta mediante una modificación no evaluada.
+- **CA-10.1, registro completo:** **Dado** que el formulario contiene los datos válidos del paciente, **cuando** se confirma el registro, **entonces** el backend crea el paciente, una cita REALIZADA de registro inicial y una consulta asociada.
+- **CA-10.2, formulario inválido:** **Dado** que faltan campos requeridos o no se cumplen sus validaciones, **cuando** se intenta guardar, **entonces** el formulario indica los campos inválidos y no inicia el registro.
+- **CA-10.3, confirmación del servicio:** **Dado** que el servicio confirma el registro compuesto, **cuando** se actualiza la interfaz, **entonces** se incorporan las entidades devueltas, se limpian los filtros y se cierra el formulario.
 
-#### SP-TB-02. Calibrar instrumentos de captura y tiempo
+#### US-TB-11. Consultar y buscar pacientes por nombre o DNI
 
-**Objetivo de investigación:** comprobar un mecanismo viable para medir duración y capturar los campos mínimos en web y Android antes de implementar TS-TB-02. Es una comprobación técnica; no sustituye al piloto con médicos.
+**Relación As-Is:** US-07 y US-08. **Respaldo implementado:** `S-PACIENTES`; `PacientesFacade.filteredPacientes; updateSearchName; updateSearchDni; PacientesComponent`.
 
-- **CA-S02.1, prueba mínima:** **Dado** un escenario técnico sintético en cada plataforma, **cuando** se registra una secuencia de inicio y final, **entonces** se documenta una duración obtenida con reloj monotónico y su correspondencia con el esquema previsto.
-- **CA-S02.2, interrupciones:** **Dado** que se provoca una pausa, reinicio o pérdida de un evento dentro del escenario técnico, **cuando** se examina la captura, **entonces** se identifica la limitación y el tratamiento del dato faltante sin fabricar una duración.
-- **CA-S02.3, conclusión del spike:** **Dado** que finaliza la comprobación acotada, **cuando** se revisan sus resultados, **entonces** quedan documentados el mecanismo recomendado, la evidencia de la prueba, las limitaciones y los ajustes necesarios para TS-TB-02; su conclusión no se presenta como confirmación de las hipótesis de usuario.
+- **CA-11.1, tarjetas:** **Dado** que existen pacientes en el conjunto autorizado, **cuando** se abre Pacientes, **entonces** se muestran las tarjetas con sus datos y acciones disponibles.
+- **CA-11.2, búsqueda combinada:** **Dado** que se introducen nombre y DNI, **cuando** se aplican los filtros, **entonces** solo se mantienen los pacientes que cumplen ambos criterios.
+- **CA-11.3, sin filtros:** **Dado** que se vacían los campos de búsqueda, **cuando** se recalcula la lista, **entonces** se vuelve a mostrar el conjunto de pacientes cargado.
+
+#### US-TB-12. Consultar el detalle del paciente sin editarlo
+
+**Relación As-Is:** US-09. **Respaldo implementado:** `S-PACIENTES`; `PacientesFacade.openView; prepareForm`.
+
+- **CA-12.1, detalle:** **Dado** que se selecciona Ver en un paciente del listado, **cuando** se abre el formulario en modo de consulta, **entonces** se cargan los datos del paciente seleccionado.
+- **CA-12.2, solo lectura:** **Dado** que el formulario está en modo view, **cuando** se consulta su contenido, **entonces** sus controles permanecen deshabilitados para edición.
+- **CA-12.3, cierre:** **Dado** que se ha abierto el detalle sin editar, **cuando** se cierra el formulario, **entonces** no se envía una actualización del paciente.
+
+#### US-TB-13. Editar la información personal y médica del paciente
+
+**Relación As-Is:** US-10. **Respaldo implementado:** `S-PACIENTES`; `PacientesFacade.openEdit; savePaciente; PacienteService.update`.
+
+- **CA-13.1, edición válida:** **Dado** que se abre un paciente en modo de edición, **cuando** se guardan datos válidos con su versión vigente, **entonces** se actualiza ese paciente y se conserva su identidad.
+- **CA-13.2, fechas inválidas:** **Dado** que la fecha de nacimiento está en el futuro o fuera del rango permitido, **cuando** la solicitud se valida en el backend, **entonces** se rechaza la actualización.
+- **CA-13.3, versión desactualizada:** **Dado** que otro cambio ha modificado la versión del paciente, **cuando** se envía la edición con una versión anterior, **entonces** el backend devuelve conflicto en vez de sobrescribir el registro vigente.
+
+#### US-TB-14. Eliminar un paciente con confirmación
+
+**Relación As-Is:** US-11. **Respaldo implementado:** `S-PACIENTES`; `PacientesFacade.confirmDelete; PacienteService.delete`.
+
+- **CA-14.1, confirmación válida:** **Dado** que se ha seleccionado el paciente de destino, **cuando** se introduce la frase ELIMINAR PACIENTE y el servicio confirma, **entonces** se completa su eliminación y se cierra la confirmación.
+- **CA-14.2, frase incorrecta:** **Dado** que la frase introducida no coincide con la requerida, **cuando** se intenta confirmar desde la web, **entonces** se muestra el error y no se envía el borrado.
+- **CA-14.3, alcance del borrado:** **Dado** que el backend elimina un paciente del propietario autenticado, **cuando** procesa sus relaciones, **entonces** también elimina sus citas, consultas y estudios, encolando la limpieza de archivos; se trata de eliminación física, no de archivado lógico.
+
+#### US-TB-15. Adjuntar un estudio al paciente y a su consulta
+
+**Relación As-Is:** US-12. **Respaldo implementado:** `S-ESTUDIOS`; `EstudiosFacade.saveEstudio; consultOptions; EstudioService.create; validateRelations`.
+
+- **CA-15.1, carga válida:** **Dado** que se seleccionan paciente, tipo y archivo permitido, **cuando** el servicio confirma la carga multipart, **entonces** el estudio devuelto se incorpora al listado con el paciente y la consulta opcional seleccionados.
+- **CA-15.2, archivo requerido:** **Dado** que no hay un archivo seleccionado, **cuando** se intenta guardar, **entonces** se informa el archivo requerido y no se envía la carga.
+- **CA-15.3, asociación incorrecta:** **Dado** que la consulta indicada no corresponde al paciente o propietario, **cuando** el backend valida la relación, **entonces** rechaza la asociación en lugar de vincular el archivo a un contexto ajeno.
+
+#### US-TB-16. Buscar e identificar estudios por paciente y fecha
+
+**Relación As-Is:** US-13 y US-14. **Respaldo implementado:** `S-ESTUDIOS`; `EstudiosFacade.filteredEstudios; EstudiosComponent.studyTypeLabel`.
+
+- **CA-16.1, filtro de paciente:** **Dado** que se introduce un nombre o DNI en Estudios, **cuando** se recalculan las coincidencias, **entonces** se muestran los estudios cuyo paciente coincide con el término.
+- **CA-16.2, filtro combinado:** **Dado** que se introduce además una fecha, **cuando** se filtra el repositorio, **entonces** se muestran los estudios que cumplen tanto el término como la fecha.
+- **CA-16.3, identificación y orden:** **Dado** que existen varios estudios coincidentes, **cuando** se presenta el resultado, **entonces** se muestran ordenados por fecha descendente, con tipo y contexto del paciente.
+
+#### US-TB-17. Abrir y explorar un estudio autorizado en la web
+
+**Relación As-Is:** US-15. **Respaldo implementado:** `S-VISOR`; `EstudiosComponent.openViewer; StudyViewerComponent.openInNewTab; onWheel; onPointerMove; resetZoom`.
+
+- **CA-17.1, imagen:** **Dado** que se obtiene la URL vigente de un estudio de imagen autorizado, **cuando** se abre y se utiliza el visor web, **entonces** se muestra la imagen y sus controles permiten ampliarla entre 1 y 3,5 y desplazarla; cerrar restablece los ajustes.
+- **CA-17.2, PDF:** **Dado** que el estudio es un PDF, **cuando** se solicita su apertura desde el visor, **entonces** se ofrece abrir el documento en una pestaña del navegador.
+- **CA-17.3, restricción:** **Dado** que el estudio no pertenece al propietario autenticado, **cuando** se solicita su URL mediante el backend, **entonces** no se entrega una URL de acceso para ese registro.
+
+#### US-TB-18. Eliminar un estudio desde la consulta
+
+**Relación As-Is:** Complementa EP-03 mediante eliminación existente. **Respaldo implementado:** `S-ESTUDIOS`; `ConsultasComponent.deleteStudy; EstudiosFacade.deleteEstudio; EstudioService.delete`.
+
+- **CA-18.1, eliminación confirmada:** **Dado** que se selecciona un estudio del historial de consulta autorizado, **cuando** el backend confirma su eliminación, **entonces** se retira el estudio del estado local.
+- **CA-18.2, archivo almacenado:** **Dado** que el estudio eliminado tiene una clave de almacenamiento, **cuando** se procesa la baja, **entonces** se encola la eliminación del objeto asociado.
+- **CA-18.3, fallo del servicio:** **Dado** que no se confirma la baja del estudio, **cuando** la solicitud termina con error, **entonces** no se retira del estado local como si el borrado hubiera sido confirmado.
+
+#### US-TB-19. Consultar las citas de un paciente
+
+**Relación As-Is:** US-16 y consultas de agenda existentes. **Respaldo implementado:** `S-AGENDA`; `AgendaFacade.openCitasModal; citasByPaciente; nextCitaDate; lastCitaDate`.
+
+- **CA-19.1, citas del paciente:** **Dado** que se selecciona un paciente en agenda, **cuando** se consulta su listado de citas, **entonces** se muestran únicamente las citas de ese paciente ordenadas por fecha.
+- **CA-19.2, próxima cita:** **Dado** que existe una cita PROGRAMADA futura del paciente, **cuando** se calcula su próxima cita, **entonces** se selecciona la primera de esas citas por fecha ascendente.
+- **CA-19.3, última cita realizada:** **Dado** que existen citas REALIZADA del paciente, **cuando** se calcula la última cita, **entonces** se selecciona la de fecha más reciente.
+
+#### US-TB-20. Programar una cita futura
+
+**Relación As-Is:** US-16. **Respaldo implementado:** `S-AGENDA`; `AgendaFacade.scheduleCita; CitaService.create`.
+
+- **CA-20.1, programación válida:** **Dado** que el paciente está seleccionado y la fecha es futura, **cuando** el médico guarda y recibe confirmación del servicio, **entonces** se incorpora la cita con estado PROGRAMADA.
+- **CA-20.2, fecha pasada:** **Dado** que la fecha elegida no es posterior al momento actual, **cuando** se intenta guardar desde el formulario web, **entonces** se muestra el error y no se envía la programación.
+- **CA-20.3, fallo del servidor:** **Dado** que el backend no confirma el registro, **cuando** termina la solicitud, **entonces** se muestra el error y no se añade una cita ficticia al listado.
+
+#### US-TB-21. Editar la fecha, motivo y notas de una cita
+
+**Relación As-Is:** Complementa US-16. **Respaldo implementado:** `S-AGENDA`; `AgendaFacade.startEditCita; saveEditCita; CitaService.update`.
+
+- **CA-21.1, edición válida:** **Dado** que se abre una cita existente con su versión vigente, **cuando** se confirma la edición y el servicio la acepta, **entonces** se actualiza la misma cita mediante su identificador.
+- **CA-21.2, fecha no admitida en la web:** **Dado** que la cita está PROGRAMADA y se propone una fecha pasada, **cuando** se intenta guardar el formulario, **entonces** se rechaza el envío del cambio.
+- **CA-21.3, cancelación de edición:** **Dado** que hay una cita abierta para editar, **cuando** se cancela su edición, **entonces** se descartan los campos del formulario sin enviar una actualización.
+
+#### US-TB-22. Eliminar una cita registrada
+
+**Relación As-Is:** Relacionada con US-18; alcance actual de eliminación. **Respaldo implementado:** `S-AGENDA`; `AgendaFacade.deleteCita; CitaService.delete`.
+
+- **CA-22.1, baja confirmada:** **Dado** que se solicita eliminar una cita del propietario autenticado, **cuando** el backend confirma la operación, **entonces** la cita se retira del listado.
+- **CA-22.2, consultas vinculadas:** **Dado** que la cita eliminada está vinculada a consultas, **cuando** el backend procesa su eliminación, **entonces** conserva las consultas y elimina su referencia a esa cita.
+- **CA-22.3, fallo de eliminación:** **Dado** que la solicitud de baja falla, **cuando** la web recibe el error, **entonces** mantiene la cita en su estado local y comunica que no pudo eliminarse.
+
+#### US-TB-23. Registrar una atención clínica y sus adjuntos
+
+**Relación As-Is:** US-12, US-19 y US-20. **Respaldo implementado:** `S-CONSULTAS`; `ConsultasFacade.saveConsulta; ConsultasApplicationService.saveAttention; uploadFiles; ClinicalWorkflowService.attend`.
+
+- **CA-23.1, atención sin cita previa:** **Dado** que se selecciona un paciente válido sin cita previa, **cuando** se guarda la atención, **entonces** se registra la consulta con sus campos clínicos y se crea una cita REALIZADA vinculada.
+- **CA-23.2, cita programada:** **Dado** que se selecciona una cita PROGRAMADA del mismo paciente, **cuando** se guarda la atención, **entonces** se vincula la consulta y esa cita pasa a REALIZADA; una cita de otro paciente no se acepta.
+- **CA-23.3, carga parcial de adjuntos:** **Dado** que la atención se guarda y falla parte de los archivos permitidos, **cuando** se solicita reintentar su carga, **entonces** se conserva la consulta guardada y se reintentan los archivos pendientes sin volver a registrar la atención.
+
+#### US-TB-24. Consultar el historial y editar una atención
+
+**Relación As-Is:** US-21 y US-22. **Respaldo implementado:** `S-CONSULTAS`; `ConsultasFacade.openHistory; consultasByPaciente; openConsultaEdit; ConsultaService.update`.
+
+- **CA-24.1, historial:** **Dado** que se abre el historial de un paciente con atenciones, **cuando** se presenta el listado, **entonces** se muestran sus consultas por fecha descendente y sus estudios asociados por consulta.
+- **CA-24.2, edición válida:** **Dado** que se abre una atención para editar con versión vigente, **cuando** se guardan sus notas, **entonces** se actualiza la misma consulta, se conserva createdAt y se actualiza updatedAt.
+- **CA-24.3, edición concurrente:** **Dado** que la versión enviada ya no coincide con la almacenada, **cuando** se procesa la actualización, **entonces** se rechaza con conflicto sin sobrescribir la versión vigente.
+
+#### US-TB-25. Configurar las preferencias de la interfaz web
+
+**Relación As-Is:** US-23, US-24, US-25 y US-26. **Respaldo implementado:** `S-PREFERENCIAS`; `I18nService.setLanguage; SettingsService.setTheme; setTextSize; setNotifications`.
+
+- **CA-25.1, idioma web:** **Dado** que la interfaz utiliza claves del catálogo de traducción, **cuando** se selecciona español o inglés, **entonces** se actualizan el idioma activo, los textos del catálogo y el atributo lang del documento.
+- **CA-25.2, tema y texto:** **Dado** que se elige tema claro u oscuro y texto normal o grande, **cuando** se aplican los ajustes, **entonces** los atributos correspondientes del documento se actualizan y se guardan esas preferencias en el navegador.
+- **CA-25.3, notificaciones:** **Dado** que se cambia el interruptor de notificaciones, **cuando** se guarda la elección, **entonces** se conserva el valor booleano local; el ajuste no acredita un canal de envío de avisos clínicos.
+
+#### US-TB-26. Conocer la propuesta y las funcionalidades de MAX
+
+**Relación As-Is:** Landing documentada en 4.3 y 5.2.2. **Respaldo implementado:** `S-LANDING`; `index.html: inicio; nosotros; funcionalidades; mision-vision; valores`.
+
+- **CA-26.1, presentación institucional:** **Dado** que el visitante abre la landing académica, **cuando** consulta Inicio, Nosotros, Misión y visión y Valores, **entonces** encuentra los contenidos publicados del proyecto.
+- **CA-26.2, funcionalidades y recorrido:** **Dado** que el visitante consulta Funcionalidades y Cómo funciona, **cuando** revisa sus tarjetas y pasos, **entonces** se presenta la información publicada sobre organización de citas y documentación.
+- **CA-26.3, alcance informativo:** **Dado** que la landing describe funciones dirigidas a médicos y pacientes, **cuando** se acredita esta historia, **entonces** se acredita la publicación de ese contenido, sin afirmar que existe un portal de pacientes o una operación clínica adicional.
+
+#### US-TB-27. Navegar por las secciones de la landing
+
+**Relación As-Is:** Navegación implementada de la landing académica. **Respaldo implementado:** `S-LANDING`; `index.html: enlaces del encabezado y pie; identificadores de sección`.
+
+- **CA-27.1, navegación principal:** **Dado** que se utiliza el encabezado de escritorio, **cuando** se activa un enlace de sección, **entonces** su fragmento apunta al identificador correspondiente de la misma página.
+- **CA-27.2, navegación del pie:** **Dado** que el visitante llega al pie de página, **cuando** selecciona una sección de su lista de navegación, **entonces** se utiliza el enlace interno a la sección correspondiente.
+- **CA-27.3, sección Contacto:** **Dado** que se selecciona el enlace Contacto, **cuando** se alcanza ese bloque, **entonces** se presenta su llamada a comenzar con MAX; no se presupone un formulario de envío inexistente.
+
+#### US-TB-28. Ingresar a la aplicación desde la landing
+
+**Relación As-Is:** Integración existente entre landing académica y frontend. **Respaldo implementado:** `S-LANDING`; `index.html: Ingresar a MAX; Comenzar con MAX; enlaces al frontend`.
+
+- **CA-28.1, acceso desde el encabezado:** **Dado** que el visitante está en la landing académica, **cuando** activa Ingresar a MAX, **entonces** el enlace dirige a https://max-dev-front.pages.dev/auth.
+- **CA-28.2, llamada a comenzar:** **Dado** que se consulta una llamada publicada para comenzar a usar MAX, **cuando** se activa su enlace al producto, **entonces** se utiliza el destino de autenticación del frontend.
+- **CA-28.3, sesión separada:** **Dado** que se llega al frontend desde la landing, **cuando** el visitante todavía no se ha autenticado, **entonces** el enlace no crea por sí solo una sesión clínica ni confirma una cita.
+
+#### TS-TB-01. Proteger las credenciales y la sesión web
+
+**Relación As-Is:** TS-01 y TS-02. **Respaldo implementado:** `S-SEGURIDAD`; `AuthService; JwtTokenService; SessionCookieService; SecurityConfig.passwordEncoder`.
+
+- **CA-T01.1, contraseñas:** **Dado** que se registra una cuenta o se acepta cambiar su contraseña, **cuando** se persiste la credencial, **entonces** se almacena el hash bcrypt y se usa el codificador para comprobarla.
+- **CA-T01.2, sesión web segura:** **Dado** que la autenticación es válida y se utiliza la configuración segura con legacy bearer desactivado, **cuando** se emite la sesión, **entonces** se escribe la cookie HttpOnly y Secure con SameSite=Lax y no se entrega el token en el cuerpo.
+- **CA-T01.3, revocación:** **Dado** que se confirma un cierre o cambio de contraseña, **cuando** se invalidan las sesiones correspondientes, **entonces** un token revocado no se acepta como sesión vigente.
+
+#### TS-TB-02. Aplicar protección CSRF y configuración CORS
+
+**Relación As-Is:** Amplía TS-01 con protección implementada. **Respaldo implementado:** `S-SEGURIDAD`; `SecurityConfig.securityFilterChain; csrfRepository; corsConfigurationSource`.
+
+- **CA-T02.1, token CSRF:** **Dado** que el cliente prepara la sesión web, **cuando** consulta el recurso CSRF, **entonces** obtiene el token que el flujo web utiliza para sus solicitudes protegidas.
+- **CA-T02.2, escritura sin protección:** **Dado** que una solicitud de escritura requiere protección CSRF, **cuando** se envía sin un token aceptable, **entonces** el filtro de seguridad rechaza esa solicitud.
+- **CA-T02.3, orígenes configurados:** **Dado** que el navegador realiza una solicitud entre orígenes, **cuando** se evalúa la política CORS, **entonces** se utilizan los orígenes configurados y la opción de credenciales de la API.
+
+#### TS-TB-03. Limitar intentos de acceso y registro
+
+**Relación As-Is:** Control existente de seguridad de EP-01. **Respaldo implementado:** `S-LIMITADOR`; `AccessLimiter.check; failure; AuthController.login; register`.
+
+- **CA-T03.1, ventana de control:** **Dado** que llega una solicitud de login o registro, **cuando** el controlador consulta el limitador, **entonces** se cuentan los intentos dentro de su ventana configurada.
+- **CA-T03.2, límite alcanzado:** **Dado** que la cuenta o IP alcanza su límite aplicable, **cuando** se procesa otro intento dentro de la ventana, **entonces** se responde con HTTP 429.
+- **CA-T03.3, credenciales fallidas:** **Dado** que un login es rechazado por credenciales incorrectas, **cuando** el controlador procesa el rechazo, **entonces** se registra el fallo de la cuenta mediante su identificador derivado.
+
+#### TS-TB-04. Aplicar permisos, aislamiento y control de versiones
+
+**Relación As-Is:** TS-01 y repositorios existentes. **Respaldo implementado:** `S-INTEGRIDAD`; `SecurityConfig; AuthenticationSupport; repositorios por propietario; RecordValidation.version`.
+
+- **CA-T04.1, aislamiento:** **Dado** que una sesión solicita registros clínicos, **cuando** se ejecuta su consulta o modificación, **entonces** se resuelven los datos por el propietario autenticado, sin aceptar un identificador ajeno como recurso propio.
+- **CA-T04.2, permiso administrativo:** **Dado** que la sesión no tiene rol ADMIN, **cuando** solicita /api/admin/, **entonces** el filtro de seguridad rechaza la operación.
+- **CA-T04.3, versión desactualizada:** **Dado** que una actualización no envía la versión vigente, **cuando** el servicio compara las versiones, **entonces** se responde con HTTP 409 sin omitir la comprobación.
+
+#### TS-TB-05. Procesar las operaciones clínicas compuestas con idempotencia
+
+**Relación As-Is:** TS-06 y flujo compuesto existente. **Respaldo implementado:** `S-INTEGRIDAD`; `ClinicalWorkflowService.register; attend; IdempotentOperations.execute`.
+
+- **CA-T05.1, operación válida:** **Dado** que se recibe una clave válida con el alta o atención, **cuando** se ejecuta el flujo compuesto, **entonces** se conserva el recibo del resultado dentro de la transacción.
+- **CA-T05.2, repetición equivalente:** **Dado** que se repite la misma clave para el mismo usuario y operación con la misma entrada, **cuando** se procesa la repetición, **entonces** se devuelve el resultado del recibo sin ejecutar otra vez la acción.
+- **CA-T05.3, reutilización incompatible:** **Dado** que se reutiliza una clave con datos distintos, **cuando** se compara la huella de entrada, **entonces** se responde con conflicto sin repetir la acción.
+
+#### TS-TB-06. Validar y gestionar los archivos clínicos
+
+**Relación As-Is:** TS-04 y TS-05. **Respaldo implementado:** `S-STORAGE`; `EstudioService.prepareUpload; validateMagic; accessUrl; EstudioStorageLifecycle`.
+
+- **CA-T06.1, validación:** **Dado** que se recibe un archivo clínico, **cuando** se prepara la carga, **entonces** se comprueban tipo permitido, extensión, firma y tamaño no vacío de hasta 20 MiB para JPEG, PNG, WebP o PDF.
+- **CA-T06.2, acceso al archivo:** **Dado** que un estudio autorizado tiene una clave de almacenamiento, **cuando** se solicita su acceso, **entonces** se devuelve la URL temporal si el almacenamiento está configurado o un error de servicio no disponible si no lo está.
+- **CA-T06.3, limpieza diferida:** **Dado** que se elimina un registro con un archivo almacenado, **cuando** se procesa la cola de limpieza de objetos sin estudio vigente, **entonces** se intenta eliminar el objeto y se conserva una tarea de reintento si el proveedor falla.
+
+#### TS-TB-07. Persistir las preferencias visuales y de notificaciones localmente
+
+**Relación As-Is:** TS-08 con alcance local comprobado. **Respaldo implementado:** `S-PREFERENCIAS`; `SettingsService.persist; loadSettings; apply`.
+
+- **CA-T07.1, persistencia:** **Dado** que el usuario cambia una preferencia admitida, **cuando** se ejecuta su setter, **entonces** se guarda el conjunto de preferencias en la clave local max_settings.
+- **CA-T07.2, recuperación:** **Dado** que el navegador contiene preferencias guardadas con valores válidos, **cuando** se construye el servicio, **entonces** se recuperan el tema, tamaño y valor booleano de notificaciones.
+- **CA-T07.3, datos no válidos:** **Dado** que el valor almacenado no puede interpretarse o contiene opciones no admitidas, **cuando** se cargan las preferencias, **entonces** se utilizan los valores predeterminados o normalizados correspondientes.
 
 ### 8.3.2. To-Be Product Backlog
 
-El backlog ordena el trabajo To-Be según el valor que aporta a las preguntas priorizadas: primero la consulta de estudios, luego la gestión de citas y la legibilidad, y después el apoyo a su medición. El orden expresa prioridad de valor, no una secuencia que permita ignorar dependencias. Un elemento bloqueado no se inicia por aparecer antes en la tabla.
+El Product Backlog consolida las mismas **35 historias** del catálogo anterior, sin incorporar funcionalidades hipotéticas. El orden agrupa primero el acceso y la administración, luego pacientes, estudios, agenda y atenciones, preferencias y landing; finalmente presenta los habilitadores técnicos. Es un orden documental de valor y alcance, no la cronología en que se construyeron las funcionalidades ni una autorización para ignorar sus dependencias.
 
-Las estimaciones usan Story Points de la escala 1, 2, 3, 5 y 8. Son estimaciones iniciales relativas a alcance, incertidumbre y complejidad; deben revisarse después de los spikes. No equivalen a horas, días, número de participantes ni resultados de experimentos. Todos los elementos tienen estado **propuesto, pendiente de implementación o investigación**, según su tipo.
+Los Story Points conservan la escala 1, 2, 3, 5 y 8. En esta edición son **estimaciones documentales retrospectivas de complejidad**, sujetas a revisión por el equipo; no son mediciones del esfuerzo realmente empleado, horas trabajadas ni puntos de desarrollo pendiente. El estado común de los elementos es **implementado en el código revisado**, con el alcance de evidencia señalado en 8.3.1.
 
 | Orden | User Story ID | Título | Descripción | Story Points |
 |---|---|---|---|---|
-| 1 | US-TB-01 | Localizar estudios por paciente | Como médico, deseo localizar los estudios del paciente consultado conservando su contexto, para reducir la carga de búsqueda | 5 |
-| 2 | US-TB-02 | Consultar el estudio correcto | Como médico, deseo comprobar la correspondencia de un estudio y consultar su archivo, para utilizar la documentación del paciente adecuado | 3 |
-| 3 | US-TB-03 | Programar una cita con un recorrido guiado | Como médico, deseo programar una cita con disponibilidad y datos revisados antes de confirmarla, para completar correctamente la gestión de agenda | 5 |
-| 4 | US-TB-04 | Reprogramar una cita conservando su integridad | Como médico, deseo cambiar el horario de una cita conservando su identidad y sus restricciones, para reorganizar la agenda sin duplicaciones ni cambios incorrectos | 5 |
-| 5 | US-TB-05 | Configurar la legibilidad en Android | Como médico, deseo configurar y previsualizar los ajustes permitidos de legibilidad, para realizar las tareas móviles con una configuración adecuada | 5 |
-| 6 | US-TB-06 | Valorar la facilidad del recorrido | Como médico participante, deseo valorar opcionalmente la facilidad de cada recorrido, para aportar información sobre mi experiencia con la variante evaluada | 2 |
-| 7 | TS-TB-01 | Preparar condiciones y casos aislados | Como desarrollador, deseo preparar asignaciones y casos sintéticos versionados y aislados, para comparar A y B bajo condiciones equivalentes | 5 |
-| 8 | TS-TB-02 | Registrar eventos experimentales | Como desarrollador, deseo registrar los eventos mínimos del protocolo con validación y deduplicación, para obtener mediciones trazables sin información clínica real | 8 |
-| 9 | TS-TB-03 | Generar registros e indicadores reproducibles | Como desarrollador, deseo transformar los registros válidos en pares e indicadores del catálogo, para preparar un análisis reproducible con pérdidas explícitas | 3 |
-| 10 | SP-TB-01 | Verificar contratos y viabilidad de las variantes | Como desarrollador, deseo investigar los contratos y capacidades existentes de los tres recorridos, para identificar restricciones y preparar las variantes sin cambios de arquitectura no evaluados | 2 |
-| 11 | SP-TB-02 | Calibrar instrumentos de captura y tiempo | Como desarrollador, deseo investigar la medición de duración y captura mínima en web y Android, para elegir instrumentos adecuados antes de integrar el tracking | 2 |
+| 1 | US-TB-01 | Iniciar sesión en MAX | Como usuario registrado, deseo iniciar sesión con mi correo y contraseña, para acceder al área correspondiente a mi perfil | 3 |
+| 2 | US-TB-02 | Registrar una cuenta médica | Como profesional médico, deseo registrar mi cuenta con mis datos y credenciales, para utilizar MAX | 3 |
+| 3 | US-TB-03 | Cerrar sesión de forma segura | Como usuario autenticado, deseo cerrar mi sesión, para finalizar el acceso desde el navegador | 2 |
+| 4 | US-TB-04 | Consultar y actualizar el perfil médico | Como médico, deseo consultar y actualizar mis datos de perfil y fotografía, para mantener correcta mi identificación en MAX | 5 |
+| 5 | US-TB-05 | Cambiar la contraseña | Como médico, deseo cambiar mi contraseña comprobando la actual, para actualizar mis credenciales de acceso | 3 |
+| 6 | US-TB-06 | Consultar el resumen del consultorio | Como médico, deseo consultar el dashboard con pacientes, estudios, atenciones y próximas citas, para revisar la actividad de mi espacio | 3 |
+| 7 | US-TB-07 | Consultar perfiles y configurar su límite | Como administrador, deseo consultar los perfiles y configurar el límite de cuentas médicas, para controlar el cupo de MAX | 5 |
+| 8 | US-TB-08 | Ingresar al contexto de un perfil médico | Como administrador, deseo ingresar al contexto de un perfil médico registrado, para acceder a su espacio mediante la operación administrativa existente | 5 |
+| 9 | US-TB-09 | Eliminar un perfil con confirmación explícita | Como administrador, deseo confirmar la eliminación de un perfil y sus datos asociados, para gestionar una baja con conocimiento de su alcance | 5 |
+| 10 | US-TB-10 | Registrar un paciente con historial inicial | Como médico, deseo registrar los datos personales y médicos de un paciente, para crear su expediente con el historial inicial que genera MAX | 5 |
+| 11 | US-TB-11 | Consultar y buscar pacientes por nombre o DNI | Como médico, deseo consultar mis pacientes y filtrarlos por nombre o DNI, para localizar su expediente | 3 |
+| 12 | US-TB-12 | Consultar el detalle del paciente sin editarlo | Como médico, deseo abrir la información de un paciente en modo de consulta, para revisar su expediente sin modificarlo | 2 |
+| 13 | US-TB-13 | Editar la información personal y médica del paciente | Como médico, deseo actualizar los datos personales, antecedentes, alergias, diagnóstico y riesgo del paciente, para mantener su expediente al día | 5 |
+| 14 | US-TB-14 | Eliminar un paciente con confirmación | Como médico, deseo confirmar la eliminación de un paciente y conocer que alcanza a sus registros asociados, para evitar una baja involuntaria | 3 |
+| 15 | US-TB-15 | Adjuntar un estudio al paciente y a su consulta | Como médico, deseo cargar un estudio indicando paciente y, cuando corresponda, una consulta de ese paciente, para centralizar su documentación clínica | 5 |
+| 16 | US-TB-16 | Buscar e identificar estudios por paciente y fecha | Como médico, deseo filtrar los estudios por paciente y fecha e identificar su tipo, para localizar el documento necesario | 3 |
+| 17 | US-TB-17 | Abrir y explorar un estudio autorizado en la web | Como médico, deseo abrir un PDF o explorar la imagen de un estudio autorizado, para revisar su contenido desde la web | 5 |
+| 18 | US-TB-18 | Eliminar un estudio desde la consulta | Como médico, deseo eliminar un estudio asociado que ya no corresponda, para mantener organizada la documentación de la consulta | 3 |
+| 19 | US-TB-19 | Consultar las citas de un paciente | Como médico, deseo consultar las citas y sus estados por paciente, para revisar su agenda registrada | 2 |
+| 20 | US-TB-20 | Programar una cita futura | Como médico, deseo registrar una cita futura con paciente, fecha, motivo y notas, para organizar su atención | 3 |
+| 21 | US-TB-21 | Editar la fecha, motivo y notas de una cita | Como médico, deseo editar la fecha, motivo y notas de una cita existente, para actualizar la agenda conservando su identidad | 3 |
+| 22 | US-TB-22 | Eliminar una cita registrada | Como médico, deseo eliminar una cita de la agenda mediante la acción disponible, para retirar ese registro | 3 |
+| 23 | US-TB-23 | Registrar una atención clínica y sus adjuntos | Como médico, deseo registrar una atención con sus notas y archivos, con o sin cita previa, para documentar la atención del paciente | 8 |
+| 24 | US-TB-24 | Consultar el historial y editar una atención | Como médico, deseo revisar el historial del paciente y corregir las notas de una atención, para recuperar y actualizar su información clínica | 5 |
+| 25 | US-TB-25 | Configurar las preferencias de la interfaz web | Como médico, deseo configurar idioma, tema, tamaño de texto y preferencia de notificaciones, para adaptar el uso de MAX en el navegador | 5 |
+| 26 | US-TB-26 | Conocer la propuesta y las funcionalidades de MAX | Como visitante, deseo consultar la presentación, funcionalidades, misión, visión y valores de MAX, para conocer la propuesta del proyecto | 3 |
+| 27 | US-TB-27 | Navegar por las secciones de la landing | Como visitante, deseo utilizar la navegación de la landing, para acceder a sus secciones informativas | 2 |
+| 28 | US-TB-28 | Ingresar a la aplicación desde la landing | Como visitante, deseo acceder al inicio de sesión desde las llamadas a la acción de la landing, para comenzar a utilizar MAX | 2 |
+| 29 | TS-TB-01 | Proteger las credenciales y la sesión web | Como desarrollador, deseo almacenar hashes bcrypt y gestionar sesiones web con JWT y cookies protegidas, para controlar el acceso a MAX | 8 |
+| 30 | TS-TB-02 | Aplicar protección CSRF y configuración CORS | Como desarrollador, deseo aplicar la protección CSRF y la política de orígenes configurada, para controlar las solicitudes web a la API | 5 |
+| 31 | TS-TB-03 | Limitar intentos de acceso y registro | Como desarrollador, deseo aplicar el limitador de intentos por cuenta e IP, para restringir solicitudes repetidas de autenticación | 3 |
+| 32 | TS-TB-04 | Aplicar permisos, aislamiento y control de versiones | Como desarrollador, deseo filtrar por propietario, restringir la administración y comprobar versiones, para proteger los registros de MAX | 5 |
+| 33 | TS-TB-05 | Procesar las operaciones clínicas compuestas con idempotencia | Como desarrollador, deseo procesar el alta con historial y la atención mediante una clave idempotente, para controlar la repetición de esas operaciones | 5 |
+| 34 | TS-TB-06 | Validar y gestionar los archivos clínicos | Como desarrollador, deseo validar los archivos y gestionar sus URLs de acceso y limpieza, para mantener los adjuntos asociados a los estudios autorizados | 8 |
+| 35 | TS-TB-07 | Persistir las preferencias visuales y de notificaciones localmente | Como desarrollador, deseo conservar tema, tamaño de texto y preferencia de notificaciones en el navegador, para recuperarlos al iniciar MAX | 2 |
 
 #### Dependencias para la ejecución
 
+La siguiente matriz resume las dependencias funcionales de las capacidades existentes. Identifica los controles y registros necesarios para utilizarlas o comprobarlas; no presenta su implementación como trabajo todavía pendiente.
+
 | Elemento | Prerrequisitos | Motivo |
 |---|---|---|
-| SP-TB-01 | Ninguno dentro de este backlog | Resolver viabilidad antes de comprometer la implementación |
-| SP-TB-02 | SP-TB-01 | Calibrar instrumentos en el contexto técnico identificado |
-| TS-TB-01 | SP-TB-01 | Preparar casos y condiciones compatibles con los contratos revisados |
-| US-TB-01 | TS-TB-01 | Disponer de casos y condiciones aisladas para la búsqueda |
-| US-TB-02 | US-TB-01 | Completar el recorrido focalizado de consulta |
-| US-TB-03 | TS-TB-01 | Programar contra casos de agenda controlados |
-| US-TB-04 | US-TB-03 | Completar la batería de agenda con reprogramación verificable |
-| US-TB-05 | TS-TB-01 | Mantener casos y configuración de referencia entre condiciones |
-| TS-TB-02 | SP-TB-02, TS-TB-01, US-TB-02, US-TB-04 y US-TB-05 | Integrar y verificar la captura en los tres recorridos completos |
-| US-TB-06 | TS-TB-02 | Asociar la respuesta opcional con la condición correcta |
-| TS-TB-03 | TS-TB-02 | Transformar datos de captura validados y representar respuestas opcionales, incluidas ausencias |
-
-La secuencia técnica empieza por los spikes y la preparación, aunque el backlog muestre primero el valor funcional. Es posible preparar una historia con casos controlados sin declarar que todo el experimento está listo; la preparación del piloto exige además instrumentación, calidad de datos y protocolo aprobado.
+| US-TB-01 y US-TB-02 | TS-TB-01, TS-TB-02 y TS-TB-03 | Aplicar credenciales, sesión, protección web y limitación de intentos |
+| US-TB-03 a US-TB-06 | Sesión válida; TS-TB-01 y TS-TB-04 | Cerrar sesión, gestionar el perfil y consultar el contexto clínico permitido |
+| US-TB-07 a US-TB-09 | Rol ADMIN y TS-TB-04; TS-TB-06 para limpieza de archivos | Consultar y administrar perfiles con sus permisos y alcance de baja |
+| US-TB-10 | Sesión válida, TS-TB-04 y TS-TB-05 | Crear el paciente y su historial mediante la operación compuesta |
+| US-TB-11 a US-TB-14 | Paciente del propietario; TS-TB-04; TS-TB-06 para archivos asociados | Consultar, editar con versión y eliminar solo registros del espacio autorizado |
+| US-TB-15 a US-TB-18 | Paciente autorizado, TS-TB-04 y TS-TB-06; consulta compatible cuando se vincula | Relacionar el documento, validar su carga y resolver acceso y limpieza |
+| US-TB-19 a US-TB-22 | Paciente autorizado; TS-TB-04 en actualización y resolución del registro | Consultar, programar, editar y eliminar citas existentes |
+| US-TB-23 | Paciente autorizado, TS-TB-05 y TS-TB-06; cita compatible si se selecciona | Guardar la atención y completar adjuntos respetando el resultado parcial |
+| US-TB-24 | Historial del paciente y TS-TB-04 | Consultar atenciones y comprobar la versión de una edición |
+| US-TB-25 | Sesión web válida y TS-TB-07 para las preferencias locales persistidas | Aplicar idioma y preferencias sin presumir sincronización con el backend |
+| US-TB-26 a US-TB-28 | Landing académica publicada; frontend disponible para completar el acceso | Consultar información pública, navegar e ingresar a la web |
+| TS-TB-01 a TS-TB-03 | Configuración de seguridad de la aplicación | Proteger sesión, solicitudes web y frecuencia de acceso |
+| TS-TB-04 y TS-TB-05 | Identidad autenticada; repositorios y transacción del backend | Separar propietarios y controlar versiones y repetición de operaciones compuestas |
+| TS-TB-06 | Registros autorizados; almacenamiento configurado para los objetos en nube | Validar archivos, emitir acceso y procesar la limpieza diferida |
+| TS-TB-07 | Almacenamiento local del navegador disponible | Persistir tema, tamaño de texto y preferencia de notificaciones |
 
 #### Trazabilidad y estimación consolidada
 
-| Experimento | Historias funcionales | Habilitadores compartidos | Métricas de referencia |
-|---|---|---|---|
-| EXP-01, ERQ-01 y H-01 | US-TB-01, US-TB-02; US-TB-06 para valoración | TS-TB-01 a TS-TB-03; SP-TB-01 y SP-TB-02 | M-01, M-02, M-05, M-08, M-09 y M-10 |
-| EXP-02, ERQ-02 y H-02 | US-TB-03, US-TB-04; US-TB-06 para valoración | TS-TB-01 a TS-TB-03; SP-TB-01 y SP-TB-02 | M-03, M-04, M-05, M-08, M-09 y M-10 |
-| EXP-03, ERQ-03 y H-03 | US-TB-05; US-TB-06 para valoración | TS-TB-01 a TS-TB-03; SP-TB-01 y SP-TB-02 | M-06, M-07, M-05, M-08, M-09 y M-10 |
+Las historias describen el producto actual que sirve como referencia para experimentar. Su existencia no acredita que estén listas las variantes B, el tracking o las sesiones con participantes.
 
-| Tipo | Cantidad | Story Points propuestos |
+| Experimento | Capacidades existentes de referencia | Alcance de la relación |
 |---|---|---|
-| Historias funcionales | 6 | 25 |
-| Historias técnicas | 3 | 16 |
-| Spikes | 2 | 4 |
-| Total | 11 | 45 |
+| EXP-01, ERQ-01 y H-01 | US-TB-11, US-TB-12, US-TB-16 y US-TB-17; TS-TB-04 y TS-TB-06 | Búsqueda del paciente y localización y consulta del estudio en web; no demuestra la mejora de la variante B |
+| EXP-02, ERQ-02 y H-02 | US-TB-19, US-TB-20 y US-TB-21; TS-TB-04 | Consulta, programación y edición de citas existentes; no acredita bloqueo automático de cruces ni el recorrido guiado propuesto |
+| EXP-03, ERQ-03 y H-03 | US-TB-25 y TS-TB-07 como referencia funcional de preferencias web | La configuración web no acredita la intervención ni la evaluación en Android; se mantiene el alcance móvil definido en 8.1 y 8.2 |
+| Resto del catálogo | Acceso, administración, pacientes, atenciones, landing y soporte técnico | Cobertura del producto implementado; no se asigna a estas historias una hipótesis experimental nueva |
 
-Los habilitadores se contabilizan una sola vez, aunque apoyen a los tres experimentos. No se suman nuevamente por experimento ni por épica. El reclutamiento, la disponibilidad de médicos, las sesiones y el calendario de confirmación de 8.2.5 son recursos y actividades del estudio; no se consideran cubiertos por estos 45 Story Points de trabajo sobre producto e instrumentos.
+| Tipo | Cantidad | Story Points de referencia |
+|---|---|---|
+| Historias funcionales | 28 | 104 |
+| Historias técnicas | 7 | 36 |
+| Total | 35 | 140 |
+
+Cada historia se contabiliza una sola vez. Las épicas y los controles compartidos no añaden puntos por cada función que utilizan. Estos puntos tampoco cubren reclutamiento, instrumentos de medición ni resultados de los experimentos.
 
 #### Criterios de preparación y terminación
 
-Una historia queda lista para iniciar cuando su alcance y criterios son entendidos, sus dependencias están resueltas, existe un caso sintético verificable y se ha identificado el entorno autorizado. Los spikes se acotan a producir evidencia y una conclusión; no se cierran únicamente por haber dedicado tiempo a investigar.
+Para comprobar una historia se identifica su versión de respaldo, se utiliza un entorno autorizado con datos sintéticos y se recorren sus criterios positivos y las restricciones descritas. La existencia de código permite documentar una capacidad implementada; una nueva comprobación funcional requiere registrar por separado el entorno, los pasos y el resultado observado.
 
-Una historia funcional o técnica se acepta cuando cumple sus criterios, conserva las reglas existentes, dispone de comprobaciones positivas y negativas, identifica la versión evaluada y deja evidencia reproducible con datos sintéticos. La cobertura de captura se valida al integrar TS-TB-02. Aceptar una historia no demuestra que se haya alcanzado el ahorro de tiempo, la tasa de acierto o una hipótesis del experimento.
+El catálogo conserva los límites encontrados: la agenda web permite crear, editar y eliminar citas, pero no se acredita aquí un bloqueo automático de solapamientos; eliminar una cita es una baja del registro, no un cambio demostrado a estado CANCELADA. La eliminación de pacientes alcanza sus registros asociados. Las preferencias de tema, texto y notificaciones se guardan localmente; el cambio de idioma web utiliza el catálogo de traducción, y no se afirma sincronización remota de preferencias ni envío de recordatorios clínicos.
 
-Antes del piloto deben estar disponibles las variantes requeridas, los casos equivalentes, la rúbrica, la asignación y los instrumentos. Las pruebas técnicas y los datos controlados permiten comprobar preparación; los resultados con médicos se registran solo después de ejecutar las sesiones bajo las condiciones de 8.2. Para declarar éxito experimental se aplicarán sus reglas de calidad, escala y análisis.
+La landing dispone de contenido y enlaces al producto. Sus enlaces legales de marcador y el bloque Contacto no se convierten en historias de políticas publicadas, formularios enviados o mensajes entregados. La tarjeta de Configuración con versión y el literal Operativo tampoco se presenta como un diagnóstico en tiempo real.
 
-Esta tabla es el registro documental del backlog To-Be. La publicación en la herramienta de gestión indicada por el curso, su enlace público y la captura correspondiente quedan pendientes de su registro real; no se incorpora una URL o captura ficticia como evidencia de gestión. Tampoco se incluyen aquí implementaciones o evidencias de 8.3.3, que quedan fuera del alcance de esta sección.
+La preparación y ejecución de EXP-01 a EXP-03 conserva las condiciones de 8.1 y 8.2. Se documentarán las variantes, instrumentos, consentimiento, sesiones y resultados cuando existan. El catálogo y el backlog de funciones implementadas no acreditan esas actividades ni los beneficios planteados en las hipótesis.
+
+Esta tabla es el registro documental del backlog. La publicación del tablero en una herramienta de gestión, su enlace y captura requieren evidencia real; no se incorpora una URL ficticia ni se atribuye a este cambio una publicación que no se ha realizado.
 
 ## Conclusiones
 
